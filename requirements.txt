@@ -1,0 +1,8 @@
+jupyter-book
+matplotlib
+numpy
+pandas
+netcdf4
+xarray
+mikeio
+fmskill
