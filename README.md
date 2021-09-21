@@ -1,5 +1,7 @@
 # Python for marine modelers using MIKE IO and FMskill
 
+[https://dhi.github.io/book-learn-mikeio-fmskill/](https://dhi.github.io/book-learn-mikeio-fmskill/)
+
 Would you like to use Python to become more efficient as a marine modeler?
 
 ## WHO SHOULD ATTEND?
