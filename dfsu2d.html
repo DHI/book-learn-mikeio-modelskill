@@ -249,8 +249,25 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-properties">
+   Basic properties
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#subset-data">
+     Subset data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#create-new-dfsu-from-mesh">
    Create new dfsu from mesh
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-examples">
+   More examples
   </a>
  </li>
 </ul>
@@ -266,19 +283,23 @@
                 
   <div class="section" id="dfsu-2d">
 <h1>Dfsu 2D<a class="headerlink" href="#dfsu-2d" title="Permalink to this headline">¶</a></h1>
-<p>2D horizontal</p>
+<p>2D horizontal.</p>
+<p>See <a class="reference external" href="https://dhi.github.io/mikeio/dfsu.html">Dfsu in MIKE IO Documentation</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">eum</span>
 </pre></div>
 </div>
 </div>
 </div>
+<div class="section" id="basic-properties">
+<h2>Basic properties<a class="headerlink" href="#basic-properties" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s2">&quot;data/FakeLake.dfsu&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s2">&quot;data/oresundHD_run1.dfsu&quot;</span>
 <span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 <span class="n">dfs</span>
 </pre></div>
@@ -286,24 +307,132 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dfsu2D
-Number of elements: 1011
-Number of nodes: 798
-Projection: PROJCS[&quot;UTM-17&quot;,GEOGCS[&quot;Unused&quot;,DATUM[&quot;UTM Projections&quot;,SPHEROID[&quot;WGS 1984&quot;,6378137,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;False_Easting&quot;,500000],PARAMETER[&quot;False_Northing&quot;,0],PARAMETER[&quot;Central_Meridian&quot;,-81],PARAMETER[&quot;Scale_Factor&quot;,0.9996],PARAMETER[&quot;Latitude_Of_Origin&quot;,0],UNIT[&quot;Meter&quot;,1]]
+Number of elements: 3612
+Number of nodes: 2046
+Projection: UTM-33
 Items:
-  0:  Bathymetry &lt;Bathymetry&gt; (meter)
-Time: time-invariant file (1 step) at 2000-01-01 12:00:00
+  0:  Surface elevation &lt;Surface Elevation&gt; (meter)
+  1:  Total water depth &lt;Water Depth&gt; (meter)
+  2:  U velocity &lt;u velocity component&gt; (meter per sec)
+  3:  V velocity &lt;v velocity component&gt; (meter per sec)
+Time: 5 steps with dt=86400.0s
+      2018-03-07 00:00:00 -- 2018-03-11 00:00:00
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_mesh</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dfsu2d_3_0.png" src="_images/dfsu2d_3_0.png" />
+<img alt="_images/dfsu2d_4_0.png" src="_images/dfsu2d_4_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">n_items</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">projection_string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;UTM-33&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">timestep</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>86400.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="s2">&quot;Surface elevation&quot;</span><span class="p">)</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 3612)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Surface elevation [m]&quot;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dfsu2d_9_0.png" src="_images/dfsu2d_9_0.png" />
+</div>
+</div>
+<div class="section" id="subset-data">
+<h3>Subset data<a class="headerlink" href="#subset-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ze</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">element_coordinates</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>    <span class="c1"># third column is depth</span>
+<span class="n">ze</span><span class="o">&lt;-</span><span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, ..., False, False, False])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elems</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ze</span><span class="o">&lt;-</span><span class="mi">20</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ds_sub</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">time_steps</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">elements</span><span class="o">=</span><span class="n">elems</span><span class="p">)</span>    <span class="c1"># read only data where depth is more than 20m</span>
+<span class="n">ds_sub</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
+Dimensions: (1, 202)
+Time: 2018-03-11 00:00:00 - 2018-03-11 00:00:00
+Items:
+  0:  Surface elevation &lt;Surface Elevation&gt; (meter)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_sub</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elems</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dfsu2d_13_0.png" src="_images/dfsu2d_13_0.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="create-new-dfsu-from-mesh">
@@ -353,6 +482,10 @@ Time: time-invariant file (1 step) at 2000-01-01 12:00:00
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="more-examples">
+<h2>More examples<a class="headerlink" href="#more-examples" title="Permalink to this headline">¶</a></h2>
+<p>See the <a class="reference external" href="https://nbviewer.jupyter.org/github/DHI/mikeio/tree/main/notebooks/">MIKE IO example notebooks</a> which has “dfsu” in the name.</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>
