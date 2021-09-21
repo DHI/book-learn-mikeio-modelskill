@@ -11,7 +11,7 @@ chapters:
 - file: dfsu2d
   sections:
   - file: exercises/exercise_B_dfsu2d
-- file: external_forcing
+- file: input_data
   sections:
-  - file: exercises/exercise_A_external
+  - file: exercises/exercise_C_input_data
 - file: exercises/final_assignment
