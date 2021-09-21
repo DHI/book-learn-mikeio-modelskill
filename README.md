@@ -4,7 +4,7 @@ Would you like to use Python to become more efficient as a marine modeler?
 
 ## WHO SHOULD ATTEND?
 
-This course has been designed for MIKE 21/3 modelers with some Python experience, e.g. from the course [Getting started with dfs files in Python using MIKE IO(https://dhi.github.io/getting-started-with-mikeio/intro.html) or similar, that would like to use Python for more pre- and post-processing. 
+This course has been designed for MIKE 21/3 modelers with some Python experience, e.g. from the course [Getting started with dfs files in Python using MIKE IO](https://dhi.github.io/getting-started-with-mikeio/intro.html) or similar, that would like to use Python for more pre- and post-processing. 
 
 ## CONTENT
 
