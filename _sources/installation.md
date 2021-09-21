@@ -1,4 +1,4 @@
-# Installing Python and MIKE IO
+# Installation
 
 1. Download Python from [https://www.python.org/downloads/](https://www.python.org/downloads/)
 2. Install Python (Select Add Python to PATH)
