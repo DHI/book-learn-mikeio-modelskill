@@ -5,6 +5,9 @@ format: jb-book
 root: intro
 chapters:
 - file: installation
+- file: mesh
+  sections:
+  - file: exercises/exercise_A_mesh
 - file: external_forcing
   sections:
   - file: exercises/exercise_A_external
