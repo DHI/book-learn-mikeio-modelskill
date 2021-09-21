@@ -5,4 +5,5 @@ pandas
 netcdf4
 xarray
 mikeio
+shapely
 fmskill
