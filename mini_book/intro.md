@@ -1,25 +1,21 @@
-# Getting started with Dfs files in Python using MIKE IO
+# Python for marine modelers using MIKE IO and FMskill
 
-## Who should attend?
+Would you like to use Python to become more efficient as a marine modeler?
 
-The course has been designed for MIKE modelers with some previous experience with programming or scripting, e.g. Python, Matlab, R, C# or Fortran. 
+## WHO SHOULD ATTEND?
 
-## Content
+This course has been designed for MIKE 21/3 modelers with some Python experience, e.g. from the course [Getting started with dfs files in Python using MIKE IO](https://dhi.github.io/getting-started-with-mikeio/intro.html) or similar, that would like to use Python for more pre- and post-processing. 
 
-The course comprises typical data processing tasks in connection with MIKE modelling, extracting selected data for analysis, preparing time series input data (forcing, boundary condition) for simulations etc. We will use Jupyter notebooks with Python packages such as NumPy, pandas and MIKE IO.
+## CONTENT
 
-## Benefits
+The course comprises typical data processing tasks in connection with MIKE 21/3 modelling, preparing input data, converting forcing data from other formats, creating roughness maps, concatenating files, extracting data from output files (e.g. vertical profiles), visualization, assessing the skill of MIKE 21/3 by comparing to station and satellite track observation data. We will use Jupyter notebooks with Python packages such as NumPy, pandas and xarray as well DHI's own MIKE IO and FMskill packages. 
 
-After the course you will have improved your skills and knowledge on how to more efficiently read, write and perform data analysis on data stored in dfs files using Python.
+## BENEFITS
+
+After the course, you will have improved your skills and knowledge on how to conduct typical MIKE 21/3 modeling workflows using MIKE IO and FMskill.
 
 :::{note}
-Don't forget to install Python
+This course assumes that you are familiar with Python
 :::
-
-And remember the Zen of Python...
-
-```
-import this
-```
 
 
