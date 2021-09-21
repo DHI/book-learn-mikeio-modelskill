@@ -5,53 +5,54 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python for marine modelers using MIKE IO and FMskill &#8212; Python for marine modelers using MIKE IO and FMskill</title>
+    <title>Exercise B: Dfsu 2D &#8212; Python for marine modelers using MIKE IO and FMskill</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installation.html" />
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Forcing data" href="../external_forcing.html" />
+    <link rel="prev" title="Dfsu 2D" href="../dfsu2d.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -68,38 +69,38 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="../_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Python for marine modelers using MIKE IO and FMskill</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
    Python for marine modelers using MIKE IO and FMskill
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="installation.html">
+  <a class="reference internal" href="../installation.html">
    Installation
   </a>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="mesh.html">
+  <a class="reference internal" href="../mesh.html">
    Mesh
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -109,31 +110,31 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="exercises/exercise_A_mesh.html">
+    <a class="reference internal" href="exercise_A_mesh.html">
      Exercise A: Mesh
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="dfsu2d.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../dfsu2d.html">
    Dfsu 2D
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="exercises/exercise_B_dfsu2d.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Exercise B: Dfsu 2D
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="external_forcing.html">
+  <a class="reference internal" href="../external_forcing.html">
    Forcing data
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -143,14 +144,14 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="exercises/exercise_A_external.html">
+    <a class="reference internal" href="exercise_A_external.html">
      Exercise A External forcing data
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="exercises/final_assignment.html">
+  <a class="reference internal" href="final_assignment.html">
    Final assignment
   </a>
  </li>
@@ -195,9 +196,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/exercises/exercise_B_dfsu2d.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -220,29 +221,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#who-should-attend">
-   WHO SHOULD ATTEND?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#content">
-   CONTENT
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#benefits">
-   BENEFITS
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -251,26 +229,14 @@
         
               <div>
                 
-  <div class="section" id="python-for-marine-modelers-using-mike-io-and-fmskill">
-<h1>Python for marine modelers using MIKE IO and FMskill<a class="headerlink" href="#python-for-marine-modelers-using-mike-io-and-fmskill" title="Permalink to this headline">¶</a></h1>
-<p>Would you like to use Python to become more efficient as a marine modeler?</p>
-<div class="section" id="who-should-attend">
-<h2>WHO SHOULD ATTEND?<a class="headerlink" href="#who-should-attend" title="Permalink to this headline">¶</a></h2>
-<p>This course has been designed for MIKE 21/3 modelers with some Python experience, e.g. from the course <a class="reference external" href="https://dhi.github.io/getting-started-with-mikeio/intro.html">Getting started with dfs files in Python using MIKE IO</a> or similar, that would like to use Python for more pre- and post-processing.</p>
-</div>
-<div class="section" id="content">
-<h2>CONTENT<a class="headerlink" href="#content" title="Permalink to this headline">¶</a></h2>
-<p>The course comprises typical data processing tasks in connection with MIKE 21/3 modelling, preparing input data, converting forcing data from other formats, creating roughness maps, concatenating files, extracting data from output files (e.g. vertical profiles), visualization, assessing the skill of MIKE 21/3 by comparing to station and satellite track observation data. We will use Jupyter notebooks with Python packages such as NumPy, pandas and xarray as well DHI’s own MIKE IO and FMskill packages.</p>
-</div>
-<div class="section" id="benefits">
-<h2>BENEFITS<a class="headerlink" href="#benefits" title="Permalink to this headline">¶</a></h2>
-<p>After the course, you will have improved your skills and knowledge on how to conduct typical MIKE 21/3 modeling workflows using MIKE IO and FMskill.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This course assumes that you are familiar with Python</p>
+  <div class="section" id="exercise-b-dfsu-2d">
+<h1>Exercise B: Dfsu 2D<a class="headerlink" href="#exercise-b-dfsu-2d" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the Dfsu class </span>
+</pre></div>
 </div>
 </div>
-<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -287,7 +253,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./exercises"
         },
         predefinedOutput: true
     }
@@ -303,11 +269,20 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="../dfsu2d.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Dfsu 2D</p>
+            </div>
+        </a>
+    </div>
      <div id="next">
-        <a class="right-next" href="installation.html" title="next page">
+        <a class="right-next" href="../external_forcing.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Installation</p>
+                <p class="prevnext-title">Forcing data</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -333,7 +308,7 @@
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
   
   </body>

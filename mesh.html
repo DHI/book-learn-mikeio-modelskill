@@ -117,11 +117,28 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="external_forcing.html">
-   Forcing data
+  <a class="reference internal" href="dfsu2d.html">
+   Dfsu 2D
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/exercise_B_dfsu2d.html">
+     Exercise B: Dfsu 2D
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="external_forcing.html">
+   Forcing data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -256,6 +273,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#a-larger-mesh">
    A larger mesh
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#change-depth">
+   Change depth
   </a>
  </li>
 </ul>
@@ -401,7 +423,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa196237130&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb1ab6510a0&gt;]
 </pre></div>
 </div>
 <img alt="_images/mesh_12_1.png" src="_images/mesh_12_1.png" />
@@ -552,7 +574,8 @@ Projection: UTM-31
 <p>A dfsu file can also be loaded as a Mesh object</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="s2">&quot;data/FakeLake.dfsu&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s2">&quot;data/FakeLake.dfsu&quot;</span>
+<span class="n">msh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -618,36 +641,71 @@ Projection: UTM-31
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">to_shapely</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># msh.to_shapely()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="change-depth">
+<h2>Change depth<a class="headerlink" href="#change-depth" title="Permalink to this headline">¶</a></h2>
+<p>Use the method set_z()</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1651</span><span class="o">/</span><span class="mf">2794353078.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">msh</span><span class="o">.</span><span class="n">to_shapely</span><span class="p">()</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">to_shapely</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1048</span>             <span class="n">polygons</span> <span class="k">with</span> <span class="n">mesh</span> <span class="n">elements</span>
-<span class="g g-Whitespace">   </span><span class="mi">1049</span>         <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1050</span><span class="s2">         from shapely.geometry import Polygon, MultiPolygon</span>
-<span class="g g-Whitespace">   </span><span class="mi">1051</span><span class="s2"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1052</span><span class="s2">         polygons = []</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;shapely&#39;
+<img alt="_images/mesh_34_0.png" src="_images/mesh_34_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zn</span> <span class="o">=</span> <span class="n">msh</span><span class="o">.</span><span class="n">node_coordinates</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>    <span class="c1"># nodes, not elements!</span>
+<span class="n">new_z</span> <span class="o">=</span> <span class="n">zn</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">new_z</span><span class="p">[</span><span class="n">zn</span><span class="o">&lt;-</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">15.0</span>     <span class="c1"># clip depth at 15m</span>
+<span class="n">msh</span><span class="o">.</span><span class="n">set_z</span><span class="p">(</span><span class="n">new_z</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#z = msh.el</span>
-<span class="c1">#msh.set_z</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/mesh_36_0.png" src="_images/mesh_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Fake_lake_clip15.mesh&#39;</span><span class="p">)</span>   <span class="c1"># save to a new file</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1742</span><span class="o">/</span><span class="mf">3796483243.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">msh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Fake_lake_clip15.mesh&#39;</span><span class="p">)</span>   <span class="c1"># save to a new file</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">write</span><span class="nt">(self, outfilename, elements)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2691</span>         <span class="k">if</span> <span class="n">elements</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2692</span>             <span class="n">geometry</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="ne">-&gt; </span><span class="mi">2693</span>             <span class="n">quantity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_source</span><span class="o">.</span><span class="n">EumQuantity</span>
+<span class="g g-Whitespace">   </span><span class="mi">2694</span>             <span class="n">elem_table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_source</span><span class="o">.</span><span class="n">ElementTable</span>
+<span class="g g-Whitespace">   </span><span class="mi">2695</span>         <span class="k">else</span><span class="p">:</span>
+
+<span class="ne">AttributeError</span>: &#39;DfsuFile&#39; object has no attribute &#39;EumQuantity&#39;
 </pre></div>
 </div>
 </div>
 </div>
+<p>See the <a class="reference external" href="https://nbviewer.jupyter.org/github/DHI/mikeio/blob/main/notebooks/Mesh.ipynb">MIKE IO Mesh Example notebook</a> for more Mesh operations (including shapely operations).</p>
 </div>
 <div class="toctree-wrapper compound">
 </div>

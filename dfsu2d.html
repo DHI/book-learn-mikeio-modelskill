@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Installation &#8212; Python for marine modelers using MIKE IO and FMskill</title>
+    <title>Dfsu 2D &#8212; Python for marine modelers using MIKE IO and FMskill</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Mesh" href="mesh.html" />
-    <link rel="prev" title="Python for marine modelers using MIKE IO and FMskill" href="intro.html" />
+    <link rel="next" title="Exercise B: Dfsu 2D" href="exercises/exercise_B_dfsu2d.html" />
+    <link rel="prev" title="Exercise A: Mesh" href="exercises/exercise_A_mesh.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,8 +94,8 @@
  </li>
 </ul>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
    Installation
   </a>
  </li>
@@ -116,11 +116,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="dfsu2d.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    Dfsu 2D
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
@@ -196,9 +196,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/installation.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/dfsu2d.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -216,6 +216,28 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/dfsu2d.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/dfsu2d.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -227,8 +249,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#test-your-installation">
-   Test your installation
+  <a class="reference internal nav-link" href="#create-new-dfsu-from-mesh">
+   Create new dfsu from mesh
   </a>
  </li>
 </ul>
@@ -242,46 +264,97 @@
         
               <div>
                 
-  <div class="section" id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<ol class="simple">
-<li><p>Download Python from <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p></li>
-<li><p>Install Python (Select Add Python to PATH)</p></li>
-<li><p>(On PCs without MIKE Zero) Install <a class="reference external" href="https://aka.ms/vs/16/release/vc_redist.x64.exe">VC redist</a></p></li>
-<li><p>Open command prompt (<code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>)</p></li>
-<li><p>Install MIKE IO (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mikeio</span></code>)</p></li>
-<li><p>Install matplotlib (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code>)</p></li>
-<li><p>Install <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/">JupyterLab</a> (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyterlab</span></code>)</p></li>
-<li><p>Start Jupyter lab (<code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>)</p></li>
-<li><p>You are now ready to start working with MIKE IO in Python</p></li>
-</ol>
-<div class="section" id="test-your-installation">
-<h2>Test your installation<a class="headerlink" href="#test-your-installation" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Open command prompt (<code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code>)</p></li>
-<li><p>Start python (<code class="docutils literal notranslate"><span class="pre">&gt;</span> <span class="pre">python</span></code>)</p></li>
-<li><p>Run the following lines of code:</p></li>
-</ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">mikeio</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python version: </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NumPy: &quot;</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pandas: &quot;</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matplotlib: &quot;</span> <span class="o">+</span> <span class="n">mpl</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MIKE IO: &quot;</span> <span class="o">+</span> <span class="n">mikeio</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+  <div class="section" id="dfsu-2d">
+<h1>Dfsu 2D<a class="headerlink" href="#dfsu-2d" title="Permalink to this headline">¶</a></h1>
+<p>2D horizontal</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">eum</span>
 </pre></div>
 </div>
-<p>Can you say yes to the following questions?</p>
-<ul class="simple">
-<li><p>My Python version is 3.8 or greater</p></li>
-<li><p>My NumPy version is 1.18 or greater</p></li>
-<li><p>My pandas version is 1.0 or greater</p></li>
-<li><p>My matplotlib version is 3.2 or greater</p></li>
-<li><p>My MIKE IO version is 0.7 or greater</p></li>
-</ul>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s2">&quot;data/FakeLake.dfsu&quot;</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+<span class="n">dfs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dfsu2D
+Number of elements: 1011
+Number of nodes: 798
+Projection: PROJCS[&quot;UTM-17&quot;,GEOGCS[&quot;Unused&quot;,DATUM[&quot;UTM Projections&quot;,SPHEROID[&quot;WGS 1984&quot;,6378137,298.257223563]],PRIMEM[&quot;Greenwich&quot;,0],UNIT[&quot;Degree&quot;,0.0174532925199433]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;False_Easting&quot;,500000],PARAMETER[&quot;False_Northing&quot;,0],PARAMETER[&quot;Central_Meridian&quot;,-81],PARAMETER[&quot;Scale_Factor&quot;,0.9996],PARAMETER[&quot;Latitude_Of_Origin&quot;,0],UNIT[&quot;Meter&quot;,1]]
+Items:
+  0:  Bathymetry &lt;Bathymetry&gt; (meter)
+Time: time-invariant file (1 step) at 2000-01-01 12:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dfsu2d_3_0.png" src="_images/dfsu2d_3_0.png" />
+</div>
+</div>
+<div class="section" id="create-new-dfsu-from-mesh">
+<h2>Create new dfsu from mesh<a class="headerlink" href="#create-new-dfsu-from-mesh" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s2">&quot;data/two_elements.mesh&quot;</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">Dataset</span><span class="o">.</span><span class="n">create_empty_data</span><span class="p">(</span><span class="n">n_elements</span><span class="o">=</span><span class="n">dfs</span><span class="o">.</span><span class="n">n_elements</span><span class="p">,</span> <span class="n">n_items</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_timesteps</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2020-1-1&quot;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>      <span class="c1"># arbitrary date </span>
+<span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="n">eum</span><span class="o">.</span><span class="n">ItemInfo</span><span class="p">(</span><span class="n">eum</span><span class="o">.</span><span class="n">EUMType</span><span class="o">.</span><span class="n">Chezy_No</span><span class="p">)]</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="n">time</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">,:]</span> <span class="o">=</span> <span class="mf">36.5</span>    <span class="c1"># set values of item 0, timestep 0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;chezy_map.dfsu&quot;</span><span class="p">,</span> <span class="n">ds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;chezy_map.dfsu&quot;</span><span class="p">)</span>
+<span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([36.5, 36.5])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 </div>
 
@@ -315,19 +388,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="intro.html" title="previous page">
+        <a class="left-prev" href="exercises/exercise_A_mesh.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Python for marine modelers using MIKE IO and FMskill</p>
+                <p class="prevnext-title">Exercise A: Mesh</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="mesh.html" title="next page">
+        <a class="right-next" href="exercises/exercise_B_dfsu2d.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Mesh</p>
+                <p class="prevnext-title">Exercise B: Dfsu 2D</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
