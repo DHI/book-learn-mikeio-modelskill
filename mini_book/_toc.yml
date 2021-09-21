@@ -8,6 +8,9 @@ chapters:
 - file: mesh
   sections:
   - file: exercises/exercise_A_mesh
+- file: dfsu2d
+  sections:
+  - file: exercises/exercise_B_dfsu2d
 - file: external_forcing
   sections:
   - file: exercises/exercise_A_external
