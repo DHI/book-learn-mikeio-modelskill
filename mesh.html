@@ -423,7 +423,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f174cd94040&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6b9d1ab220&gt;]
 </pre></div>
 </div>
 <img alt="_images/mesh_12_1.png" src="_images/mesh_12_1.png" />
@@ -434,22 +434,6 @@ Projection: UTM-31
 <p>It can sometimes be convenient to have mesh boundary as a polyline (or multiple in case of more complex meshes).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">boundary_polylines</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BoundaryPolylines(n_exteriors=1, exteriors=[Polyline(n_nodes=5, nodes=array([0, 1, 2, 3, 0], dtype=int32), xy=array([[0., 0.],
-       [3., 0.],
-       [3., 3.],
-       [0., 3.],
-       [0., 0.]]), area=9.0)], n_interiors=0, interiors=[])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bxy</span> <span class="o">=</span> <span class="n">msh</span><span class="o">.</span><span class="n">boundary_polylines</span><span class="o">.</span><span class="n">exteriors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">xy</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bxy</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">bxy</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;equal&quot;</span><span class="p">);</span>
@@ -457,7 +441,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mesh_15_0.png" src="_images/mesh_15_0.png" />
+<img alt="_images/mesh_14_0.png" src="_images/mesh_14_0.png" />
 </div>
 </div>
 </div>
@@ -509,7 +493,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mesh_19_0.png" src="_images/mesh_19_0.png" />
+<img alt="_images/mesh_18_0.png" src="_images/mesh_18_0.png" />
 </div>
 </div>
 </div>
@@ -587,7 +571,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mesh_27_0.png" src="_images/mesh_27_0.png" />
+<img alt="_images/mesh_26_0.png" src="_images/mesh_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -609,7 +593,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mesh_29_0.png" src="_images/mesh_29_0.png" />
+<img alt="_images/mesh_28_0.png" src="_images/mesh_28_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -636,7 +620,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mesh_31_0.png" src="_images/mesh_31_0.png" />
+<img alt="_images/mesh_30_0.png" src="_images/mesh_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -658,15 +642,26 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mesh_34_0.png" src="_images/mesh_34_0.png" />
+<img alt="_images/mesh_33_0.png" src="_images/mesh_33_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zn</span> <span class="o">=</span> <span class="n">msh</span><span class="o">.</span><span class="n">node_coordinates</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>    <span class="c1"># nodes, not elements!</span>
-<span class="n">new_z</span> <span class="o">=</span> <span class="n">zn</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">new_z</span><span class="p">[</span><span class="n">zn</span><span class="o">&lt;-</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">15.0</span>     <span class="c1"># clip depth at 15m</span>
-<span class="n">msh</span><span class="o">.</span><span class="n">set_z</span><span class="p">(</span><span class="n">new_z</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zn</span> <span class="o">=</span> <span class="n">msh</span><span class="o">.</span><span class="n">zn</span>            <span class="c1"># nodes, not elements!</span>
+<span class="n">zn</span><span class="p">[</span><span class="n">zn</span><span class="o">&lt;-</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">15.0</span>     <span class="c1"># clip depth at 15m</span>
+<span class="n">msh</span><span class="o">.</span><span class="n">zn</span> <span class="o">=</span> <span class="n">zn</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1974</span><span class="o">/</span><span class="mf">3965131852.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">zn</span> <span class="o">=</span> <span class="n">msh</span><span class="o">.</span><span class="n">zn</span>            <span class="c1"># nodes, not elements!</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">zn</span><span class="p">[</span><span class="n">zn</span><span class="o">&lt;-</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">15.0</span>     <span class="c1"># clip depth at 15m</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">msh</span><span class="o">.</span><span class="n">zn</span> <span class="o">=</span> <span class="n">zn</span>
+
+<span class="ne">AttributeError</span>: &#39;Mesh&#39; object has no attribute &#39;zn&#39;
 </pre></div>
 </div>
 </div>
@@ -678,7 +673,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/mesh_36_0.png" src="_images/mesh_36_0.png" />
+<img alt="_images/mesh_35_0.png" src="_images/mesh_35_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -690,7 +685,7 @@ Projection: UTM-31
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1802</span><span class="o">/</span><span class="mf">3796483243.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1974</span><span class="o">/</span><span class="mf">3796483243.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">msh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Fake_lake_clip15.mesh&#39;</span><span class="p">)</span>   <span class="c1"># save to a new file</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">write</span><span class="nt">(self, outfilename, elements)</span>
