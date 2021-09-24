@@ -444,65 +444,6 @@ Items:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1608</span><span class="o">/</span><span class="mf">3092342410.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fn</span> <span class="o">=</span> <span class="s2">&quot;data/two_elements.mesh&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">__init__</span><span class="nt">(self, filename, dtype)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1836</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1837</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">filename</span>
-<span class="ne">-&gt; </span><span class="mi">1838</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_read_header</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1839</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span> <span class="o">=</span> <span class="n">dtype</span>
-<span class="g g-Whitespace">   </span><span class="mi">1840</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">_read_header</span><span class="nt">(self, filename)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1754</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1755</span>         <span class="k">if</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;.mesh&quot;</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1756</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_read_mesh_header</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1757</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1758</span>         <span class="k">elif</span> <span class="n">ext</span> <span class="o">==</span> <span class="s2">&quot;.dfsu&quot;</span><span class="p">:</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">_read_mesh_header</span><span class="nt">(self, filename)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1765</span>         <span class="n">Read</span> <span class="n">header</span> <span class="n">of</span> <span class="n">mesh</span> <span class="n">file</span> <span class="ow">and</span> <span class="nb">set</span> <span class="nb">object</span> <span class="n">properties</span>
-<span class="g g-Whitespace">   </span><span class="mi">1766</span>         <span class="sd">&quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1767</span><span class="sd">         msh = MeshFile.ReadMesh(filename)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1768</span><span class="sd">         self._source = msh</span>
-<span class="g g-Whitespace">   </span><span class="mi">1769</span><span class="sd">         self._projstr = msh.ProjectionString</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikecore/MeshFile.py</span> in <span class="ni">ReadMesh</span><span class="nt">(filename)</span>
-<span class="g g-Whitespace">    </span><span class="mi">406</span><span class="sd">             raise FileNotFoundError(&quot;File {0} not found&quot;.format(filename))</span>
-<span class="g g-Whitespace">    </span><span class="mi">407</span><span class="sd">         file = MeshFile()</span>
-<span class="ne">--&gt; </span><span class="mi">408</span><span class="sd">         file.Read(filename)</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span><span class="sd">         return file</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikecore/MeshFile.py</span> in <span class="ni">Read</span><span class="nt">(self, filename)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span><span class="sd">             if match:</span>
-<span class="g g-Whitespace">    </span><span class="mi">222</span><span class="sd">                 groups = match.groups()</span>
-<span class="ne">--&gt; </span><span class="mi">223</span><span class="sd">                 itemType = eumItem(int(groups[0]))</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span><span class="sd">                 itemUnit = eumUnit(int(groups[1]))</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span><span class="sd">                 self.EumQuantity = eumQuantity(itemType, itemUnit)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/enum.py</span> in <span class="ni">__call__</span><span class="nt">(cls, value, names, module, qualname, type, start)</span>
-<span class="g g-Whitespace">    </span><span class="mi">382</span><span class="sd">         &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">383</span>         <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># simple value lookup</span>
-<span class="ne">--&gt; </span><span class="mi">384</span>             <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="fm">__new__</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">385</span>         <span class="c1"># otherwise, functional API: we&#39;re creating a new Enum type</span>
-<span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">_create_</span><span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/enum.py</span> in <span class="ni">__new__</span><span class="nt">(cls, value)</span>
-<span class="g g-Whitespace">    </span><span class="mi">700</span>                 <span class="n">ve_exc</span> <span class="o">=</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%r</span><span class="s2"> is not a valid </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__qualname__</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">701</span>                 <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">exc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">702</span>                     <span class="k">raise</span> <span class="n">ve_exc</span>
-<span class="g g-Whitespace">    </span><span class="mi">703</span>                 <span class="k">elif</span> <span class="n">exc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">704</span>                     <span class="n">exc</span> <span class="o">=</span> <span class="ne">TypeError</span><span class="p">(</span>
-
-<span class="ne">ValueError</span>: 10079 is not a valid eumItem
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -536,7 +477,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([36.5, 36.5, 36.5, ..., 36.5, 36.5, 36.5])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([36.5, 36.5])
 </pre></div>
 </div>
 </div>
