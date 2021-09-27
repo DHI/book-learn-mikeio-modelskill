@@ -518,19 +518,14 @@ Time: 23 steps with dt=10800.0s
 <h3>Connecting<a class="headerlink" href="#connecting" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">con</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">([</span><span class="n">o1</span><span class="p">,</span> <span class="n">o2</span><span class="p">,</span> <span class="n">o3</span><span class="p">],</span> <span class="n">mr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">con</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">([</span><span class="n">o1</span><span class="p">,</span> <span class="n">o2</span><span class="p">],</span> <span class="n">mr</span><span class="p">)</span>
 <span class="n">con</span><span class="o">.</span><span class="n">observations</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">4260369878.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">con</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">([</span><span class="n">o1</span><span class="p">,</span> <span class="n">o2</span><span class="p">,</span> <span class="n">o3</span><span class="p">],</span> <span class="n">mr</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">con</span><span class="o">.</span><span class="n">observations</span>
-
-<span class="ne">NameError</span>: name &#39;o3&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;HKNA&#39;: PointObservation: HKNA, x=4.242, y=52.6887,
+ &#39;EPL&#39;: PointObservation: EPL, x=3.276, y=51.999}
 </pre></div>
 </div>
 </div>
@@ -542,14 +537,7 @@ Time: 23 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">3617015222.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">con</span><span class="o">.</span><span class="n">plot_observation_positions</span><span class="p">();</span>
-
-<span class="ne">NameError</span>: name &#39;con&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/model_skill_20_0.png" src="_images/model_skill_20_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -560,13 +548,9 @@ Time: 23 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">4158991639.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cc</span>
-
-<span class="ne">NameError</span>: name &#39;con&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ComparerCollection&gt;
+PointComparer: HKNA
+PointComparer: EPL
 </pre></div>
 </div>
 </div>
@@ -578,32 +562,129 @@ Time: 23 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">1511755929.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/skill.py:509: FutureWarning: this method is deprecated in favour of `Styler.format(precision=..)`
+  sdf = self.df.style.set_precision(precision)
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><style type="text/css">
+#T_48d9b_row0_col1 {
+  background-color: #a9c6fd;
+  color: #000000;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: bold;
+}
+#T_48d9b_row0_col2, #T_48d9b_row0_col3, #T_48d9b_row0_col4, #T_48d9b_row0_col6, #T_48d9b_row0_col7, #T_48d9b_row1_col5 {
+  background-color: #fff7ec;
+  color: #000000;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: bold;
+}
+#T_48d9b_row0_col5, #T_48d9b_row1_col2, #T_48d9b_row1_col3, #T_48d9b_row1_col4, #T_48d9b_row1_col6, #T_48d9b_row1_col7 {
+  background-color: #7f0000;
+  color: #f1f1f1;
+}
+#T_48d9b_row1_col1 {
+  background-color: #3b4cc0;
+  color: #f1f1f1;
+}
+</style>
+<table id="T_48d9b_">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th class="col_heading level0 col0" >n</th>
+      <th class="col_heading level0 col1" >bias</th>
+      <th class="col_heading level0 col2" >rmse</th>
+      <th class="col_heading level0 col3" >urmse</th>
+      <th class="col_heading level0 col4" >mae</th>
+      <th class="col_heading level0 col5" >cc</th>
+      <th class="col_heading level0 col6" >si</th>
+      <th class="col_heading level0 col7" >r2</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >observation</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+      <th class="blank col7" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_48d9b_level0_row0" class="row_heading level0 row0" >EPL</th>
+      <td id="T_48d9b_row0_col0" class="data row0 col0" >67</td>
+      <td id="T_48d9b_row0_col1" class="data row0 col1" >-0.07</td>
+      <td id="T_48d9b_row0_col2" class="data row0 col2" >0.22</td>
+      <td id="T_48d9b_row0_col3" class="data row0 col3" >0.21</td>
+      <td id="T_48d9b_row0_col4" class="data row0 col4" >0.19</td>
+      <td id="T_48d9b_row0_col5" class="data row0 col5" >0.97</td>
+      <td id="T_48d9b_row0_col6" class="data row0 col6" >0.08</td>
+      <td id="T_48d9b_row0_col7" class="data row0 col7" >0.93</td>
+    </tr>
+    <tr>
+      <th id="T_48d9b_level0_row1" class="row_heading level0 row1" >HKNA</th>
+      <td id="T_48d9b_row1_col0" class="data row1 col0" >386</td>
+      <td id="T_48d9b_row1_col1" class="data row1 col1" >-0.19</td>
+      <td id="T_48d9b_row1_col2" class="data row1 col2" >0.35</td>
+      <td id="T_48d9b_row1_col3" class="data row1 col3" >0.29</td>
+      <td id="T_48d9b_row1_col4" class="data row1 col4" >0.25</td>
+      <td id="T_48d9b_row1_col5" class="data row1 col5" >0.97</td>
+      <td id="T_48d9b_row1_col6" class="data row1 col6" >0.09</td>
+      <td id="T_48d9b_row1_col7" class="data row1 col7" >0.91</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;c2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="s2">&quot;mean_absolute_error&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="s2">&quot;mean_absolute_error&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">2473684445.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;c2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="s2">&quot;mean_absolute_error&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n</th>
+      <th>mean_absolute_error</th>
+    </tr>
+    <tr>
+      <th>observation</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>EPL</th>
+      <td>67</td>
+      <td>0.188513</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,14 +693,7 @@ Time: 23 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">4067845940.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;HKNA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot_timeseries</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/model_skill_24_0.png" src="_images/model_skill_24_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -629,31 +703,17 @@ Time: 23 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">4043208676.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">show_hist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1">#, ylim=[2,8], xlim=[1,10])</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/model_skill_25_0.png" src="_images/model_skill_25_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;c2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">1978442559.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;c2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/model_skill_26_0.png" src="_images/model_skill_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -663,14 +723,7 @@ Time: 23 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">3630719388.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;HKNA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">binsize</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/model_skill_27_0.png" src="_images/model_skill_27_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -680,14 +733,7 @@ Time: 23 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1791</span><span class="o">/</span><span class="mf">3032654568.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">con</span><span class="o">.</span><span class="n">plot_temporal_coverage</span><span class="p">();</span>
-
-<span class="ne">NameError</span>: name &#39;con&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/model_skill_28_0.png" src="_images/model_skill_28_0.png" />
 </div>
 </div>
 </div>
