@@ -14,4 +14,7 @@ chapters:
 - file: input_data
   sections:
   - file: exercises/exercise_C_input_data
+- file: model_skill
+  sections:
+  - file: exercises/exercise_D_model_skill
 - file: exercises/final_assignment
