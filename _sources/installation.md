@@ -5,7 +5,8 @@ This course assumes that you have a working installation Python 3.8+.
 1. Install/upgrade MIKE IO (`pip install --upgrade mikeio`)
 2. (On PCs without MIKE Zero) Install [VC redist](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 3. Install matplotlib (`pip install matplotlib`)
-4. Install/upgrade FMSkill (`pip install --upgrade fmskill`)
+4. Install netCDF4 (`pip install netCDF4`)
+5. Install/upgrade FMSkill (`pip install --upgrade fmskill`)
 
 You will need to code in either VS Code or Jupyter Lab in this course.
 
