@@ -14,6 +14,10 @@ chapters:
 - file: input_data
   sections:
   - file: exercises/exercise_C_input_data
+- file: dfsu3d
+- file: output_visualisation
+- file: output_statistics
+- file: export_to_file
 - file: model_skill
   sections:
   - file: exercises/exercise_D_model_skill
