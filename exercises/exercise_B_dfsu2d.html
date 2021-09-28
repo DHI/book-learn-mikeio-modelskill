@@ -270,6 +270,11 @@
    Read
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#write">
+   Write
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -345,6 +350,41 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot this array as a time series and determine the time with the largest wind speed </span>
 <span class="c1"># (hint: use to_dataframe() on the output of max(axis=1))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="write">
+<h2>Write<a class="headerlink" href="#write" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read the Surface elevation item into a new dataset `ds`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rename the first and only item of this dataset (Surface elevation) to `Sea Level`</span>
+<span class="c1"># ds.items[0].name = &quot;new name&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create new directories project_X and project_X/HD</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;project_X/HD&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># write this dataset to a new Dfsu file project_X/HD/NorthSea_SLEV.dfsu</span>
 </pre></div>
 </div>
 </div>

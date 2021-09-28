@@ -444,7 +444,7 @@ Projection: UTM-31
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe3e0a087c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fdd68e0e160&gt;]
 </pre></div>
 </div>
 <img alt="_images/mesh_13_1.png" src="_images/mesh_13_1.png" />
@@ -654,7 +654,6 @@ Projection: UTM-31
 </div>
 <div class="section" id="change-depth">
 <h2>Change depth<a class="headerlink" href="#change-depth" title="Permalink to this headline">¶</a></h2>
-<p>Use the method set_z()</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
@@ -668,9 +667,8 @@ Projection: UTM-31
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zn</span> <span class="o">=</span> <span class="n">msh</span><span class="o">.</span><span class="n">zn</span>            <span class="c1"># nodes, not elements!</span>
-<span class="n">zn</span><span class="p">[</span><span class="n">zn</span><span class="o">&lt;-</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">15.0</span>     <span class="c1"># clip depth at 15m</span>
-<span class="n">msh</span><span class="o">.</span><span class="n">zn</span> <span class="o">=</span> <span class="n">zn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># zn == nodes, not elements!</span>
+<span class="n">msh</span><span class="o">.</span><span class="n">zn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">msh</span><span class="o">.</span><span class="n">zn</span><span class="p">,</span> <span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># clip depth to interval [-15,0]</span>
 </pre></div>
 </div>
 </div>
