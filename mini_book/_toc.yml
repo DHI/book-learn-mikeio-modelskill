@@ -19,6 +19,8 @@ chapters:
 - file: output_statistics
 - file: export_to_file
 - file: point_observations
+  sections:
+  - file: exercises/exercise_point_observations
 - file: model_skill
   sections:
   - file: exercises/exercise_D_model_skill
