@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Output Visualisation &#8212; Python for marine modelers using MIKE IO and FMSkill</title>
+    <title>Track observations &#8212; Python for marine modelers using MIKE IO and FMSkill</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Output statistics" href="output_statistics.html" />
-    <link rel="prev" title="Dfsu 3D" href="dfsu3d.html" />
+    <link rel="next" title="Final assignment" href="exercises/final_assignment.html" />
+    <link rel="prev" title="Exercise: Basic model skill" href="exercises/exercise_basic_model_skill.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -105,7 +105,7 @@
   MIKE IO Dfsu/Mesh
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="mesh.html">
    Mesh
@@ -162,8 +162,8 @@
    Dfsu 3D
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="output_visualisation.html">
    Output Visualisation
   </a>
  </li>
@@ -183,7 +183,7 @@
   FMskill
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="point_observations.html">
    Point observations
@@ -223,8 +223,8 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="track_observations.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Track observations
   </a>
  </li>
@@ -276,7 +276,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/output_visualisation.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/track_observations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -301,7 +301,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/output_visualisation.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/track_observations.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -309,7 +309,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/output_visualisation.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/track_observations.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -323,6 +323,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-from-file">
+   Data from file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dhi-altimetry-api">
+   DHI Altimetry API
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -331,13 +349,66 @@
         
               <div>
                 
-  <div class="section" id="output-visualisation">
-<h1>Output Visualisation<a class="headerlink" href="#output-visualisation" title="Permalink to this headline">¶</a></h1>
-<p>[in development]</p>
+  <div class="section" id="track-observations">
+<h1>Track observations<a class="headerlink" href="#track-observations" title="Permalink to this headline">¶</a></h1>
+<p>Track observations are point observations for moving points. The index therefore consists of time, x- and y-positions. Altimetry data acquired from satellite is an example of track observations; data obtained from boat is another example.</p>
+<p>The track observation data may come from a file or web api. We will cover the following situations here:</p>
+<ul class="simple">
+<li><p>File</p>
+<ul>
+<li><p>dfs0</p></li>
+<li><p>csv/excel</p></li>
+</ul>
+</li>
+<li><p>REST API</p></li>
+</ul>
+<p>FMskill has the class <a class="reference external" href="https://dhi.github.io/fmskill/api.html#fmskill.observation.TrackObservation">TrackObservation</a> for working with track observations.</p>
+<p>Track observations consist of time-<strong>position</strong>-value (data) and <em>meta</em> data such as</p>
+<ul class="simple">
+<li><p>data type (e.g. water level)</p></li>
+<li><p>unit (e.g. meter)</p></li>
+</ul>
+<p>FMskill is agnostic to the coordinate reference system (CRS) and it is therefore the responsibility of the user to make sure that all data (observations and model) use the same CRS.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fmskill</span> <span class="kn">import</span> <span class="n">TrackObservation</span>
+<span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">eum</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="data-from-file">
+<h2>Data from file<a class="headerlink" href="#data-from-file" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="dhi-altimetry-api">
+<h2>DHI Altimetry API<a class="headerlink" href="#dhi-altimetry-api" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference external" href="https://nbviewer.jupyter.org/github/DHI/fmskill/blob/main/notebooks/Altimetry_data.ipynb">Altimetry_data.ipynb</a> example notebook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">fmskill.data</span> <span class="kn">import</span> <span class="n">DHIAltimetryRepository</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DHI_ALTIMETRY_API_KEY&quot;</span><span class="p">]</span>
+<span class="n">repo</span> <span class="o">=</span> <span class="n">DHIAltimetryRepository</span><span class="p">(</span><span class="n">api_key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span><span class="o">.</span><span class="n">time_of_newest_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2021-10-01 07:08:08&#39;)
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -373,19 +444,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="dfsu3d.html" title="previous page">
+        <a class="left-prev" href="exercises/exercise_basic_model_skill.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Dfsu 3D</p>
+                <p class="prevnext-title">Exercise: Basic model skill</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="output_statistics.html" title="next page">
+        <a class="right-next" href="exercises/final_assignment.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Output statistics</p>
+                <p class="prevnext-title">Final assignment</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
