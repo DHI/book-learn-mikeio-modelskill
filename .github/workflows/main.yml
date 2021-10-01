@@ -18,8 +18,10 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        
+
     - name: Build the book
+      env:
+        DHI_ALTIMETRY_API_KEY: ${{ secrets.DHI_ALTIMETRY_API_KEY }}
       run: |
           jupyter-book build mini_book/
     
