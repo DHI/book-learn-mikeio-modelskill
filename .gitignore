@@ -132,3 +132,6 @@ _build
 mini_book/output
 
 extra/
+
+mini_book/*.dfsu
+mini_book/*.mesh

@@ -24,5 +24,5 @@ chapters:
 - file: fmskill_model_results
 - file: model_skill
   sections:
-  - file: exercises/exercise_D_model_skill
+  - file: exercises/exercise_basic_model_skill
 - file: exercises/final_assignment
