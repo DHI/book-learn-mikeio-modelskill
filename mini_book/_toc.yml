@@ -31,4 +31,7 @@ parts:
     - file: model_skill
       sections:
       - file: exercises/exercise_basic_model_skill
+    - file: track_observations
+  - caption: 
+    chapters:       
     - file: exercises/final_assignment
