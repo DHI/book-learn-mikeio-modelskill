@@ -3,26 +3,32 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: installation
-- file: mesh
-  sections:
-  - file: exercises/exercise_A_mesh
-- file: dfsu2d
-  sections:
-  - file: exercises/exercise_B_dfsu2d
-- file: input_data
-  sections:
-  - file: exercises/exercise_C_input_data
-- file: dfsu3d
-- file: output_visualisation
-- file: output_statistics
-- file: export_to_file
-- file: point_observations
-  sections:
-  - file: exercises/exercise_point_observations
-- file: fmskill_model_results
-- file: model_skill
-  sections:
-  - file: exercises/exercise_basic_model_skill
-- file: exercises/final_assignment
+parts: 
+  - caption: 
+    chapters:
+    - file: installation
+  - caption: MIKE IO Dfsu/Mesh
+    chapters: 
+    - file: mesh
+      sections:
+      - file: exercises/exercise_A_mesh
+    - file: dfsu2d
+      sections:
+      - file: exercises/exercise_B_dfsu2d
+    - file: input_data
+      sections:
+      - file: exercises/exercise_C_input_data
+    - file: dfsu3d
+    - file: output_visualisation
+    - file: output_statistics
+    - file: export_to_file
+  - caption: FMskill
+    chapters: 
+    - file: point_observations
+      sections:
+      - file: exercises/exercise_point_observations
+    - file: fmskill_model_results
+    - file: model_skill
+      sections:
+      - file: exercises/exercise_basic_model_skill
+    - file: exercises/final_assignment
