@@ -21,6 +21,7 @@ chapters:
 - file: point_observations
   sections:
   - file: exercises/exercise_point_observations
+- file: fmskill_model_results
 - file: model_skill
   sections:
   - file: exercises/exercise_D_model_skill
