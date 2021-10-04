@@ -38,4 +38,4 @@ Can you say yes to the following questions?
 * My pandas version is 1.0 or greater
 * My matplotlib version is 3.2 or greater
 * My MIKE IO version is 0.8 or greater
-* My FMSkill version is 0.3.5 or greater
+* My FMSkill version is 0.4 or greater

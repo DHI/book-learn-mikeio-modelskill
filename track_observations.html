@@ -478,48 +478,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1979</span><span class="o">/</span><span class="mf">3467817591.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">o1</span> <span class="o">=</span> <span class="n">TrackObservation</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="s2">&quot;surface_elevation&quot;</span><span class="p">)</span>  <span class="c1"># step 2: create TrackObservation</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">o1</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/observation.py</span> in <span class="ni">__init__</span><span class="nt">(self, filename, item, name, variable_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span>             <span class="n">df</span> <span class="o">=</span> <span class="n">filename</span>
-<span class="ne">--&gt; </span><span class="mi">339</span>             <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">item</span><span class="p">]]</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span>             <span class="n">itemInfo</span> <span class="o">=</span> <span class="n">eum</span><span class="o">.</span><span class="n">ItemInfo</span><span class="p">(</span><span class="n">eum</span><span class="o">.</span><span class="n">EUMType</span><span class="o">.</span><span class="n">Undefined</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">923</span>                 <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">924</span>                     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_get_value</span><span class="p">(</span><span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="n">takeable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_takeable</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">925</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_tuple</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">926</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span>             <span class="c1"># we by definition only have the 0th axis</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_getitem_tuple</span><span class="nt">(self, tup)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1504</span>     <span class="k">def</span> <span class="nf">_getitem_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tup</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1505</span> 
-<span class="ne">-&gt; </span><span class="mi">1506</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_has_valid_tuple</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1507</span>         <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="n">IndexingError</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1508</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_lowerdim</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_has_valid_tuple</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span>         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">753</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">754</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_validate_key</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">755</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">756</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_validate_key</span><span class="nt">(self, key, axis)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1418</span>             <span class="c1"># check that the key has a numeric dtype</span>
-<span class="g g-Whitespace">   </span><span class="mi">1419</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1420</span>                 <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.iloc requires numeric indexers, got </span><span class="si">{</span><span class="n">arr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1421</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1422</span>             <span class="c1"># check that the key does not exceed the maximum size of the index</span>
-
-<span class="ne">IndexError</span>: .iloc requires numeric indexers, got [&#39;0&#39; &#39;1&#39; &#39;surface_elevation&#39;]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/utils.py:38: UserWarning: Time axis has duplicate entries. Now adding milliseconds to non-unique entries to make index unique.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TrackObservation: Observation, n=1115
 </pre></div>
 </div>
 </div>
@@ -565,7 +528,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succesfully retrieved 268 records from API in 1.72 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succesfully retrieved 268 records from API in 1.44 seconds
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -735,49 +698,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1979</span><span class="o">/</span><span class="mf">3703937540.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">o1</span> <span class="o">=</span> <span class="n">TrackObservation</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="s2">&quot;significant_wave_height&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Alti_from_df&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">o1</span><span class="o">.</span><span class="n">itemInfo</span> <span class="o">=</span> <span class="n">eum</span><span class="o">.</span><span class="n">ItemInfo</span><span class="p">(</span><span class="n">eum</span><span class="o">.</span><span class="n">EUMType</span><span class="o">.</span><span class="n">Significant_wave_height</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">o1</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/observation.py</span> in <span class="ni">__init__</span><span class="nt">(self, filename, item, name, variable_name)</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span>             <span class="n">df</span> <span class="o">=</span> <span class="n">filename</span>
-<span class="ne">--&gt; </span><span class="mi">339</span>             <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">item</span><span class="p">]]</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span>             <span class="n">itemInfo</span> <span class="o">=</span> <span class="n">eum</span><span class="o">.</span><span class="n">ItemInfo</span><span class="p">(</span><span class="n">eum</span><span class="o">.</span><span class="n">EUMType</span><span class="o">.</span><span class="n">Undefined</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">341</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">923</span>                 <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">IndexError</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">924</span>                     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">obj</span><span class="o">.</span><span class="n">_get_value</span><span class="p">(</span><span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="n">takeable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_takeable</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">925</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_tuple</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">926</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">927</span>             <span class="c1"># we by definition only have the 0th axis</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_getitem_tuple</span><span class="nt">(self, tup)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1504</span>     <span class="k">def</span> <span class="nf">_getitem_tuple</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tup</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1505</span> 
-<span class="ne">-&gt; </span><span class="mi">1506</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_has_valid_tuple</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1507</span>         <span class="k">with</span> <span class="n">suppress</span><span class="p">(</span><span class="n">IndexingError</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1508</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getitem_lowerdim</span><span class="p">(</span><span class="n">tup</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_has_valid_tuple</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">752</span>         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">753</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">754</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_validate_key</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">755</span>             <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">756</span>                 <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/pandas/core/indexing.py</span> in <span class="ni">_validate_key</span><span class="nt">(self, key, axis)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1418</span>             <span class="c1"># check that the key has a numeric dtype</span>
-<span class="g g-Whitespace">   </span><span class="mi">1419</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">is_numeric_dtype</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1420</span>                 <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;.iloc requires numeric indexers, got </span><span class="si">{</span><span class="n">arr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1421</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1422</span>             <span class="c1"># check that the key does not exceed the maximum size of the index</span>
-
-<span class="ne">IndexError</span>: .iloc requires numeric indexers, got [&#39;0&#39; &#39;1&#39; &#39;significant_wave_height&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TrackObservation: Alti_from_df, n=268
 </pre></div>
 </div>
 </div>
@@ -812,15 +733,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1979</span><span class="o">/</span><span class="mf">1481348440.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">o1</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;significant_wave_height&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">o2</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Significant Wave Height&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
-
-<span class="ne">NameError</span>: name &#39;o1&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/track_observations_15_0.png" src="_images/track_observations_15_0.png" />
 </div>
 </div>
 </div>
