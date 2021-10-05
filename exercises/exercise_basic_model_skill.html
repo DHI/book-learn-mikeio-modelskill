@@ -367,7 +367,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1710</span><span class="o">/</span><span class="mf">1258159771.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1715</span><span class="o">/</span><span class="mf">1258159771.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">&#39;../data/SW/eur_Hm0.dfs0&#39;</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> 
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">c</span> <span class="o">=</span> <span class="n">fmskill</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">fn_obs</span><span class="p">,</span> <span class="n">fn_mod</span><span class="p">)</span>
@@ -394,17 +394,61 @@
 <p>When you have fixed the above snippet, you can continue to do the skill assessment</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">plot_timeseries</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot a timeseries of the comparison</span>
+<span class="c1"># * remove the default title</span>
+<span class="c1"># * set the limits of the y axis to cover the 0-6m interval</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1710</span><span class="o">/</span><span class="mf">569743289.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">c</span><span class="o">.</span><span class="n">plot_timeseries</span><span class="p">()</span>
+</div>
+<p>Your colleague, who is very skilled at Excel, wants to make a plot like this one:</p>
+<p><img alt="" src="../_images/excel_chart.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the .df property on the comparer object to save the obs and model timeseries as an Excel file (&quot;skill.xlsx&quot;)</span>
+<span class="c1"># you might get an error &quot;No module named &#39;openpyxl&#39;&quot;, the solution is to run `pip install openpyxl`</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the default skill metrics using the skill method</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the skill using the mean absolute percentage error and max error, use the metrics argument</span>
+<span class="c1"># c.skill(metrics=[__,__])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the hit_ratio metric from fmskill.metrics</span>
+<span class="c1"># and calculate the ratio when the deviation between model and observation is less than 0.5 m</span>
+<span class="c1"># hint: use the Observation and Model columns of the dataframe from the .df property you used above</span>
 
-<span class="ne">NameError</span>: name &#39;c&#39; is not defined
+<span class="c1"># is the hit ratio ~0.95 ? Does it match with your expectation based on the timeseries plot?</span>
+<span class="c1"># what about a deviation of less than 0.1m? Pretty accurate wave model...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hit_ratio(c.df.Observation, __, a=__)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compare the distribution of modelled and observed values, using the .hist method</span>
+<span class="c1"># change the number of bins to 10</span>
 </pre></div>
 </div>
 </div>
