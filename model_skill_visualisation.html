@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Model skill visualisation &#8212; Python for marine modelers using MIKE IO and FMSkill</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Track observations" href="track_observations.html" />
+    <link rel="prev" title="Exercise: Basic model skill" href="exercises/exercise_basic_model_skill.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Python for marine modelers using MIKE IO and FMSkill</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Python for marine modelers using MIKE IO and FMskill
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="installation.html">
+   Installation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  MIKE IO Dfsu/Mesh
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="mesh.html">
+   Mesh
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/exercise_A_mesh.html">
+     Exercise A: Mesh
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="dfsu2d.html">
+   Dfsu 2D
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/exercise_B_dfsu2d.html">
+     Exercise B: Dfsu 2D
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="input_data.html">
+   Input data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/exercise_C_input_data.html">
+     Exercise C: Input data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dfsu3d.html">
+   Dfsu 3D
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="output_visualisation.html">
+   Output Visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="output_statistics.html">
+   Output statistics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="export_to_file.html">
+   Export to file
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  FMskill
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="point_observations.html">
+   Point observations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/exercise_point_observations.html">
+     Exercise point observation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fmskill_model_results.html">
+   Model results
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="model_skill.html">
+   Model skill assessment
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercises/exercise_basic_model_skill.html">
+     Exercise: Basic model skill
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Model skill visualisation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="track_observations.html">
+   Track observations
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exercises/final_assignment.html">
+   Final assignment
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/model_skill_visualisation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/model_skill_visualisation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/model_skill_visualisation.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#custom-plot">
+   Custom plot
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fmskill</span> <span class="kn">import</span> <span class="n">PointObservation</span>
+<span class="kn">from</span> <span class="nn">fmskill</span> <span class="kn">import</span> <span class="n">ModelResult</span><span class="p">,</span> <span class="n">Connector</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="model-skill-visualisation">
+<h1>Model skill visualisation<a class="headerlink" href="#model-skill-visualisation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;data/SW/HKZN_local_2017_DutchCoast.dfsu&#39;</span>
+<span class="n">mr</span> <span class="o">=</span> <span class="n">ModelResult</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;HKZN_local&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">obs</span> <span class="o">=</span> <span class="p">[</span><span class="n">PointObservation</span><span class="p">(</span><span class="s1">&#39;data/SW/HKZA_Hm0.dfs0&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">3.9</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.7</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKZA&quot;</span><span class="p">),</span>
+       <span class="n">PointObservation</span><span class="p">(</span><span class="s1">&#39;data/SW/HKZA_Hm0.dfs0&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">3.8</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.5</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKZA_2&quot;</span><span class="p">),</span>
+       <span class="n">PointObservation</span><span class="p">(</span><span class="s1">&#39;data/SW/HKZA_Hm0.dfs0&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">3.5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.6</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKZA_3&quot;</span><span class="p">),</span>
+       <span class="n">PointObservation</span><span class="p">(</span><span class="s1">&#39;data/SW/HKNA_Hm0.dfs0&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">4.2420</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.6887</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKNA&quot;</span><span class="p">),</span>
+       <span class="n">PointObservation</span><span class="p">(</span><span class="s1">&#39;data/SW/HKNA_Hm0.dfs0&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">4.2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.6</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKNA_2&quot;</span><span class="p">),</span>
+       <span class="n">PointObservation</span><span class="p">(</span><span class="s1">&#39;data/SW/HKNA_Hm0.dfs0&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">4.3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.7</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKNA_3&quot;</span><span class="p">),</span>
+       <span class="n">PointObservation</span><span class="p">(</span><span class="s2">&quot;data/SW/eur_Hm0.dfs0&quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">3.2760</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">51.9990</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;EPL&quot;</span><span class="p">),</span>
+       <span class="n">PointObservation</span><span class="p">(</span><span class="s2">&quot;data/SW/eur_Hm0.dfs0&quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">3.2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">51.9</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;EPL_2&quot;</span><span class="p">),</span>
+       <span class="n">PointObservation</span><span class="p">(</span><span class="s2">&quot;data/SW/eur_Hm0.dfs0&quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">3.3</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">51.95</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;EPL_3&quot;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">con</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">mr</span><span class="p">)</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n</th>
+      <th>bias</th>
+      <th>rmse</th>
+      <th>urmse</th>
+      <th>mae</th>
+      <th>cc</th>
+      <th>si</th>
+      <th>r2</th>
+    </tr>
+    <tr>
+      <th>observation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>EPL</th>
+      <td>66</td>
+      <td>-0.066028</td>
+      <td>0.224919</td>
+      <td>0.215009</td>
+      <td>0.189791</td>
+      <td>0.969512</td>
+      <td>0.078551</td>
+      <td>0.932082</td>
+    </tr>
+    <tr>
+      <th>EPL_2</th>
+      <td>66</td>
+      <td>-0.195815</td>
+      <td>0.295575</td>
+      <td>0.221408</td>
+      <td>0.255748</td>
+      <td>0.967011</td>
+      <td>0.080888</td>
+      <td>0.882707</td>
+    </tr>
+    <tr>
+      <th>EPL_3</th>
+      <td>66</td>
+      <td>-0.066028</td>
+      <td>0.224919</td>
+      <td>0.215009</td>
+      <td>0.189791</td>
+      <td>0.969512</td>
+      <td>0.078551</td>
+      <td>0.932082</td>
+    </tr>
+    <tr>
+      <th>HKNA</th>
+      <td>386</td>
+      <td>-0.194260</td>
+      <td>0.351964</td>
+      <td>0.293499</td>
+      <td>0.251839</td>
+      <td>0.971194</td>
+      <td>0.088669</td>
+      <td>0.905300</td>
+    </tr>
+    <tr>
+      <th>HKNA_2</th>
+      <td>386</td>
+      <td>-0.296194</td>
+      <td>0.430783</td>
+      <td>0.312799</td>
+      <td>0.325512</td>
+      <td>0.969579</td>
+      <td>0.094500</td>
+      <td>0.858137</td>
+    </tr>
+    <tr>
+      <th>HKNA_3</th>
+      <td>386</td>
+      <td>-0.135648</td>
+      <td>0.298130</td>
+      <td>0.265482</td>
+      <td>0.210063</td>
+      <td>0.975813</td>
+      <td>0.080205</td>
+      <td>0.932054</td>
+    </tr>
+    <tr>
+      <th>HKZA</th>
+      <td>397</td>
+      <td>0.051763</td>
+      <td>0.285233</td>
+      <td>0.280497</td>
+      <td>0.222436</td>
+      <td>0.965938</td>
+      <td>0.090669</td>
+      <td>0.930484</td>
+    </tr>
+    <tr>
+      <th>HKZA_2</th>
+      <td>397</td>
+      <td>-0.081574</td>
+      <td>0.284985</td>
+      <td>0.273060</td>
+      <td>0.217139</td>
+      <td>0.969767</td>
+      <td>0.088266</td>
+      <td>0.930605</td>
+    </tr>
+    <tr>
+      <th>HKZA_3</th>
+      <td>397</td>
+      <td>-0.011184</td>
+      <td>0.278949</td>
+      <td>0.278725</td>
+      <td>0.218145</td>
+      <td>0.966900</td>
+      <td>0.090097</td>
+      <td>0.933514</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fmskill.skill.AggregatedSkill
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">plot_bar</span><span class="p">(</span><span class="s1">&#39;rmse&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;rmse&#39;}, xlabel=&#39;observation&#39;&gt;
+</pre></div>
+</div>
+<img alt="_images/model_skill_visualisation_5_1.png" src="_images/model_skill_visualisation_5_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="o">.</span><span class="n">plot_line</span><span class="p">(</span><span class="s1">&#39;urmse&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;AxesSubplot:title={&#39;center&#39;:&#39;urmse&#39;}, xlabel=&#39;observation&#39;&gt;]
+</pre></div>
+</div>
+<img alt="_images/model_skill_visualisation_6_1.png" src="_images/model_skill_visualisation_6_1.png" />
+</div>
+</div>
+<div class="section" id="custom-plot">
+<h2>Custom plot<a class="headerlink" href="#custom-plot" title="Permalink to this headline">¶</a></h2>
+<p>All skill statistics are available in a dataframe, and in case you need a tailor-made plot, you can get data and use matplotlib to get exactly what you need.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;bias&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">bias</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.35</span><span class="p">,</span><span class="mf">0.35</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Bias (m)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">mr</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/model_skill_visualisation_10_0.png" src="_images/model_skill_visualisation_10_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="exercises/exercise_basic_model_skill.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Exercise: Basic model skill</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="track_observations.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Track observations</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Jesper Mariegaard and  Henrik Andersson<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
