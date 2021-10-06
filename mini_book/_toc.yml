@@ -34,6 +34,7 @@ parts:
     - file: track_observations
     - file: model_skill_visualisation
     - file: multi_model_comparison
-  - caption: 
-    chapters:       
+  - caption: Assignments
+    chapters: 
+    - file: exercises/fmskill_assignment
     - file: exercises/final_assignment
