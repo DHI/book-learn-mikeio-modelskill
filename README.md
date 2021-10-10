@@ -1,4 +1,4 @@
-# Python for marine modelers using MIKE IO and FMskill
+# Python for marine modelers using [MIKE IO](https://github.com/DHI/mikeio) and [FMskill](https://github.com/DHI/fmskill)
 
 [https://dhi.github.io/book-learn-mikeio-fmskill/](https://dhi.github.io/book-learn-mikeio-fmskill/)
 
