@@ -7,3 +7,4 @@ xarray
 mikeio
 shapely
 fmskill
+geopandas
