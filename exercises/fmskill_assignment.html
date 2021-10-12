@@ -398,7 +398,7 @@
                 
   <div class="section" id="fmskill-assignment">
 <h1>FMskill assignment<a class="headerlink" href="#fmskill-assignment" title="Permalink to this headline">¶</a></h1>
-<p>You are working on a project modelling waves in the Southern North Sea. You have done 6 different calibration runs and want to choose the “best”. You would also like to see how you best model is performing compared to a third-party model in NetCDF.</p>
+<p>You are working on a project modelling waves in the Southern North Sea. You have done 6 different calibration runs and want to choose the “best”. You would also like to see how your best model is performing compared to a third-party model in NetCDF.</p>
 <p>The data:</p>
 <ul class="simple">
 <li><p>SW model results: 6 dfs0 files ts_runX.dfs0 each with 4 items corresponding to 4 stations</p></li>
@@ -427,8 +427,8 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fmskill</span> <span class="kn">import</span> <span class="n">PointObservation</span><span class="p">,</span> <span class="n">ModelResult</span><span class="p">,</span> <span class="n">Connector</span>
-<span class="kn">import</span> <span class="nn">fmskill</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmskill</span>
+<span class="kn">from</span> <span class="nn">fmskill</span> <span class="kn">import</span> <span class="n">PointObservation</span><span class="p">,</span> <span class="n">ModelResult</span><span class="p">,</span> <span class="n">Connector</span>
 </pre></div>
 </div>
 </div>
@@ -447,64 +447,6 @@
 <p>Use fmskill.compare to do a quick comparison of F16 and SW1.</p>
 <p>What is the mean absolute error in cm?
 Do a time series plot.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">fmskill</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">fldr</span> <span class="o">+</span> <span class="s2">&quot;F16.dfs0&quot;</span><span class="p">,</span> <span class="n">fldr</span> <span class="o">+</span> <span class="s2">&quot;ts_run5.dfs0&quot;</span><span class="p">,</span> <span class="n">mod_item</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">plot_timeseries</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;F16&#39;}, ylabel=&#39;Significant wave height [m]&#39;&gt;
-</pre></div>
-</div>
-<img alt="../_images/fmskill_assignment_5_1.png" src="../_images/fmskill_assignment_5_1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="s2">&quot;mae&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n</th>
-      <th>mae</th>
-    </tr>
-    <tr>
-      <th>observation</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>F16</th>
-      <td>265</td>
-      <td>0.215754</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
 </div>
 <div class="section" id="define-all-observations-and-all-model-results">
 <h3>1.2 Define all observations and all model results<a class="headerlink" href="#define-all-observations-and-all-model-results" title="Permalink to this headline">¶</a></h3>
@@ -513,24 +455,6 @@ Do a time series plot.</p>
 <li><p>Define 6 ModelResults mr1, mr2, …</p></li>
 <li><p>How many items do the ModelResults have?</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#o1 = PointObservation(fldr + &quot;F16.dfs0&quot;, x=4.0122, y=54.1167)</span>
-<span class="c1">#o2 = PointObservation(fldr + &quot;HKZA.dfs0&quot;,x=4.0090,y=52.3066)</span>
-<span class="n">o1</span> <span class="o">=</span> <span class="n">PointObservation</span><span class="p">(</span><span class="n">fldr</span> <span class="o">+</span> <span class="s2">&quot;F16.dfs0&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mr1</span> <span class="o">=</span> <span class="n">ModelResult</span><span class="p">(</span><span class="n">fldr</span> <span class="o">+</span> <span class="s2">&quot;ts_run1.dfs0&quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">mr2</span> <span class="o">=</span> <span class="n">ModelResult</span><span class="p">(</span><span class="n">fldr</span> <span class="o">+</span> <span class="s2">&quot;ts_run2.dfs0&quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">mr3</span> <span class="o">=</span> <span class="n">ModelResult</span><span class="p">(</span><span class="n">fldr</span> <span class="o">+</span> <span class="s2">&quot;NWS_HM0.nc&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;NWS&quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="s2">&quot;VHM0&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="create-connector-plot-temporal-coverage">
 <h3>1.3 Create connector, plot temporal coverage<a class="headerlink" href="#create-connector-plot-temporal-coverage" title="Permalink to this headline">¶</a></h3>
@@ -541,104 +465,10 @@ Do a time series plot.</p>
 <li><p>Plot the temporal coverage of observations and models</p></li>
 <li><p>Save the Connector to an excel configuration file</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">con</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">()</span>
-<span class="n">con</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">o1</span><span class="p">,</span> <span class="p">[</span><span class="n">mr1</span><span class="p">,</span> <span class="n">mr2</span><span class="p">,</span> <span class="n">mr3</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1962</span><span class="o">/</span><span class="mf">3063283126.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">con</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">con</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">o1</span><span class="p">,</span> <span class="p">[</span><span class="n">mr1</span><span class="p">,</span> <span class="n">mr2</span><span class="p">,</span> <span class="n">mr3</span><span class="p">])</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/connection.py</span> in <span class="ni">add</span><span class="nt">(self, obs, mod, weight, validate)</span>
-<span class="g g-Whitespace">    </span><span class="mi">445</span>                 <span class="n">con</span> <span class="o">=</span> <span class="n">TrackConnector</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="n">validate</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">446</span>             <span class="k">else</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">447</span>                 <span class="n">con</span> <span class="o">=</span> <span class="n">PointConnector</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">mod</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">weight</span><span class="p">,</span> <span class="n">validate</span><span class="o">=</span><span class="n">validate</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">448</span>         <span class="k">if</span> <span class="n">con</span><span class="o">.</span><span class="n">n_models</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">449</span>             <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="p">[</span><span class="n">con</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">con</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/connection.py</span> in <span class="ni">__init__</span><span class="nt">(self, obs, mod, weight, validate)</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">modelresults</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_model</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span> 
-<span class="ne">--&gt; </span><span class="mi">128</span>         <span class="n">ok</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">modelresults</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="k">if</span> <span class="n">validate</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">ok</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>             <span class="n">mod_txt</span> <span class="o">=</span> <span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/connection.py</span> in <span class="ni">_validate</span><span class="nt">(self, obs, modelresults)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span>             <span class="c1"># has_mod_item = self._has_mod_item(mod)</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>             <span class="n">eum_match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_eum</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">175</span>             <span class="n">in_domain</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_in_domain</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">176</span>             <span class="n">time_overlaps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_validate_start_end</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>             <span class="n">ok</span> <span class="o">=</span> <span class="n">ok</span> <span class="ow">and</span> <span class="n">eum_match</span> <span class="ow">and</span> <span class="n">in_domain</span> <span class="ow">and</span> <span class="n">time_overlaps</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/connection.py</span> in <span class="ni">_validate_in_domain</span><span class="nt">(obs, mod)</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span>         <span class="n">in_domain</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">207</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">ModelResultInterface</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">PointObservation</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">208</span>             <span class="n">in_domain</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">_in_domain</span><span class="p">(</span><span class="n">obs</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">obs</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">in_domain</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>                 <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/model/xarray.py</span> in <span class="ni">_in_domain</span><span class="nt">(self, x, y)</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>     <span class="k">def</span> <span class="nf">_in_domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>         <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">y</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">114</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>                 <span class="s2">&quot;PointObservation has None position - cannot determine if inside xarray domain!&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>             <span class="p">)</span>
-
-<span class="ne">ValueError</span>: PointObservation has None position - cannot determine if inside xarray domain!
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">con</span><span class="o">.</span><span class="n">connections</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">cc</span> <span class="o">=</span><span class="n">con</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="evaluate-results">
 <h3>1.4 Evaluate results<a class="headerlink" href="#evaluate-results" title="Permalink to this headline">¶</a></h3>
 <p>Do relevant qualitative and quantitative analysis (e.g. time series plots, scatter plots, skill tables etc) to compare the models.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/comparison.py:454: UserWarning: No data!
-  warnings.warn(&quot;No data!&quot;)
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1962</span><span class="o">/</span><span class="mf">2694832569.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;style&#39;
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="find-the-best">
 <h3>1.5 Find the best<a class="headerlink" href="#find-the-best" title="Permalink to this headline">¶</a></h3>
