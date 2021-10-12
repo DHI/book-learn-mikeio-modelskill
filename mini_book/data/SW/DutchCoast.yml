@@ -1,0 +1,59 @@
+modelresults:
+  HKZN_local:
+    filename: HKZN_local_2017_DutchCoast.dfsu
+    item: 0
+observations:
+  EPL:
+    filename: eur_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 3.276
+    y: 51.999
+  EPL_2:
+    filename: eur_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 3.2
+    y: 51.9
+  EPL_3:
+    filename: eur_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 3.3
+    y: 51.95
+  HKNA:
+    filename: HKNA_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 4.242
+    y: 52.6887
+  HKNA_2:
+    filename: HKNA_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 4.2
+    y: 52.6
+  HKNA_3:
+    filename: HKNA_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 4.3
+    y: 52.7
+  HKZA:
+    filename: HKZA_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 3.9
+    y: 52.7
+  HKZA_2:
+    filename: HKZA_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 3.8
+    y: 52.5
+  HKZA_3:
+    filename: HKZA_Hm0.dfs0
+    item: Hm0
+    type: PointObservation
+    x: 3.5
+    y: 52.6
