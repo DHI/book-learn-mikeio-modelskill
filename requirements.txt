@@ -8,3 +8,4 @@ mikeio
 shapely
 fmskill
 geopandas
+openpyxl
