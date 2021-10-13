@@ -32,6 +32,8 @@ parts:
       sections:
       - file: exercises/exercise_basic_model_skill
     - file: track_observations
+      sections:
+      - file: exercises/exercise_track_observation
     - file: model_skill_visualisation
     - file: multi_model_comparison
   - caption: Assignments
