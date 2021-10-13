@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exercise: Basic model skill &#8212; Python for marine modelers using MIKE IO and FMSkill</title>
+    <title>Exercise: track observation &#8212; Python for marine modelers using MIKE IO and FMSkill</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Track observations" href="../track_observations.html" />
-    <link rel="prev" title="Model skill assessment" href="../model_skill.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -183,7 +181,7 @@
   FMskill
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../point_observations.html">
    Point observations
@@ -206,18 +204,18 @@
    Model results
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../model_skill.html">
    Model skill assessment
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="exercise_basic_model_skill.html">
      Exercise: Basic model skill
     </a>
    </li>
@@ -296,7 +294,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/exercises/exercise_basic_model_skill.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/exercises/exercise_track_observation.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -321,7 +319,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/exercises/exercise_basic_model_skill.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/exercises/exercise_track_observation.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -329,7 +327,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/exercises/exercise_basic_model_skill.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/exercises/exercise_track_observation.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="../_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -343,6 +341,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#compare-to-model-result">
+   Compare to Model Result
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -351,115 +362,118 @@
         
               <div>
                 
-  <div class="section" id="exercise-basic-model-skill">
-<h1>Exercise: Basic model skill<a class="headerlink" href="#exercise-basic-model-skill" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="exercise-track-observation">
+<h1>Exercise: track observation<a class="headerlink" href="#exercise-track-observation" title="Permalink to this headline">¶</a></h1>
+<p>Altimetry data can be downloaded using</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://altimetry.dhigroup.com/">altimetry.dhigroup.com</a></p></li>
+<li><p>The REST API (requires API key)</p></li>
+<li><p>fmskill.data.DHIAltimetryRepository (which wraps the REST API)</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">fmskill</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>You want do to a simple comparison between model and observation using the fmskill.compare method, but the following code snippet doesn’t work.</p>
-<p>Change the code below, so that it works as intended. Hint: look at the documentation</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">fmskill</span><span class="o">.</span><span class="n">compare</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn_mod</span> <span class="o">=</span> <span class="s1">&#39;../data/SW/ts_storm_4.dfs0&#39;</span>
-<span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">&#39;../data/SW/eur_Hm0.dfs0&#39;</span>
-
-<span class="n">c</span> <span class="o">=</span> <span class="n">fmskill</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">fn_obs</span><span class="p">,</span> <span class="n">fn_mod</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2205</span><span class="o">/</span><span class="mf">1258159771.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">&#39;../data/SW/eur_Hm0.dfs0&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">c</span> <span class="o">=</span> <span class="n">fmskill</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">fn_obs</span><span class="p">,</span> <span class="n">fn_mod</span><span class="p">)</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/connection.py</span> in <span class="ni">compare</span><span class="nt">(obs, mod, obs_item, mod_item)</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="n">obs</span> <span class="o">=</span> <span class="n">PointObservation</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">obs_item</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span> 
-<span class="ne">---&gt; </span><span class="mi">51</span>     <span class="n">mod</span> <span class="o">=</span> <span class="n">_parse_model</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">mod_item</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="k">return</span> <span class="n">PointComparer</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">mod</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">53</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/fmskill/connection.py</span> in <span class="ni">_parse_model</span><span class="nt">(mod, item)</span>
-<span class="g g-Whitespace">     </span><span class="mi">57</span>         <span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfs0</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">58</span>         <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dfs</span><span class="o">.</span><span class="n">items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">59</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Model ambiguous - please provide item&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">60</span>         <span class="n">mod</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="n">item</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">61</span>     <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
-
-<span class="ne">ValueError</span>: Model ambiguous - please provide item
-</pre></div>
-</div>
-</div>
-</div>
-<p>When you have fixed the above snippet, you can continue to do the skill assessment</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot a timeseries of the comparison</span>
-<span class="c1"># * remove the default title</span>
-<span class="c1"># * set the limits of the y axis to cover the 0-6m interval</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Your colleague, who is very skilled at Excel, wants to make a plot like this one:</p>
-<p><img alt="" src="../_images/excel_chart.png" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the .df property on the comparer object to save the obs and model timeseries as an Excel file (&quot;skill.xlsx&quot;)</span>
-<span class="c1"># you might get an error &quot;No module named &#39;openpyxl&#39;&quot;, the solution is to run `pip install openpyxl`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the default skill metrics using the skill method</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download csv from altimetry.dhigroup.com for roughly lat:50.0N-55.5N, lon:2.0W-9.0E</span>
+<span class="c1"># For the period 2017-10-27 - 2017-10-30</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the skill using the mean absolute percentage error and max error, use the metrics argument</span>
-<span class="c1"># c.skill(metrics=[__,__])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the csv file with pandas (note that the datetime is the third column)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the hit_ratio metric from fmskill.metrics</span>
-<span class="c1"># and calculate the ratio when the deviation between model and observation is less than 0.5 m</span>
-<span class="c1"># hint: use the Observation and Model columns of the dataframe from the .df property you used above</span>
-
-<span class="c1"># is the hit ratio ~0.95 ? Does it match with your expectation based on the timeseries plot?</span>
-<span class="c1"># what about a deviation of less than 0.1m? Pretty accurate wave model...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import TrackObservation from fmskill</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># hit_ratio(c.df.Observation, __, a=__)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create TrackObservation o1 with the &quot;water_level&quot; item</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># compare the distribution of modelled and observed values, using the .hist method</span>
-<span class="c1"># change the number of bins to 10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an appropriate ItemInfo and assign to o1.itemInfo</span>
 </pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="compare-to-model-result">
+<h2>Compare to Model Result<a class="headerlink" href="#compare-to-model-result" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s2">&quot;../data/NorthSea_HD_and_windspeed.dfsu&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create ModelResult mr with the right item (for comparison with o1)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create Connector with o1 and mr and extract to a variable cc</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a scatter plot</span>
+<span class="c1"># Any outliers? Check the plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find the timestep of the smallest and largest residual cc[0].residual</span>
+<span class="c1"># hint: argmax() and cc[0].df and iloc[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print these rows of the original altimetry DataFrame df</span>
+<span class="c1"># hint: df.loc[xx]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the value of the &quot;water_level&quot; to np.nan for any outliers</span>
+<span class="c1"># hint: df.loc[xx, &quot;water_level&quot;] = np.nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new TrackObservation o1b with the corrected data and redo </span>
+<span class="c1"># the skill assessment and the scatter plot</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -494,24 +508,6 @@
 
 <div class='prev-next-bottom'>
     
-    <div id="prev">
-        <a class="left-prev" href="../model_skill.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Model skill assessment</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="../track_observations.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Track observations</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
