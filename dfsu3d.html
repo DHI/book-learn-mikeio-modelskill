@@ -442,28 +442,18 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">1945643677.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/oresund_sigma_z.dfsu&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dfs</span>
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">__init__</span><span class="nt">(self, filename, dtype)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1836</span>         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1837</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="n">filename</span>
-<span class="ne">-&gt; </span><span class="mi">1838</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_read_header</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1839</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_dtype</span> <span class="o">=</span> <span class="n">dtype</span>
-<span class="g g-Whitespace">   </span><span class="mi">1840</span> 
-
-<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">_read_header</span><span class="nt">(self, filename)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1749</span>     <span class="k">def</span> <span class="nf">_read_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1750</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-<span class="ne">-&gt; </span><span class="mi">1751</span>             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;file </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> does not exist!&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1752</span> 
-<span class="g g-Whitespace">   </span><span class="mi">1753</span>         <span class="n">_</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-
-<span class="ne">Exception</span>: file data/oresund_sigma_z.dfsu does not exist!
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dfsu3DSigmaZ
+Number of elements: 17118
+Number of nodes: 12042
+Projection: UTM-33
+Number of sigma layers: 4
+Max number of z layers: 5
+Items:
+  0:  Z coordinate &lt;ItemGeometry3D&gt; (meter)
+  1:  Temperature &lt;Temperature&gt; (degree Celsius)
+  2:  Salinity &lt;Salinity&gt; (PSU)
+Time: 3 steps with dt=10800.0s
+      1997-09-15 21:00:00 -- 1997-09-16 03:00:00
 </pre></div>
 </div>
 </div>
@@ -484,16 +474,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">3734937189.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Maximum number of layers: </span><span class="si">{</span><span class="n">dfs</span><span class="o">.</span><span class="n">n_layers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of sigma layers: </span><span class="si">{</span><span class="n">dfs</span><span class="o">.</span><span class="n">n_sigma_layers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Maximum number of z-layers: </span><span class="si">{</span><span class="n">dfs</span><span class="o">.</span><span class="n">n_z_layers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The layer number for each 3d element: </span><span class="si">{</span><span class="n">dfs</span><span class="o">.</span><span class="n">layer_ids</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;List of 3d element ids of surface layer: </span><span class="si">{</span><span class="n">dfs</span><span class="o">.</span><span class="n">top_elements</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;dfs&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum number of layers: 9
+Number of sigma layers: 4
+Maximum number of z-layers: 5
+The layer number for each 3d element: [5 6 7 ... 7 8 9]
+List of 3d element ids of surface layer: [    4     8    12 ... 17106 17111 17117]
+List of 3d element ids of bottom layer: [    0     5     9 ... 17102 17107 17112]
+List of number of layers for each column: [5 4 4 ... 5 5 6]
+The 2d-to-3d element connectivity table for a 3d object: [list([0, 1, 2, 3, 4]) list([5, 6, 7, 8]) list([9, 10, 11, 12])] ...
+The associated 2d element id for each 3d element: [   0    0    0 ... 3699 3699 3699]
 </pre></div>
 </div>
 </div>
@@ -507,13 +496,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">2181057394.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">geom2d</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">geometry2d</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">geom2d</span>
-
-<span class="ne">NameError</span>: name &#39;dfs&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unstructured Geometry
+Number of nodes: 2090
+Number of elements: 3700
+Projection: UTM-33
 </pre></div>
 </div>
 </div>
@@ -525,12 +511,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">2425023737.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">geom2d</span><span class="o">.</span><span class="n">n_elements</span>
-
-<span class="ne">NameError</span>: name &#39;geom2d&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3700
 </pre></div>
 </div>
 </div>
@@ -546,14 +527,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">1753184667.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">elem_ids</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">top_elements</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;dfs&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
+Dimensions: (3, 3700)
+Time: 1997-09-15 21:00:00 - 1997-09-16 03:00:00
+Items:
+  0:  Z coordinate &lt;ItemGeometry3D&gt; (meter)
+  1:  Temperature &lt;Temperature&gt; (degree Celsius)
+  2:  Salinity &lt;Salinity&gt; (PSU)
 </pre></div>
 </div>
 </div>
@@ -566,13 +546,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">2397650665.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">max_t</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Maximum temperature in top layer: </span><span class="si">{</span><span class="n">max_t</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">C&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;ds&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Maximum temperature in top layer: 17.5C
 </pre></div>
 </div>
 </div>
@@ -592,16 +566,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">615403941.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">timestep</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">max_elem_id</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,:]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">top_element_coordinates</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">element_coordinates</span><span class="p">[</span><span class="n">dfs</span><span class="o">.</span><span class="n">top_elements</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span> <span class="o">=</span> <span class="n">top_element_coordinates</span><span class="p">[</span><span class="n">max_elem_id</span><span class="p">][:</span><span class="mi">2</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span>
-
-<span class="ne">NameError</span>: name &#39;ds&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(333934.085102392, 6158101.508170851)
 </pre></div>
 </div>
 </div>
@@ -614,15 +579,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">1705365608.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,:],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Temperature&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
-
-<span class="ne">NameError</span>: name &#39;dfs&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/dfsu3d_14_0.png" src="_images/dfsu3d_14_0.png" />
 </div>
 </div>
 </div>
@@ -638,31 +595,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">140056467.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">elem_ids</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">find_nearest_profile_elements</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">z_profile_static</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">element_coordinates</span><span class="p">[</span><span class="n">elem_ids</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;dfs&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_profile</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">976534672.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ds_profile</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;dfs&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -674,12 +610,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">101428548.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ds_profile</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>   <span class="c1"># 3 timesteps and 4 layers (no z-layers at this position)</span>
-
-<span class="ne">NameError</span>: name &#39;ds_profile&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 4)
 </pre></div>
 </div>
 </div>
@@ -694,33 +625,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">172443286.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="k">for</span> <span class="n">timestep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ds_profile</span><span class="o">.</span><span class="n">time</span><span class="p">)):</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_profile</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,</span> <span class="p">:],</span><span class="n">z_profile_static</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds_profile</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="n">timestep</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Temperature profiles with static z&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-
-<span class="ne">NameError</span>: name &#39;ds_profile&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/dfsu3d_19_0.png" src="_images/dfsu3d_19_0.png" />
 </div>
 </div>
 <p>The profile can also be plotted using the dynamic z-values. We then need to read the z values in the nodes together with the temperature data for each time step.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">3685484747.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ds_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;dfs&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -738,16 +649,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1781</span><span class="o">/</span><span class="mf">2426661052.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Static z: </span><span class="si">{</span><span class="n">z_profile_static</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> 
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># requires MIKE IO v0.8.1</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># ec_dyn = dfs.get_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][0,:])</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># print(f&quot;Dynamic z: {ec_dyn[:,2].round(3)} (first time step)&quot;)</span>
-
-<span class="ne">NameError</span>: name &#39;z_profile_static&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Static z: [-7. -5. -3. -1.]
 </pre></div>
 </div>
 </div>
