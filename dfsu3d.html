@@ -641,9 +641,9 @@ Items:
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Static z: </span><span class="si">{</span><span class="n">z_profile_static</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># requires MIKE IO v0.8.1</span>
-<span class="c1"># ec_dyn = dfs.get_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][0,:])</span>
+<span class="c1"># ec_dyn = dfs.calc_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][0,:])</span>
 <span class="c1"># print(f&quot;Dynamic z: {ec_dyn[:,2].round(3)} (first time step)&quot;)</span>
-<span class="c1"># ec_dyn = dfs.get_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][1,:])</span>
+<span class="c1"># ec_dyn = dfs.calc_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][1,:])</span>
 <span class="c1"># print(f&quot;Dynamic z: {ec_dyn[:,2].round(3)} (second time step)&quot;)</span>
 </pre></div>
 </div>
@@ -658,7 +658,7 @@ Items:
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># requires MIKE IO v0.8.1</span>
 <span class="c1"># for timestep in range(len(ds_dyn.time)):</span>
-<span class="c1">#     ec_dyn = dfs.get_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][timestep,:])</span>
+<span class="c1">#     ec_dyn = dfs.calc_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][timestep,:])</span>
 <span class="c1">#     plt.plot(ds_dyn[&#39;Temperature&#39;][timestep, :],ec_dyn[:,2], label=f&quot;{ds.time[timestep]}&quot;)</span>
 <span class="c1"># plt.title(&quot;Temperature profiles with dynamic z&quot;)</span>
 <span class="c1"># plt.legend();</span>
