@@ -135,3 +135,4 @@ extra/
 
 mini_book/*.dfsu
 mini_book/*.mesh
+mini_book/tmp/
