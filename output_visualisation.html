@@ -452,7 +452,9 @@ Projection: LONG/LAT
 <p>There are other options as well, such as explicit specification of which contour lines to show or choosing a specific colormap (<a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">matplotlib colormaps</a>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;contour&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Coarse North Sea model&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;contour&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+         <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span>
+         <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Coarse North Sea model&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -549,21 +551,73 @@ Items:
 </div>
 </div>
 </div>
+<p>In order to customize the plot we can take return the axis and add additional things, like markers and a legend.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">ax</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Surface elevation (m)&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">time_of_last_step</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">));</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">350000</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">6.15e6</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Location of bouy&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import matplotlib.pyplot as plt
+``
+ax = dfs.plot(z = values, label=&quot;Surface elevation (m)&quot;,
+              cmap=&quot;winter&quot;,
+              title=time_of_last_step, figsize=(12,12));
+ax.scatter(x=350000, y=6.15e6, marker=&#39;*&#39;, s=200, label=&quot;Location of bouy&quot;)
+ax.legend()
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcb81311cd0&gt;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;/tmp/ipykernel_2434/1617164966.py&quot;, line 2
+    ``
+    ^
+SyntaxError: invalid syntax
 </pre></div>
 </div>
-<img alt="_images/output_visualisation_18_1.png" src="_images/output_visualisation_18_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
+Dimensions: (5, 3612)
+Time: 2018-03-07 00:00:00 - 2018-03-11 00:00:00
+Items:
+  0:  Surface elevation &lt;Surface Elevation&gt; (meter)
+  1:  Total water depth &lt;Water Depth&gt; (meter)
+  2:  U velocity &lt;u velocity component&gt; (meter per sec)
+  3:  V velocity &lt;v velocity component&gt; (meter per sec)
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to create subplots, we can supply the axis as an argument to plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Surface elevation&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Surface elevation (m)&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;ax=ax1&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;contourf&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+
+<span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;V velocity&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+         <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Northward velocity (m/s)&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;ax=ax2&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;contourf&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2434</span><span class="o">/</span><span class="mf">1385376121.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Surface elevation&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span>          <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Surface elevation (m)&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;ax=ax1&quot;</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;contourf&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">NameError</span>: name &#39;plt&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </div>
