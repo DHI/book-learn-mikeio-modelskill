@@ -355,6 +355,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mean">
+   Mean
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quantiles">
+   Quantiles
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -369,9 +387,125 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span>
+
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;data/NorthSea_HD_and_windspeed.dfsu&quot;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">ds</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
+Dimensions: (67, 958)
+Time: 2017-10-27 00:00:00 - 2017-10-29 18:00:00
+Items:
+  0:  Surface elevation &lt;Surface Elevation&gt; (meter)
+  1:  Wind speed &lt;Wind speed&gt; (meter per sec)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mean">
+<h2>Mean<a class="headerlink" href="#mean" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsm</span>  <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_ws</span> <span class="o">=</span> <span class="n">dsm</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">]</span>
+<span class="n">mean_ws</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 958)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2426</span><span class="o">/</span><span class="mf">3186467535.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws</span><span class="p">)</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ne</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>                     <span class="sa">f</span><span class="s2">&quot;Length of z (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s2">) does not match geometry (</span><span class="si">{</span><span class="n">ne</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="p">)</span>
+
+<span class="ne">Exception</span>: Length of z (1) does not match geometry (958)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The array is a 2d array, and the plot method exprect a 1d array, so we select the the first and only timestep in the array.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_ws_vec</span> <span class="o">=</span> <span class="n">mean_ws</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">mean_ws_vec</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(958,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws_vec</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Average </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Average 2017-10-27 00:00:00 : 2017-10-29 18:00:00&#39;}&gt;
+</pre></div>
+</div>
+<img alt="_images/output_statistics_7_1.png" src="_images/output_statistics_7_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="quantiles">
+<h2>Quantiles<a class="headerlink" href="#quantiles" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsq</span>  <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.9</span><span class="p">])</span>
+<span class="n">dsq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
+Dimensions: (1, 958)
+Time: 2017-10-27 00:00:00 - 2017-10-27 00:00:00
+Items:
+  0:  Quantile 0.1, Surface elevation &lt;Surface Elevation&gt; (meter)
+  1:  Quantile 0.5, Surface elevation &lt;Surface Elevation&gt; (meter)
+  2:  Quantile 0.9, Surface elevation &lt;Surface Elevation&gt; (meter)
+  3:  Quantile 0.1, Wind speed &lt;Wind speed&gt; (meter per sec)
+  4:  Quantile 0.5, Wind speed &lt;Wind speed&gt; (meter per sec)
+  5:  Quantile 0.9, Wind speed &lt;Wind speed&gt; (meter per sec)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Write to a new dfsu file</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;NorthSea_Quantiles.dfsu&quot;</span><span class="p">,</span> <span class="n">dsq</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="_images/mikezero_quantiles.png" /></p>
 </div>
 </div>
 
