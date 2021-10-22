@@ -355,6 +355,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mesh">
+   Mesh
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dfsu">
+   Dfsu
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -365,11 +383,187 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="output-visualisation">
 <h1>Output Visualisation<a class="headerlink" href="#output-visualisation" title="Permalink to this headline">¶</a></h1>
-<p>[in development]</p>
+<p>Visualizing output is an important part of any modelling project. MIKE IO has some possibilites for visualizing output from Dfsu and Mesh files, which we will explore here.</p>
+<div class="section" id="mesh">
+<h2>Mesh<a class="headerlink" href="#mesh" title="Permalink to this headline">¶</a></h2>
+<p>A mesh contains information about the mesh geometry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Mesh</span>
+
+<span class="n">msh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="s2">&quot;data/southern_north_sea.mesh&quot;</span><span class="p">)</span>
+<span class="n">msh</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of elements: 958
+Number of nodes: 570
+Projection: LONG/LAT
+</pre></div>
+</div>
+</div>
+</div>
+<p>The default is to plot the elements and color them according to the bathymetry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/output_visualisation_4_1.png" src="_images/output_visualisation_4_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;outline_only&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_visualisation_5_0.png" src="_images/output_visualisation_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;mesh_only&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_visualisation_6_0.png" src="_images/output_visualisation_6_0.png" />
+</div>
+</div>
+<p>Maybe we would like to higlight the bathymetric variations in some range, in this case in the -40, -20m range.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;patch&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">40</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=-</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_visualisation_8_0.png" src="_images/output_visualisation_8_0.png" />
+</div>
+</div>
+<p>There are other options as well, such as explicit specification of which contour lines to show or choosing a specific colormap (<a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">matplotlib colormaps</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">msh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;contour&#39;</span><span class="p">,</span> <span class="n">show_mesh</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;tab10&quot;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">),</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Coarse North Sea model&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_visualisation_10_0.png" src="_images/output_visualisation_10_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="dfsu">
+<h2>Dfsu<a class="headerlink" href="#dfsu" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;data/oresundHD_run1.dfsu&quot;</span><span class="p">)</span>
+<span class="n">dfs</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dfsu2D
+Number of elements: 3612
+Number of nodes: 2046
+Projection: UTM-33
+Items:
+  0:  Surface elevation &lt;Surface Elevation&gt; (meter)
+  1:  Total water depth &lt;Water Depth&gt; (meter)
+  2:  U velocity &lt;u velocity component&gt; (meter per sec)
+  3:  V velocity &lt;v velocity component&gt; (meter per sec)
+Time: 5 steps with dt=86400.0s
+      2018-03-07 00:00:00 -- 2018-03-11 00:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>The default plot for a Dfsu is the same as for the mesh. (plot the elements and color them according to the bathymetry).</p>
+<p>But in addition, we can also plot other data, such as surface elevation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/output_visualisation_14_1.png" src="_images/output_visualisation_14_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
+Dimensions: (5, 3612)
+Time: 2018-03-07 00:00:00 - 2018-03-11 00:00:00
+Items:
+  0:  Surface elevation &lt;Surface Elevation&gt; (meter)
+  1:  Total water depth &lt;Water Depth&gt; (meter)
+  2:  U velocity &lt;u velocity component&gt; (meter per sec)
+  3:  V velocity &lt;v velocity component&gt; (meter per sec)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract wl at last timestep</span>
+<span class="n">values</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Surface elevation&quot;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">values</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3612,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_of_last_step</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">time_of_last_step</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Timestamp(&#39;2018-03-11 00:00:00&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Surface elevation (m)&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">time_of_last_step</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">12</span><span class="p">));</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">350000</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">6.15e6</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Location of bouy&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fcb81311cd0&gt;
+</pre></div>
+</div>
+<img alt="_images/output_visualisation_18_1.png" src="_images/output_visualisation_18_1.png" />
 </div>
 </div>
 </div>
