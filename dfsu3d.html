@@ -636,34 +636,40 @@ Items:
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This rest of this section uses features introduced in MIKE IO v 0.9.0 (released 2021-10-22)</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Static z: </span><span class="si">{</span><span class="n">z_profile_static</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># requires MIKE IO v0.8.1</span>
-<span class="c1"># ec_dyn = dfs.calc_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][0,:])</span>
-<span class="c1"># print(f&quot;Dynamic z: {ec_dyn[:,2].round(3)} (first time step)&quot;)</span>
-<span class="c1"># ec_dyn = dfs.calc_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][1,:])</span>
-<span class="c1"># print(f&quot;Dynamic z: {ec_dyn[:,2].round(3)} (second time step)&quot;)</span>
+<span class="n">ec_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">calc_element_coordinates</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">,</span> <span class="n">zn</span><span class="o">=</span><span class="n">ds_dyn</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dynamic z: </span><span class="si">{</span><span class="n">ec_dyn</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> (first time step)&quot;</span><span class="p">)</span>
+<span class="n">ec_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">calc_element_coordinates</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">,</span> <span class="n">zn</span><span class="o">=</span><span class="n">ds_dyn</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">,:])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dynamic z: </span><span class="si">{</span><span class="n">ec_dyn</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> (second time step)&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Static z: [-7. -5. -3. -1.]
+Dynamic z: [-6.982 -4.945 -2.909 -0.872] (first time step)
+Dynamic z: [-6.988 -4.963 -2.938 -0.913] (second time step)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># requires MIKE IO v0.8.1</span>
-<span class="c1"># for timestep in range(len(ds_dyn.time)):</span>
-<span class="c1">#     ec_dyn = dfs.calc_element_coordinates(elements=elem_ids, zn=ds_dyn[&#39;Z coordinate&#39;][timestep,:])</span>
-<span class="c1">#     plt.plot(ds_dyn[&#39;Temperature&#39;][timestep, :],ec_dyn[:,2], label=f&quot;{ds.time[timestep]}&quot;)</span>
-<span class="c1"># plt.title(&quot;Temperature profiles with dynamic z&quot;)</span>
-<span class="c1"># plt.legend();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">timestep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ds_dyn</span><span class="o">.</span><span class="n">time</span><span class="p">)):</span>
+    <span class="n">ec_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">calc_element_coordinates</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">,</span> <span class="n">zn</span><span class="o">=</span><span class="n">ds_dyn</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,:])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_dyn</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,</span> <span class="p">:],</span><span class="n">ec_dyn</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="n">timestep</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Temperature profiles with dynamic z&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dfsu3d_24_0.png" src="_images/dfsu3d_24_0.png" />
 </div>
 </div>
 <div class="section" id="read-vertical-slice">
@@ -723,7 +729,7 @@ Time: 3 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dfsu3d_28_0.png" src="_images/dfsu3d_28_0.png" />
+<img alt="_images/dfsu3d_29_0.png" src="_images/dfsu3d_29_0.png" />
 </div>
 </div>
 </div>
