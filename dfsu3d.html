@@ -371,8 +371,13 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#top-layer-of-3d-file">
-       Top layer of 3D file
+      <a class="reference internal nav-link" href="#layers-in-a-3d-file">
+       Layers in a 3D file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#surface-layer-of-3d-file">
+       Surface layer of 3D file
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
@@ -516,8 +521,49 @@ Projection: UTM-33
 </div>
 </div>
 </div>
-<div class="section" id="top-layer-of-3d-file">
-<h3>Top layer of 3D file<a class="headerlink" href="#top-layer-of-3d-file" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="layers-in-a-3d-file">
+<h3>Layers in a 3D file<a class="headerlink" href="#layers-in-a-3d-file" title="Permalink to this headline">¶</a></h3>
+<p>Get element ids for a specific layer with the get_layer_elements() method. Note that layer ids are 1-based!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of elements per layer (5 z-layers, 4 sigma layers):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dfs</span><span class="o">.</span><span class="n">n_layers</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Layer </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dfs</span><span class="o">.</span><span class="n">get_layer_elements</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of elements per layer (5 z-layers, 4 sigma layers):
+Layer 1: 10
+Layer 2: 86
+Layer 3: 187
+Layer 4: 528
+Layer 5: 1507
+Layer 6: 3700
+Layer 7: 3700
+Layer 8: 3700
+Layer 9: 3700
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the bottom layer is a list of the elements with the lowest id for each column</span>
+<span class="c1"># For sigma-z files it is NOT the same as layer 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bottom layer: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dfs</span><span class="o">.</span><span class="n">bottom_elements</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bottom layer: 3700
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="surface-layer-of-3d-file">
+<h3>Surface layer of 3D file<a class="headerlink" href="#surface-layer-of-3d-file" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elem_ids</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">top_elements</span>
@@ -536,6 +582,16 @@ Items:
   2:  Salinity &lt;Salinity&gt; (PSU)
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Temperature&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dfsu3d_14_0.png" src="_images/dfsu3d_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -579,7 +635,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dfsu3d_14_0.png" src="_images/dfsu3d_14_0.png" />
+<img alt="_images/dfsu3d_18_0.png" src="_images/dfsu3d_18_0.png" />
 </div>
 </div>
 </div>
@@ -625,7 +681,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dfsu3d_19_0.png" src="_images/dfsu3d_19_0.png" />
+<img alt="_images/dfsu3d_23_0.png" src="_images/dfsu3d_23_0.png" />
 </div>
 </div>
 <p>The profile can also be plotted using the dynamic z-values. We then need to read the z values in the nodes together with the temperature data for each time step.</p>
@@ -669,7 +725,7 @@ Dynamic z: [-6.988 -4.963 -2.938 -0.913] (second time step)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dfsu3d_24_0.png" src="_images/dfsu3d_24_0.png" />
+<img alt="_images/dfsu3d_28_0.png" src="_images/dfsu3d_28_0.png" />
 </div>
 </div>
 <div class="section" id="read-vertical-slice">
@@ -729,7 +785,7 @@ Time: 3 steps with dt=10800.0s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dfsu3d_29_0.png" src="_images/dfsu3d_29_0.png" />
+<img alt="_images/dfsu3d_33_0.png" src="_images/dfsu3d_33_0.png" />
 </div>
 </div>
 </div>

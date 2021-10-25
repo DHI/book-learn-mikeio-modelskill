@@ -396,6 +396,13 @@
   <a class="reference internal nav-link" href="#custom">
    Custom
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exceedance-probability">
+     Exceedance probability
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -489,7 +496,7 @@ Items:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2481</span><span class="o">/</span><span class="mf">3186467535.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2403</span><span class="o">/</span><span class="mf">3186467535.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws</span><span class="p">)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
@@ -532,6 +539,10 @@ Items:
 <div class="section" id="spatial-aggregations">
 <h3>Spatial aggregations<a class="headerlink" href="#spatial-aggregations" title="Permalink to this headline">¶</a></h3>
 <p>The Dataset aggregation methods (e.g. mean) takes an <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument. If we give it the spatial axis (or the string ‘space’), it will produce a time series of spatially aggregated values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s important to note that the spatial aggregations here ignores element areas! Only average takes a weights argument.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;space&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
@@ -621,6 +632,21 @@ Items:
 </div>
 <div class="cell_output docutils container">
 <img alt="_images/output_statistics_16_0.png" src="_images/output_statistics_16_0.png" />
+</div>
+</div>
+<p>It’s important to know that the element area is not taking into account when doing the spatial aggregations! Only Dataset.average supports weighted averages.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;space&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Simple mean&quot;</span><span class="p">]</span>
+<span class="n">area</span><span class="o">=</span><span class="n">dfs</span><span class="o">.</span><span class="n">get_element_area</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Weighted&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;space&quot;</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">area</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean wind speed (simple vs weighted by element area)&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_statistics_18_0.png" src="_images/output_statistics_18_0.png" />
 </div>
 </div>
 </div>
@@ -834,7 +860,7 @@ Items:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2481</span><span class="o">/</span><span class="mf">2109345646.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2403</span><span class="o">/</span><span class="mf">2109345646.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean wind speed&quot;</span><span class="p">);</span> <span class="c1"># this will fail for MIKE IO &lt; 0.9.1</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
@@ -860,7 +886,9 @@ Items:
 </div>
 <div class="section" id="custom">
 <h2>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
-<p>Exceedance probability</p>
+<div class="section" id="exceedance-probability">
+<h3>Exceedance probability<a class="headerlink" href="#exceedance-probability" title="Permalink to this headline">¶</a></h3>
+<p>Let’s find out how often the wind exceeds 12m/s in our simulation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -899,15 +927,31 @@ Items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">one_to_zero</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wind speed [m/s]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability of exceedance [-]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wind speed in element 0&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="n">val</span><span class="o">&gt;</span><span class="mi">12</span><span class="p">],</span> <span class="n">val</span><span class="p">[</span><span class="n">val</span><span class="o">&gt;</span><span class="mi">12</span><span class="p">],</span><span class="s1">&#39;.r&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Wind speed [m/s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;How often is the wind speed above 12m/s (element 0)?&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_36_0.png" src="_images/output_statistics_36_0.png" />
+<img alt="_images/output_statistics_39_0.png" src="_images/output_statistics_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">one_to_zero</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wind speed [m/s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability of exceedance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wind speed exceedance in element 0&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_statistics_40_0.png" src="_images/output_statistics_40_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -932,15 +976,17 @@ Items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dse</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed exceeding 12 m/s&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prob. of Exceedance [%]&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dse</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed exceeding 12 m/s&quot;</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Time of Exceedance [%]&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2481</span><span class="o">/</span><span class="mf">3639932724.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dse</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed exceeding 12 m/s&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prob. of Exceedance [%]&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">);</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2403</span><span class="o">/</span><span class="mf">3108453866.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dse</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed exceeding 12 m/s&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Time of Exceedance [%]&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">);</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1361</span>         <span class="k">else</span><span class="p">:</span>
@@ -951,6 +997,35 @@ Items:
 
 <span class="ne">Exception</span>: Length of z (1) does not match geometry (958)
 </pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_hours</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span><span class="o">/</span><span class="mi">3600</span>
+<span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dse</span><span class="o">*</span><span class="n">total_hours</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed exceeding 12 m/s&quot;</span><span class="p">,</span> 
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exceedance [Hours]&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2403</span><span class="o">/</span><span class="mf">230615124.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">total_hours</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">total_seconds</span><span class="p">()</span><span class="o">/</span><span class="mi">3600</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dse</span><span class="o">*</span><span class="n">total_hours</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed exceeding 12 m/s&quot;</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exceedance [Hours]&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">);</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ne</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>                     <span class="sa">f</span><span class="s2">&quot;Length of z (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s2">) does not match geometry (</span><span class="si">{</span><span class="n">ne</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="p">)</span>
+
+<span class="ne">Exception</span>: Length of z (1) does not match geometry (958)
+</pre></div>
+</div>
 </div>
 </div>
 </div>
