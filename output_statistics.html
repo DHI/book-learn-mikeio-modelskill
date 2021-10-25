@@ -361,13 +361,40 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mean">
-   Mean
+  <a class="reference internal nav-link" href="#dataset">
+   Dataset
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#temporal-aggregations-mean">
+     Temporal aggregations: mean
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#spatial-aggregations">
+     Spatial aggregations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quantiles-to-file">
+     Quantiles to file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#total">
+     Total
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#generic">
+   Generic
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#quantiles">
-   Quantiles
+  <a class="reference internal nav-link" href="#custom">
+   Custom
   </a>
  </li>
 </ul>
@@ -383,16 +410,43 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="output-statistics">
 <h1>Output statistics<a class="headerlink" href="#output-statistics" title="Permalink to this headline">¶</a></h1>
-<p>[in development]</p>
+<p>After running your MIKE simulation, you would often want to make different kinds of summary statistics of your data - both for your own understanding and for communicating your results.</p>
+<p>Examples of statistics</p>
+<ul class="simple">
+<li><p>Min, max, mean, standard deviation</p></li>
+<li><p>Quantiles/percentiles (e.g. median, interquartile range, return period etc)</p></li>
+<li><p>Probability/frequency of exceedance</p></li>
+</ul>
+<p>Types of aggregations</p>
+<ul class="simple">
+<li><p>Total - aggregate all data to a single number</p></li>
+<li><p>Temporal - aggregate all time steps; for a dfsu 2d, the result would be a map</p></li>
+<li><p>Spatial - aggregate all elements to a single value per time step</p></li>
+<li><p>Others: monthly, by layer, spatial bin, sub domain etc…</p></li>
+</ul>
+<p>Ways of calculating</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://dhi.github.io/mikeio/dataset.html#methods">MIKEIO.Dataset</a></p></li>
+<li><p><a class="reference external" href="https://dhi.github.io/mikeio/generic.html">MIKEIO.generic</a> (temporal aggregations only; larger-than-memory)</p></li>
+<li><p>custom code (typically with NumPy)</p></li>
+</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This section uses features introduced in MIKE IO v 0.9.0 (released 2021-10-22)</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span>
-
-<span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;data/NorthSea_HD_and_windspeed.dfsu&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span><span class="p">,</span> <span class="n">generic</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p>For smaller dfs files (maybe up to 2GB) it can be convenient to read the data to memory before doing aggregations. The MIKEIO.Dataset class have several <a class="reference external" href="https://dhi.github.io/mikeio/dataset.html#methods">methods</a> for aggregating data along an axis. See the generic section below for larger-than-memory data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;data/NorthSea_HD_and_windspeed.dfsu&quot;</span><span class="p">)</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">ds</span>
 </pre></div>
@@ -409,9 +463,9 @@ Items:
 </div>
 </div>
 </div>
-<div class="section" id="mean">
-<h2>Mean<a class="headerlink" href="#mean" title="Permalink to this headline">¶</a></h2>
-<p>The default is to aggregate along the time axis.</p>
+<div class="section" id="temporal-aggregations-mean">
+<h3>Temporal aggregations: mean<a class="headerlink" href="#temporal-aggregations-mean" title="Permalink to this headline">¶</a></h3>
+<p>The default is to aggregate along the time axis - the output will therefore be a map.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsm</span>  <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -435,7 +489,7 @@ Items:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2383</span><span class="o">/</span><span class="mf">3186467535.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2489</span><span class="o">/</span><span class="mf">3186467535.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws</span><span class="p">)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
@@ -466,20 +520,115 @@ Items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws_vec</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Average </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws_vec</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Average </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;Average 2017-10-27 00:00:00 : 2017-10-29 18:00:00&#39;}&gt;
+<img alt="_images/output_statistics_10_0.png" src="_images/output_statistics_10_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="spatial-aggregations">
+<h3>Spatial aggregations<a class="headerlink" href="#spatial-aggregations" title="Permalink to this headline">¶</a></h3>
+<p>The Dataset aggregation methods (e.g. mean) takes an <code class="docutils literal notranslate"><span class="pre">axis</span></code> argument. If we give it the spatial axis (or the string ‘space’), it will produce a time series of spatially aggregated values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;space&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="_images/output_statistics_8_1.png" src="_images/output_statistics_8_1.png" />
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Surface elevation</th>
+      <th>Wind speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-10-27 00:00:00</th>
+      <td>0.256916</td>
+      <td>10.234554</td>
+    </tr>
+    <tr>
+      <th>2017-10-27 01:00:00</th>
+      <td>0.274964</td>
+      <td>10.264292</td>
+    </tr>
+    <tr>
+      <th>2017-10-27 02:00:00</th>
+      <td>0.287414</td>
+      <td>10.531686</td>
+    </tr>
+    <tr>
+      <th>2017-10-27 03:00:00</th>
+      <td>0.290940</td>
+      <td>10.794677</td>
+    </tr>
+    <tr>
+      <th>2017-10-27 04:00:00</th>
+      <td>0.287234</td>
+      <td>10.858320</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Wind speed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="_images/output_statistics_13_1.png" src="_images/output_statistics_13_1.png" />
+</div>
+</div>
+<p>Dataset has other methods for calculating typical statistics, e.g. max, quantile…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;space&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Max wind speed&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_statistics_15_0.png" src="_images/output_statistics_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.9</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;space&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_statistics_16_0.png" src="_images/output_statistics_16_0.png" />
 </div>
 </div>
 </div>
-<div class="section" id="quantiles">
-<h2>Quantiles<a class="headerlink" href="#quantiles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="quantiles-to-file">
+<h3>Quantiles to file<a class="headerlink" href="#quantiles-to-file" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsq</span>  <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.9</span><span class="p">])</span>
@@ -511,6 +660,210 @@ Items:
 </div>
 </div>
 <p><img alt="" src="_images/mikezero_quantiles.png" /></p>
+</div>
+<div class="section" id="total">
+<h3>Total<a class="headerlink" href="#total" title="Permalink to this headline">¶</a></h3>
+<p>Aggregating over all data (both time and space) can be done from the Dataset in a few ways:</p>
+<ul class="simple">
+<li><p>ds.describe() - will give you summary statistics like pandas df.describe()</p></li>
+<li><p>using axis=None in ds.mean(), ds.min()</p></li>
+<li><p>using standard NumPy aggregation functions on the Dataset data e.g. ds[“Wind speed”].mean()</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Surface elevation</th>
+      <th>Wind speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>64186.000000</td>
+      <td>64186.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>0.449857</td>
+      <td>12.772705</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.651157</td>
+      <td>3.694293</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>-2.347003</td>
+      <td>1.190171</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>0.057831</td>
+      <td>10.376003</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>0.466257</td>
+      <td>12.653086</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>0.849586</td>
+      <td>14.885848</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>3.756879</td>
+      <td>26.213045</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Surface elevation</th>
+      <th>Wind speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-10-27</th>
+      <td>-2.347003</td>
+      <td>1.190171</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.1901706457138062
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="generic">
+<h2>Generic<a class="headerlink" href="#generic" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://dhi.github.io/mikeio/generic.html">MIKEIO.generic</a> submodule can produce common <strong>temporal</strong> statistics on any dfs file (of any size). The output will be a new dfs file. Currently, generic has these methods for calculating statistics:</p>
+<ul class="simple">
+<li><p>avg_time()</p></li>
+<li><p>quantile()</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">generic</span><span class="o">.</span><span class="n">avg_time</span><span class="p">(</span><span class="s2">&quot;data/NorthSea_HD_and_windspeed.dfsu&quot;</span><span class="p">,</span> <span class="s2">&quot;NorthSea_avg.dfsu&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;NorthSea_avg.dfsu&quot;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">)</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
+Dimensions: (1, 958)
+Time: 2017-10-27 00:00:00 - 2017-10-27 00:00:00
+Items:
+  0:  Wind speed &lt;Wind speed&gt; (meter per sec)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean wind speed&quot;</span><span class="p">);</span> <span class="c1"># this will fail for MIKE IO &lt; 0.9.1 </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2489</span><span class="o">/</span><span class="mf">2109345646.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean wind speed&quot;</span><span class="p">);</span> <span class="c1"># this will fail for MIKE IO &lt; 0.9.1</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ne</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>                     <span class="sa">f</span><span class="s2">&quot;Length of z (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s2">) does not match geometry (</span><span class="si">{</span><span class="n">ne</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="p">)</span>
+
+<span class="ne">Exception</span>: Length of z (1) does not match geometry (958)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">generic</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="s2">&quot;data/NorthSea_HD_and_windspeed.dfsu&quot;</span><span class="p">,</span> <span class="s2">&quot;NorthSea_Quantiles2.dfsu&quot;</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="_images/mikezero_quantiles.png" /></p>
+</div>
+<div class="section" id="custom">
+<h2>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
+<p>Exceedance probability</p>
 </div>
 </div>
 
