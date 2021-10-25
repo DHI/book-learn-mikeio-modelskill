@@ -489,7 +489,7 @@ Items:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2489</span><span class="o">/</span><span class="mf">3186467535.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2468</span><span class="o">/</span><span class="mf">3186467535.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws</span><span class="p">)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
@@ -594,15 +594,12 @@ Items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Wind speed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Wind speed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
-</pre></div>
-</div>
-<img alt="_images/output_statistics_13_1.png" src="_images/output_statistics_13_1.png" />
+<img alt="_images/output_statistics_13_0.png" src="_images/output_statistics_13_0.png" />
 </div>
 </div>
 <p>Dataset has other methods for calculating typical statistics, e.g. max, quantile…</p>
@@ -837,7 +834,7 @@ Items:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2489</span><span class="o">/</span><span class="mf">2109345646.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2468</span><span class="o">/</span><span class="mf">2109345646.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mean wind speed&quot;</span><span class="p">);</span> <span class="c1"># this will fail for MIKE IO &lt; 0.9.1</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
@@ -864,6 +861,99 @@ Items:
 <div class="section" id="custom">
 <h2>Custom<a class="headerlink" href="#custom" title="Permalink to this headline">¶</a></h2>
 <p>Exceedance probability</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">eum</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;data/NorthSea_HD_and_windspeed.dfsu&quot;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
+Dimensions: (67, 958)
+Time: 2017-10-27 00:00:00 - 2017-10-29 18:00:00
+Items:
+  0:  Surface elevation &lt;Surface Elevation&gt; (meter)
+  1:  Wind speed &lt;Wind speed&gt; (meter per sec)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nt</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">n_timesteps</span>
+<span class="n">one_to_zero</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="n">nt</span> <span class="o">+</span> <span class="mf">1.</span><span class="p">)</span><span class="o">/</span><span class="n">nt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">][:,</span><span class="mi">0</span><span class="p">]),</span> <span class="n">one_to_zero</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Wind speed [m/s]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability of exceedance [-]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Wind speed in element 0&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/output_statistics_36_0.png" src="_images/output_statistics_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create empty Dataset </span>
+<span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="n">eum</span><span class="o">.</span><span class="n">ItemInfo</span><span class="p">(</span><span class="n">eum</span><span class="o">.</span><span class="n">EUMType</span><span class="o">.</span><span class="n">Probability</span><span class="p">)]</span>
+<span class="n">dse</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">dfs</span><span class="o">.</span><span class="n">n_elements</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s2">&quot;2017-10-27&quot;</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">threshold</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">n_elements</span><span class="p">):</span>
+    <span class="c1"># this is a naive and slow way of calculating this!</span>
+    <span class="n">dat</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">][:,</span><span class="n">j</span><span class="p">]</span>
+    <span class="n">dse</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">threshold</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">dat</span><span class="p">),</span> <span class="n">one_to_zero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dse</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed exceeding 12 m/s&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prob. of Exceedance [%]&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2468</span><span class="o">/</span><span class="mf">3639932724.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dse</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Wind speed exceeding 12 m/s&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Prob. of Exceedance [%]&quot;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">);</span>
+
+<span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/mikeio/dfsu.py</span> in <span class="ni">plot</span><span class="nt">(self, z, elements, plot_type, title, label, cmap, vmin, vmax, levels, n_refinements, show_mesh, show_outline, figsize, ax)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1361</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1362</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">!=</span> <span class="n">ne</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1363</span>                 <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1364</span>                     <span class="sa">f</span><span class="s2">&quot;Length of z (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s2">) does not match geometry (</span><span class="si">{</span><span class="n">ne</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1365</span>                 <span class="p">)</span>
+
+<span class="ne">Exception</span>: Length of z (1) does not match geometry (958)
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
