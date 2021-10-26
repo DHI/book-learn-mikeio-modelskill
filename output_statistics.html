@@ -444,7 +444,7 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This section uses features introduced in MIKE IO v 0.9.0 (released 2021-10-22)</p>
+<p>This section uses features introduced in MIKE IO v 0.10.1 (released 2021-10-26)</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -503,30 +503,6 @@ Items:
 </pre></div>
 </div>
 <img alt="_images/output_statistics_7_1.png" src="_images/output_statistics_7_1.png" />
-</div>
-</div>
-<p>The array is a 2d array, and the plot method expects a 1d array, so we select the the first and only timestep in the array.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_ws_vec</span> <span class="o">=</span> <span class="n">mean_ws</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">mean_ws_vec</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(958,)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">mean_ws_vec</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Wind speed&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Average </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> : </span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/output_statistics_10_0.png" src="_images/output_statistics_10_0.png" />
 </div>
 </div>
 </div>
@@ -604,7 +580,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_13_0.png" src="_images/output_statistics_13_0.png" />
+<img alt="_images/output_statistics_10_0.png" src="_images/output_statistics_10_0.png" />
 </div>
 </div>
 <p>Dataset has other methods for calculating typical statistics, e.g. max, quantile…</p>
@@ -615,7 +591,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_15_0.png" src="_images/output_statistics_15_0.png" />
+<img alt="_images/output_statistics_12_0.png" src="_images/output_statistics_12_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -625,7 +601,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_16_0.png" src="_images/output_statistics_16_0.png" />
+<img alt="_images/output_statistics_13_0.png" src="_images/output_statistics_13_0.png" />
 </div>
 </div>
 <p>It’s important to know that the element area is not taking into account when doing the spatial aggregations! Only Dataset.average supports weighted averages.</p>
@@ -640,7 +616,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_18_0.png" src="_images/output_statistics_18_0.png" />
+<img alt="_images/output_statistics_15_0.png" src="_images/output_statistics_15_0.png" />
 </div>
 </div>
 </div>
@@ -852,7 +828,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_31_0.png" src="_images/output_statistics_31_0.png" />
+<img alt="_images/output_statistics_28_0.png" src="_images/output_statistics_28_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -892,7 +868,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_38_0.png" src="_images/output_statistics_38_0.png" />
+<img alt="_images/output_statistics_35_0.png" src="_images/output_statistics_35_0.png" />
 </div>
 </div>
 </div>
@@ -928,7 +904,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_42_0.png" src="_images/output_statistics_42_0.png" />
+<img alt="_images/output_statistics_39_0.png" src="_images/output_statistics_39_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -942,7 +918,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_43_0.png" src="_images/output_statistics_43_0.png" />
+<img alt="_images/output_statistics_40_0.png" src="_images/output_statistics_40_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -973,7 +949,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_46_0.png" src="_images/output_statistics_46_0.png" />
+<img alt="_images/output_statistics_43_0.png" src="_images/output_statistics_43_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -985,7 +961,7 @@ Items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/output_statistics_47_0.png" src="_images/output_statistics_47_0.png" />
+<img alt="_images/output_statistics_44_0.png" src="_images/output_statistics_44_0.png" />
 </div>
 </div>
 </div>
