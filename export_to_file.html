@@ -361,6 +361,11 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#export-to-shapefile">
    Export to shapefile
   </a>
@@ -378,33 +383,32 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="export-to-file">
 <h1>Export to file<a class="headerlink" href="#export-to-file" title="Permalink to this headline">¶</a></h1>
-<p>[in development]</p>
+<p>A need for exporting dfsu files to other formats, such as raster formats (NetCDF, GeoTIFF) or vector formats (ESRI Shape, GeoJSON) are not uncommon.</p>
+<p>There are usually very specific requirements about the exported data, naming, metadata, resolution and so on, which is why we don’t provide out of the box tools to convert files back and forth from a lot of formats, but instead provide the necessary building blocks and some examples to use as inspiration.</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nbviewer.org/github/DHI/mikeio/blob/main/notebooks/Dfsu%20-%20Export%20to%20netcdf.ipynb">Dfsu converted to NetCdf (unstructured grid)</a></p></li>
+<li><p><a class="reference external" href="https://nbviewer.org/github/DHI/mikeio/blob/main/notebooks/Dfsu%20-%20Export%20to%20netcdf.ipynb">Dfsu interpolated to structured grid</a></p></li>
+<li><p><a class="reference external" href="https://nbviewer.org/github/DHI/mikeio/blob/main/notebooks/Dfs2%20-%20Export%20to%20netcdf.ipynb">Dfs2 converted to NetCDF</a></p></li>
+</ul>
+</div>
+<div class="section" id="export-to-shapefile">
+<h2>Export to shapefile<a class="headerlink" href="#export-to-shapefile" title="Permalink to this headline">¶</a></h2>
 <p>Exporting to GIS formats such as ESRI Shapefile or GeoTiff requires some libraries which are tricky to install on Windows.</p>
 <p>One way is to use Conda-forge</p>
 <ol class="simple">
 <li><p>Download the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda installer</a></p></li>
 <li><p>Install GeoPandas: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">conda-forge</span> <span class="pre">geopandas</span></code></p></li>
 </ol>
-<div class="section" id="export-to-shapefile">
-<h2>Export to shapefile<a class="headerlink" href="#export-to-shapefile" title="Permalink to this headline">¶</a></h2>
-<p>This section requires the <code class="docutils literal notranslate"><span class="pre">geopandas</span></code> package</p>
+<p>An alternative is to use to run python under <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a></p>
+<p><img alt="" src="_images/wsl.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;data/oresundHD_run1.dfsu&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="s2">&quot;data/oresundHD_run1.dfsu&quot;</span><span class="p">)</span>
 <span class="n">dfs</span>
 </pre></div>
 </div>
@@ -470,7 +474,7 @@ Items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">shp</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">poly_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">shp</span><span class="o">.</span><span class="n">geoms</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -484,7 +488,7 @@ Items:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">CRSError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2195</span><span class="o">/</span><span class="mf">1350686416.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1955</span><span class="o">/</span><span class="mf">1350686416.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;waterlevel&#39;</span><span class="p">:</span> <span class="n">maxwl</span><span class="p">},</span><span class="n">geometry</span><span class="o">=</span><span class="n">poly_list</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dfs</span><span class="o">.</span><span class="n">projection_string</span><span class="p">)</span>
 
 <span class="nn">/opt/hostedtoolcache/Python/3.9.7/x64/lib/python3.9/site-packages/geopandas/geodataframe.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, geometry, crs, *args, **kwargs)</span>
