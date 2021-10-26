@@ -1,3 +1,0 @@
-# Final assignment
-
-[In development]
