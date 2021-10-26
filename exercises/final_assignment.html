@@ -307,9 +307,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/exercises/final_assignment.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/exercises/final_assignment.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -327,11 +327,56 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/exercises/final_assignment.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/exercises/final_assignment.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hydrograhic-profiles">
+   1. Hydrograhic profiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#area-of-suitable-environmental-conditions">
+   2. Area of suitable environmental conditions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#remarks">
+   Remarks
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -342,7 +387,141 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="final-assignment">
 <h1>Final assignment<a class="headerlink" href="#final-assignment" title="Permalink to this headline">¶</a></h1>
-<p>[In development]</p>
+<p>The final assignment of the course is a fictive but realistic part of a 3D HD modelling project of the Baltic Sea.</p>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Baltic_Sea_map.png/287px-Baltic_Sea_map.png" /></p>
+<p>Map from wikipedia.</p>
+<p>The client is an NGO focusing on environmental issues, and they are interesting in understanding the changes in suitability of the Baltic Sea for reproduction of cod (<em>Gadus Morhua</em>).</p>
+<p>The client can not do modelling themselves, but they have experience from other models, and know that it is non-trivial to model the hydrography of the Baltic Sea, with stratification caused by both temperature and salinity. This is why they want us to demonstrate that our model is able to capture the stratification, before they can trust that the model results can be used to quantify the environmental conditions for the cod.</p>
+<p>There are two main tasks:</p>
+<ol class="simple">
+<li><p>Qualitative validation of hydrographic vertical profiles in a central part of the Baltic Sea</p></li>
+<li><p>Calculation of the total area of suitable habitat for cod.</p></li>
+</ol>
+<div class="section" id="hydrograhic-profiles">
+<h2>1. Hydrograhic profiles<a class="headerlink" href="#hydrograhic-profiles" title="Permalink to this headline">¶</a></h2>
+<p>The client have downloaded hydrograpic observations from the national monitoring agency for a station located in the central Baltic Sea for the years 2017 &amp; 2018.</p>
+<p>Station: BY5 (Gotland Deep)
+Latitude: 57.3N
+Longitude: 20.07E</p>
+<p>Easting (UTM-32): 1165460 (m)
+Nothing (UTM-32): 6406530 (m)</p>
+<p>The client have opened the file in Excel and it seems like the necessary observations are available in the dataset (along with a lot of other interesting data).</p>
+<p><img alt="" src="../_images/hydrography_excel.png" /></p>
+<p>Our project manager have outlined the steps necessary to complete this task:</p>
+<ol class="simple">
+<li><p>Create a map of the model bathymetry where the location of the sampling station BY5 is clearly indicated</p></li>
+<li><p>Find 3d elements of water column closest to the station (x=1165460, y=6406530)</p></li>
+<li><p>Extract vertical profiles of temperature and salinity</p></li>
+<li><p>Visualize the modelled vertical profiles for the whole year (<em>not sure exactly how, use your best knowledge!</em>)</p></li>
+<li><p>Compare with measurement data for one sampling occasion in winter and one during summer</p></li>
+</ol>
+<p>Sketch of how a vertical profile model obs comparison could look like:</p>
+<p><img alt="" src="../_images/vertical_sketch.png" /></p>
+<p>Below are some pandas code to get started on reading the observed data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/final_assignment/hydrography_gotland_deep_2017.txt&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Sampling date&#39;</span><span class="p">,</span> <span class="s1">&#39;Sampling time (start)&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Sampling date</th>
+      <th>Sampling time (start)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2017-12-16</td>
+      <td>08:00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2017-12-16</td>
+      <td>08:00</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2017-12-16</td>
+      <td>08:00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2017-12-16</td>
+      <td>08:00</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2017-12-16</td>
+      <td>08:00</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sampling date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;2017-01-09&#39;, &#39;2017-02-10&#39;, &#39;2017-03-15&#39;, &#39;2017-04-24&#39;,
+       &#39;2017-05-22&#39;, &#39;2017-06-15&#39;, &#39;2017-07-11&#39;, &#39;2017-09-14&#39;,
+       &#39;2017-11-11&#39;, &#39;2017-12-16&#39;, &#39;2018-01-28&#39;, &#39;2018-04-18&#39;,
+       &#39;2018-04-19&#39;, &#39;2018-05-30&#39;, &#39;2018-09-04&#39;, &#39;2018-10-15&#39;,
+       &#39;2018-11-09&#39;, &#39;2018-12-05&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="area-of-suitable-environmental-conditions">
+<h2>2. Area of suitable environmental conditions<a class="headerlink" href="#area-of-suitable-environmental-conditions" title="Permalink to this headline">¶</a></h2>
+<p>The second task is to visualize the suitable areas for cod reproduction.</p>
+<p>Cod eggs sink to the bottom and need a minium salinity of 10 PSU to remain bouyant and to survive. (A real project would also use the dissolved oxygen concentration). Cod spawning occurs in the spring, and we will use the mean value of April 2017 of the bottom layer salinity to visualize and quantify which parts of the Baltic Sea, that are potential areas for cod reproduction.</p>
+<p>Again, our dear project manager have outlined the steps necessary to complete this task:</p>
+<ol class="simple">
+<li><p>Get element ids of bottom elements</p></li>
+<li><p>Extract bottom layer salinity</p></li>
+<li><p>Find mean bottom layer salinity in april</p></li>
+<li><p>Find elements with mean salinity &gt;= 10 (note: original vs bottom layer index)</p></li>
+<li><p>Create a plot where it is clearly indicated which parts of the Baltic Sea are suitable and which ones are not</p></li>
+<li><p>Calculate the total area in km2 of the elements which meet the salinity criteria</p></li>
+<li><p>What is the percentage of the bottom suitable for cod eggs?</p></li>
+</ol>
+</div>
+<div class="section" id="remarks">
+<h2>Remarks<a class="headerlink" href="#remarks" title="Permalink to this headline">¶</a></h2>
+<p>Good luck, and remember:</p>
+<ol class="simple">
+<li><p>Get help from your learning team (this is what you would do in a real project, it is not cheating)</p></li>
+<li><p>If you get stuck, write in yammer</p></li>
+<li><p>Submit the assignment in time</p></li>
+<li><p>Review your peers solutions</p></li>
+</ol>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
