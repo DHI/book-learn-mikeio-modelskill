@@ -523,17 +523,18 @@ Projection: UTM-33
 </div>
 <div class="section" id="layers-in-a-3d-file">
 <h3>Layers in a 3D file<a class="headerlink" href="#layers-in-a-3d-file" title="Permalink to this headline">¶</a></h3>
-<p>Get element ids for a specific layer with the get_layer_elements() method. Note that layer ids are 1-based!</p>
+<p>Get element ids for a specific layer with the get_layer_elements() method. Layer ids are 0-based (new in MIKE IO 0.10).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of elements per layer (5 z-layers, 4 sigma layers):&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">dfs</span><span class="o">.</span><span class="n">n_layers</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dfs</span><span class="o">.</span><span class="n">n_layers</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Layer </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dfs</span><span class="o">.</span><span class="n">get_layer_elements</span><span class="p">(</span><span class="n">j</span><span class="p">))</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of elements per layer (5 z-layers, 4 sigma layers):
+Layer 0: 3700
 Layer 1: 10
 Layer 2: 86
 Layer 3: 187
@@ -542,7 +543,6 @@ Layer 5: 1507
 Layer 6: 3700
 Layer 7: 3700
 Layer 8: 3700
-Layer 9: 3700
 </pre></div>
 </div>
 </div>
