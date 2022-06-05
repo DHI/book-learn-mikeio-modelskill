@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Multi model comparison &#8212; Python for marine modelers using MIKE IO and FMSkill</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,46 +20,62 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="FMskill assignment" href="exercises/fmskill_assignment.html" />
     <link rel="prev" title="Model skill visualisation" href="model_skill_visualisation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -66,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -86,21 +105,22 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Python for marine modelers using MIKE IO and FMskill
+                </a>
+            </li>
+        </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Python for marine modelers using MIKE IO and FMskill
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="installation.html">
    Installation
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   MIKE IO Dfsu/Mesh
  </span>
@@ -178,7 +198,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   FMskill
  </span>
@@ -251,7 +271,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Assignments
  </span>
@@ -270,96 +290,182 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/multi_model_comparison.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/multi_model_comparison.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/multi_model_comparison.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/multi_model_comparison.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/multi_model_comparison.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/multi_model_comparison.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#define-observations">
    Define observations
@@ -411,17 +517,84 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Multi model comparison</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-observations">
+   Define observations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#define-models">
+   Define models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#connect-observations-and-model-results">
+   Connect observations and model results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#perform-analysis">
+   Perform analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#time-series-plot-specifically-for-point-comparisons">
+     Time series plot (specifically for point comparisons)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-on-time">
+   Filtering on time
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-on-area">
+   Filtering on area
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skill-object">
+   Skill object
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sel-method-can-subset-the-skill-object">
+     The sel() method can subset the skill object
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="multi-model-comparison">
-<h1>Multi model comparison<a class="headerlink" href="#multi-model-comparison" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="multi-model-comparison">
+<h1>Multi model comparison<a class="headerlink" href="#multi-model-comparison" title="Permalink to this headline">#</a></h1>
 <p>We often want to compare the result of multiple models.</p>
 <p><strong>Calibration</strong>. We have several “runs” of the same model with different settings. We would like to find the best.</p>
 <p><strong>Validation</strong>. We would like to compare our model with alternative models, e.g. a regional DHI model or an external model.</p>
@@ -435,8 +608,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="define-observations">
-<h2>Define observations<a class="headerlink" href="#define-observations" title="Permalink to this headline">¶</a></h2>
+<section id="define-observations">
+<h2>Define observations<a class="headerlink" href="#define-observations" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span> <span class="o">=</span> <span class="n">PointObservation</span><span class="p">(</span><span class="s1">&#39;data/SW/HKNA_Hm0.dfs0&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">4.2420</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.6887</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKNA&quot;</span><span class="p">)</span>
@@ -446,9 +619,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="define-models">
-<h2>Define models<a class="headerlink" href="#define-models" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="define-models">
+<h2>Define models<a class="headerlink" href="#define-models" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mr1</span> <span class="o">=</span> <span class="n">ModelResult</span><span class="p">(</span><span class="s1">&#39;data/SW/HKZN_local_2017_DutchCoast.dfsu&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;SW_1&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -458,9 +631,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="connect-observations-and-model-results">
-<h2>Connect observations and model results<a class="headerlink" href="#connect-observations-and-model-results" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="connect-observations-and-model-results">
+<h2>Connect observations and model results<a class="headerlink" href="#connect-observations-and-model-results" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">con</span> <span class="o">=</span> <span class="n">Connector</span><span class="p">([</span><span class="n">o1</span><span class="p">,</span> <span class="n">o2</span><span class="p">,</span> <span class="n">o3</span><span class="p">],</span> <span class="p">[</span><span class="n">mr1</span><span class="p">,</span> <span class="n">mr2</span><span class="p">,</span> <span class="n">mr3</span><span class="p">])</span>
@@ -503,7 +676,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_9_0.png" src="_images/multi_model_comparison_9_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/mikeio/dfsu.py:605: FutureWarning: Dfsu.plot() have been deprecated, please use DataArray.plot() instead
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="_images/multi_model_comparison_9_1.png" src="_images/multi_model_comparison_9_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -522,6 +699,35 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/fmskill/connection.py:556,</span> in <span class="ni">Connector.extract</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">553</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">ComparerCollection</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">555</span> <span class="k">for</span> <span class="n">con</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">556</span>     <span class="n">comparer</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="k">if</span> <span class="n">comparer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span>         <span class="n">cc</span><span class="o">.</span><span class="n">add_comparer</span><span class="p">(</span><span class="n">comparer</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/fmskill/connection.py:310,</span> in <span class="ni">PointConnector.extract</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span> <span class="n">df_model</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span> <span class="k">for</span> <span class="n">mr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelresults</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">310</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">mr</span><span class="o">.</span><span class="n">_extract_point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span>     <span class="k">if</span> <span class="p">(</span><span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span>         <span class="n">df_model</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/fmskill/model/dfs.py:113,</span> in <span class="ni">_DfsBase._extract_point</span><span class="nt">(self, observation, item)</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_dfs0</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="n">ds_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_point_dfs0</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">113</span> <span class="k">return</span> <span class="n">ds_model</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;to_dataframe&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -530,18 +736,19 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;PointComparer&gt;
-Observation: EPL, n_points=66
- Model: SW_1, rmse=0.225
- Model: SW_2, rmse=0.234
- Model: ERA5, rmse=0.290
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="perform-analysis">
-<h2>Perform analysis<a class="headerlink" href="#perform-analysis" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="perform-analysis">
+<h2>Perform analysis<a class="headerlink" href="#perform-analysis" title="Permalink to this headline">#</a></h2>
 <p>You can perform simple filtering on specific <code class="docutils literal notranslate"><span class="pre">observation</span></code> or specific <code class="docutils literal notranslate"><span class="pre">model</span></code>. You can refer to observations and models using their <em>name</em> or <em>index</em>.</p>
 <p>The main analysis methods are:</p>
 <ul class="simple">
@@ -557,153 +764,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th></th>
-      <th>n</th>
-      <th>bias</th>
-      <th>rmse</th>
-      <th>urmse</th>
-      <th>mae</th>
-      <th>cc</th>
-      <th>si</th>
-      <th>r2</th>
-    </tr>
-    <tr>
-      <th>model</th>
-      <th>observation</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th rowspan="3" valign="top">ERA5</th>
-      <th>EPL</th>
-      <td>66</td>
-      <td>-0.207731</td>
-      <td>0.289960</td>
-      <td>0.202299</td>
-      <td>0.223748</td>
-      <td>0.972255</td>
-      <td>0.073907</td>
-      <td>0.887121</td>
-    </tr>
-    <tr>
-      <th>HKNA</th>
-      <td>386</td>
-      <td>-0.437425</td>
-      <td>0.545329</td>
-      <td>0.325643</td>
-      <td>0.441374</td>
-      <td>0.974863</td>
-      <td>0.098380</td>
-      <td>0.772663</td>
-    </tr>
-    <tr>
-      <th>c2</th>
-      <td>113</td>
-      <td>-0.355675</td>
-      <td>0.517129</td>
-      <td>0.375391</td>
-      <td>0.432571</td>
-      <td>0.945969</td>
-      <td>0.126460</td>
-      <td>0.782854</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">SW_1</th>
-      <th>EPL</th>
-      <td>66</td>
-      <td>-0.066028</td>
-      <td>0.224919</td>
-      <td>0.215009</td>
-      <td>0.189791</td>
-      <td>0.969512</td>
-      <td>0.078551</td>
-      <td>0.932082</td>
-    </tr>
-    <tr>
-      <th>HKNA</th>
-      <td>386</td>
-      <td>-0.194260</td>
-      <td>0.351964</td>
-      <td>0.293499</td>
-      <td>0.251839</td>
-      <td>0.971194</td>
-      <td>0.088669</td>
-      <td>0.905300</td>
-    </tr>
-    <tr>
-      <th>c2</th>
-      <td>113</td>
-      <td>-0.001210</td>
-      <td>0.351796</td>
-      <td>0.351794</td>
-      <td>0.294585</td>
-      <td>0.974335</td>
-      <td>0.118511</td>
-      <td>0.899507</td>
-    </tr>
-    <tr>
-      <th rowspan="3" valign="top">SW_2</th>
-      <th>EPL</th>
-      <td>66</td>
-      <td>0.001181</td>
-      <td>0.233964</td>
-      <td>0.233961</td>
-      <td>0.199915</td>
-      <td>0.969512</td>
-      <td>0.085475</td>
-      <td>0.926509</td>
-    </tr>
-    <tr>
-      <th>HKNA</th>
-      <td>386</td>
-      <td>-0.100426</td>
-      <td>0.293033</td>
-      <td>0.275287</td>
-      <td>0.214422</td>
-      <td>0.971194</td>
-      <td>0.083167</td>
-      <td>0.934358</td>
-    </tr>
-    <tr>
-      <th>c2</th>
-      <td>113</td>
-      <td>0.081431</td>
-      <td>0.430268</td>
-      <td>0.422492</td>
-      <td>0.357138</td>
-      <td>0.974335</td>
-      <td>0.142327</td>
-      <td>0.849675</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -712,87 +781,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [11],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">observation</span><span class="o">=</span><span class="s2">&quot;c2&quot;</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>observation</th>
-      <th>n</th>
-      <th>bias</th>
-      <th>rmse</th>
-      <th>urmse</th>
-      <th>mae</th>
-      <th>cc</th>
-      <th>si</th>
-      <th>r2</th>
-    </tr>
-    <tr>
-      <th>model</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>ERA5</th>
-      <td>c2</td>
-      <td>113</td>
-      <td>-0.355675</td>
-      <td>0.517129</td>
-      <td>0.375391</td>
-      <td>0.432571</td>
-      <td>0.945969</td>
-      <td>0.126460</td>
-      <td>0.782854</td>
-    </tr>
-    <tr>
-      <th>SW_1</th>
-      <td>c2</td>
-      <td>113</td>
-      <td>-0.001210</td>
-      <td>0.351796</td>
-      <td>0.351794</td>
-      <td>0.294585</td>
-      <td>0.974335</td>
-      <td>0.118511</td>
-      <td>0.899507</td>
-    </tr>
-    <tr>
-      <th>SW_2</th>
-      <td>c2</td>
-      <td>113</td>
-      <td>0.081431</td>
-      <td>0.430268</td>
-      <td>0.422492</td>
-      <td>0.357138</td>
-      <td>0.974335</td>
-      <td>0.142327</td>
-      <td>0.849675</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,60 +798,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">mean_skill</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">observation</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;c2&quot;</span><span class="p">])</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>n</th>
-      <th>bias</th>
-      <th>rmse</th>
-      <th>urmse</th>
-      <th>mae</th>
-      <th>cc</th>
-      <th>si</th>
-      <th>r2</th>
-    </tr>
-    <tr>
-      <th>model</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>SW_1</th>
-      <td>499</td>
-      <td>-0.097735</td>
-      <td>0.35188</td>
-      <td>0.322647</td>
-      <td>0.273212</td>
-      <td>0.972764</td>
-      <td>0.10359</td>
-      <td>0.902404</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -863,7 +815,14 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_17_0.png" src="_images/multi_model_comparison_17_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;SW_1&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;OrRd&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -873,11 +832,18 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_18_0.png" src="_images/multi_model_comparison_18_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [14],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">taylor</span><span class="p">(</span><span class="n">normalize_std</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">aggregate_observations</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
 </div>
 </div>
-<div class="section" id="time-series-plot-specifically-for-point-comparisons">
-<h3>Time series plot (specifically for point comparisons)<a class="headerlink" href="#time-series-plot-specifically-for-point-comparisons" title="Permalink to this headline">¶</a></h3>
+</div>
+<section id="time-series-plot-specifically-for-point-comparisons">
+<h3>Time series plot (specifically for point comparisons)<a class="headerlink" href="#time-series-plot-specifically-for-point-comparisons" title="Permalink to this headline">#</a></h3>
 <p>If you select an comparison from the collection which is a PointComparer, you can do a time series plot</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -886,13 +852,20 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_20_0.png" src="_images/multi_model_comparison_20_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [15],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s1">&#39;EPL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot_timeseries</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="filtering-on-time">
-<h2>Filtering on time<a class="headerlink" href="#filtering-on-time" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="filtering-on-time">
+<h2>Filtering on time<a class="headerlink" href="#filtering-on-time" title="Permalink to this headline">#</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> arguments to do your analysis on part of the time series</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -901,87 +874,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [16],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;SW_1&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2017-10-28&#39;</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>model</th>
-      <th>n</th>
-      <th>bias</th>
-      <th>rmse</th>
-      <th>urmse</th>
-      <th>mae</th>
-      <th>cc</th>
-      <th>si</th>
-      <th>r2</th>
-    </tr>
-    <tr>
-      <th>observation</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>EPL</th>
-      <td>SW_1</td>
-      <td>47</td>
-      <td>-0.100029</td>
-      <td>0.240775</td>
-      <td>0.219013</td>
-      <td>0.205827</td>
-      <td>0.919089</td>
-      <td>0.098479</td>
-      <td>0.811727</td>
-    </tr>
-    <tr>
-      <th>HKNA</th>
-      <td>SW_1</td>
-      <td>281</td>
-      <td>-0.097075</td>
-      <td>0.203241</td>
-      <td>0.178559</td>
-      <td>0.164563</td>
-      <td>0.968106</td>
-      <td>0.067642</td>
-      <td>0.916126</td>
-    </tr>
-    <tr>
-      <th>c2</th>
-      <td>SW_1</td>
-      <td>72</td>
-      <td>-0.188193</td>
-      <td>0.313787</td>
-      <td>0.251089</td>
-      <td>0.258661</td>
-      <td>0.478554</td>
-      <td>0.122423</td>
-      <td>-1.420894</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -990,12 +891,19 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_23_0.png" src="_images/multi_model_comparison_23_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [17],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;SW_2&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2017-10-28&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;OrRd&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="filtering-on-area">
-<h2>Filtering on area<a class="headerlink" href="#filtering-on-area" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="filtering-on-area">
+<h2>Filtering on area<a class="headerlink" href="#filtering-on-area" title="Permalink to this headline">#</a></h2>
 <p>You can do you analysis in a specific <code class="docutils literal notranslate"><span class="pre">area</span></code> by providing a bounding box or a closed polygon</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1014,7 +922,11 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_26_0.png" src="_images/multi_model_comparison_26_0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/mikeio/dfsu.py:605: FutureWarning: Dfsu.plot() have been deprecated, please use DataArray.plot() instead
+  warnings.warn(
+</pre></div>
+</div>
+<img alt="_images/multi_model_comparison_26_1.png" src="_images/multi_model_comparison_26_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1024,75 +936,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [20],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;SW_1&quot;</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="n">bbox</span><span class="p">)</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>model</th>
-      <th>n</th>
-      <th>bias</th>
-      <th>rmse</th>
-      <th>urmse</th>
-      <th>mae</th>
-      <th>cc</th>
-      <th>si</th>
-      <th>r2</th>
-    </tr>
-    <tr>
-      <th>observation</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>HKNA</th>
-      <td>SW_1</td>
-      <td>386</td>
-      <td>-0.19426</td>
-      <td>0.351964</td>
-      <td>0.293499</td>
-      <td>0.251839</td>
-      <td>0.971194</td>
-      <td>0.088669</td>
-      <td>0.905300</td>
-    </tr>
-    <tr>
-      <th>c2</th>
-      <td>SW_1</td>
-      <td>42</td>
-      <td>-0.05587</td>
-      <td>0.388404</td>
-      <td>0.384365</td>
-      <td>0.336023</td>
-      <td>0.952688</td>
-      <td>0.139796</td>
-      <td>0.749645</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1101,12 +953,19 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_28_0.png" src="_images/multi_model_comparison_28_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [21],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;SW_2&quot;</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="n">polygon</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="skill-object">
-<h2>Skill object<a class="headerlink" href="#skill-object" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="skill-object">
+<h2>Skill object<a class="headerlink" href="#skill-object" title="Permalink to this headline">#</a></h2>
 <p>The skill() and mean_skill() methods return a skill object that can visualize results in various ways. The primary methods of the skill object are:</p>
 <ul class="simple">
 <li><p>style()</p></li>
@@ -1122,6 +981,16 @@ Observation: EPL, n_points=66
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [22],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1130,331 +999,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_ca444_row0_col1 {
-  background-color: #92b4fe;
-  color: #000000;
-}
-#T_ca444_row0_col2 {
-  background-color: #fddcaf;
-  color: #000000;
-}
-#T_ca444_row0_col3, #T_ca444_row0_col6, #T_ca444_row1_col5, #T_ca444_row3_col2, #T_ca444_row3_col4, #T_ca444_row7_col7 {
-  background-color: #fff7ec;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_ca444_row0_col4, #T_ca444_row7_col6 {
-  background-color: #fee7c5;
-  color: #000000;
-}
-#T_ca444_row0_col5 {
-  background-color: #feecd2;
-  color: #000000;
-}
-#T_ca444_row0_col7 {
-  background-color: #fdcc96;
-  color: #000000;
-}
-#T_ca444_row1_col1 {
-  background-color: #3b4cc0;
-  color: #f1f1f1;
-}
-#T_ca444_row1_col2, #T_ca444_row1_col4, #T_ca444_row1_col7, #T_ca444_row2_col5, #T_ca444_row8_col3, #T_ca444_row8_col6 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_ca444_row1_col3 {
-  background-color: #f67a51;
-  color: #f1f1f1;
-}
-#T_ca444_row1_col6 {
-  background-color: #fdbf88;
-  color: #000000;
-}
-#T_ca444_row2_col1 {
-  background-color: #5673e0;
-  color: #f1f1f1;
-}
-#T_ca444_row2_col2 {
-  background-color: #a30000;
-  color: #f1f1f1;
-}
-#T_ca444_row2_col3 {
-  background-color: #cc2116;
-  color: #f1f1f1;
-}
-#T_ca444_row2_col4 {
-  background-color: #8c0000;
-  color: #f1f1f1;
-}
-#T_ca444_row2_col6 {
-  background-color: #d2291a;
-  color: #f1f1f1;
-}
-#T_ca444_row2_col7 {
-  background-color: #990000;
-  color: #f1f1f1;
-}
-#T_ca444_row3_col1 {
-  background-color: #c7d7f0;
-  color: #000000;
-}
-#T_ca444_row3_col3 {
-  background-color: #fff0dc;
-  color: #000000;
-}
-#T_ca444_row3_col5, #T_ca444_row6_col5 {
-  background-color: #fedfb4;
-  color: #000000;
-}
-#T_ca444_row3_col6 {
-  background-color: #feefd9;
-  color: #000000;
-}
-#T_ca444_row3_col7 {
-  background-color: #fff6e9;
-  color: #000000;
-}
-#T_ca444_row4_col1 {
-  background-color: #97b8ff;
-  color: #000000;
-}
-#T_ca444_row4_col2, #T_ca444_row5_col2 {
-  background-color: #fdb37d;
-  color: #000000;
-}
-#T_ca444_row4_col3, #T_ca444_row5_col4 {
-  background-color: #fdac76;
-  color: #000000;
-}
-#T_ca444_row4_col4 {
-  background-color: #fdd49f;
-  color: #000000;
-}
-#T_ca444_row4_col5, #T_ca444_row7_col5 {
-  background-color: #fee8c8;
-  color: #000000;
-}
-#T_ca444_row4_col6, #T_ca444_row5_col7 {
-  background-color: #fdd9aa;
-  color: #000000;
-}
-#T_ca444_row4_col7 {
-  background-color: #fedfb5;
-  color: #000000;
-}
-#T_ca444_row5_col1 {
-  background-color: #dcdddd;
-  color: #000000;
-}
-#T_ca444_row5_col3 {
-  background-color: #e54e36;
-  color: #f1f1f1;
-}
-#T_ca444_row5_col5, #T_ca444_row8_col5 {
-  background-color: #fff5e7;
-  color: #000000;
-}
-#T_ca444_row5_col6 {
-  background-color: #ea5a3f;
-  color: #f1f1f1;
-}
-#T_ca444_row6_col1 {
-  background-color: #dddcdc;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_ca444_row6_col2 {
-  background-color: #fff4e4;
-  color: #000000;
-}
-#T_ca444_row6_col3 {
-  background-color: #fee5c3;
-  color: #000000;
-}
-#T_ca444_row6_col4 {
-  background-color: #fff2e1;
-  color: #000000;
-}
-#T_ca444_row6_col6 {
-  background-color: #fee1b9;
-  color: #000000;
-}
-#T_ca444_row6_col7 {
-  background-color: #fff1de;
-  color: #000000;
-}
-#T_ca444_row7_col1 {
-  background-color: #bbd1f8;
-  color: #000000;
-}
-#T_ca444_row7_col2 {
-  background-color: #fddaab;
-  color: #000000;
-}
-#T_ca444_row7_col3 {
-  background-color: #fdc48d;
-  color: #000000;
-}
-#T_ca444_row7_col4 {
-  background-color: #feebd0;
-  color: #000000;
-}
-#T_ca444_row8_col1 {
-  background-color: #f1cdba;
-  color: #000000;
-}
-#T_ca444_row8_col2 {
-  background-color: #ec5d42;
-  color: #f1f1f1;
-}
-#T_ca444_row8_col4 {
-  background-color: #e7533a;
-  color: #f1f1f1;
-}
-#T_ca444_row8_col7 {
-  background-color: #f98556;
-  color: #f1f1f1;
-}
-</style>
-<table id="T_ca444_">
-  <thead>
-    <tr>
-      <th class="blank" >&nbsp;</th>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >n</th>
-      <th class="col_heading level0 col1" >bias</th>
-      <th class="col_heading level0 col2" >rmse</th>
-      <th class="col_heading level0 col3" >urmse</th>
-      <th class="col_heading level0 col4" >mae</th>
-      <th class="col_heading level0 col5" >cc</th>
-      <th class="col_heading level0 col6" >si</th>
-      <th class="col_heading level0 col7" >r2</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >model</th>
-      <th class="index_name level1" >observation</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-      <th class="blank col2" >&nbsp;</th>
-      <th class="blank col3" >&nbsp;</th>
-      <th class="blank col4" >&nbsp;</th>
-      <th class="blank col5" >&nbsp;</th>
-      <th class="blank col6" >&nbsp;</th>
-      <th class="blank col7" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_ca444_level0_row0" class="row_heading level0 row0" rowspan="3">ERA5</th>
-      <th id="T_ca444_level1_row0" class="row_heading level1 row0" >EPL</th>
-      <td id="T_ca444_row0_col0" class="data row0 col0" >66</td>
-      <td id="T_ca444_row0_col1" class="data row0 col1" >-0.208</td>
-      <td id="T_ca444_row0_col2" class="data row0 col2" >0.290</td>
-      <td id="T_ca444_row0_col3" class="data row0 col3" >0.202</td>
-      <td id="T_ca444_row0_col4" class="data row0 col4" >0.224</td>
-      <td id="T_ca444_row0_col5" class="data row0 col5" >0.972</td>
-      <td id="T_ca444_row0_col6" class="data row0 col6" >0.074</td>
-      <td id="T_ca444_row0_col7" class="data row0 col7" >0.887</td>
-    </tr>
-    <tr>
-      <th id="T_ca444_level1_row1" class="row_heading level1 row1" >HKNA</th>
-      <td id="T_ca444_row1_col0" class="data row1 col0" >386</td>
-      <td id="T_ca444_row1_col1" class="data row1 col1" >-0.437</td>
-      <td id="T_ca444_row1_col2" class="data row1 col2" >0.545</td>
-      <td id="T_ca444_row1_col3" class="data row1 col3" >0.326</td>
-      <td id="T_ca444_row1_col4" class="data row1 col4" >0.441</td>
-      <td id="T_ca444_row1_col5" class="data row1 col5" >0.975</td>
-      <td id="T_ca444_row1_col6" class="data row1 col6" >0.098</td>
-      <td id="T_ca444_row1_col7" class="data row1 col7" >0.773</td>
-    </tr>
-    <tr>
-      <th id="T_ca444_level1_row2" class="row_heading level1 row2" >c2</th>
-      <td id="T_ca444_row2_col0" class="data row2 col0" >113</td>
-      <td id="T_ca444_row2_col1" class="data row2 col1" >-0.356</td>
-      <td id="T_ca444_row2_col2" class="data row2 col2" >0.517</td>
-      <td id="T_ca444_row2_col3" class="data row2 col3" >0.375</td>
-      <td id="T_ca444_row2_col4" class="data row2 col4" >0.433</td>
-      <td id="T_ca444_row2_col5" class="data row2 col5" >0.946</td>
-      <td id="T_ca444_row2_col6" class="data row2 col6" >0.126</td>
-      <td id="T_ca444_row2_col7" class="data row2 col7" >0.783</td>
-    </tr>
-    <tr>
-      <th id="T_ca444_level0_row3" class="row_heading level0 row3" rowspan="3">SW_1</th>
-      <th id="T_ca444_level1_row3" class="row_heading level1 row3" >EPL</th>
-      <td id="T_ca444_row3_col0" class="data row3 col0" >66</td>
-      <td id="T_ca444_row3_col1" class="data row3 col1" >-0.066</td>
-      <td id="T_ca444_row3_col2" class="data row3 col2" >0.225</td>
-      <td id="T_ca444_row3_col3" class="data row3 col3" >0.215</td>
-      <td id="T_ca444_row3_col4" class="data row3 col4" >0.190</td>
-      <td id="T_ca444_row3_col5" class="data row3 col5" >0.970</td>
-      <td id="T_ca444_row3_col6" class="data row3 col6" >0.079</td>
-      <td id="T_ca444_row3_col7" class="data row3 col7" >0.932</td>
-    </tr>
-    <tr>
-      <th id="T_ca444_level1_row4" class="row_heading level1 row4" >HKNA</th>
-      <td id="T_ca444_row4_col0" class="data row4 col0" >386</td>
-      <td id="T_ca444_row4_col1" class="data row4 col1" >-0.194</td>
-      <td id="T_ca444_row4_col2" class="data row4 col2" >0.352</td>
-      <td id="T_ca444_row4_col3" class="data row4 col3" >0.293</td>
-      <td id="T_ca444_row4_col4" class="data row4 col4" >0.252</td>
-      <td id="T_ca444_row4_col5" class="data row4 col5" >0.971</td>
-      <td id="T_ca444_row4_col6" class="data row4 col6" >0.089</td>
-      <td id="T_ca444_row4_col7" class="data row4 col7" >0.905</td>
-    </tr>
-    <tr>
-      <th id="T_ca444_level1_row5" class="row_heading level1 row5" >c2</th>
-      <td id="T_ca444_row5_col0" class="data row5 col0" >113</td>
-      <td id="T_ca444_row5_col1" class="data row5 col1" >-0.001</td>
-      <td id="T_ca444_row5_col2" class="data row5 col2" >0.352</td>
-      <td id="T_ca444_row5_col3" class="data row5 col3" >0.352</td>
-      <td id="T_ca444_row5_col4" class="data row5 col4" >0.295</td>
-      <td id="T_ca444_row5_col5" class="data row5 col5" >0.974</td>
-      <td id="T_ca444_row5_col6" class="data row5 col6" >0.119</td>
-      <td id="T_ca444_row5_col7" class="data row5 col7" >0.900</td>
-    </tr>
-    <tr>
-      <th id="T_ca444_level0_row6" class="row_heading level0 row6" rowspan="3">SW_2</th>
-      <th id="T_ca444_level1_row6" class="row_heading level1 row6" >EPL</th>
-      <td id="T_ca444_row6_col0" class="data row6 col0" >66</td>
-      <td id="T_ca444_row6_col1" class="data row6 col1" >0.001</td>
-      <td id="T_ca444_row6_col2" class="data row6 col2" >0.234</td>
-      <td id="T_ca444_row6_col3" class="data row6 col3" >0.234</td>
-      <td id="T_ca444_row6_col4" class="data row6 col4" >0.200</td>
-      <td id="T_ca444_row6_col5" class="data row6 col5" >0.970</td>
-      <td id="T_ca444_row6_col6" class="data row6 col6" >0.085</td>
-      <td id="T_ca444_row6_col7" class="data row6 col7" >0.927</td>
-    </tr>
-    <tr>
-      <th id="T_ca444_level1_row7" class="row_heading level1 row7" >HKNA</th>
-      <td id="T_ca444_row7_col0" class="data row7 col0" >386</td>
-      <td id="T_ca444_row7_col1" class="data row7 col1" >-0.100</td>
-      <td id="T_ca444_row7_col2" class="data row7 col2" >0.293</td>
-      <td id="T_ca444_row7_col3" class="data row7 col3" >0.275</td>
-      <td id="T_ca444_row7_col4" class="data row7 col4" >0.214</td>
-      <td id="T_ca444_row7_col5" class="data row7 col5" >0.971</td>
-      <td id="T_ca444_row7_col6" class="data row7 col6" >0.083</td>
-      <td id="T_ca444_row7_col7" class="data row7 col7" >0.934</td>
-    </tr>
-    <tr>
-      <th id="T_ca444_level1_row8" class="row_heading level1 row8" >c2</th>
-      <td id="T_ca444_row8_col0" class="data row8 col0" >113</td>
-      <td id="T_ca444_row8_col1" class="data row8 col1" >0.081</td>
-      <td id="T_ca444_row8_col2" class="data row8 col2" >0.430</td>
-      <td id="T_ca444_row8_col3" class="data row8 col3" >0.422</td>
-      <td id="T_ca444_row8_col4" class="data row8 col4" >0.357</td>
-      <td id="T_ca444_row8_col5" class="data row8 col5" >0.974</td>
-      <td id="T_ca444_row8_col6" class="data row8 col6" >0.142</td>
-      <td id="T_ca444_row8_col7" class="data row8 col7" >0.850</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [23],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1463,181 +1016,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_c5ddf_row0_col2 {
-  background-color: #fddcaf;
-  color: #000000;
-}
-#T_c5ddf_row0_col3, #T_c5ddf_row0_col6, #T_c5ddf_row1_col5, #T_c5ddf_row3_col4, #T_c5ddf_row6_col1, #T_c5ddf_row7_col7 {
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_c5ddf_row1_col2 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_c5ddf_row2_col2 {
-  background-color: #a30000;
-  color: #f1f1f1;
-}
-#T_c5ddf_row3_col2 {
-  background-color: #fff7ec;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_c5ddf_row4_col2, #T_c5ddf_row5_col2 {
-  background-color: #fdb37d;
-  color: #000000;
-}
-#T_c5ddf_row6_col2 {
-  background-color: #fff4e4;
-  color: #000000;
-}
-#T_c5ddf_row7_col2 {
-  background-color: #fddaab;
-  color: #000000;
-}
-#T_c5ddf_row8_col2 {
-  background-color: #ec5d42;
-  color: #f1f1f1;
-}
-</style>
-<table id="T_c5ddf_">
-  <thead>
-    <tr>
-      <th class="blank" >&nbsp;</th>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >n</th>
-      <th class="col_heading level0 col1" >bias</th>
-      <th class="col_heading level0 col2" >rmse</th>
-      <th class="col_heading level0 col3" >urmse</th>
-      <th class="col_heading level0 col4" >mae</th>
-      <th class="col_heading level0 col5" >cc</th>
-      <th class="col_heading level0 col6" >si</th>
-      <th class="col_heading level0 col7" >r2</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >model</th>
-      <th class="index_name level1" >observation</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-      <th class="blank col2" >&nbsp;</th>
-      <th class="blank col3" >&nbsp;</th>
-      <th class="blank col4" >&nbsp;</th>
-      <th class="blank col5" >&nbsp;</th>
-      <th class="blank col6" >&nbsp;</th>
-      <th class="blank col7" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_c5ddf_level0_row0" class="row_heading level0 row0" rowspan="3">ERA5</th>
-      <th id="T_c5ddf_level1_row0" class="row_heading level1 row0" >EPL</th>
-      <td id="T_c5ddf_row0_col0" class="data row0 col0" >66</td>
-      <td id="T_c5ddf_row0_col1" class="data row0 col1" >-0.208</td>
-      <td id="T_c5ddf_row0_col2" class="data row0 col2" >0.290</td>
-      <td id="T_c5ddf_row0_col3" class="data row0 col3" >0.202</td>
-      <td id="T_c5ddf_row0_col4" class="data row0 col4" >0.224</td>
-      <td id="T_c5ddf_row0_col5" class="data row0 col5" >0.972</td>
-      <td id="T_c5ddf_row0_col6" class="data row0 col6" >0.074</td>
-      <td id="T_c5ddf_row0_col7" class="data row0 col7" >0.887</td>
-    </tr>
-    <tr>
-      <th id="T_c5ddf_level1_row1" class="row_heading level1 row1" >HKNA</th>
-      <td id="T_c5ddf_row1_col0" class="data row1 col0" >386</td>
-      <td id="T_c5ddf_row1_col1" class="data row1 col1" >-0.437</td>
-      <td id="T_c5ddf_row1_col2" class="data row1 col2" >0.545</td>
-      <td id="T_c5ddf_row1_col3" class="data row1 col3" >0.326</td>
-      <td id="T_c5ddf_row1_col4" class="data row1 col4" >0.441</td>
-      <td id="T_c5ddf_row1_col5" class="data row1 col5" >0.975</td>
-      <td id="T_c5ddf_row1_col6" class="data row1 col6" >0.098</td>
-      <td id="T_c5ddf_row1_col7" class="data row1 col7" >0.773</td>
-    </tr>
-    <tr>
-      <th id="T_c5ddf_level1_row2" class="row_heading level1 row2" >c2</th>
-      <td id="T_c5ddf_row2_col0" class="data row2 col0" >113</td>
-      <td id="T_c5ddf_row2_col1" class="data row2 col1" >-0.356</td>
-      <td id="T_c5ddf_row2_col2" class="data row2 col2" >0.517</td>
-      <td id="T_c5ddf_row2_col3" class="data row2 col3" >0.375</td>
-      <td id="T_c5ddf_row2_col4" class="data row2 col4" >0.433</td>
-      <td id="T_c5ddf_row2_col5" class="data row2 col5" >0.946</td>
-      <td id="T_c5ddf_row2_col6" class="data row2 col6" >0.126</td>
-      <td id="T_c5ddf_row2_col7" class="data row2 col7" >0.783</td>
-    </tr>
-    <tr>
-      <th id="T_c5ddf_level0_row3" class="row_heading level0 row3" rowspan="3">SW_1</th>
-      <th id="T_c5ddf_level1_row3" class="row_heading level1 row3" >EPL</th>
-      <td id="T_c5ddf_row3_col0" class="data row3 col0" >66</td>
-      <td id="T_c5ddf_row3_col1" class="data row3 col1" >-0.066</td>
-      <td id="T_c5ddf_row3_col2" class="data row3 col2" >0.225</td>
-      <td id="T_c5ddf_row3_col3" class="data row3 col3" >0.215</td>
-      <td id="T_c5ddf_row3_col4" class="data row3 col4" >0.190</td>
-      <td id="T_c5ddf_row3_col5" class="data row3 col5" >0.970</td>
-      <td id="T_c5ddf_row3_col6" class="data row3 col6" >0.079</td>
-      <td id="T_c5ddf_row3_col7" class="data row3 col7" >0.932</td>
-    </tr>
-    <tr>
-      <th id="T_c5ddf_level1_row4" class="row_heading level1 row4" >HKNA</th>
-      <td id="T_c5ddf_row4_col0" class="data row4 col0" >386</td>
-      <td id="T_c5ddf_row4_col1" class="data row4 col1" >-0.194</td>
-      <td id="T_c5ddf_row4_col2" class="data row4 col2" >0.352</td>
-      <td id="T_c5ddf_row4_col3" class="data row4 col3" >0.293</td>
-      <td id="T_c5ddf_row4_col4" class="data row4 col4" >0.252</td>
-      <td id="T_c5ddf_row4_col5" class="data row4 col5" >0.971</td>
-      <td id="T_c5ddf_row4_col6" class="data row4 col6" >0.089</td>
-      <td id="T_c5ddf_row4_col7" class="data row4 col7" >0.905</td>
-    </tr>
-    <tr>
-      <th id="T_c5ddf_level1_row5" class="row_heading level1 row5" >c2</th>
-      <td id="T_c5ddf_row5_col0" class="data row5 col0" >113</td>
-      <td id="T_c5ddf_row5_col1" class="data row5 col1" >-0.001</td>
-      <td id="T_c5ddf_row5_col2" class="data row5 col2" >0.352</td>
-      <td id="T_c5ddf_row5_col3" class="data row5 col3" >0.352</td>
-      <td id="T_c5ddf_row5_col4" class="data row5 col4" >0.295</td>
-      <td id="T_c5ddf_row5_col5" class="data row5 col5" >0.974</td>
-      <td id="T_c5ddf_row5_col6" class="data row5 col6" >0.119</td>
-      <td id="T_c5ddf_row5_col7" class="data row5 col7" >0.900</td>
-    </tr>
-    <tr>
-      <th id="T_c5ddf_level0_row6" class="row_heading level0 row6" rowspan="3">SW_2</th>
-      <th id="T_c5ddf_level1_row6" class="row_heading level1 row6" >EPL</th>
-      <td id="T_c5ddf_row6_col0" class="data row6 col0" >66</td>
-      <td id="T_c5ddf_row6_col1" class="data row6 col1" >0.001</td>
-      <td id="T_c5ddf_row6_col2" class="data row6 col2" >0.234</td>
-      <td id="T_c5ddf_row6_col3" class="data row6 col3" >0.234</td>
-      <td id="T_c5ddf_row6_col4" class="data row6 col4" >0.200</td>
-      <td id="T_c5ddf_row6_col5" class="data row6 col5" >0.970</td>
-      <td id="T_c5ddf_row6_col6" class="data row6 col6" >0.085</td>
-      <td id="T_c5ddf_row6_col7" class="data row6 col7" >0.927</td>
-    </tr>
-    <tr>
-      <th id="T_c5ddf_level1_row7" class="row_heading level1 row7" >HKNA</th>
-      <td id="T_c5ddf_row7_col0" class="data row7 col0" >386</td>
-      <td id="T_c5ddf_row7_col1" class="data row7 col1" >-0.100</td>
-      <td id="T_c5ddf_row7_col2" class="data row7 col2" >0.293</td>
-      <td id="T_c5ddf_row7_col3" class="data row7 col3" >0.275</td>
-      <td id="T_c5ddf_row7_col4" class="data row7 col4" >0.214</td>
-      <td id="T_c5ddf_row7_col5" class="data row7 col5" >0.971</td>
-      <td id="T_c5ddf_row7_col6" class="data row7 col6" >0.083</td>
-      <td id="T_c5ddf_row7_col7" class="data row7 col7" >0.934</td>
-    </tr>
-    <tr>
-      <th id="T_c5ddf_level1_row8" class="row_heading level1 row8" >c2</th>
-      <td id="T_c5ddf_row8_col0" class="data row8 col0" >113</td>
-      <td id="T_c5ddf_row8_col1" class="data row8 col1" >0.081</td>
-      <td id="T_c5ddf_row8_col2" class="data row8 col2" >0.430</td>
-      <td id="T_c5ddf_row8_col3" class="data row8 col3" >0.422</td>
-      <td id="T_c5ddf_row8_col4" class="data row8 col4" >0.357</td>
-      <td id="T_c5ddf_row8_col5" class="data row8 col5" >0.974</td>
-      <td id="T_c5ddf_row8_col6" class="data row8 col6" >0.142</td>
-      <td id="T_c5ddf_row8_col7" class="data row8 col7" >0.850</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [24],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;rmse&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1647,13 +1034,30 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_33_0.png" src="_images/multi_model_comparison_33_0.png" />
-<img alt="_images/multi_model_comparison_33_1.png" src="_images/multi_model_comparison_33_1.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [25],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">plot_bar</span><span class="p">(</span><span class="s1">&#39;rmse&#39;</span><span class="p">);</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">s</span><span class="o">.</span><span class="n">plot_barh</span><span class="p">(</span><span class="s1">&#39;rmse&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="s1">&#39;freq:12H&#39;</span><span class="p">],</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bias&#39;</span><span class="p">,</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span><span class="s1">&#39;si&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [26],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="s1">&#39;freq:12H&#39;</span><span class="p">],</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bias&#39;</span><span class="p">,</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span><span class="s1">&#39;si&#39;</span><span class="p">])</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1665,366 +1069,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_afbe5_row0_col1 {
-  background-color: #bbd1f8;
-  color: #000000;
-}
-#T_afbe5_row0_col2, #T_afbe5_row9_col2 {
-  background-color: #feedd4;
-  color: #000000;
-}
-#T_afbe5_row0_col3 {
-  background-color: #feeed7;
-  color: #000000;
-}
-#T_afbe5_row1_col1 {
-  background-color: #97b8ff;
-  color: #000000;
-}
-#T_afbe5_row1_col2 {
-  background-color: #fdcc96;
-  color: #000000;
-}
-#T_afbe5_row1_col3, #T_afbe5_row2_col3 {
-  background-color: #fddaab;
-  color: #000000;
-}
-#T_afbe5_row2_col1 {
-  background-color: #b2ccfb;
-  color: #000000;
-}
-#T_afbe5_row2_col2 {
-  background-color: #fee0b8;
-  color: #000000;
-}
-#T_afbe5_row3_col1 {
-  background-color: #485fd1;
-  color: #f1f1f1;
-}
-#T_afbe5_row3_col2 {
-  background-color: #c4170f;
-  color: #f1f1f1;
-}
-#T_afbe5_row3_col3 {
-  background-color: #fddeb3;
-  color: #000000;
-}
-#T_afbe5_row4_col1 {
-  background-color: #3b4cc0;
-  color: #f1f1f1;
-}
-#T_afbe5_row4_col2, #T_afbe5_row5_col3 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_afbe5_row4_col3 {
-  background-color: #fdab75;
-  color: #000000;
-}
-#T_afbe5_row5_col1 {
-  background-color: #7b9ff9;
-  color: #f1f1f1;
-}
-#T_afbe5_row5_col2 {
-  background-color: #da3724;
-  color: #f1f1f1;
-}
-#T_afbe5_row6_col1 {
-  background-color: #cad8ef;
-  color: #000000;
-}
-#T_afbe5_row6_col2 {
-  background-color: #fee2bc;
-  color: #000000;
-}
-#T_afbe5_row6_col3 {
-  background-color: #8c0000;
-  color: #f1f1f1;
-}
-#T_afbe5_row7_col1 {
-  background-color: #bad0f8;
-  color: #000000;
-}
-#T_afbe5_row7_col2 {
-  background-color: #fee3bd;
-  color: #000000;
-}
-#T_afbe5_row7_col3 {
-  background-color: #ee6246;
-  color: #f1f1f1;
-}
-#T_afbe5_row8_col1 {
-  background-color: #c6d6f1;
-  color: #000000;
-}
-#T_afbe5_row8_col2 {
-  background-color: #fff2e0;
-  color: #000000;
-}
-#T_afbe5_row8_col3 {
-  background-color: #fff7ec;
-  color: #000000;
-}
-#T_afbe5_row9_col1 {
-  background-color: #d6dce4;
-  color: #000000;
-}
-#T_afbe5_row9_col3 {
-  background-color: #fff3e3;
-  color: #000000;
-}
-#T_afbe5_row10_col1 {
-  background-color: #7a9df8;
-  color: #f1f1f1;
-}
-#T_afbe5_row10_col2 {
-  background-color: #e34b34;
-  color: #f1f1f1;
-}
-#T_afbe5_row10_col3 {
-  background-color: #f98254;
-  color: #f1f1f1;
-}
-#T_afbe5_row11_col1 {
-  background-color: #dedcdb;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_afbe5_row11_col2 {
-  background-color: #fdad77;
-  color: #000000;
-}
-#T_afbe5_row11_col3 {
-  background-color: #c51810;
-  color: #f1f1f1;
-}
-#T_afbe5_row12_col1 {
-  background-color: #cfdaea;
-  color: #000000;
-}
-#T_afbe5_row12_col2 {
-  background-color: #fee7c7;
-  color: #000000;
-}
-#T_afbe5_row12_col3 {
-  background-color: #b50302;
-  color: #f1f1f1;
-}
-#T_afbe5_row13_col1 {
-  background-color: #bfd3f6;
-  color: #000000;
-}
-#T_afbe5_row13_col2 {
-  background-color: #fee5c1;
-  color: #000000;
-}
-#T_afbe5_row13_col3 {
-  background-color: #e24831;
-  color: #f1f1f1;
-}
-#T_afbe5_row14_col1 {
-  background-color: #d2dbe8;
-  color: #000000;
-}
-#T_afbe5_row14_col2, #T_afbe5_row14_col3 {
-  background-color: #fff7ec;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_afbe5_row15_col1 {
-  background-color: #ecd3c5;
-  color: #000000;
-}
-#T_afbe5_row15_col2 {
-  background-color: #fee8c8;
-  color: #000000;
-}
-#T_afbe5_row15_col3 {
-  background-color: #feebcf;
-  color: #000000;
-}
-#T_afbe5_row16_col1 {
-  background-color: #abc8fd;
-  color: #000000;
-}
-#T_afbe5_row16_col2 {
-  background-color: #fc8c59;
-  color: #f1f1f1;
-}
-#T_afbe5_row16_col3 {
-  background-color: #f98556;
-  color: #f1f1f1;
-}
-#T_afbe5_row17_col1 {
-  background-color: #f4c5ad;
-  color: #000000;
-}
-#T_afbe5_row17_col2 {
-  background-color: #fc8f5b;
-  color: #000000;
-}
-#T_afbe5_row17_col3 {
-  background-color: #a90000;
-  color: #f1f1f1;
-}
-</style>
-<table id="T_afbe5_">
-  <thead>
-    <tr>
-      <th class="blank" >&nbsp;</th>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >n</th>
-      <th class="col_heading level0 col1" >bias</th>
-      <th class="col_heading level0 col2" >rmse</th>
-      <th class="col_heading level0 col3" >si</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >model</th>
-      <th class="index_name level1" >datetime</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-      <th class="blank col2" >&nbsp;</th>
-      <th class="blank col3" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_afbe5_level0_row0" class="row_heading level0 row0" rowspan="6">ERA5</th>
-      <th id="T_afbe5_level1_row0" class="row_heading level1 row0" >2017-10-27 00:00:00</th>
-      <td id="T_afbe5_row0_col0" class="data row0 col0" >84</td>
-      <td id="T_afbe5_row0_col1" class="data row0 col1" >-0.161</td>
-      <td id="T_afbe5_row0_col2" class="data row0 col2" >0.205</td>
-      <td id="T_afbe5_row0_col3" class="data row0 col3" >0.061</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row1" class="row_heading level1 row1" >2017-10-27 12:00:00</th>
-      <td id="T_afbe5_row1_col0" class="data row1 col0" >156</td>
-      <td id="T_afbe5_row1_col1" class="data row1 col1" >-0.310</td>
-      <td id="T_afbe5_row1_col2" class="data row1 col2" >0.340</td>
-      <td id="T_afbe5_row1_col3" class="data row1 col3" >0.069</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row2" class="row_heading level1 row2" >2017-10-28 00:00:00</th>
-      <td id="T_afbe5_row2_col0" class="data row2 col0" >76</td>
-      <td id="T_afbe5_row2_col1" class="data row2 col1" >-0.200</td>
-      <td id="T_afbe5_row2_col2" class="data row2 col2" >0.264</td>
-      <td id="T_afbe5_row2_col3" class="data row2 col3" >0.069</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row3" class="row_heading level1 row3" >2017-10-28 12:00:00</th>
-      <td id="T_afbe5_row3_col0" class="data row3 col0" >84</td>
-      <td id="T_afbe5_row3_col1" class="data row3 col1" >-0.637</td>
-      <td id="T_afbe5_row3_col2" class="data row3 col2" >0.679</td>
-      <td id="T_afbe5_row3_col3" class="data row3 col3" >0.067</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row4" class="row_heading level1 row4" >2017-10-29 00:00:00</th>
-      <td id="T_afbe5_row4_col0" class="data row4 col0" >82</td>
-      <td id="T_afbe5_row4_col1" class="data row4 col1" >-0.699</td>
-      <td id="T_afbe5_row4_col2" class="data row4 col2" >0.800</td>
-      <td id="T_afbe5_row4_col3" class="data row4 col3" >0.081</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row5" class="row_heading level1 row5" >2017-10-29 12:00:00</th>
-      <td id="T_afbe5_row5_col0" class="data row5 col0" >83</td>
-      <td id="T_afbe5_row5_col1" class="data row5 col1" >-0.419</td>
-      <td id="T_afbe5_row5_col2" class="data row5 col2" >0.626</td>
-      <td id="T_afbe5_row5_col3" class="data row5 col3" >0.116</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level0_row6" class="row_heading level0 row6" rowspan="6">SW_1</th>
-      <th id="T_afbe5_level1_row6" class="row_heading level1 row6" >2017-10-27 00:00:00</th>
-      <td id="T_afbe5_row6_col0" class="data row6 col0" >84</td>
-      <td id="T_afbe5_row6_col1" class="data row6 col1" >-0.096</td>
-      <td id="T_afbe5_row6_col2" class="data row6 col2" >0.257</td>
-      <td id="T_afbe5_row6_col3" class="data row6 col3" >0.114</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row7" class="row_heading level1 row7" >2017-10-27 12:00:00</th>
-      <td id="T_afbe5_row7_col0" class="data row7 col0" >156</td>
-      <td id="T_afbe5_row7_col1" class="data row7 col1" >-0.166</td>
-      <td id="T_afbe5_row7_col2" class="data row7 col2" >0.253</td>
-      <td id="T_afbe5_row7_col3" class="data row7 col3" >0.094</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row8" class="row_heading level1 row8" >2017-10-28 00:00:00</th>
-      <td id="T_afbe5_row8_col0" class="data row8 col0" >76</td>
-      <td id="T_afbe5_row8_col1" class="data row8 col1" >-0.111</td>
-      <td id="T_afbe5_row8_col2" class="data row8 col2" >0.179</td>
-      <td id="T_afbe5_row8_col3" class="data row8 col3" >0.056</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row9" class="row_heading level1 row9" >2017-10-28 12:00:00</th>
-      <td id="T_afbe5_row9_col0" class="data row9 col0" >84</td>
-      <td id="T_afbe5_row9_col1" class="data row9 col1" >-0.037</td>
-      <td id="T_afbe5_row9_col2" class="data row9 col2" >0.204</td>
-      <td id="T_afbe5_row9_col3" class="data row9 col3" >0.058</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row10" class="row_heading level1 row10" >2017-10-29 00:00:00</th>
-      <td id="T_afbe5_row10_col0" class="data row10 col0" >82</td>
-      <td id="T_afbe5_row10_col1" class="data row10 col1" >-0.421</td>
-      <td id="T_afbe5_row10_col2" class="data row10 col2" >0.596</td>
-      <td id="T_afbe5_row10_col3" class="data row10 col3" >0.088</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row11" class="row_heading level1 row11" >2017-10-29 12:00:00</th>
-      <td id="T_afbe5_row11_col0" class="data row11 col0" >83</td>
-      <td id="T_afbe5_row11_col1" class="data row11 col1" >0.007</td>
-      <td id="T_afbe5_row11_col2" class="data row11 col2" >0.419</td>
-      <td id="T_afbe5_row11_col3" class="data row11 col3" >0.105</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level0_row12" class="row_heading level0 row12" rowspan="6">SW_2</th>
-      <th id="T_afbe5_level1_row12" class="row_heading level1 row12" >2017-10-27 00:00:00</th>
-      <td id="T_afbe5_row12_col0" class="data row12 col0" >84</td>
-      <td id="T_afbe5_row12_col1" class="data row12 col1" >-0.070</td>
-      <td id="T_afbe5_row12_col2" class="data row12 col2" >0.236</td>
-      <td id="T_afbe5_row12_col3" class="data row12 col3" >0.108</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row13" class="row_heading level1 row13" >2017-10-27 12:00:00</th>
-      <td id="T_afbe5_row13_col0" class="data row13 col0" >156</td>
-      <td id="T_afbe5_row13_col1" class="data row13 col1" >-0.146</td>
-      <td id="T_afbe5_row13_col2" class="data row13 col2" >0.247</td>
-      <td id="T_afbe5_row13_col3" class="data row13 col3" >0.098</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row14" class="row_heading level1 row14" >2017-10-28 00:00:00</th>
-      <td id="T_afbe5_row14_col0" class="data row14 col0" >76</td>
-      <td id="T_afbe5_row14_col1" class="data row14 col1" >-0.055</td>
-      <td id="T_afbe5_row14_col2" class="data row14 col2" >0.150</td>
-      <td id="T_afbe5_row14_col3" class="data row14 col3" >0.056</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row15" class="row_heading level1 row15" >2017-10-28 12:00:00</th>
-      <td id="T_afbe5_row15_col0" class="data row15 col0" >84</td>
-      <td id="T_afbe5_row15_col1" class="data row15 col1" >0.091</td>
-      <td id="T_afbe5_row15_col2" class="data row15 col2" >0.234</td>
-      <td id="T_afbe5_row15_col3" class="data row15 col3" >0.062</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row16" class="row_heading level1 row16" >2017-10-29 00:00:00</th>
-      <td id="T_afbe5_row16_col0" class="data row16 col0" >82</td>
-      <td id="T_afbe5_row16_col1" class="data row16 col1" >-0.226</td>
-      <td id="T_afbe5_row16_col2" class="data row16 col2" >0.477</td>
-      <td id="T_afbe5_row16_col3" class="data row16 col3" >0.088</td>
-    </tr>
-    <tr>
-      <th id="T_afbe5_level1_row17" class="row_heading level1 row17" >2017-10-29 12:00:00</th>
-      <td id="T_afbe5_row17_col0" class="data row17 col0" >83</td>
-      <td id="T_afbe5_row17_col1" class="data row17 col1" >0.173</td>
-      <td id="T_afbe5_row17_col2" class="data row17 col2" >0.472</td>
-      <td id="T_afbe5_row17_col3" class="data row17 col3" >0.110</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [27],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2033,7 +1086,14 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_36_0.png" src="_images/multi_model_comparison_36_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [28],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">plot_line</span><span class="p">(</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Hm0 rmse [m]&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -2043,11 +1103,18 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/multi_model_comparison_37_0.png" src="_images/multi_model_comparison_37_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [29],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">plot_grid</span><span class="p">(</span><span class="s1">&#39;si&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;0.1%&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Hm0 Scatter index&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
 </div>
 </div>
-<div class="section" id="the-sel-method-can-subset-the-skill-object">
-<h3>The sel() method can subset the skill object<a class="headerlink" href="#the-sel-method-can-subset-the-skill-object" title="Permalink to this headline">¶</a></h3>
+</div>
+<section id="the-sel-method-can-subset-the-skill-object">
+<h3>The sel() method can subset the skill object<a class="headerlink" href="#the-sel-method-can-subset-the-skill-object" title="Permalink to this headline">#</a></h3>
 <p>A new skill object will be returned</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2057,331 +1124,16 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_a05f7_row0_col1 {
-  background-color: #92b4fe;
-  color: #000000;
-}
-#T_a05f7_row0_col2 {
-  background-color: #fddcaf;
-  color: #000000;
-}
-#T_a05f7_row0_col3, #T_a05f7_row0_col6, #T_a05f7_row1_col5, #T_a05f7_row3_col2, #T_a05f7_row3_col4, #T_a05f7_row7_col7 {
-  background-color: #fff7ec;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_a05f7_row0_col4, #T_a05f7_row7_col6 {
-  background-color: #fee7c5;
-  color: #000000;
-}
-#T_a05f7_row0_col5 {
-  background-color: #feecd2;
-  color: #000000;
-}
-#T_a05f7_row0_col7 {
-  background-color: #fdcc96;
-  color: #000000;
-}
-#T_a05f7_row1_col1 {
-  background-color: #3b4cc0;
-  color: #f1f1f1;
-}
-#T_a05f7_row1_col2, #T_a05f7_row1_col4, #T_a05f7_row1_col7, #T_a05f7_row2_col5, #T_a05f7_row8_col3, #T_a05f7_row8_col6 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_a05f7_row1_col3 {
-  background-color: #f67a51;
-  color: #f1f1f1;
-}
-#T_a05f7_row1_col6 {
-  background-color: #fdbf88;
-  color: #000000;
-}
-#T_a05f7_row2_col1 {
-  background-color: #5673e0;
-  color: #f1f1f1;
-}
-#T_a05f7_row2_col2 {
-  background-color: #a30000;
-  color: #f1f1f1;
-}
-#T_a05f7_row2_col3 {
-  background-color: #cc2116;
-  color: #f1f1f1;
-}
-#T_a05f7_row2_col4 {
-  background-color: #8c0000;
-  color: #f1f1f1;
-}
-#T_a05f7_row2_col6 {
-  background-color: #d2291a;
-  color: #f1f1f1;
-}
-#T_a05f7_row2_col7 {
-  background-color: #990000;
-  color: #f1f1f1;
-}
-#T_a05f7_row3_col1 {
-  background-color: #c7d7f0;
-  color: #000000;
-}
-#T_a05f7_row3_col3 {
-  background-color: #fff0dc;
-  color: #000000;
-}
-#T_a05f7_row3_col5, #T_a05f7_row6_col5 {
-  background-color: #fedfb4;
-  color: #000000;
-}
-#T_a05f7_row3_col6 {
-  background-color: #feefd9;
-  color: #000000;
-}
-#T_a05f7_row3_col7 {
-  background-color: #fff6e9;
-  color: #000000;
-}
-#T_a05f7_row4_col1 {
-  background-color: #97b8ff;
-  color: #000000;
-}
-#T_a05f7_row4_col2, #T_a05f7_row5_col2 {
-  background-color: #fdb37d;
-  color: #000000;
-}
-#T_a05f7_row4_col3, #T_a05f7_row5_col4 {
-  background-color: #fdac76;
-  color: #000000;
-}
-#T_a05f7_row4_col4 {
-  background-color: #fdd49f;
-  color: #000000;
-}
-#T_a05f7_row4_col5, #T_a05f7_row7_col5 {
-  background-color: #fee8c8;
-  color: #000000;
-}
-#T_a05f7_row4_col6, #T_a05f7_row5_col7 {
-  background-color: #fdd9aa;
-  color: #000000;
-}
-#T_a05f7_row4_col7 {
-  background-color: #fedfb5;
-  color: #000000;
-}
-#T_a05f7_row5_col1 {
-  background-color: #dcdddd;
-  color: #000000;
-}
-#T_a05f7_row5_col3 {
-  background-color: #e54e36;
-  color: #f1f1f1;
-}
-#T_a05f7_row5_col5, #T_a05f7_row8_col5 {
-  background-color: #fff5e7;
-  color: #000000;
-}
-#T_a05f7_row5_col6 {
-  background-color: #ea5a3f;
-  color: #f1f1f1;
-}
-#T_a05f7_row6_col1 {
-  background-color: #dddcdc;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_a05f7_row6_col2 {
-  background-color: #fff4e4;
-  color: #000000;
-}
-#T_a05f7_row6_col3 {
-  background-color: #fee5c3;
-  color: #000000;
-}
-#T_a05f7_row6_col4 {
-  background-color: #fff2e1;
-  color: #000000;
-}
-#T_a05f7_row6_col6 {
-  background-color: #fee1b9;
-  color: #000000;
-}
-#T_a05f7_row6_col7 {
-  background-color: #fff1de;
-  color: #000000;
-}
-#T_a05f7_row7_col1 {
-  background-color: #bbd1f8;
-  color: #000000;
-}
-#T_a05f7_row7_col2 {
-  background-color: #fddaab;
-  color: #000000;
-}
-#T_a05f7_row7_col3 {
-  background-color: #fdc48d;
-  color: #000000;
-}
-#T_a05f7_row7_col4 {
-  background-color: #feebd0;
-  color: #000000;
-}
-#T_a05f7_row8_col1 {
-  background-color: #f1cdba;
-  color: #000000;
-}
-#T_a05f7_row8_col2 {
-  background-color: #ec5d42;
-  color: #f1f1f1;
-}
-#T_a05f7_row8_col4 {
-  background-color: #e7533a;
-  color: #f1f1f1;
-}
-#T_a05f7_row8_col7 {
-  background-color: #f98556;
-  color: #f1f1f1;
-}
-</style>
-<table id="T_a05f7_">
-  <thead>
-    <tr>
-      <th class="blank" >&nbsp;</th>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >n</th>
-      <th class="col_heading level0 col1" >bias</th>
-      <th class="col_heading level0 col2" >rmse</th>
-      <th class="col_heading level0 col3" >urmse</th>
-      <th class="col_heading level0 col4" >mae</th>
-      <th class="col_heading level0 col5" >cc</th>
-      <th class="col_heading level0 col6" >si</th>
-      <th class="col_heading level0 col7" >r2</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >model</th>
-      <th class="index_name level1" >observation</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-      <th class="blank col2" >&nbsp;</th>
-      <th class="blank col3" >&nbsp;</th>
-      <th class="blank col4" >&nbsp;</th>
-      <th class="blank col5" >&nbsp;</th>
-      <th class="blank col6" >&nbsp;</th>
-      <th class="blank col7" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_a05f7_level0_row0" class="row_heading level0 row0" rowspan="3">ERA5</th>
-      <th id="T_a05f7_level1_row0" class="row_heading level1 row0" >EPL</th>
-      <td id="T_a05f7_row0_col0" class="data row0 col0" >66</td>
-      <td id="T_a05f7_row0_col1" class="data row0 col1" >-0.208</td>
-      <td id="T_a05f7_row0_col2" class="data row0 col2" >0.290</td>
-      <td id="T_a05f7_row0_col3" class="data row0 col3" >0.202</td>
-      <td id="T_a05f7_row0_col4" class="data row0 col4" >0.224</td>
-      <td id="T_a05f7_row0_col5" class="data row0 col5" >0.972</td>
-      <td id="T_a05f7_row0_col6" class="data row0 col6" >0.074</td>
-      <td id="T_a05f7_row0_col7" class="data row0 col7" >0.887</td>
-    </tr>
-    <tr>
-      <th id="T_a05f7_level1_row1" class="row_heading level1 row1" >HKNA</th>
-      <td id="T_a05f7_row1_col0" class="data row1 col0" >386</td>
-      <td id="T_a05f7_row1_col1" class="data row1 col1" >-0.437</td>
-      <td id="T_a05f7_row1_col2" class="data row1 col2" >0.545</td>
-      <td id="T_a05f7_row1_col3" class="data row1 col3" >0.326</td>
-      <td id="T_a05f7_row1_col4" class="data row1 col4" >0.441</td>
-      <td id="T_a05f7_row1_col5" class="data row1 col5" >0.975</td>
-      <td id="T_a05f7_row1_col6" class="data row1 col6" >0.098</td>
-      <td id="T_a05f7_row1_col7" class="data row1 col7" >0.773</td>
-    </tr>
-    <tr>
-      <th id="T_a05f7_level1_row2" class="row_heading level1 row2" >c2</th>
-      <td id="T_a05f7_row2_col0" class="data row2 col0" >113</td>
-      <td id="T_a05f7_row2_col1" class="data row2 col1" >-0.356</td>
-      <td id="T_a05f7_row2_col2" class="data row2 col2" >0.517</td>
-      <td id="T_a05f7_row2_col3" class="data row2 col3" >0.375</td>
-      <td id="T_a05f7_row2_col4" class="data row2 col4" >0.433</td>
-      <td id="T_a05f7_row2_col5" class="data row2 col5" >0.946</td>
-      <td id="T_a05f7_row2_col6" class="data row2 col6" >0.126</td>
-      <td id="T_a05f7_row2_col7" class="data row2 col7" >0.783</td>
-    </tr>
-    <tr>
-      <th id="T_a05f7_level0_row3" class="row_heading level0 row3" rowspan="3">SW_1</th>
-      <th id="T_a05f7_level1_row3" class="row_heading level1 row3" >EPL</th>
-      <td id="T_a05f7_row3_col0" class="data row3 col0" >66</td>
-      <td id="T_a05f7_row3_col1" class="data row3 col1" >-0.066</td>
-      <td id="T_a05f7_row3_col2" class="data row3 col2" >0.225</td>
-      <td id="T_a05f7_row3_col3" class="data row3 col3" >0.215</td>
-      <td id="T_a05f7_row3_col4" class="data row3 col4" >0.190</td>
-      <td id="T_a05f7_row3_col5" class="data row3 col5" >0.970</td>
-      <td id="T_a05f7_row3_col6" class="data row3 col6" >0.079</td>
-      <td id="T_a05f7_row3_col7" class="data row3 col7" >0.932</td>
-    </tr>
-    <tr>
-      <th id="T_a05f7_level1_row4" class="row_heading level1 row4" >HKNA</th>
-      <td id="T_a05f7_row4_col0" class="data row4 col0" >386</td>
-      <td id="T_a05f7_row4_col1" class="data row4 col1" >-0.194</td>
-      <td id="T_a05f7_row4_col2" class="data row4 col2" >0.352</td>
-      <td id="T_a05f7_row4_col3" class="data row4 col3" >0.293</td>
-      <td id="T_a05f7_row4_col4" class="data row4 col4" >0.252</td>
-      <td id="T_a05f7_row4_col5" class="data row4 col5" >0.971</td>
-      <td id="T_a05f7_row4_col6" class="data row4 col6" >0.089</td>
-      <td id="T_a05f7_row4_col7" class="data row4 col7" >0.905</td>
-    </tr>
-    <tr>
-      <th id="T_a05f7_level1_row5" class="row_heading level1 row5" >c2</th>
-      <td id="T_a05f7_row5_col0" class="data row5 col0" >113</td>
-      <td id="T_a05f7_row5_col1" class="data row5 col1" >-0.001</td>
-      <td id="T_a05f7_row5_col2" class="data row5 col2" >0.352</td>
-      <td id="T_a05f7_row5_col3" class="data row5 col3" >0.352</td>
-      <td id="T_a05f7_row5_col4" class="data row5 col4" >0.295</td>
-      <td id="T_a05f7_row5_col5" class="data row5 col5" >0.974</td>
-      <td id="T_a05f7_row5_col6" class="data row5 col6" >0.119</td>
-      <td id="T_a05f7_row5_col7" class="data row5 col7" >0.900</td>
-    </tr>
-    <tr>
-      <th id="T_a05f7_level0_row6" class="row_heading level0 row6" rowspan="3">SW_2</th>
-      <th id="T_a05f7_level1_row6" class="row_heading level1 row6" >EPL</th>
-      <td id="T_a05f7_row6_col0" class="data row6 col0" >66</td>
-      <td id="T_a05f7_row6_col1" class="data row6 col1" >0.001</td>
-      <td id="T_a05f7_row6_col2" class="data row6 col2" >0.234</td>
-      <td id="T_a05f7_row6_col3" class="data row6 col3" >0.234</td>
-      <td id="T_a05f7_row6_col4" class="data row6 col4" >0.200</td>
-      <td id="T_a05f7_row6_col5" class="data row6 col5" >0.970</td>
-      <td id="T_a05f7_row6_col6" class="data row6 col6" >0.085</td>
-      <td id="T_a05f7_row6_col7" class="data row6 col7" >0.927</td>
-    </tr>
-    <tr>
-      <th id="T_a05f7_level1_row7" class="row_heading level1 row7" >HKNA</th>
-      <td id="T_a05f7_row7_col0" class="data row7 col0" >386</td>
-      <td id="T_a05f7_row7_col1" class="data row7 col1" >-0.100</td>
-      <td id="T_a05f7_row7_col2" class="data row7 col2" >0.293</td>
-      <td id="T_a05f7_row7_col3" class="data row7 col3" >0.275</td>
-      <td id="T_a05f7_row7_col4" class="data row7 col4" >0.214</td>
-      <td id="T_a05f7_row7_col5" class="data row7 col5" >0.971</td>
-      <td id="T_a05f7_row7_col6" class="data row7 col6" >0.083</td>
-      <td id="T_a05f7_row7_col7" class="data row7 col7" >0.934</td>
-    </tr>
-    <tr>
-      <th id="T_a05f7_level1_row8" class="row_heading level1 row8" >c2</th>
-      <td id="T_a05f7_row8_col0" class="data row8 col0" >113</td>
-      <td id="T_a05f7_row8_col1" class="data row8 col1" >0.081</td>
-      <td id="T_a05f7_row8_col2" class="data row8 col2" >0.430</td>
-      <td id="T_a05f7_row8_col3" class="data row8 col3" >0.422</td>
-      <td id="T_a05f7_row8_col4" class="data row8 col4" >0.357</td>
-      <td id="T_a05f7_row8_col5" class="data row8 col5" >0.974</td>
-      <td id="T_a05f7_row8_col6" class="data row8 col6" >0.142</td>
-      <td id="T_a05f7_row8_col7" class="data row8 col7" >0.850</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [30],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">s</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2390,121 +1142,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_6081c_row0_col2 {
-  background-color: #a9c6fd;
-  color: #000000;
-}
-#T_6081c_row0_col3, #T_6081c_row0_col4, #T_6081c_row0_col5, #T_6081c_row0_col7, #T_6081c_row0_col8, #T_6081c_row2_col6 {
-  background-color: #fff7ec;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_6081c_row0_col6, #T_6081c_row1_col3, #T_6081c_row2_col3, #T_6081c_row2_col4, #T_6081c_row2_col5, #T_6081c_row2_col7, #T_6081c_row2_col8 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_6081c_row1_col2 {
-  background-color: #3b4cc0;
-  color: #f1f1f1;
-}
-#T_6081c_row1_col4 {
-  background-color: #f4764f;
-  color: #f1f1f1;
-}
-#T_6081c_row1_col5 {
-  background-color: #f2704c;
-  color: #f1f1f1;
-}
-#T_6081c_row1_col6 {
-  background-color: #ea5a3f;
-  color: #f1f1f1;
-}
-#T_6081c_row1_col7 {
-  background-color: #fdd49e;
-  color: #000000;
-}
-#T_6081c_row1_col8 {
-  background-color: #c2140d;
-  color: #f1f1f1;
-}
-#T_6081c_row2_col2 {
-  background-color: #dcdddd;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-</style>
-<table id="T_6081c_">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >model</th>
-      <th class="col_heading level0 col1" >n</th>
-      <th class="col_heading level0 col2" >bias</th>
-      <th class="col_heading level0 col3" >rmse</th>
-      <th class="col_heading level0 col4" >urmse</th>
-      <th class="col_heading level0 col5" >mae</th>
-      <th class="col_heading level0 col6" >cc</th>
-      <th class="col_heading level0 col7" >si</th>
-      <th class="col_heading level0 col8" >r2</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >observation</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-      <th class="blank col2" >&nbsp;</th>
-      <th class="blank col3" >&nbsp;</th>
-      <th class="blank col4" >&nbsp;</th>
-      <th class="blank col5" >&nbsp;</th>
-      <th class="blank col6" >&nbsp;</th>
-      <th class="blank col7" >&nbsp;</th>
-      <th class="blank col8" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_6081c_level0_row0" class="row_heading level0 row0" >EPL</th>
-      <td id="T_6081c_row0_col0" class="data row0 col0" >SW_1</td>
-      <td id="T_6081c_row0_col1" class="data row0 col1" >66</td>
-      <td id="T_6081c_row0_col2" class="data row0 col2" >-0.066</td>
-      <td id="T_6081c_row0_col3" class="data row0 col3" >0.225</td>
-      <td id="T_6081c_row0_col4" class="data row0 col4" >0.215</td>
-      <td id="T_6081c_row0_col5" class="data row0 col5" >0.190</td>
-      <td id="T_6081c_row0_col6" class="data row0 col6" >0.970</td>
-      <td id="T_6081c_row0_col7" class="data row0 col7" >0.079</td>
-      <td id="T_6081c_row0_col8" class="data row0 col8" >0.932</td>
-    </tr>
-    <tr>
-      <th id="T_6081c_level0_row1" class="row_heading level0 row1" >HKNA</th>
-      <td id="T_6081c_row1_col0" class="data row1 col0" >SW_1</td>
-      <td id="T_6081c_row1_col1" class="data row1 col1" >386</td>
-      <td id="T_6081c_row1_col2" class="data row1 col2" >-0.194</td>
-      <td id="T_6081c_row1_col3" class="data row1 col3" >0.352</td>
-      <td id="T_6081c_row1_col4" class="data row1 col4" >0.293</td>
-      <td id="T_6081c_row1_col5" class="data row1 col5" >0.252</td>
-      <td id="T_6081c_row1_col6" class="data row1 col6" >0.971</td>
-      <td id="T_6081c_row1_col7" class="data row1 col7" >0.089</td>
-      <td id="T_6081c_row1_col8" class="data row1 col8" >0.905</td>
-    </tr>
-    <tr>
-      <th id="T_6081c_level0_row2" class="row_heading level0 row2" >c2</th>
-      <td id="T_6081c_row2_col0" class="data row2 col0" >SW_1</td>
-      <td id="T_6081c_row2_col1" class="data row2 col1" >113</td>
-      <td id="T_6081c_row2_col2" class="data row2 col2" >-0.001</td>
-      <td id="T_6081c_row2_col3" class="data row2 col3" >0.352</td>
-      <td id="T_6081c_row2_col4" class="data row2 col4" >0.352</td>
-      <td id="T_6081c_row2_col5" class="data row2 col5" >0.295</td>
-      <td id="T_6081c_row2_col6" class="data row2 col6" >0.974</td>
-      <td id="T_6081c_row2_col7" class="data row2 col7" >0.119</td>
-      <td id="T_6081c_row2_col8" class="data row2 col8" >0.900</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [31],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;SW_1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2513,117 +1159,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_85a53_row0_col2 {
-  background-color: #3b4cc0;
-  color: #f1f1f1;
-}
-#T_85a53_row0_col3, #T_85a53_row0_col4, #T_85a53_row0_col5, #T_85a53_row0_col7, #T_85a53_row0_col8, #T_85a53_row1_col6, #T_85a53_row2_col6 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_85a53_row0_col6, #T_85a53_row2_col3, #T_85a53_row2_col4, #T_85a53_row2_col5, #T_85a53_row2_col7, #T_85a53_row2_col8 {
-  background-color: #fff7ec;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_85a53_row1_col2 {
-  background-color: #97b8ff;
-  color: #000000;
-}
-#T_85a53_row1_col3 {
-  background-color: #fdd7a4;
-  color: #000000;
-}
-#T_85a53_row1_col4, #T_85a53_row1_col7 {
-  background-color: #fdbe87;
-  color: #000000;
-}
-#T_85a53_row1_col5 {
-  background-color: #fee2bb;
-  color: #000000;
-}
-#T_85a53_row1_col8 {
-  background-color: #fedfb5;
-  color: #000000;
-}
-#T_85a53_row2_col2 {
-  background-color: #bbd1f8;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-</style>
-<table id="T_85a53_">
-  <thead>
-    <tr>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >observation</th>
-      <th class="col_heading level0 col1" >n</th>
-      <th class="col_heading level0 col2" >bias</th>
-      <th class="col_heading level0 col3" >rmse</th>
-      <th class="col_heading level0 col4" >urmse</th>
-      <th class="col_heading level0 col5" >mae</th>
-      <th class="col_heading level0 col6" >cc</th>
-      <th class="col_heading level0 col7" >si</th>
-      <th class="col_heading level0 col8" >r2</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >model</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-      <th class="blank col2" >&nbsp;</th>
-      <th class="blank col3" >&nbsp;</th>
-      <th class="blank col4" >&nbsp;</th>
-      <th class="blank col5" >&nbsp;</th>
-      <th class="blank col6" >&nbsp;</th>
-      <th class="blank col7" >&nbsp;</th>
-      <th class="blank col8" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_85a53_level0_row0" class="row_heading level0 row0" >ERA5</th>
-      <td id="T_85a53_row0_col0" class="data row0 col0" >HKNA</td>
-      <td id="T_85a53_row0_col1" class="data row0 col1" >386</td>
-      <td id="T_85a53_row0_col2" class="data row0 col2" >-0.437</td>
-      <td id="T_85a53_row0_col3" class="data row0 col3" >0.545</td>
-      <td id="T_85a53_row0_col4" class="data row0 col4" >0.326</td>
-      <td id="T_85a53_row0_col5" class="data row0 col5" >0.441</td>
-      <td id="T_85a53_row0_col6" class="data row0 col6" >0.975</td>
-      <td id="T_85a53_row0_col7" class="data row0 col7" >0.098</td>
-      <td id="T_85a53_row0_col8" class="data row0 col8" >0.773</td>
-    </tr>
-    <tr>
-      <th id="T_85a53_level0_row1" class="row_heading level0 row1" >SW_1</th>
-      <td id="T_85a53_row1_col0" class="data row1 col0" >HKNA</td>
-      <td id="T_85a53_row1_col1" class="data row1 col1" >386</td>
-      <td id="T_85a53_row1_col2" class="data row1 col2" >-0.194</td>
-      <td id="T_85a53_row1_col3" class="data row1 col3" >0.352</td>
-      <td id="T_85a53_row1_col4" class="data row1 col4" >0.293</td>
-      <td id="T_85a53_row1_col5" class="data row1 col5" >0.252</td>
-      <td id="T_85a53_row1_col6" class="data row1 col6" >0.971</td>
-      <td id="T_85a53_row1_col7" class="data row1 col7" >0.089</td>
-      <td id="T_85a53_row1_col8" class="data row1 col8" >0.905</td>
-    </tr>
-    <tr>
-      <th id="T_85a53_level0_row2" class="row_heading level0 row2" >SW_2</th>
-      <td id="T_85a53_row2_col0" class="data row2 col0" >HKNA</td>
-      <td id="T_85a53_row2_col1" class="data row2 col1" >386</td>
-      <td id="T_85a53_row2_col2" class="data row2 col2" >-0.100</td>
-      <td id="T_85a53_row2_col3" class="data row2 col3" >0.293</td>
-      <td id="T_85a53_row2_col4" class="data row2 col4" >0.275</td>
-      <td id="T_85a53_row2_col5" class="data row2 col5" >0.214</td>
-      <td id="T_85a53_row2_col6" class="data row2 col6" >0.971</td>
-      <td id="T_85a53_row2_col7" class="data row2 col7" >0.083</td>
-      <td id="T_85a53_row2_col8" class="data row2 col8" >0.934</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [32],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">observation</span><span class="o">=</span><span class="s1">&#39;HKNA&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2632,269 +1176,15 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_5ada3_row0_col1 {
-  background-color: #92b4fe;
-  color: #000000;
-}
-#T_5ada3_row0_col2, #T_5ada3_row0_col3, #T_5ada3_row0_col6, #T_5ada3_row1_col5, #T_5ada3_row5_col4, #T_5ada3_row5_col7 {
-  background-color: #fff7ec;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_5ada3_row0_col4 {
-  background-color: #fff2e1;
-  color: #000000;
-}
-#T_5ada3_row0_col5 {
-  background-color: #feecd2;
-  color: #000000;
-}
-#T_5ada3_row0_col7 {
-  background-color: #fdcc96;
-  color: #000000;
-}
-#T_5ada3_row1_col1 {
-  background-color: #3b4cc0;
-  color: #f1f1f1;
-}
-#T_5ada3_row1_col2, #T_5ada3_row1_col4, #T_5ada3_row1_col7, #T_5ada3_row2_col5, #T_5ada3_row6_col3, #T_5ada3_row6_col6 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_5ada3_row1_col3 {
-  background-color: #f67a51;
-  color: #f1f1f1;
-}
-#T_5ada3_row1_col6 {
-  background-color: #fdbf88;
-  color: #000000;
-}
-#T_5ada3_row2_col1 {
-  background-color: #5673e0;
-  color: #f1f1f1;
-}
-#T_5ada3_row2_col2 {
-  background-color: #ad0000;
-  color: #f1f1f1;
-}
-#T_5ada3_row2_col3 {
-  background-color: #cc2116;
-  color: #f1f1f1;
-}
-#T_5ada3_row2_col4 {
-  background-color: #8e0000;
-  color: #f1f1f1;
-}
-#T_5ada3_row2_col6 {
-  background-color: #d2291a;
-  color: #f1f1f1;
-}
-#T_5ada3_row2_col7 {
-  background-color: #990000;
-  color: #f1f1f1;
-}
-#T_5ada3_row3_col1 {
-  background-color: #97b8ff;
-  color: #000000;
-}
-#T_5ada3_row3_col2 {
-  background-color: #fdd5a0;
-  color: #000000;
-}
-#T_5ada3_row3_col3 {
-  background-color: #fdac76;
-  color: #000000;
-}
-#T_5ada3_row3_col4 {
-  background-color: #fee2bb;
-  color: #000000;
-}
-#T_5ada3_row3_col5, #T_5ada3_row5_col5 {
-  background-color: #fee8c8;
-  color: #000000;
-}
-#T_5ada3_row3_col6, #T_5ada3_row4_col7 {
-  background-color: #fdd9aa;
-  color: #000000;
-}
-#T_5ada3_row3_col7 {
-  background-color: #fedfb5;
-  color: #000000;
-}
-#T_5ada3_row4_col1 {
-  background-color: #dcdddd;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_5ada3_row4_col2 {
-  background-color: #fdd6a2;
-  color: #000000;
-}
-#T_5ada3_row4_col3 {
-  background-color: #e54e36;
-  color: #f1f1f1;
-}
-#T_5ada3_row4_col4 {
-  background-color: #fdbf89;
-  color: #000000;
-}
-#T_5ada3_row4_col5, #T_5ada3_row6_col5 {
-  background-color: #fff5e7;
-  color: #000000;
-}
-#T_5ada3_row4_col6 {
-  background-color: #ea5a3f;
-  color: #f1f1f1;
-}
-#T_5ada3_row5_col1 {
-  background-color: #bbd1f8;
-  color: #000000;
-}
-#T_5ada3_row5_col2 {
-  background-color: #fff6e9;
-  color: #000000;
-}
-#T_5ada3_row5_col3 {
-  background-color: #fdc48d;
-  color: #000000;
-}
-#T_5ada3_row5_col6 {
-  background-color: #fee7c5;
-  color: #000000;
-}
-#T_5ada3_row6_col1 {
-  background-color: #f1cdba;
-  color: #000000;
-}
-#T_5ada3_row6_col2 {
-  background-color: #f77d52;
-  color: #f1f1f1;
-}
-#T_5ada3_row6_col4 {
-  background-color: #ef6447;
-  color: #f1f1f1;
-}
-#T_5ada3_row6_col7 {
-  background-color: #f98556;
-  color: #f1f1f1;
-}
-</style>
-<table id="T_5ada3_">
-  <thead>
-    <tr>
-      <th class="blank" >&nbsp;</th>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >n</th>
-      <th class="col_heading level0 col1" >bias</th>
-      <th class="col_heading level0 col2" >rmse</th>
-      <th class="col_heading level0 col3" >urmse</th>
-      <th class="col_heading level0 col4" >mae</th>
-      <th class="col_heading level0 col5" >cc</th>
-      <th class="col_heading level0 col6" >si</th>
-      <th class="col_heading level0 col7" >r2</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >model</th>
-      <th class="index_name level1" >observation</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-      <th class="blank col2" >&nbsp;</th>
-      <th class="blank col3" >&nbsp;</th>
-      <th class="blank col4" >&nbsp;</th>
-      <th class="blank col5" >&nbsp;</th>
-      <th class="blank col6" >&nbsp;</th>
-      <th class="blank col7" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_5ada3_level0_row0" class="row_heading level0 row0" rowspan="3">ERA5</th>
-      <th id="T_5ada3_level1_row0" class="row_heading level1 row0" >EPL</th>
-      <td id="T_5ada3_row0_col0" class="data row0 col0" >66</td>
-      <td id="T_5ada3_row0_col1" class="data row0 col1" >-0.208</td>
-      <td id="T_5ada3_row0_col2" class="data row0 col2" >0.290</td>
-      <td id="T_5ada3_row0_col3" class="data row0 col3" >0.202</td>
-      <td id="T_5ada3_row0_col4" class="data row0 col4" >0.224</td>
-      <td id="T_5ada3_row0_col5" class="data row0 col5" >0.972</td>
-      <td id="T_5ada3_row0_col6" class="data row0 col6" >0.074</td>
-      <td id="T_5ada3_row0_col7" class="data row0 col7" >0.887</td>
-    </tr>
-    <tr>
-      <th id="T_5ada3_level1_row1" class="row_heading level1 row1" >HKNA</th>
-      <td id="T_5ada3_row1_col0" class="data row1 col0" >386</td>
-      <td id="T_5ada3_row1_col1" class="data row1 col1" >-0.437</td>
-      <td id="T_5ada3_row1_col2" class="data row1 col2" >0.545</td>
-      <td id="T_5ada3_row1_col3" class="data row1 col3" >0.326</td>
-      <td id="T_5ada3_row1_col4" class="data row1 col4" >0.441</td>
-      <td id="T_5ada3_row1_col5" class="data row1 col5" >0.975</td>
-      <td id="T_5ada3_row1_col6" class="data row1 col6" >0.098</td>
-      <td id="T_5ada3_row1_col7" class="data row1 col7" >0.773</td>
-    </tr>
-    <tr>
-      <th id="T_5ada3_level1_row2" class="row_heading level1 row2" >c2</th>
-      <td id="T_5ada3_row2_col0" class="data row2 col0" >113</td>
-      <td id="T_5ada3_row2_col1" class="data row2 col1" >-0.356</td>
-      <td id="T_5ada3_row2_col2" class="data row2 col2" >0.517</td>
-      <td id="T_5ada3_row2_col3" class="data row2 col3" >0.375</td>
-      <td id="T_5ada3_row2_col4" class="data row2 col4" >0.433</td>
-      <td id="T_5ada3_row2_col5" class="data row2 col5" >0.946</td>
-      <td id="T_5ada3_row2_col6" class="data row2 col6" >0.126</td>
-      <td id="T_5ada3_row2_col7" class="data row2 col7" >0.783</td>
-    </tr>
-    <tr>
-      <th id="T_5ada3_level0_row3" class="row_heading level0 row3" rowspan="2">SW_1</th>
-      <th id="T_5ada3_level1_row3" class="row_heading level1 row3" >HKNA</th>
-      <td id="T_5ada3_row3_col0" class="data row3 col0" >386</td>
-      <td id="T_5ada3_row3_col1" class="data row3 col1" >-0.194</td>
-      <td id="T_5ada3_row3_col2" class="data row3 col2" >0.352</td>
-      <td id="T_5ada3_row3_col3" class="data row3 col3" >0.293</td>
-      <td id="T_5ada3_row3_col4" class="data row3 col4" >0.252</td>
-      <td id="T_5ada3_row3_col5" class="data row3 col5" >0.971</td>
-      <td id="T_5ada3_row3_col6" class="data row3 col6" >0.089</td>
-      <td id="T_5ada3_row3_col7" class="data row3 col7" >0.905</td>
-    </tr>
-    <tr>
-      <th id="T_5ada3_level1_row4" class="row_heading level1 row4" >c2</th>
-      <td id="T_5ada3_row4_col0" class="data row4 col0" >113</td>
-      <td id="T_5ada3_row4_col1" class="data row4 col1" >-0.001</td>
-      <td id="T_5ada3_row4_col2" class="data row4 col2" >0.352</td>
-      <td id="T_5ada3_row4_col3" class="data row4 col3" >0.352</td>
-      <td id="T_5ada3_row4_col4" class="data row4 col4" >0.295</td>
-      <td id="T_5ada3_row4_col5" class="data row4 col5" >0.974</td>
-      <td id="T_5ada3_row4_col6" class="data row4 col6" >0.119</td>
-      <td id="T_5ada3_row4_col7" class="data row4 col7" >0.900</td>
-    </tr>
-    <tr>
-      <th id="T_5ada3_level0_row5" class="row_heading level0 row5" rowspan="2">SW_2</th>
-      <th id="T_5ada3_level1_row5" class="row_heading level1 row5" >HKNA</th>
-      <td id="T_5ada3_row5_col0" class="data row5 col0" >386</td>
-      <td id="T_5ada3_row5_col1" class="data row5 col1" >-0.100</td>
-      <td id="T_5ada3_row5_col2" class="data row5 col2" >0.293</td>
-      <td id="T_5ada3_row5_col3" class="data row5 col3" >0.275</td>
-      <td id="T_5ada3_row5_col4" class="data row5 col4" >0.214</td>
-      <td id="T_5ada3_row5_col5" class="data row5 col5" >0.971</td>
-      <td id="T_5ada3_row5_col6" class="data row5 col6" >0.083</td>
-      <td id="T_5ada3_row5_col7" class="data row5 col7" >0.934</td>
-    </tr>
-    <tr>
-      <th id="T_5ada3_level1_row6" class="row_heading level1 row6" >c2</th>
-      <td id="T_5ada3_row6_col0" class="data row6 col0" >113</td>
-      <td id="T_5ada3_row6_col1" class="data row6 col1" >0.081</td>
-      <td id="T_5ada3_row6_col2" class="data row6 col2" >0.430</td>
-      <td id="T_5ada3_row6_col3" class="data row6 col3" >0.422</td>
-      <td id="T_5ada3_row6_col4" class="data row6 col4" >0.357</td>
-      <td id="T_5ada3_row6_col5" class="data row6 col5" >0.974</td>
-      <td id="T_5ada3_row6_col6" class="data row6 col6" >0.142</td>
-      <td id="T_5ada3_row6_col7" class="data row6 col7" >0.850</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [33],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="s1">&#39;rmse&gt;0.25&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2903,94 +1193,19 @@ Observation: EPL, n_points=66
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style type="text/css">
-#T_04bc4_row0_col0, #T_04bc4_row0_col1 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_04bc4_row1_col0 {
-  background-color: #b90805;
-  color: #f1f1f1;
-}
-#T_04bc4_row1_col1 {
-  background-color: #910000;
-  color: #f1f1f1;
-}
-#T_04bc4_row2_col0 {
-  background-color: #fff7ec;
-  color: #000000;
-}
-#T_04bc4_row2_col1, #T_04bc4_row3_col0 {
-  background-color: #fff7ec;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
-}
-#T_04bc4_row3_col1 {
-  background-color: #fdd8a7;
-  color: #000000;
-}
-#T_04bc4_row4_col0 {
-  background-color: #fdb07a;
-  color: #000000;
-}
-#T_04bc4_row4_col1 {
-  background-color: #f67b51;
-  color: #f1f1f1;
-}
-</style>
-<table id="T_04bc4_">
-  <thead>
-    <tr>
-      <th class="blank" >&nbsp;</th>
-      <th class="blank level0" >&nbsp;</th>
-      <th class="col_heading level0 col0" >rmse</th>
-      <th class="col_heading level0 col1" >mae</th>
-    </tr>
-    <tr>
-      <th class="index_name level0" >model</th>
-      <th class="index_name level1" >observation</th>
-      <th class="blank col0" >&nbsp;</th>
-      <th class="blank col1" >&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_04bc4_level0_row0" class="row_heading level0 row0" rowspan="2">ERA5</th>
-      <th id="T_04bc4_level1_row0" class="row_heading level1 row0" >HKNA</th>
-      <td id="T_04bc4_row0_col0" class="data row0 col0" >0.545</td>
-      <td id="T_04bc4_row0_col1" class="data row0 col1" >0.441</td>
-    </tr>
-    <tr>
-      <th id="T_04bc4_level1_row1" class="row_heading level1 row1" >c2</th>
-      <td id="T_04bc4_row1_col0" class="data row1 col0" >0.517</td>
-      <td id="T_04bc4_row1_col1" class="data row1 col1" >0.433</td>
-    </tr>
-    <tr>
-      <th id="T_04bc4_level0_row2" class="row_heading level0 row2" rowspan="2">SW_1</th>
-      <th id="T_04bc4_level1_row2" class="row_heading level1 row2" >HKNA</th>
-      <td id="T_04bc4_row2_col0" class="data row2 col0" >0.352</td>
-      <td id="T_04bc4_row2_col1" class="data row2 col1" >0.252</td>
-    </tr>
-    <tr>
-      <th id="T_04bc4_level1_row3" class="row_heading level1 row3" >c2</th>
-      <td id="T_04bc4_row3_col0" class="data row3 col0" >0.352</td>
-      <td id="T_04bc4_row3_col1" class="data row3 col1" >0.295</td>
-    </tr>
-    <tr>
-      <th id="T_04bc4_level0_row4" class="row_heading level0 row4" >SW_2</th>
-      <th id="T_04bc4_level1_row4" class="row_heading level1 row4" >c2</th>
-      <td id="T_04bc4_row4_col0" class="data row4 col0" >0.430</td>
-      <td id="T_04bc4_row4_col1" class="data row4 col1" >0.357</td>
-    </tr>
-  </tbody>
-</table>
-</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [34],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="s1">&#39;rmse&gt;0.3&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span><span class="s1">&#39;mae&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+</pre></div>
 </div>
 </div>
 </div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -3014,54 +1229,48 @@ Observation: EPL, n_points=66
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="model_skill_visualisation.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Model skill visualisation</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="model_skill_visualisation.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Model skill visualisation</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="exercises/fmskill_assignment.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FMskill assignment</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="exercises/fmskill_assignment.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">FMskill assignment</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Jesper Mariegaard and  Henrik Andersson<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jesper Mariegaard and  Henrik Andersson<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>

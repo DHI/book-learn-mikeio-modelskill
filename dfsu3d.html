@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Dfsu 3D &#8212; Python for marine modelers using MIKE IO and FMSkill</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,46 +20,62 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Output Visualisation" href="output_visualisation.html" />
     <link rel="prev" title="Exercise C: Input data" href="exercises/exercise_C_input_data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -66,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -86,21 +105,22 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Python for marine modelers using MIKE IO and FMskill
+                </a>
+            </li>
+        </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Python for marine modelers using MIKE IO and FMskill
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="installation.html">
    Installation
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   MIKE IO Dfsu/Mesh
  </span>
@@ -178,7 +198,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   FMskill
  </span>
@@ -251,7 +271,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Assignments
  </span>
@@ -270,96 +290,182 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/dfsu3d.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/dfsu3d.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/dfsu3d.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/dfsu3d.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/dfsu3d.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/dfsu3d.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Dfsu 3D
@@ -403,17 +509,76 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dfsu 3D</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Dfsu 3D
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-sigma-z">
+     3D Sigma-z
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#layers-in-a-3d-file">
+       Layers in a 3D file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#surface-layer-of-3d-file">
+       Surface layer of 3D file
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#find-position-of-max-temperature-and-plot">
+       Find position of max temperature and plot
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-1d-profile-from-3d-file">
+   Read 1D profile from 3D file
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-vertical-slice">
+     Read vertical slice
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="dfsu-3d">
-<h1>Dfsu 3D<a class="headerlink" href="#dfsu-3d" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="dfsu-3d">
+<h1>Dfsu 3D<a class="headerlink" href="#dfsu-3d" title="Permalink to this headline">#</a></h1>
 <p>Layered dfsu files comes in several different shapes:</p>
 <ul class="simple">
 <li><p>3D</p></li>
@@ -427,41 +592,36 @@
 </ul>
 <p>In sigma-layered files, all columns has the same number of layers. In sigma-z files, the number of z-layers can be different for different columns.</p>
 <p>Layered dfsu files have a “hidden” first dynamic item called “zn” with the (dynamic) z-positions of the nodes.</p>
-<p>Read the <a class="reference external" href="https://dhi.github.io/mikeio/dfsu.html">MIKE IO dfsu documentation</a> for more info.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This section uses features introduced in MIKE IO v 0.10.1 (released 2021-10-26)</p>
-</div>
+<p>Read the <a class="reference external" href="https://dhi.github.io/mikeio/dfsu-3d.html">MIKE IO dfsu-3d documentation</a> for more info.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mikeio</span> <span class="kn">import</span> <span class="n">Dfsu</span>
+<span class="kn">import</span> <span class="nn">mikeio</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="d-sigma-z">
-<h2>3D Sigma-z<a class="headerlink" href="#d-sigma-z" title="Permalink to this headline">¶</a></h2>
+<section id="d-sigma-z">
+<h2>3D Sigma-z<a class="headerlink" href="#d-sigma-z" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/oresund_sigma_z.dfsu&quot;</span>
-<span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">mikeio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="n">dfs</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dfsu3DSigmaZ
-Number of elements: 17118
-Number of nodes: 12042
-Projection: UTM-33
-Number of sigma layers: 4
-Max number of z layers: 5
-Items:
-  0:  Z coordinate &lt;ItemGeometry3D&gt; (meter)
-  1:  Temperature &lt;Temperature&gt; (degree Celsius)
-  2:  Salinity &lt;Salinity&gt; (PSU)
-Time: 3 steps with dt=10800.0s
+number of elements: 17118
+number of nodes: 12042
+projection: UTM-33
+number of sigma layers: 4
+max number of z layers: 5
+items:
+  0:  Temperature &lt;Temperature&gt; (degree Celsius)
+  1:  Salinity &lt;Salinity&gt; (PSU)
+time: 3 steps with dt=10800.0s
       1997-09-15 21:00:00 -- 1997-09-16 03:00:00
 </pre></div>
 </div>
@@ -490,7 +650,7 @@ The layer number for each 3d element: [4 5 6 ... 6 7 8]
 List of 3d element ids of surface layer: [    4     8    12 ... 17106 17111 17117]
 List of 3d element ids of bottom layer: [    0     5     9 ... 17102 17107 17112]
 List of number of layers for each column: [5 4 4 ... 5 5 6]
-The 2d-to-3d element connectivity table for a 3d object: [list([0, 1, 2, 3, 4]) list([5, 6, 7, 8]) list([9, 10, 11, 12])] ...
+The 2d-to-3d element connectivity table for a 3d object: [array([0, 1, 2, 3, 4]) array([5, 6, 7, 8]) array([ 9, 10, 11, 12])] ...
 The associated 2d element id for each 3d element: [   0    0    0 ... 3699 3699 3699]
 </pre></div>
 </div>
@@ -505,10 +665,10 @@ The associated 2d element id for each 3d element: [   0    0    0 ... 3699 3699 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unstructured Geometry
-Number of nodes: 2090
-Number of elements: 3700
-Projection: UTM-33
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Flexible Mesh Geometry: Mesh
+number of nodes: 2090
+number of elements: 3700
+projection: UTM-33
 </pre></div>
 </div>
 </div>
@@ -525,8 +685,8 @@ Projection: UTM-33
 </div>
 </div>
 </div>
-<div class="section" id="layers-in-a-3d-file">
-<h3>Layers in a 3D file<a class="headerlink" href="#layers-in-a-3d-file" title="Permalink to this headline">¶</a></h3>
+<section id="layers-in-a-3d-file">
+<h3>Layers in a 3D file<a class="headerlink" href="#layers-in-a-3d-file" title="Permalink to this headline">#</a></h3>
 <p>Get element ids for a specific layer with the get_layer_elements() method. Layer ids are 0-based (new in MIKE IO 0.10).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -565,32 +725,31 @@ Layer 8: 3700
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="surface-layer-of-3d-file">
-<h3>Surface layer of 3D file<a class="headerlink" href="#surface-layer-of-3d-file" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="surface-layer-of-3d-file">
+<h3>Surface layer of 3D file<a class="headerlink" href="#surface-layer-of-3d-file" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elem_ids</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">top_elements</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mikeio.Dataset&gt;
-Dimensions: (3, 3700)
-Time: 1997-09-15 21:00:00 - 1997-09-16 03:00:00
-Items:
-  0:  Z coordinate &lt;ItemGeometry3D&gt; (meter)
-  1:  Temperature &lt;Temperature&gt; (degree Celsius)
-  2:  Salinity &lt;Salinity&gt; (PSU)
+dims: (time:3, element:3700)
+time: 1997-09-15 21:00:00 - 1997-09-16 03:00:00 (3 records)
+geometry: Dfsu2D (3700 elements, 2090 nodes)
+items:
+  0:  Temperature &lt;Temperature&gt; (degree Celsius)
+  1:  Salinity &lt;Salinity&gt; (PSU)
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Temperature&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[</span><span class="s2">&quot;Temperature&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
@@ -600,7 +759,7 @@ Items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_t</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">max_t</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Maximum temperature in top layer: </span><span class="si">{</span><span class="n">max_t</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">C&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -611,14 +770,14 @@ Items:
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="find-position-of-max-temperature-and-plot">
-<h3>Find position of max temperature and plot<a class="headerlink" href="#find-position-of-max-temperature-and-plot" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="find-position-of-max-temperature-and-plot">
+<h3>Find position of max temperature and plot<a class="headerlink" href="#find-position-of-max-temperature-and-plot" title="Permalink to this headline">#</a></h3>
 <p>Use numpy argmax() method to find the element with the largest value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timestep</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">max_elem_id</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,:]</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+<span class="n">max_elem_id</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">timestep</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
 <span class="n">top_element_coordinates</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">element_coordinates</span><span class="p">[</span><span class="n">dfs</span><span class="o">.</span><span class="n">top_elements</span><span class="p">]</span>
 <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span> <span class="o">=</span> <span class="n">top_element_coordinates</span><span class="p">[</span><span class="n">max_elem_id</span><span class="p">][:</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span>
@@ -633,7 +792,7 @@ Items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,:],</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Temperature&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -642,30 +801,22 @@ Items:
 <img alt="_images/dfsu3d_18_0.png" src="_images/dfsu3d_18_0.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="read-1d-profile-from-3d-file">
-<h1>Read 1D profile from 3D file<a class="headerlink" href="#read-1d-profile-from-3d-file" title="Permalink to this headline">¶</a></h1>
-<p>Find water column which has highest temperature and plot profile for all 3 time steps using static(!) z information.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="read-1d-profile-from-3d-file">
+<h1>Read 1D profile from 3D file<a class="headerlink" href="#read-1d-profile-from-3d-file" title="Permalink to this headline">#</a></h1>
+<p>Find water column which has highest temperature and plot profile for all 3 time steps using dynamic z information.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">elem_ids</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">find_nearest_profile_elements</span><span class="p">(</span><span class="n">max_x</span><span class="p">,</span> <span class="n">max_y</span><span class="p">)</span>
-<span class="n">z_profile_static</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">element_coordinates</span><span class="p">[</span><span class="n">elem_ids</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsp</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">max_x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">max_y</span><span class="p">)</span> <span class="c1"># select vertical column from dfsu-3d </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_profile</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_profile</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>   <span class="c1"># 3 timesteps and 4 layers (no z-layers at this position)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsp</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>   <span class="c1"># 3 timesteps and 4 layers (no z-layers at this position)</span>
 </pre></div>
 </div>
 </div>
@@ -677,83 +828,35 @@ Items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">timestep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ds_profile</span><span class="o">.</span><span class="n">time</span><span class="p">)):</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_profile</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,</span> <span class="p">:],</span><span class="n">z_profile_static</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds_profile</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="n">timestep</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Temperature profiles with static z&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dsp</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dfsu3d_23_0.png" src="_images/dfsu3d_23_0.png" />
+<img alt="_images/dfsu3d_22_0.png" src="_images/dfsu3d_22_0.png" />
 </div>
 </div>
-<p>The profile can also be plotted using the dynamic z-values. We then need to read the z values in the nodes together with the temperature data for each time step.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">,</span><span class="s1">&#39;Temperature&#39;</span><span class="p">],</span> <span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This rest of this section uses features introduced in MIKE IO v 0.9.0 (released 2021-10-22)</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Static z: </span><span class="si">{</span><span class="n">z_profile_static</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">ec_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">calc_element_coordinates</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">,</span> <span class="n">zn</span><span class="o">=</span><span class="n">ds_dyn</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">,:])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dynamic z: </span><span class="si">{</span><span class="n">ec_dyn</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> (first time step)&quot;</span><span class="p">)</span>
-<span class="n">ec_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">calc_element_coordinates</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">,</span> <span class="n">zn</span><span class="o">=</span><span class="n">ds_dyn</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">,:])</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dynamic z: </span><span class="si">{</span><span class="n">ec_dyn</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2"> (second time step)&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Static z: [-7. -5. -3. -1.]
-Dynamic z: [-6.982 -4.945 -2.909 -0.872] (first time step)
-Dynamic z: [-6.988 -4.963 -2.938 -0.913] (second time step)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">timestep</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ds_dyn</span><span class="o">.</span><span class="n">time</span><span class="p">)):</span>
-    <span class="n">ec_dyn</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">calc_element_coordinates</span><span class="p">(</span><span class="n">elements</span><span class="o">=</span><span class="n">elem_ids</span><span class="p">,</span> <span class="n">zn</span><span class="o">=</span><span class="n">ds_dyn</span><span class="p">[</span><span class="s1">&#39;Z coordinate&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,:])</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_dyn</span><span class="p">[</span><span class="s1">&#39;Temperature&#39;</span><span class="p">][</span><span class="n">timestep</span><span class="p">,</span> <span class="p">:],</span><span class="n">ec_dyn</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="n">timestep</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Temperature profiles with dynamic z&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/dfsu3d_28_0.png" src="_images/dfsu3d_28_0.png" />
-</div>
-</div>
-<div class="section" id="read-vertical-slice">
-<h2>Read vertical slice<a class="headerlink" href="#read-vertical-slice" title="Permalink to this headline">¶</a></h2>
+<section id="read-vertical-slice">
+<h2>Read vertical slice<a class="headerlink" href="#read-vertical-slice" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;data/oresund_vertical_slice.dfsu&quot;</span>
-<span class="n">dfs</span> <span class="o">=</span> <span class="n">Dfsu</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">dfs</span> <span class="o">=</span> <span class="n">mikeio</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="n">dfs</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DfsuVerticalProfileSigmaZ
-Number of elements: 441
-Number of nodes: 550
-Projection: UTM-33
-Number of sigma layers: 4
-Max number of z layers: 5
-Items:
-  0:  Z coordinate &lt;ItemGeometry3D&gt; (meter)
-  1:  Temperature &lt;Temperature&gt; (degree Celsius)
-  2:  Salinity &lt;Salinity&gt; (PSU)
-Time: 3 steps with dt=10800.0s
+number of elements: 441
+number of nodes: 550
+projection: UTM-33
+number of sigma layers: 4
+max number of z layers: 5
+items:
+  0:  Temperature &lt;Temperature&gt; (degree Celsius)
+  1:  Salinity &lt;Salinity&gt; (PSU)
+time: 3 steps with dt=10800.0s
       1997-09-15 21:00:00 -- 1997-09-16 03:00:00
 </pre></div>
 </div>
@@ -777,23 +880,23 @@ Time: 3 steps with dt=10800.0s
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="s2">&quot;Temperature&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">items</span><span class="o">=</span><span class="s2">&quot;Temperature&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfs</span><span class="o">.</span><span class="n">plot_vertical_profile</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Transect&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Temperature&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">da</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dfsu3d_33_0.png" src="_images/dfsu3d_33_0.png" />
+<img alt="_images/dfsu3d_27_0.png" src="_images/dfsu3d_27_0.png" />
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -817,54 +920,48 @@ Time: 3 steps with dt=10800.0s
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="exercises/exercise_C_input_data.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Exercise C: Input data</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="exercises/exercise_C_input_data.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Exercise C: Input data</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="output_visualisation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Output Visualisation</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="output_visualisation.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Output Visualisation</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Jesper Mariegaard and  Henrik Andersson<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jesper Mariegaard and  Henrik Andersson<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>

@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Point observations &#8212; Python for marine modelers using MIKE IO and FMSkill</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,46 +20,62 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Exercise point observation" href="exercises/exercise_point_observations.html" />
     <link rel="prev" title="Export to file" href="export_to_file.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -66,9 +84,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -86,21 +105,22 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Python for marine modelers using MIKE IO and FMskill
+                </a>
+            </li>
+        </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="intro.html">
-   Python for marine modelers using MIKE IO and FMskill
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="installation.html">
    Installation
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   MIKE IO Dfsu/Mesh
  </span>
@@ -178,7 +198,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   FMskill
  </span>
@@ -251,7 +271,7 @@
   </a>
  </li>
 </ul>
-<p class="caption" role="heading">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Assignments
  </span>
@@ -270,96 +290,182 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/point_observations.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/point_observations.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/point_observations.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/DHI/book-learn-mikeio-fmskill/main?urlpath=lab/tree/mini_book/point_observations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/point_observations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/point_observations.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#observations-from-dfs0">
    Observations from dfs0
@@ -387,17 +493,60 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Point observations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observations-from-dfs0">
+   Observations from dfs0
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-pointobservation-class">
+   The PointObservation class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observations-from-csv-excel">
+   Observations from csv/excel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observations-from-netcdf">
+   Observations from NetCDF
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observations-from-web-apis">
+   Observations from web APIs
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="point-observations">
-<h1>Point observations<a class="headerlink" href="#point-observations" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="point-observations">
+<h1>Point observations<a class="headerlink" href="#point-observations" title="Permalink to this headline">#</a></h1>
 <p>In order to skill assess our model, we need observational data. The data may come from a file or web api. We will cover the following situations here:</p>
 <ul class="simple">
 <li><p>File</p>
@@ -425,8 +574,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="observations-from-dfs0">
-<h2>Observations from dfs0<a class="headerlink" href="#observations-from-dfs0" title="Permalink to this headline">¶</a></h2>
+<section id="observations-from-dfs0">
+<h2>Observations from dfs0<a class="headerlink" href="#observations-from-dfs0" title="Permalink to this headline">#</a></h2>
 <p>Dfs0 files are obviously a very common container format for point observation data at DHI. Besides the data (time-value-pairs), it typically contains meta data information about the data type (EUM type, e.g. water level) and data unit (EUMUnit, e.g. meter). It can potentially store geographical information too, but this is rarely the case. We typically need to provide this information ourselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -436,9 +585,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="the-pointobservation-class">
-<h2>The PointObservation class<a class="headerlink" href="#the-pointobservation-class" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-pointobservation-class">
+<h2>The PointObservation class<a class="headerlink" href="#the-pointobservation-class" title="Permalink to this headline">#</a></h2>
 <p>The PointObservation class can be instantiated with a dfs0 file name, the item, the position and optionally also a user-defined name.</p>
 <p>PointObservation has basic properties like start_time, end_time, n_points, name, etc</p>
 <p>PointObservation has two simple plot methods:</p>
@@ -467,8 +616,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(datetime.datetime(2017, 10, 26, 0, 10),
- datetime.datetime(2017, 10, 29, 23, 50))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(Timestamp(&#39;2017-10-26 00:10:00&#39;), Timestamp(&#39;2017-10-29 23:50:00&#39;))
 </pre></div>
 </div>
 </div>
@@ -570,9 +718,9 @@
 <img alt="_images/point_observations_11_0.png" src="_images/point_observations_11_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="observations-from-csv-excel">
-<h2>Observations from csv/excel<a class="headerlink" href="#observations-from-csv-excel" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="observations-from-csv-excel">
+<h2>Observations from csv/excel<a class="headerlink" href="#observations-from-csv-excel" title="Permalink to this headline">#</a></h2>
 <p>Pandas is our friend. FMSkill PointObservation can be initialized with either a dfs0 or a pandas DataFrame. Hence, for other file types than dfs0 the workflow is to first create a DataFrame with the data e.g. using pd.read_csv() or pd.read_excel().</p>
 <p>You need to provide the <strong>position</strong> and preferably also <strong>EUM info</strong> (for nice plotting).</p>
 <div class="cell docutils container">
@@ -682,9 +830,9 @@
 <img alt="_images/point_observations_19_0.png" src="_images/point_observations_19_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="observations-from-netcdf">
-<h2>Observations from NetCDF<a class="headerlink" href="#observations-from-netcdf" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="observations-from-netcdf">
+<h2>Observations from NetCDF<a class="headerlink" href="#observations-from-netcdf" title="Permalink to this headline">#</a></h2>
 <p>A NetCDF file is best handled with xarray. It often contains meta data that you can use for constructing your point observation object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -738,7 +886,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1047,7 +1195,8 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
-Dimensions:      (TIME: 1008, DEPTH: 2, LATITUDE: 4464, LONGITUDE: 4464, POSITION: 4464)
+Dimensions:      (TIME: 1008, DEPTH: 2, LATITUDE: 4464, LONGITUDE: 4464,
+                  POSITION: 4464)
 Coordinates:
   * TIME         (TIME) datetime64[ns] 2017-10-25 ... 2017-10-31T23:50:00
   * LATITUDE     (LATITUDE) float32 52.0 52.0 52.0 52.0 ... 52.0 52.0 52.0 52.0
@@ -1080,108 +1229,108 @@ Attributes: (12/51)
     id:                             NO_TS_MO_Europlatform2_201710
     title:                          NWS - NRT in situ Observations
     history:                        2020-01-22T12:14:28Z : Creation; 2020-11-...
-    date_update:                    2021-02-26T13:39:19Z</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-ff8c884f-d19c-4fd9-be90-32509e42c744' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-ff8c884f-d19c-4fd9-be90-32509e42c744' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>TIME</span>: 1008</li><li><span>DEPTH</span>: 2</li><li><span class='xr-has-index'>LATITUDE</span>: 4464</li><li><span class='xr-has-index'>LONGITUDE</span>: 4464</li><li><span>POSITION</span>: 4464</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-f6729a44-e089-4502-9965-0c389d2e0f24' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f6729a44-e089-4502-9965-0c389d2e0f24' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>TIME</span></div><div class='xr-var-dims'>(TIME)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-10-25 ... 2017-10-31T23:50:00</div><input id='attrs-1f6f6e88-4439-4169-88ee-af84c3b0215f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1f6f6e88-4439-4169-88ee-af84c3b0215f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-17d0da47-7fa9-4fca-aab1-72aef318ae14' class='xr-var-data-in' type='checkbox'><label for='data-17d0da47-7fa9-4fca-aab1-72aef318ae14' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>valid_min :</span></dt><dd>-90000.0</dd><dt><span>valid_max :</span></dt><dd>90000.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>comment :</span></dt><dd> </dd><dt><span>axis :</span></dt><dd>T</dd><dt><span>ancillary_variables :</span></dt><dd>TIME_QC</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-10-25T00:00:00.000000000&#x27;, &#x27;2017-10-25T00:10:00.000000000&#x27;,
+    date_update:                    2021-02-26T13:39:19Z</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-5a759021-7481-4edc-b573-32e9318288bc' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-5a759021-7481-4edc-b573-32e9318288bc' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>TIME</span>: 1008</li><li><span>DEPTH</span>: 2</li><li><span class='xr-has-index'>LATITUDE</span>: 4464</li><li><span class='xr-has-index'>LONGITUDE</span>: 4464</li><li><span>POSITION</span>: 4464</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-cda06039-d8b0-42f8-aae3-ebe18e4e4a3d' class='xr-section-summary-in' type='checkbox'  checked><label for='section-cda06039-d8b0-42f8-aae3-ebe18e4e4a3d' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>TIME</span></div><div class='xr-var-dims'>(TIME)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-10-25 ... 2017-10-31T23:50:00</div><input id='attrs-8a8f0f02-0f27-4730-b72b-ae221458ae95' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8a8f0f02-0f27-4730-b72b-ae221458ae95' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0377cc32-1471-419c-be08-e85b1ca2689b' class='xr-var-data-in' type='checkbox'><label for='data-0377cc32-1471-419c-be08-e85b1ca2689b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>valid_min :</span></dt><dd>-90000.0</dd><dt><span>valid_max :</span></dt><dd>90000.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>comment :</span></dt><dd> </dd><dt><span>axis :</span></dt><dd>T</dd><dt><span>ancillary_variables :</span></dt><dd>TIME_QC</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-10-25T00:00:00.000000000&#x27;, &#x27;2017-10-25T00:10:00.000000000&#x27;,
        &#x27;2017-10-25T00:20:00.000000256&#x27;, ..., &#x27;2017-10-31T23:30:00.000000000&#x27;,
        &#x27;2017-10-31T23:39:59.999999744&#x27;, &#x27;2017-10-31T23:50:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>LATITUDE</span></div><div class='xr-var-dims'>(LATITUDE)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>52.0 52.0 52.0 ... 52.0 52.0 52.0</div><input id='attrs-bbf4c3ec-a40b-45ac-910b-4c953e63a1bd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bbf4c3ec-a40b-45ac-910b-4c953e63a1bd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d15ecf1e-b9f5-46d2-af61-7870f7ff49c2' class='xr-var-data-in' type='checkbox'><label for='data-d15ecf1e-b9f5-46d2-af61-7870f7ff49c2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude of each location</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degree_north</dd><dt><span>valid_min :</span></dt><dd>-90.0</dd><dt><span>valid_max :</span></dt><dd>90.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd></dd><dt><span>comment :</span></dt><dd></dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>ancillary_variables :</span></dt><dd>POSITION_QC</dd></dl></div><div class='xr-var-data'><pre>array([51.99861, 51.99861, 51.99861, ..., 51.99861, 51.99861, 51.99861],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>LONGITUDE</span></div><div class='xr-var-dims'>(LONGITUDE)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>3.276 3.276 3.276 ... 3.276 3.276</div><input id='attrs-0c2b5ce5-2d4c-4b2b-9392-6e1de1a795bc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0c2b5ce5-2d4c-4b2b-9392-6e1de1a795bc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-de5e76c5-2c05-4c02-acdd-6a79fbdef09d' class='xr-var-data-in' type='checkbox'><label for='data-de5e76c5-2c05-4c02-acdd-6a79fbdef09d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude of each location</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>valid_min :</span></dt><dd>-180.0</dd><dt><span>valid_max :</span></dt><dd>180.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd></dd><dt><span>comment :</span></dt><dd></dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>ancillary_variables :</span></dt><dd>POSITION_QC</dd></dl></div><div class='xr-var-data'><pre>array([3.276389, 3.276389, 3.276389, ..., 3.276389, 3.276389, 3.276389],
-      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c9521e08-372f-44bd-b72b-a0bc96bce46b' class='xr-section-summary-in' type='checkbox'  ><label for='section-c9521e08-372f-44bd-b72b-a0bc96bce46b' class='xr-section-summary' >Data variables: <span>(18)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TIME_QC</span></div><div class='xr-var-dims'>(TIME)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3973f8fb-0bcc-4094-a7f6-b73c7f7adc79' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3973f8fb-0bcc-4094-a7f6-b73c7f7adc79' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b298876f-4fe6-40bb-9187-e49be71ef06c' class='xr-var-data-in' type='checkbox'><label for='data-b298876f-4fe6-40bb-9187-e49be71ef06c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Time quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([1., 1., 1., ..., 1., 1., 1.], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>DEPH</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b2cbc059-9ea9-45f0-b5b5-64cba5cc54a1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b2cbc059-9ea9-45f0-b5b5-64cba5cc54a1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-652817c9-d5b1-4041-81b1-1d067d86679b' class='xr-var-data-in' type='checkbox'><label for='data-652817c9-d5b1-4041-81b1-1d067d86679b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Depth</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>valid_max :</span></dt><dd>12000.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>QC_procedure :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd></dd><dt><span>comment :</span></dt><dd></dd><dt><span>axis :</span></dt><dd>Z</dd><dt><span>reference :</span></dt><dd>sea_level</dd><dt><span>ancillary_variables :</span></dt><dd>DEPH_QC</dd><dt><span>valid_min :</span></dt><dd>-12000.0</dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[0., 1.],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>LATITUDE</span></div><div class='xr-var-dims'>(LATITUDE)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>52.0 52.0 52.0 ... 52.0 52.0 52.0</div><input id='attrs-a30a0bbf-e09e-47dd-8eea-f7644aa42641' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a30a0bbf-e09e-47dd-8eea-f7644aa42641' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7dd53722-be8c-4a44-9dae-e5a5b168654f' class='xr-var-data-in' type='checkbox'><label for='data-7dd53722-be8c-4a44-9dae-e5a5b168654f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude of each location</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>units :</span></dt><dd>degree_north</dd><dt><span>valid_min :</span></dt><dd>-90.0</dd><dt><span>valid_max :</span></dt><dd>90.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd></dd><dt><span>comment :</span></dt><dd></dd><dt><span>axis :</span></dt><dd>Y</dd><dt><span>ancillary_variables :</span></dt><dd>POSITION_QC</dd></dl></div><div class='xr-var-data'><pre>array([51.99861, 51.99861, 51.99861, ..., 51.99861, 51.99861, 51.99861],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>LONGITUDE</span></div><div class='xr-var-dims'>(LONGITUDE)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>3.276 3.276 3.276 ... 3.276 3.276</div><input id='attrs-7cd29d4b-b910-40da-85dc-a67bf8fb5c81' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7cd29d4b-b910-40da-85dc-a67bf8fb5c81' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-600af6b5-3a2b-447e-9cc9-8b5211fff714' class='xr-var-data-in' type='checkbox'><label for='data-600af6b5-3a2b-447e-9cc9-8b5211fff714' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude of each location</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>valid_min :</span></dt><dd>-180.0</dd><dt><span>valid_max :</span></dt><dd>180.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd></dd><dt><span>comment :</span></dt><dd></dd><dt><span>axis :</span></dt><dd>X</dd><dt><span>ancillary_variables :</span></dt><dd>POSITION_QC</dd></dl></div><div class='xr-var-data'><pre>array([3.276389, 3.276389, 3.276389, ..., 3.276389, 3.276389, 3.276389],
+      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6f2896f5-c930-4c67-bbd6-f367bbbbaa72' class='xr-section-summary-in' type='checkbox'  ><label for='section-6f2896f5-c930-4c67-bbd6-f367bbbbaa72' class='xr-section-summary' >Data variables: <span>(18)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>TIME_QC</span></div><div class='xr-var-dims'>(TIME)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f55511fc-2b03-4d3d-831e-458f4da5a6b8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f55511fc-2b03-4d3d-831e-458f4da5a6b8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fbede19d-b2cb-4a1a-b733-0e03c6d56ddb' class='xr-var-data-in' type='checkbox'><label for='data-fbede19d-b2cb-4a1a-b733-0e03c6d56ddb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Time quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([1., 1., 1., ..., 1., 1., 1.], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>DEPH</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-00e7083e-e6c3-4a6c-a12b-fd51ae2be0ce' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-00e7083e-e6c3-4a6c-a12b-fd51ae2be0ce' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0b7a1164-ac68-450b-96a8-75af7c24c486' class='xr-var-data-in' type='checkbox'><label for='data-0b7a1164-ac68-450b-96a8-75af7c24c486' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Depth</dd><dt><span>standard_name :</span></dt><dd>depth</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>valid_max :</span></dt><dd>12000.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>QC_procedure :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd></dd><dt><span>comment :</span></dt><dd></dd><dt><span>axis :</span></dt><dd>Z</dd><dt><span>reference :</span></dt><dd>sea_level</dd><dt><span>ancillary_variables :</span></dt><dd>DEPH_QC</dd><dt><span>valid_min :</span></dt><dd>-12000.0</dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[0., 1.],
        [0., 1.],
        [0., 1.],
        ...,
        [0., 1.],
        [0., 1.],
-       [0., 1.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>DEPH_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b80435f2-7eb3-44e1-858b-1d401005ed19' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b80435f2-7eb3-44e1-858b-1d401005ed19' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-205f32df-cfac-46ea-b770-22ad3a61f382' class='xr-var-data-in' type='checkbox'><label for='data-205f32df-cfac-46ea-b770-22ad3a61f382' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Depth quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[7., 7.],
+       [0., 1.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>DEPH_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-417ceaa6-c71e-460d-bda9-682c36dd6746' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-417ceaa6-c71e-460d-bda9-682c36dd6746' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-701884b7-f104-4833-b1a6-c2331b73a77d' class='xr-var-data-in' type='checkbox'><label for='data-701884b7-f104-4833-b1a6-c2331b73a77d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Depth quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[7., 7.],
        [7., 7.],
        [7., 7.],
        ...,
        [7., 7.],
        [7., 7.],
-       [7., 7.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>POSITION_QC</span></div><div class='xr-var-dims'>(POSITION)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e81710e7-bd90-4969-b9c4-4f7a348eed1d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e81710e7-bd90-4969-b9c4-4f7a348eed1d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5cbf1e95-ba86-4334-9dd1-b1971fe320fc' class='xr-var-data-in' type='checkbox'><label for='data-5cbf1e95-ba86-4334-9dd1-b1971fe320fc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Position quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([1., 1., 1., ..., 1., 1., 1.], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VAVH</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6f7b4678-f55e-4e2b-888a-3f3f912b8ed8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6f7b4678-f55e-4e2b-888a-3f3f912b8ed8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-968f3b42-81a9-40be-99ab-09db926884aa' class='xr-var-data-in' type='checkbox'><label for='data-968f3b42-81a9-40be-99ab-09db926884aa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Average height highest 1/3 wave (H1/3)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_significant_height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>30000</dd><dt><span>type_of_analysis :</span></dt><dd>zero crossing</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[1.59,  nan],
+       [7., 7.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>POSITION_QC</span></div><div class='xr-var-dims'>(POSITION)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-51290e8c-2fec-4600-a284-395a770e89a7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-51290e8c-2fec-4600-a284-395a770e89a7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-798a94c4-77b9-4ae5-a3d5-cf67a91e5f34' class='xr-var-data-in' type='checkbox'><label for='data-798a94c4-77b9-4ae5-a3d5-cf67a91e5f34' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Position quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([1., 1., 1., ..., 1., 1., 1.], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VAVH</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-62b13fc0-4ed8-4c49-8af2-500a76c57029' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-62b13fc0-4ed8-4c49-8af2-500a76c57029' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-531d124b-3489-4581-be29-233add8fa8e6' class='xr-var-data-in' type='checkbox'><label for='data-531d124b-3489-4581-be29-233add8fa8e6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Average height highest 1/3 wave (H1/3)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_significant_height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>30000</dd><dt><span>type_of_analysis :</span></dt><dd>zero crossing</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[1.59,  nan],
        [1.71,  nan],
        [1.8 ,  nan],
        ...,
        [1.35,  nan],
        [1.39,  nan],
-       [1.46,  nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VAVH_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-37024865-f075-4db8-8b34-d88215e0c68b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-37024865-f075-4db8-8b34-d88215e0c68b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0aa6887e-b8b0-431d-99c2-53eb5e5b3242' class='xr-var-data-in' type='checkbox'><label for='data-0aa6887e-b8b0-431d-99c2-53eb5e5b3242' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Average height highest 1/3 wave (H1/3) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
+       [1.46,  nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VAVH_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-459eb527-f6c1-48ec-a83b-e09318754124' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-459eb527-f6c1-48ec-a83b-e09318754124' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f4328553-5c7e-4c69-9576-1e4df69db2f9' class='xr-var-data-in' type='checkbox'><label for='data-f4328553-5c7e-4c69-9576-1e4df69db2f9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Average height highest 1/3 wave (H1/3) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
        [ 1., nan],
        [ 1., nan],
        ...,
        [ 1., nan],
        [ 1., nan],
-       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VHM0</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c74d7e86-3fcf-44f6-aeda-2e2525faadee' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c74d7e86-3fcf-44f6-aeda-2e2525faadee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d0acef81-838a-4ad1-8d63-b29f9fe209b7' class='xr-var-data-in' type='checkbox'><label for='data-d0acef81-838a-4ad1-8d63-b29f9fe209b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Spectral significant wave height (Hm0)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_significant_height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>30000</dd><dt><span>type_of_analysis :</span></dt><dd>spectral analysis</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[1.68,  nan],
+       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VHM0</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a15e1b62-0b69-40f9-b4d6-1d88ec9843e1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a15e1b62-0b69-40f9-b4d6-1d88ec9843e1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4b75d891-3d9b-488c-a2c2-03faa6c9f219' class='xr-var-data-in' type='checkbox'><label for='data-4b75d891-3d9b-488c-a2c2-03faa6c9f219' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Spectral significant wave height (Hm0)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_significant_height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>30000</dd><dt><span>type_of_analysis :</span></dt><dd>spectral analysis</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[1.68,  nan],
        [1.79,  nan],
        [1.84,  nan],
        ...,
        [1.42,  nan],
        [1.44,  nan],
-       [1.5 ,  nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VHM0_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5160134b-e244-45d0-8c07-50de0c42c224' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5160134b-e244-45d0-8c07-50de0c42c224' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f4b9f2bc-5e3f-49e9-a104-1393ac994660' class='xr-var-data-in' type='checkbox'><label for='data-f4b9f2bc-5e3f-49e9-a104-1393ac994660' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Spectral significant wave height (Hm0) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
+       [1.5 ,  nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VHM0_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1593f5f5-bd11-4ebc-9791-39ae35876df3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1593f5f5-bd11-4ebc-9791-39ae35876df3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ab21551f-ab4c-4e28-9ad4-a32bdce6a3c2' class='xr-var-data-in' type='checkbox'><label for='data-ab21551f-ab4c-4e28-9ad4-a32bdce6a3c2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Spectral significant wave height (Hm0) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
        [ 1., nan],
        [ 1., nan],
        ...,
        [ 1., nan],
        [ 1., nan],
-       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VAVT</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c31ede86-79fc-472d-b9e5-ed1418404430' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c31ede86-79fc-472d-b9e5-ed1418404430' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-77a38d5a-6910-45e9-8138-f9ff11533412' class='xr-var-data-in' type='checkbox'><label for='data-77a38d5a-6910-45e9-8138-f9ff11533412' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Average period highest 1/3 wave (T1/3)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_significant_period</dd><dt><span>units :</span></dt><dd>s</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>50000</dd><dt><span>type_of_analysis :</span></dt><dd>zero crossing</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[5.7, nan],
+       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VAVT</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-bf126cfc-bff2-4baa-8bef-819a396ccd04' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bf126cfc-bff2-4baa-8bef-819a396ccd04' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ed69354a-e476-4bc1-aff2-c8f4ecfea2c5' class='xr-var-data-in' type='checkbox'><label for='data-ed69354a-e476-4bc1-aff2-c8f4ecfea2c5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Average period highest 1/3 wave (T1/3)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_significant_period</dd><dt><span>units :</span></dt><dd>s</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>50000</dd><dt><span>type_of_analysis :</span></dt><dd>zero crossing</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[5.7, nan],
        [5.9, nan],
        [6.1, nan],
        ...,
        [5.2, nan],
        [5.3, nan],
-       [5.2, nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VAVT_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e465e395-097e-45f3-a95e-b9e34bd78073' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e465e395-097e-45f3-a95e-b9e34bd78073' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-27841b30-484c-4c72-84e2-9ea9c3064da0' class='xr-var-data-in' type='checkbox'><label for='data-27841b30-484c-4c72-84e2-9ea9c3064da0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Average period highest 1/3 wave (T1/3) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
+       [5.2, nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VAVT_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2a607533-0a36-4a6f-ab81-138c4b4d51b6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2a607533-0a36-4a6f-ab81-138c4b4d51b6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-16902ceb-49f2-41e9-b5d1-ed4336d2cfbf' class='xr-var-data-in' type='checkbox'><label for='data-16902ceb-49f2-41e9-b5d1-ed4336d2cfbf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Average period highest 1/3 wave (T1/3) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
        [ 1., nan],
        [ 1., nan],
        ...,
        [ 1., nan],
        [ 1., nan],
-       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VTPK</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7d2bd868-8811-4d13-a27f-ccecd77d8068' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7d2bd868-8811-4d13-a27f-ccecd77d8068' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3b79c631-57e2-437a-a0b6-e2b39c0eccad' class='xr-var-data-in' type='checkbox'><label for='data-3b79c631-57e2-437a-a0b6-e2b39c0eccad' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Wave period at spectral peak / peak period (Tp)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_period_at_variance_spectral_density_maximum</dd><dt><span>units :</span></dt><dd>s</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>50000</dd><dt><span>type_of_analysis :</span></dt><dd>spectral analysis</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[7.142,   nan],
+       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VTPK</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-908c9060-f46a-459b-ab0f-a81baffc527f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-908c9060-f46a-459b-ab0f-a81baffc527f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c6494bd5-1e3a-4cbe-9619-63a05df154f5' class='xr-var-data-in' type='checkbox'><label for='data-c6494bd5-1e3a-4cbe-9619-63a05df154f5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Wave period at spectral peak / peak period (Tp)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_period_at_variance_spectral_density_maximum</dd><dt><span>units :</span></dt><dd>s</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>50000</dd><dt><span>type_of_analysis :</span></dt><dd>spectral analysis</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[7.142,   nan],
        [7.142,   nan],
        [7.142,   nan],
        ...,
        [5.263,   nan],
        [5.555,   nan],
-       [5.263,   nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VTPK_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d2d07dad-1081-4491-afc1-2541c50b4353' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d2d07dad-1081-4491-afc1-2541c50b4353' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ca8b85a1-68ef-4774-a9fd-30e9a87bfbfb' class='xr-var-data-in' type='checkbox'><label for='data-ca8b85a1-68ef-4774-a9fd-30e9a87bfbfb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Wave period at spectral peak / peak period (Tp) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
+       [5.263,   nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VTPK_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5aa32dda-5933-49f6-9b47-be17dc21bddf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5aa32dda-5933-49f6-9b47-be17dc21bddf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d90898c4-cd81-46e1-b44b-edfd892b8671' class='xr-var-data-in' type='checkbox'><label for='data-d90898c4-cd81-46e1-b44b-edfd892b8671' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Wave period at spectral peak / peak period (Tp) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
        [ 1., nan],
        [ 1., nan],
        ...,
        [ 1., nan],
        [ 1., nan],
-       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VTZA</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f813723f-e217-4925-9fbf-c6973bc3791a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f813723f-e217-4925-9fbf-c6973bc3791a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1173da4f-44e3-408d-9de1-ef405721f3f2' class='xr-var-data-in' type='checkbox'><label for='data-1173da4f-44e3-408d-9de1-ef405721f3f2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Average zero crossing wave period (Tz)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_mean_period</dd><dt><span>units :</span></dt><dd>s</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>50000</dd><dt><span>type_of_analysis :</span></dt><dd>zero crossing</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[4.8, nan],
+       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VTZA</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-89ff7012-8e6f-4fbc-9da4-d71237e1a66c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-89ff7012-8e6f-4fbc-9da4-d71237e1a66c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-35f5e4ad-77e3-4b26-b9aa-17d67a18fcfa' class='xr-var-data-in' type='checkbox'><label for='data-35f5e4ad-77e3-4b26-b9aa-17d67a18fcfa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Average zero crossing wave period (Tz)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_mean_period</dd><dt><span>units :</span></dt><dd>s</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>50000</dd><dt><span>type_of_analysis :</span></dt><dd>zero crossing</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[4.8, nan],
        [5.1, nan],
        [5.1, nan],
        ...,
        [4.4, nan],
        [4.4, nan],
-       [4.5, nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VTZA_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fe69e394-b3f4-4dfa-bbee-d138471a43e3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fe69e394-b3f4-4dfa-bbee-d138471a43e3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e1587605-969a-494e-817d-f3a853b57ce7' class='xr-var-data-in' type='checkbox'><label for='data-e1587605-969a-494e-817d-f3a853b57ce7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Average zero crossing wave period (Tz) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
+       [4.5, nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>VTZA_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-064e9929-c97c-463a-8439-88be89c368d9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-064e9929-c97c-463a-8439-88be89c368d9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-04ad9764-176b-46a8-adde-893827f5a5e8' class='xr-var-data-in' type='checkbox'><label for='data-04ad9764-176b-46a8-adde-893827f5a5e8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Average zero crossing wave period (Tz) quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
        [ 1., nan],
        [ 1., nan],
        ...,
        [ 1., nan],
        [ 1., nan],
-       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>TEMP</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f6fb14d1-4510-4e48-88e6-8dc49184eb5c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f6fb14d1-4510-4e48-88e6-8dc49184eb5c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2dde3085-2fb4-4599-a5c0-c08af41dab2f' class='xr-var-data-in' type='checkbox'><label for='data-2dde3085-2fb4-4599-a5c0-c08af41dab2f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea temperature</dd><dt><span>standard_name :</span></dt><dd>sea_water_temperature</dd><dt><span>units :</span></dt><dd>degrees_C</dd><dt><span>valid_min :</span></dt><dd>-2000</dd><dt><span>valid_max :</span></dt><dd>32000</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[nan, nan],
+       [ 1., nan]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>TEMP</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5d90a34e-e653-443c-bf6a-61fe4b2f59e7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5d90a34e-e653-443c-bf6a-61fe4b2f59e7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b7fff5e3-7bef-40c8-a738-d1cb26d19ce3' class='xr-var-data-in' type='checkbox'><label for='data-b7fff5e3-7bef-40c8-a738-d1cb26d19ce3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Sea temperature</dd><dt><span>standard_name :</span></dt><dd>sea_water_temperature</dd><dt><span>units :</span></dt><dd>degrees_C</dd><dt><span>valid_min :</span></dt><dd>-2000</dd><dt><span>valid_max :</span></dt><dd>32000</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[nan, nan],
        [nan, nan],
        [nan, nan],
        ...,
        [nan, nan],
        [nan, nan],
-       [nan, nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>TEMP_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-daecafa6-e614-43d7-9550-10b6ed91b893' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-daecafa6-e614-43d7-9550-10b6ed91b893' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-00e6edb9-8fe2-4e32-ad82-e018b30f4d6a' class='xr-var-data-in' type='checkbox'><label for='data-00e6edb9-8fe2-4e32-ad82-e018b30f4d6a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Sea temperature quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[nan,  9.],
+       [nan, nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>TEMP_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-00e79485-a0d4-4bb0-9966-fe254077e3b3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-00e79485-a0d4-4bb0-9966-fe254077e3b3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c14aa295-589e-4552-822b-c2ba592c04bb' class='xr-var-data-in' type='checkbox'><label for='data-c14aa295-589e-4552-822b-c2ba592c04bb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Sea temperature quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[nan,  9.],
        [nan,  9.],
        [nan,  9.],
        ...,
        [nan,  9.],
        [nan,  9.],
-       [nan,  9.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>SWHT</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-db645325-cce5-4299-9005-78ee122033c7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-db645325-cce5-4299-9005-78ee122033c7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-16ceb886-a1c3-40dc-be49-4bc9bf2f0159' class='xr-var-data-in' type='checkbox'><label for='data-16ceb886-a1c3-40dc-be49-4bc9bf2f0159' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Swell Height</dd><dt><span>standard_name :</span></dt><dd>sea_surface_swell_wave_significant_height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>10000</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[0.1 ,  nan],
+       [nan,  9.]], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>SWHT</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ddb3cb21-f277-4a49-a5ed-816181be8ff5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ddb3cb21-f277-4a49-a5ed-816181be8ff5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9aa403c7-2f98-4b68-bd63-59fc8433a9df' class='xr-var-data-in' type='checkbox'><label for='data-9aa403c7-2f98-4b68-bd63-59fc8433a9df' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Swell Height</dd><dt><span>standard_name :</span></dt><dd>sea_surface_swell_wave_significant_height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>10000</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div><div class='xr-var-data'><pre>array([[0.1 ,  nan],
        [0.1 ,  nan],
        [0.1 ,  nan],
        ...,
        [0.34,  nan],
        [0.33,  nan],
-       [0.3 ,  nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>SWHT_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fdb1760f-c313-43b4-87c9-4e547a13936f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fdb1760f-c313-43b4-87c9-4e547a13936f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a30d3ea8-3d06-40cd-8bcc-7041e8be5f2f' class='xr-var-data-in' type='checkbox'><label for='data-a30d3ea8-3d06-40cd-8bcc-7041e8be5f2f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Swell Height quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
+       [0.3 ,  nan]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>SWHT_QC</span></div><div class='xr-var-dims'>(TIME, DEPTH)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1e8829e6-dc36-47cf-906d-67d764559322' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1e8829e6-dc36-47cf-906d-67d764559322' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fe8c3084-2355-4105-ae21-7d4f6550be1c' class='xr-var-data-in' type='checkbox'><label for='data-fe8c3084-2355-4105-ae21-7d4f6550be1c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>valid_min :</span></dt><dd>0</dd><dt><span>valid_max :</span></dt><dd>9</dd><dt><span>flag_values :</span></dt><dd>[0 1 2 3 4 5 6 7 8 9]</dd><dt><span>flag_meanings :</span></dt><dd>no_qc_performed good_data probably_good_data bad_data_that_are_potentially_correctable bad_data value_changed not_used nominal_value interpolated_value missing_value</dd><dt><span>long_name :</span></dt><dd>Swell Height quality flag</dd><dt><span>conventions :</span></dt><dd>Copernicus Marine In Situ reference table 2</dd></dl></div><div class='xr-var-data'><pre>array([[ 1., nan],
        [ 1., nan],
        [ 1., nan],
        ...,
        [ 1., nan],
        [ 1., nan],
-       [ 1., nan]], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8d5f001f-a9ed-4898-a067-f1815ae29582' class='xr-section-summary-in' type='checkbox'  ><label for='section-8d5f001f-a9ed-4898-a067-f1815ae29582' class='xr-section-summary' >Attributes: <span>(51)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>data_type :</span></dt><dd>OceanSITES time-series data</dd><dt><span>platform_code :</span></dt><dd>Europlatform2</dd><dt><span>platform_name :</span></dt><dd></dd><dt><span>institution :</span></dt><dd>Rijkswaterstaat Water Traffic and Environment</dd><dt><span>institution_edmo_code :</span></dt><dd>1526</dd><dt><span>wmo_platform_code :</span></dt><dd></dd><dt><span>source :</span></dt><dd>mooring</dd><dt><span>source_platform_category_code :</span></dt><dd>48</dd><dt><span>data_mode :</span></dt><dd>R</dd><dt><span>quality_control_indicator :</span></dt><dd>1</dd><dt><span>quality_index :</span></dt><dd>A</dd><dt><span>netcdf_version :</span></dt><dd>netCDF-4 classic model</dd><dt><span>summary :</span></dt><dd>Oceanographic data from North West Shelf</dd><dt><span>area :</span></dt><dd>North West Shelf</dd><dt><span>geospatial_lat_min :</span></dt><dd>51.998611</dd><dt><span>geospatial_lat_max :</span></dt><dd>51.998611</dd><dt><span>geospatial_lon_min :</span></dt><dd>3.276389</dd><dt><span>geospatial_lon_max :</span></dt><dd>3.276389</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0</dd><dt><span>geospatial_vertical_max :</span></dt><dd>1</dd><dt><span>family_label :</span></dt><dd>mooring</dd><dt><span>family_code :</span></dt><dd>MO</dd><dt><span>time_coverage_start :</span></dt><dd>2017-10-01T00:00:00Z</dd><dt><span>time_coverage_end :</span></dt><dd>2017-10-31T23:59:59Z</dd><dt><span>institution_references :</span></dt><dd>http://www.rijkswaterstaat.nl/en/about_us/our_organization/</dd><dt><span>contact :</span></dt><dd>cmems-service@bsh.de</dd><dt><span>author :</span></dt><dd>cmems-service</dd><dt><span>pi_name :</span></dt><dd>matroos@rws.nl</dd><dt><span>distribution_statement :</span></dt><dd>These data follow Copernicus standards; they are public and free of charge. User assumes all risk for use of data. User must display citation in any publication or product using data. User must contact PI prior to any commercial use of data.</dd><dt><span>citation :</span></dt><dd>These data were collected and made freely available by the Copernicus project and the programs that contribute to it</dd><dt><span>qc_manual :</span></dt><dd>OceanSITES User&#x27;s Manual v1.2</dd><dt><span>last_date_observation :</span></dt><dd>2017-10-31T23:50:00Z</dd><dt><span>last_latitude_observation :</span></dt><dd>51.998611</dd><dt><span>last_longitude_observation :</span></dt><dd>3.276389</dd><dt><span>ices_platform_code :</span></dt><dd></dd><dt><span>bottom_depth :</span></dt><dd></dd><dt><span>doi :</span></dt><dd></dd><dt><span>site_code :</span></dt><dd></dd><dt><span>comment :</span></dt><dd></dd><dt><span>format_version :</span></dt><dd>1.4</dd><dt><span>Conventions :</span></dt><dd>CF-1.6 Copernicus-InSituTAC-FormatManual-1.41 Copernicus-InSituTAC-SRD-1.5 Copernicus-InSituTAC-ParametersList-3.2.0</dd><dt><span>update_interval :</span></dt><dd>PT1H</dd><dt><span>naming_authority :</span></dt><dd>Copernicus Marine In Situ</dd><dt><span>cdm_data_type :</span></dt><dd>timeSeries</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu http://www.marineinsitu.eu</dd><dt><span>data_assembly_center :</span></dt><dd>BSH</dd><dt><span>wmo_inst_type :</span></dt><dd></dd><dt><span>id :</span></dt><dd>NO_TS_MO_Europlatform2_201710</dd><dt><span>title :</span></dt><dd>NWS - NRT in situ Observations</dd><dt><span>history :</span></dt><dd>2020-01-22T12:14:28Z : Creation; 2020-11-26T13:29:56Z, BSH North West Shelf PU: File updated to comply with Copernicus Marine In Situ NetCDF Format Manual Version 1.41; 2021-02-26T13:39:19Z, BSH North West Shelf PU: Title has been modified to comply with PIT v5.6.0.</dd><dt><span>date_update :</span></dt><dd>2021-02-26T13:39:19Z</dd></dl></div></li></ul></div></div></div></div>
+       [ 1., nan]], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a72b6b57-cc7a-4215-bfdc-a7f986857ddc' class='xr-section-summary-in' type='checkbox'  ><label for='section-a72b6b57-cc7a-4215-bfdc-a7f986857ddc' class='xr-section-summary' >Attributes: <span>(51)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>data_type :</span></dt><dd>OceanSITES time-series data</dd><dt><span>platform_code :</span></dt><dd>Europlatform2</dd><dt><span>platform_name :</span></dt><dd></dd><dt><span>institution :</span></dt><dd>Rijkswaterstaat Water Traffic and Environment</dd><dt><span>institution_edmo_code :</span></dt><dd>1526</dd><dt><span>wmo_platform_code :</span></dt><dd></dd><dt><span>source :</span></dt><dd>mooring</dd><dt><span>source_platform_category_code :</span></dt><dd>48</dd><dt><span>data_mode :</span></dt><dd>R</dd><dt><span>quality_control_indicator :</span></dt><dd>1</dd><dt><span>quality_index :</span></dt><dd>A</dd><dt><span>netcdf_version :</span></dt><dd>netCDF-4 classic model</dd><dt><span>summary :</span></dt><dd>Oceanographic data from North West Shelf</dd><dt><span>area :</span></dt><dd>North West Shelf</dd><dt><span>geospatial_lat_min :</span></dt><dd>51.998611</dd><dt><span>geospatial_lat_max :</span></dt><dd>51.998611</dd><dt><span>geospatial_lon_min :</span></dt><dd>3.276389</dd><dt><span>geospatial_lon_max :</span></dt><dd>3.276389</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0</dd><dt><span>geospatial_vertical_max :</span></dt><dd>1</dd><dt><span>family_label :</span></dt><dd>mooring</dd><dt><span>family_code :</span></dt><dd>MO</dd><dt><span>time_coverage_start :</span></dt><dd>2017-10-01T00:00:00Z</dd><dt><span>time_coverage_end :</span></dt><dd>2017-10-31T23:59:59Z</dd><dt><span>institution_references :</span></dt><dd>http://www.rijkswaterstaat.nl/en/about_us/our_organization/</dd><dt><span>contact :</span></dt><dd>cmems-service@bsh.de</dd><dt><span>author :</span></dt><dd>cmems-service</dd><dt><span>pi_name :</span></dt><dd>matroos@rws.nl</dd><dt><span>distribution_statement :</span></dt><dd>These data follow Copernicus standards; they are public and free of charge. User assumes all risk for use of data. User must display citation in any publication or product using data. User must contact PI prior to any commercial use of data.</dd><dt><span>citation :</span></dt><dd>These data were collected and made freely available by the Copernicus project and the programs that contribute to it</dd><dt><span>qc_manual :</span></dt><dd>OceanSITES User&#x27;s Manual v1.2</dd><dt><span>last_date_observation :</span></dt><dd>2017-10-31T23:50:00Z</dd><dt><span>last_latitude_observation :</span></dt><dd>51.998611</dd><dt><span>last_longitude_observation :</span></dt><dd>3.276389</dd><dt><span>ices_platform_code :</span></dt><dd></dd><dt><span>bottom_depth :</span></dt><dd></dd><dt><span>doi :</span></dt><dd></dd><dt><span>site_code :</span></dt><dd></dd><dt><span>comment :</span></dt><dd></dd><dt><span>format_version :</span></dt><dd>1.4</dd><dt><span>Conventions :</span></dt><dd>CF-1.6 Copernicus-InSituTAC-FormatManual-1.41 Copernicus-InSituTAC-SRD-1.5 Copernicus-InSituTAC-ParametersList-3.2.0</dd><dt><span>update_interval :</span></dt><dd>PT1H</dd><dt><span>naming_authority :</span></dt><dd>Copernicus Marine In Situ</dd><dt><span>cdm_data_type :</span></dt><dd>timeSeries</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu http://www.marineinsitu.eu</dd><dt><span>data_assembly_center :</span></dt><dd>BSH</dd><dt><span>wmo_inst_type :</span></dt><dd></dd><dt><span>id :</span></dt><dd>NO_TS_MO_Europlatform2_201710</dd><dt><span>title :</span></dt><dd>NWS - NRT in situ Observations</dd><dt><span>history :</span></dt><dd>2020-01-22T12:14:28Z : Creation; 2020-11-26T13:29:56Z, BSH North West Shelf PU: File updated to comply with Copernicus Marine In Situ NetCDF Format Manual Version 1.41; 2021-02-26T13:39:19Z, BSH North West Shelf PU: Title has been modified to comply with PIT v5.6.0.</dd><dt><span>date_update :</span></dt><dd>2021-02-26T13:39:19Z</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1246,7 +1395,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1558,23 +1707,26 @@ dl.xr-attrs {
 array([1.68, 1.79, 1.84, ..., 1.42, 1.44, 1.5 ])
 Coordinates:
   * TIME     (TIME) datetime64[ns] 2017-10-25 ... 2017-10-31T23:50:00
-Attributes: (12/16)
+Attributes:
     long_name:           Spectral significant wave height (Hm0)
     standard_name:       sea_surface_wave_significant_height
     units:               m
     valid_min:           1
     valid_max:           30000
     type_of_analysis:    spectral analysis
-    ...                  ...
+    comment:              
+    uncertainty:          
+    accuracy:             
+    precision:            
     resolution:           
     cell_methods:         
     sensor_depth:        0.0
     sensor_mount:         
     sensor_orientation:   
-    data_mode:           R</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'VHM0'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>TIME</span>: 1008</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-95dd24ec-5311-4d31-8137-64bb61f6259d' class='xr-array-in' type='checkbox' checked><label for='section-95dd24ec-5311-4d31-8137-64bb61f6259d' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>1.68 1.79 1.84 1.84 1.76 1.73 1.72 ... 1.59 1.54 1.44 1.42 1.44 1.5</span></div><div class='xr-array-data'><pre>array([1.68, 1.79, 1.84, ..., 1.42, 1.44, 1.5 ])</pre></div></div></li><li class='xr-section-item'><input id='section-d5a405c9-4ed5-47a5-a1c3-4c2d566de7b5' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d5a405c9-4ed5-47a5-a1c3-4c2d566de7b5' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>TIME</span></div><div class='xr-var-dims'>(TIME)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-10-25 ... 2017-10-31T23:50:00</div><input id='attrs-131dc2fd-866f-43c3-a07e-2bd10cb882c3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-131dc2fd-866f-43c3-a07e-2bd10cb882c3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6febedab-4cbf-43ee-9576-053d59d18155' class='xr-var-data-in' type='checkbox'><label for='data-6febedab-4cbf-43ee-9576-053d59d18155' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>valid_min :</span></dt><dd>-90000.0</dd><dt><span>valid_max :</span></dt><dd>90000.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>comment :</span></dt><dd> </dd><dt><span>axis :</span></dt><dd>T</dd><dt><span>ancillary_variables :</span></dt><dd>TIME_QC</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-10-25T00:00:00.000000000&#x27;, &#x27;2017-10-25T00:10:00.000000000&#x27;,
+    data_mode:           R</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'VHM0'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>TIME</span>: 1008</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-ce9406a8-64e3-4ddc-8e91-c2e4aa780b38' class='xr-array-in' type='checkbox' checked><label for='section-ce9406a8-64e3-4ddc-8e91-c2e4aa780b38' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>1.68 1.79 1.84 1.84 1.76 1.73 1.72 ... 1.59 1.54 1.44 1.42 1.44 1.5</span></div><div class='xr-array-data'><pre>array([1.68, 1.79, 1.84, ..., 1.42, 1.44, 1.5 ])</pre></div></div></li><li class='xr-section-item'><input id='section-57b3ff86-cf5d-4678-90b2-f0b72b6ba20e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-57b3ff86-cf5d-4678-90b2-f0b72b6ba20e' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>TIME</span></div><div class='xr-var-dims'>(TIME)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-10-25 ... 2017-10-31T23:50:00</div><input id='attrs-df45d9ba-27b4-42ef-872f-fab49b4028dc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-df45d9ba-27b4-42ef-872f-fab49b4028dc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-72fa1bd8-e92a-47ed-9467-dd8205f18d56' class='xr-var-data-in' type='checkbox'><label for='data-72fa1bd8-e92a-47ed-9467-dd8205f18d56' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>valid_min :</span></dt><dd>-90000.0</dd><dt><span>valid_max :</span></dt><dd>90000.0</dd><dt><span>QC_indicator :</span></dt><dd>0</dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>comment :</span></dt><dd> </dd><dt><span>axis :</span></dt><dd>T</dd><dt><span>ancillary_variables :</span></dt><dd>TIME_QC</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-10-25T00:00:00.000000000&#x27;, &#x27;2017-10-25T00:10:00.000000000&#x27;,
        &#x27;2017-10-25T00:20:00.000000256&#x27;, ..., &#x27;2017-10-31T23:30:00.000000000&#x27;,
        &#x27;2017-10-31T23:39:59.999999744&#x27;, &#x27;2017-10-31T23:50:00.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-03207f65-0c2d-4b4d-b679-08092f0733fa' class='xr-section-summary-in' type='checkbox'  ><label for='section-03207f65-0c2d-4b4d-b679-08092f0733fa' class='xr-section-summary' >Attributes: <span>(16)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Spectral significant wave height (Hm0)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_significant_height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>30000</dd><dt><span>type_of_analysis :</span></dt><dd>spectral analysis</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-4b2d7392-c18e-40e9-bd71-7c8cafca9f03' class='xr-section-summary-in' type='checkbox'  ><label for='section-4b2d7392-c18e-40e9-bd71-7c8cafca9f03' class='xr-section-summary' >Attributes: <span>(16)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Spectral significant wave height (Hm0)</dd><dt><span>standard_name :</span></dt><dd>sea_surface_wave_significant_height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>valid_min :</span></dt><dd>1</dd><dt><span>valid_max :</span></dt><dd>30000</dd><dt><span>type_of_analysis :</span></dt><dd>spectral analysis</dd><dt><span>comment :</span></dt><dd> </dd><dt><span>uncertainty :</span></dt><dd> </dd><dt><span>accuracy :</span></dt><dd> </dd><dt><span>precision :</span></dt><dd> </dd><dt><span>resolution :</span></dt><dd> </dd><dt><span>cell_methods :</span></dt><dd> </dd><dt><span>sensor_depth :</span></dt><dd>0.0</dd><dt><span>sensor_mount :</span></dt><dd> </dd><dt><span>sensor_orientation :</span></dt><dd> </dd><dt><span>data_mode :</span></dt><dd>R</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1669,15 +1821,15 @@ Attributes: (12/16)
 <img alt="_images/point_observations_28_0.png" src="_images/point_observations_28_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="observations-from-web-apis">
-<h2>Observations from web APIs<a class="headerlink" href="#observations-from-web-apis" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="observations-from-web-apis">
+<h2>Observations from web APIs<a class="headerlink" href="#observations-from-web-apis" title="Permalink to this headline">#</a></h2>
 <p>FMSkill has functionality for accessing observational data trough a few selected APIs - that functionality will soon moved to a separate repo WatObs. More about that later.</p>
 <p>For now - check out the <a class="reference external" href="https://nbviewer.jupyter.org/github/DHI/fmskill/blob/main/notebooks/DMI_observations.ipynb">DMI_observations.ipynb</a> notebook.</p>
-</div>
+</section>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1701,54 +1853,48 @@ Attributes: (12/16)
 
               </div>
               
-        
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="export_to_file.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Export to file</p>
-            </div>
-        </a>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="export_to_file.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Export to file</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="exercises/exercise_point_observations.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise point observation</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="exercises/exercise_point_observations.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Exercise point observation</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Jesper Mariegaard and  Henrik Andersson<br/>
-        
-            &copy; Copyright 2021.<br/>
-      </p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jesper Mariegaard and  Henrik Andersson<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
     </div>
-  </footer>
-</main>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  
+
   </body>
 </html>
