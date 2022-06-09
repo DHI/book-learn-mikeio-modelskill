@@ -656,11 +656,12 @@ title="Print to PDF"
 </section>
 <section id="dhi-altimetry-api">
 <h2>DHI Altimetry API<a class="headerlink" href="#dhi-altimetry-api" title="Permalink to this headline">#</a></h2>
-<p>See <a class="reference external" href="https://nbviewer.jupyter.org/github/DHI/fmskill/blob/main/notebooks/Altimetry_data.ipynb">Altimetry_data.ipynb</a> example notebook.</p>
+<p>You need to pip install “watobs” for this part!</p>
+<p>See <a class="reference external" href="https://nbviewer.jupyter.org/github/DHI/watobs/blob/main/notebooks/Altimetry_data.ipynb">Altimetry_data.ipynb</a> example notebook.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">fmskill.data</span> <span class="kn">import</span> <span class="n">DHIAltimetryRepository</span>
+<span class="kn">from</span> <span class="nn">watobs</span> <span class="kn">import</span> <span class="n">DHIAltimetryRepository</span>
 </pre></div>
 </div>
 </div>
@@ -694,7 +695,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succesfully retrieved 268 records from API in 1.22 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succesfully retrieved 268 records from API in 1.87 seconds
 </pre></div>
 </div>
 <div class="output text_html"><div>

@@ -676,11 +676,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/mikeio/dfsu.py:605: FutureWarning: Dfsu.plot() have been deprecated, please use DataArray.plot() instead
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="_images/multi_model_comparison_9_1.png" src="_images/multi_model_comparison_9_1.png" />
+<img alt="_images/multi_model_comparison_9_0.png" src="_images/multi_model_comparison_9_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -699,35 +695,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [8],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/fmskill/connection.py:556,</span> in <span class="ni">Connector.extract</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">553</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">ComparerCollection</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">555</span> <span class="k">for</span> <span class="n">con</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">connections</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-<span class="ne">--&gt; </span><span class="mi">556</span>     <span class="n">comparer</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="n">extract</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="k">if</span> <span class="n">comparer</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">558</span>         <span class="n">cc</span><span class="o">.</span><span class="n">add_comparer</span><span class="p">(</span><span class="n">comparer</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/fmskill/connection.py:310,</span> in <span class="ni">PointConnector.extract</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span> <span class="n">df_model</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span> <span class="k">for</span> <span class="n">mr</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelresults</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">310</span>     <span class="n">df</span> <span class="o">=</span> <span class="n">mr</span><span class="o">.</span><span class="n">_extract_point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">obs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">311</span>     <span class="k">if</span> <span class="p">(</span><span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">312</span>         <span class="n">df_model</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/fmskill/model/dfs.py:113,</span> in <span class="ni">_DfsBase._extract_point</span><span class="nt">(self, observation, item)</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_dfs0</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="n">ds_model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_point_dfs0</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">113</span> <span class="k">return</span> <span class="n">ds_model</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;to_dataframe&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -736,12 +703,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [9],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;PointComparer&gt;
+Observation: EPL, n_points=66
+ Model: SW_1, rmse=0.225
+ Model: SW_2, rmse=0.234
+ Model: ERA5, rmse=0.290
 </pre></div>
 </div>
 </div>
@@ -764,15 +730,153 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [10],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>n</th>
+      <th>bias</th>
+      <th>rmse</th>
+      <th>urmse</th>
+      <th>mae</th>
+      <th>cc</th>
+      <th>si</th>
+      <th>r2</th>
+    </tr>
+    <tr>
+      <th>model</th>
+      <th>observation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="3" valign="top">ERA5</th>
+      <th>EPL</th>
+      <td>66</td>
+      <td>-0.207731</td>
+      <td>0.289960</td>
+      <td>0.202299</td>
+      <td>0.223748</td>
+      <td>0.972255</td>
+      <td>0.073907</td>
+      <td>0.887121</td>
+    </tr>
+    <tr>
+      <th>HKNA</th>
+      <td>386</td>
+      <td>-0.437425</td>
+      <td>0.545329</td>
+      <td>0.325643</td>
+      <td>0.441374</td>
+      <td>0.974863</td>
+      <td>0.098380</td>
+      <td>0.772663</td>
+    </tr>
+    <tr>
+      <th>c2</th>
+      <td>99</td>
+      <td>-0.385808</td>
+      <td>0.463093</td>
+      <td>0.256140</td>
+      <td>0.393481</td>
+      <td>0.977581</td>
+      <td>0.087898</td>
+      <td>0.809338</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">SW_1</th>
+      <th>EPL</th>
+      <td>66</td>
+      <td>-0.066028</td>
+      <td>0.224919</td>
+      <td>0.215009</td>
+      <td>0.189791</td>
+      <td>0.969512</td>
+      <td>0.078551</td>
+      <td>0.932082</td>
+    </tr>
+    <tr>
+      <th>HKNA</th>
+      <td>386</td>
+      <td>-0.194260</td>
+      <td>0.351964</td>
+      <td>0.293499</td>
+      <td>0.251839</td>
+      <td>0.971194</td>
+      <td>0.088669</td>
+      <td>0.905300</td>
+    </tr>
+    <tr>
+      <th>c2</th>
+      <td>99</td>
+      <td>-0.031866</td>
+      <td>0.356946</td>
+      <td>0.355521</td>
+      <td>0.300259</td>
+      <td>0.972395</td>
+      <td>0.122001</td>
+      <td>0.886725</td>
+    </tr>
+    <tr>
+      <th rowspan="3" valign="top">SW_2</th>
+      <th>EPL</th>
+      <td>66</td>
+      <td>0.001181</td>
+      <td>0.233964</td>
+      <td>0.233961</td>
+      <td>0.199915</td>
+      <td>0.969512</td>
+      <td>0.085475</td>
+      <td>0.926509</td>
+    </tr>
+    <tr>
+      <th>HKNA</th>
+      <td>386</td>
+      <td>-0.100426</td>
+      <td>0.293033</td>
+      <td>0.275287</td>
+      <td>0.214422</td>
+      <td>0.971194</td>
+      <td>0.083167</td>
+      <td>0.934358</td>
+    </tr>
+    <tr>
+      <th>c2</th>
+      <td>99</td>
+      <td>0.045900</td>
+      <td>0.427302</td>
+      <td>0.424829</td>
+      <td>0.357356</td>
+      <td>0.972395</td>
+      <td>0.145785</td>
+      <td>0.837671</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -781,15 +885,87 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [11],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">observation</span><span class="o">=</span><span class="s2">&quot;c2&quot;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>observation</th>
+      <th>n</th>
+      <th>bias</th>
+      <th>rmse</th>
+      <th>urmse</th>
+      <th>mae</th>
+      <th>cc</th>
+      <th>si</th>
+      <th>r2</th>
+    </tr>
+    <tr>
+      <th>model</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ERA5</th>
+      <td>c2</td>
+      <td>99</td>
+      <td>-0.385808</td>
+      <td>0.463093</td>
+      <td>0.256140</td>
+      <td>0.393481</td>
+      <td>0.977581</td>
+      <td>0.087898</td>
+      <td>0.809338</td>
+    </tr>
+    <tr>
+      <th>SW_1</th>
+      <td>c2</td>
+      <td>99</td>
+      <td>-0.031866</td>
+      <td>0.356946</td>
+      <td>0.355521</td>
+      <td>0.300259</td>
+      <td>0.972395</td>
+      <td>0.122001</td>
+      <td>0.886725</td>
+    </tr>
+    <tr>
+      <th>SW_2</th>
+      <td>c2</td>
+      <td>99</td>
+      <td>0.045900</td>
+      <td>0.427302</td>
+      <td>0.424829</td>
+      <td>0.357356</td>
+      <td>0.972395</td>
+      <td>0.145785</td>
+      <td>0.837671</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -798,15 +974,60 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">mean_skill</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">observation</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;c2&quot;</span><span class="p">])</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>n</th>
+      <th>bias</th>
+      <th>rmse</th>
+      <th>urmse</th>
+      <th>mae</th>
+      <th>cc</th>
+      <th>si</th>
+      <th>r2</th>
+    </tr>
+    <tr>
+      <th>model</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SW_1</th>
+      <td>485</td>
+      <td>-0.113063</td>
+      <td>0.354455</td>
+      <td>0.32451</td>
+      <td>0.276049</td>
+      <td>0.971795</td>
+      <td>0.105335</td>
+      <td>0.896013</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -815,14 +1036,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [13],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;SW_1&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;OrRd&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/multi_model_comparison_17_0.png" src="_images/multi_model_comparison_17_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -832,14 +1046,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [14],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">taylor</span><span class="p">(</span><span class="n">normalize_std</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">aggregate_observations</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/multi_model_comparison_18_0.png" src="_images/multi_model_comparison_18_0.png" />
 </div>
 </div>
 <section id="time-series-plot-specifically-for-point-comparisons">
@@ -852,14 +1059,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [15],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s1">&#39;EPL&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot_timeseries</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/multi_model_comparison_20_0.png" src="_images/multi_model_comparison_20_0.png" />
 </div>
 </div>
 </section>
@@ -874,15 +1074,87 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [16],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;SW_1&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;2017-10-28&#39;</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>model</th>
+      <th>n</th>
+      <th>bias</th>
+      <th>rmse</th>
+      <th>urmse</th>
+      <th>mae</th>
+      <th>cc</th>
+      <th>si</th>
+      <th>r2</th>
+    </tr>
+    <tr>
+      <th>observation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>EPL</th>
+      <td>SW_1</td>
+      <td>47</td>
+      <td>-0.100029</td>
+      <td>0.240775</td>
+      <td>0.219013</td>
+      <td>0.205827</td>
+      <td>0.919089</td>
+      <td>0.098479</td>
+      <td>0.811727</td>
+    </tr>
+    <tr>
+      <th>HKNA</th>
+      <td>SW_1</td>
+      <td>281</td>
+      <td>-0.097075</td>
+      <td>0.203241</td>
+      <td>0.178559</td>
+      <td>0.164563</td>
+      <td>0.968106</td>
+      <td>0.067642</td>
+      <td>0.916126</td>
+    </tr>
+    <tr>
+      <th>c2</th>
+      <td>SW_1</td>
+      <td>66</td>
+      <td>-0.210375</td>
+      <td>0.323525</td>
+      <td>0.245786</td>
+      <td>0.268925</td>
+      <td>0.385374</td>
+      <td>0.121129</td>
+      <td>-1.855535</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -891,14 +1163,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [17],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;SW_2&#39;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="s1">&#39;2017-10-28&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;OrRd&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/multi_model_comparison_23_0.png" src="_images/multi_model_comparison_23_0.png" />
 </div>
 </div>
 </section>
@@ -922,11 +1187,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/mikeio/dfsu.py:605: FutureWarning: Dfsu.plot() have been deprecated, please use DataArray.plot() instead
-  warnings.warn(
-</pre></div>
-</div>
-<img alt="_images/multi_model_comparison_26_1.png" src="_images/multi_model_comparison_26_1.png" />
+<img alt="_images/multi_model_comparison_26_0.png" src="_images/multi_model_comparison_26_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -936,15 +1197,75 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [20],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;SW_1&quot;</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="n">bbox</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>model</th>
+      <th>n</th>
+      <th>bias</th>
+      <th>rmse</th>
+      <th>urmse</th>
+      <th>mae</th>
+      <th>cc</th>
+      <th>si</th>
+      <th>r2</th>
+    </tr>
+    <tr>
+      <th>observation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>HKNA</th>
+      <td>SW_1</td>
+      <td>386</td>
+      <td>-0.19426</td>
+      <td>0.351964</td>
+      <td>0.293499</td>
+      <td>0.251839</td>
+      <td>0.971194</td>
+      <td>0.088669</td>
+      <td>0.905300</td>
+    </tr>
+    <tr>
+      <th>c2</th>
+      <td>SW_1</td>
+      <td>42</td>
+      <td>-0.05587</td>
+      <td>0.388404</td>
+      <td>0.384365</td>
+      <td>0.336023</td>
+      <td>0.952688</td>
+      <td>0.139796</td>
+      <td>0.749645</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -953,14 +1274,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [21],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;SW_2&quot;</span><span class="p">,</span> <span class="n">area</span><span class="o">=</span><span class="n">polygon</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/multi_model_comparison_28_0.png" src="_images/multi_model_comparison_28_0.png" />
 </div>
 </div>
 </section>
@@ -981,16 +1295,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [22],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1000,11 +1304,104 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [23],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/IPython/core/formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:272,</span> in <span class="ni">Styler._repr_html_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd"> Hooks into Jupyter notebook rich display system, which calls _repr_html_ by</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd"> default if an object is returned at the end of a cell.</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.repr&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;html&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1178,</span> in <span class="ni">Styler.to_html</span><span class="nt">(self, buf, table_uuid, table_attributes, sparse_index, sparse_columns, bold_headers, caption, max_rows, max_columns, encoding, doctype_html, exclude_styles, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span> <span class="ow">or</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.encoding&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="c1"># Build HTML string..</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span> <span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">sparse_index</span><span class="o">=</span><span class="n">sparse_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">sparse_columns</span><span class="o">=</span><span class="n">sparse_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="n">max_cols</span><span class="o">=</span><span class="n">max_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="n">exclude_styles</span><span class="o">=</span><span class="n">exclude_styles</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">doctype_html</span><span class="o">=</span><span class="n">doctype_html</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="n">html</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="p">(</span><span class="n">encoding</span> <span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:162,</span> in <span class="ni">StylerRenderer._render_html</span><span class="nt">(self, sparse_index, sparse_columns, max_rows, max_cols, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">def</span> <span class="nf">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">sparse_index</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd">     Renders the ``Styler`` including all applied styles to HTML.</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd">     Generates a dict with necessary kwargs passed to jinja2 template.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># TODO: namespace all the pandas keys</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">sparse_index</span><span class="p">,</span> <span class="n">sparse_columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="p">,</span> <span class="n">max_cols</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:205,</span> in <span class="ni">StylerRenderer._compute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todo</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1446,</span> in <span class="ni">Styler._apply</span><span class="nt">(self, func, axis, subset, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># see GH 42005</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> resulted in the apply method collapsing to a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="se">\n</span><span class="s2">Usually, this is the result of the function returning a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="sa">f</span><span class="s2">&quot;single value, instead of list-like.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> created invalid </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> labels.</span><span class="se">\n</span><span class="s2">Usually, this is &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>     <span class="sa">f</span><span class="s2">&quot;the result of the function returning a &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> shape:   </span><span class="se">{{</span><span class="s2">2</span><span class="se">}}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+
+<span class="ne">ValueError</span>: Function &lt;bound method AggregatedSkill._style_one_best of                      n      bias      rmse     urmse       mae        cc  \
+<span class="n">model</span> <span class="n">observation</span>                                                          
+<span class="n">ERA5</span>  <span class="n">EPL</span>           <span class="mi">66</span> <span class="o">-</span><span class="mf">0.207731</span>  <span class="mf">0.289960</span>  <span class="mf">0.202299</span>  <span class="mf">0.223748</span>  <span class="mf">0.972255</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.437425</span>  <span class="mf">0.545329</span>  <span class="mf">0.325643</span>  <span class="mf">0.441374</span>  <span class="mf">0.974863</span>   
+      <span class="n">c2</span>            <span class="mi">99</span> <span class="o">-</span><span class="mf">0.385808</span>  <span class="mf">0.463093</span>  <span class="mf">0.256140</span>  <span class="mf">0.393481</span>  <span class="mf">0.977581</span>   
+<span class="n">SW_1</span>  <span class="n">EPL</span>           <span class="mi">66</span> <span class="o">-</span><span class="mf">0.066028</span>  <span class="mf">0.224919</span>  <span class="mf">0.215009</span>  <span class="mf">0.189791</span>  <span class="mf">0.969512</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.194260</span>  <span class="mf">0.351964</span>  <span class="mf">0.293499</span>  <span class="mf">0.251839</span>  <span class="mf">0.971194</span>   
+      <span class="n">c2</span>            <span class="mi">99</span> <span class="o">-</span><span class="mf">0.031866</span>  <span class="mf">0.356946</span>  <span class="mf">0.355521</span>  <span class="mf">0.300259</span>  <span class="mf">0.972395</span>   
+<span class="n">SW_2</span>  <span class="n">EPL</span>           <span class="mi">66</span>  <span class="mf">0.001181</span>  <span class="mf">0.233964</span>  <span class="mf">0.233961</span>  <span class="mf">0.199915</span>  <span class="mf">0.969512</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.100426</span>  <span class="mf">0.293033</span>  <span class="mf">0.275287</span>  <span class="mf">0.214422</span>  <span class="mf">0.971194</span>   
+      <span class="n">c2</span>            <span class="mi">99</span>  <span class="mf">0.045900</span>  <span class="mf">0.427302</span>  <span class="mf">0.424829</span>  <span class="mf">0.357356</span>  <span class="mf">0.972395</span>   
+
+                         <span class="n">si</span>        <span class="n">r2</span>  
+<span class="n">model</span> <span class="n">observation</span>                      
+<span class="n">ERA5</span>  <span class="n">EPL</span>          <span class="mf">0.073907</span>  <span class="mf">0.887121</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.098380</span>  <span class="mf">0.772663</span>  
+      <span class="n">c2</span>           <span class="mf">0.087898</span>  <span class="mf">0.809338</span>  
+<span class="n">SW_1</span>  <span class="n">EPL</span>          <span class="mf">0.078551</span>  <span class="mf">0.932082</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.088669</span>  <span class="mf">0.905300</span>  
+      <span class="n">c2</span>           <span class="mf">0.122001</span>  <span class="mf">0.886725</span>  
+<span class="n">SW_2</span>  <span class="n">EPL</span>          <span class="mf">0.085475</span>  <span class="mf">0.926509</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.083167</span>  <span class="mf">0.934358</span>  
+      <span class="n">c2</span>           <span class="mf">0.145785</span>  <span class="mf">0.837671</span>  <span class="o">&gt;</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">apply</span> <span class="n">method</span> <span class="n">collapsing</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Series</span><span class="o">.</span>
+<span class="n">Usually</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">list</span><span class="o">-</span><span class="n">like</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.io.formats.style.Styler at 0x7fe5bff20e80&gt;
 </pre></div>
 </div>
 </div>
@@ -1017,11 +1414,104 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [24],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;rmse&#39;</span><span class="p">)</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/IPython/core/formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:272,</span> in <span class="ni">Styler._repr_html_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd"> Hooks into Jupyter notebook rich display system, which calls _repr_html_ by</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd"> default if an object is returned at the end of a cell.</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.repr&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;html&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1178,</span> in <span class="ni">Styler.to_html</span><span class="nt">(self, buf, table_uuid, table_attributes, sparse_index, sparse_columns, bold_headers, caption, max_rows, max_columns, encoding, doctype_html, exclude_styles, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span> <span class="ow">or</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.encoding&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="c1"># Build HTML string..</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span> <span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">sparse_index</span><span class="o">=</span><span class="n">sparse_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">sparse_columns</span><span class="o">=</span><span class="n">sparse_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="n">max_cols</span><span class="o">=</span><span class="n">max_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="n">exclude_styles</span><span class="o">=</span><span class="n">exclude_styles</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">doctype_html</span><span class="o">=</span><span class="n">doctype_html</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="n">html</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="p">(</span><span class="n">encoding</span> <span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:162,</span> in <span class="ni">StylerRenderer._render_html</span><span class="nt">(self, sparse_index, sparse_columns, max_rows, max_cols, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">def</span> <span class="nf">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">sparse_index</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd">     Renders the ``Styler`` including all applied styles to HTML.</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd">     Generates a dict with necessary kwargs passed to jinja2 template.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># TODO: namespace all the pandas keys</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">sparse_index</span><span class="p">,</span> <span class="n">sparse_columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="p">,</span> <span class="n">max_cols</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:205,</span> in <span class="ni">StylerRenderer._compute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todo</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1446,</span> in <span class="ni">Styler._apply</span><span class="nt">(self, func, axis, subset, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># see GH 42005</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> resulted in the apply method collapsing to a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="se">\n</span><span class="s2">Usually, this is the result of the function returning a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="sa">f</span><span class="s2">&quot;single value, instead of list-like.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> created invalid </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> labels.</span><span class="se">\n</span><span class="s2">Usually, this is &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>     <span class="sa">f</span><span class="s2">&quot;the result of the function returning a &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> shape:   </span><span class="se">{{</span><span class="s2">2</span><span class="se">}}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+
+<span class="ne">ValueError</span>: Function &lt;bound method AggregatedSkill._style_one_best of                      n      bias      rmse     urmse       mae        cc  \
+<span class="n">model</span> <span class="n">observation</span>                                                          
+<span class="n">ERA5</span>  <span class="n">EPL</span>           <span class="mi">66</span> <span class="o">-</span><span class="mf">0.207731</span>  <span class="mf">0.289960</span>  <span class="mf">0.202299</span>  <span class="mf">0.223748</span>  <span class="mf">0.972255</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.437425</span>  <span class="mf">0.545329</span>  <span class="mf">0.325643</span>  <span class="mf">0.441374</span>  <span class="mf">0.974863</span>   
+      <span class="n">c2</span>            <span class="mi">99</span> <span class="o">-</span><span class="mf">0.385808</span>  <span class="mf">0.463093</span>  <span class="mf">0.256140</span>  <span class="mf">0.393481</span>  <span class="mf">0.977581</span>   
+<span class="n">SW_1</span>  <span class="n">EPL</span>           <span class="mi">66</span> <span class="o">-</span><span class="mf">0.066028</span>  <span class="mf">0.224919</span>  <span class="mf">0.215009</span>  <span class="mf">0.189791</span>  <span class="mf">0.969512</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.194260</span>  <span class="mf">0.351964</span>  <span class="mf">0.293499</span>  <span class="mf">0.251839</span>  <span class="mf">0.971194</span>   
+      <span class="n">c2</span>            <span class="mi">99</span> <span class="o">-</span><span class="mf">0.031866</span>  <span class="mf">0.356946</span>  <span class="mf">0.355521</span>  <span class="mf">0.300259</span>  <span class="mf">0.972395</span>   
+<span class="n">SW_2</span>  <span class="n">EPL</span>           <span class="mi">66</span>  <span class="mf">0.001181</span>  <span class="mf">0.233964</span>  <span class="mf">0.233961</span>  <span class="mf">0.199915</span>  <span class="mf">0.969512</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.100426</span>  <span class="mf">0.293033</span>  <span class="mf">0.275287</span>  <span class="mf">0.214422</span>  <span class="mf">0.971194</span>   
+      <span class="n">c2</span>            <span class="mi">99</span>  <span class="mf">0.045900</span>  <span class="mf">0.427302</span>  <span class="mf">0.424829</span>  <span class="mf">0.357356</span>  <span class="mf">0.972395</span>   
+
+                         <span class="n">si</span>        <span class="n">r2</span>  
+<span class="n">model</span> <span class="n">observation</span>                      
+<span class="n">ERA5</span>  <span class="n">EPL</span>          <span class="mf">0.073907</span>  <span class="mf">0.887121</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.098380</span>  <span class="mf">0.772663</span>  
+      <span class="n">c2</span>           <span class="mf">0.087898</span>  <span class="mf">0.809338</span>  
+<span class="n">SW_1</span>  <span class="n">EPL</span>          <span class="mf">0.078551</span>  <span class="mf">0.932082</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.088669</span>  <span class="mf">0.905300</span>  
+      <span class="n">c2</span>           <span class="mf">0.122001</span>  <span class="mf">0.886725</span>  
+<span class="n">SW_2</span>  <span class="n">EPL</span>          <span class="mf">0.085475</span>  <span class="mf">0.926509</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.083167</span>  <span class="mf">0.934358</span>  
+      <span class="n">c2</span>           <span class="mf">0.145785</span>  <span class="mf">0.837671</span>  <span class="o">&gt;</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">apply</span> <span class="n">method</span> <span class="n">collapsing</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Series</span><span class="o">.</span>
+<span class="n">Usually</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">list</span><span class="o">-</span><span class="n">like</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.io.formats.style.Styler at 0x7fe5cce61790&gt;
 </pre></div>
 </div>
 </div>
@@ -1034,30 +1524,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [25],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">plot_bar</span><span class="p">(</span><span class="s1">&#39;rmse&#39;</span><span class="p">);</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">s</span><span class="o">.</span><span class="n">plot_barh</span><span class="p">(</span><span class="s1">&#39;rmse&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/multi_model_comparison_33_0.png" src="_images/multi_model_comparison_33_0.png" />
+<img alt="_images/multi_model_comparison_33_1.png" src="_images/multi_model_comparison_33_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="s1">&#39;freq:12H&#39;</span><span class="p">],</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bias&#39;</span><span class="p">,</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span><span class="s1">&#39;si&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [26],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">,</span><span class="s1">&#39;freq:12H&#39;</span><span class="p">],</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bias&#39;</span><span class="p">,</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span><span class="s1">&#39;si&#39;</span><span class="p">])</span>
-
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1070,11 +1543,101 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [27],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/IPython/core/formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:272,</span> in <span class="ni">Styler._repr_html_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd"> Hooks into Jupyter notebook rich display system, which calls _repr_html_ by</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd"> default if an object is returned at the end of a cell.</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.repr&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;html&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1178,</span> in <span class="ni">Styler.to_html</span><span class="nt">(self, buf, table_uuid, table_attributes, sparse_index, sparse_columns, bold_headers, caption, max_rows, max_columns, encoding, doctype_html, exclude_styles, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span> <span class="ow">or</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.encoding&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="c1"># Build HTML string..</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span> <span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">sparse_index</span><span class="o">=</span><span class="n">sparse_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">sparse_columns</span><span class="o">=</span><span class="n">sparse_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="n">max_cols</span><span class="o">=</span><span class="n">max_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="n">exclude_styles</span><span class="o">=</span><span class="n">exclude_styles</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">doctype_html</span><span class="o">=</span><span class="n">doctype_html</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="n">html</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="p">(</span><span class="n">encoding</span> <span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:162,</span> in <span class="ni">StylerRenderer._render_html</span><span class="nt">(self, sparse_index, sparse_columns, max_rows, max_cols, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">def</span> <span class="nf">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">sparse_index</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd">     Renders the ``Styler`` including all applied styles to HTML.</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd">     Generates a dict with necessary kwargs passed to jinja2 template.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># TODO: namespace all the pandas keys</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">sparse_index</span><span class="p">,</span> <span class="n">sparse_columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="p">,</span> <span class="n">max_cols</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:205,</span> in <span class="ni">StylerRenderer._compute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todo</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1446,</span> in <span class="ni">Styler._apply</span><span class="nt">(self, func, axis, subset, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># see GH 42005</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> resulted in the apply method collapsing to a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="se">\n</span><span class="s2">Usually, this is the result of the function returning a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="sa">f</span><span class="s2">&quot;single value, instead of list-like.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> created invalid </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> labels.</span><span class="se">\n</span><span class="s2">Usually, this is &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>     <span class="sa">f</span><span class="s2">&quot;the result of the function returning a &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> shape:   </span><span class="se">{{</span><span class="s2">2</span><span class="se">}}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+
+<span class="ne">ValueError</span>: Function &lt;bound method AggregatedSkill._style_max of                              n      bias      rmse        si
+<span class="n">model</span> <span class="n">datetime</span>                                              
+<span class="n">ERA5</span>  <span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">84</span> <span class="o">-</span><span class="mf">0.161382</span>  <span class="mf">0.204982</span>  <span class="mf">0.060595</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mi">150</span> <span class="o">-</span><span class="mf">0.305598</span>  <span class="mf">0.334626</span>  <span class="mf">0.067474</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">28</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">76</span> <span class="o">-</span><span class="mf">0.199948</span>  <span class="mf">0.263777</span>  <span class="mf">0.068780</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">28</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">84</span> <span class="o">-</span><span class="mf">0.637032</span>  <span class="mf">0.678505</span>  <span class="mf">0.067394</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">82</span> <span class="o">-</span><span class="mf">0.698554</span>  <span class="mf">0.800169</span>  <span class="mf">0.081207</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">75</span> <span class="o">-</span><span class="mf">0.471565</span>  <span class="mf">0.574846</span>  <span class="mf">0.081900</span>
+<span class="n">SW_1</span>  <span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">84</span> <span class="o">-</span><span class="mf">0.096087</span>  <span class="mf">0.256552</span>  <span class="mf">0.114050</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mi">150</span> <span class="o">-</span><span class="mf">0.175200</span>  <span class="mf">0.255482</span>  <span class="mf">0.092034</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">28</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">76</span> <span class="o">-</span><span class="mf">0.111003</span>  <span class="mf">0.178883</span>  <span class="mf">0.056080</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">28</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">84</span> <span class="o">-</span><span class="mf">0.036629</span>  <span class="mf">0.203794</span>  <span class="mf">0.057842</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">82</span> <span class="o">-</span><span class="mf">0.420602</span>  <span class="mf">0.596202</span>  <span class="mf">0.087930</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">75</span> <span class="o">-</span><span class="mf">0.028575</span>  <span class="mf">0.422405</span>  <span class="mf">0.104992</span>
+<span class="n">SW_2</span>  <span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">84</span> <span class="o">-</span><span class="mf">0.070095</span>  <span class="mf">0.235600</span>  <span class="mf">0.107842</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">27</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>  <span class="mi">150</span> <span class="o">-</span><span class="mf">0.156691</span>  <span class="mf">0.248323</span>  <span class="mf">0.095349</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">28</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">76</span> <span class="o">-</span><span class="mf">0.055158</span>  <span class="mf">0.150391</span>  <span class="mf">0.055934</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">28</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">84</span>  <span class="mf">0.090981</span>  <span class="mf">0.233976</span>  <span class="mf">0.062195</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span> <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">82</span> <span class="o">-</span><span class="mf">0.225964</span>  <span class="mf">0.477416</span>  <span class="mf">0.087514</span>
+<span class="g g-Whitespace">      </span><span class="mi">2017</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">29</span> <span class="mi">12</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>   <span class="mi">75</span>  <span class="mf">0.137705</span>  <span class="mf">0.460642</span>  <span class="mf">0.109511</span><span class="o">&gt;</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">apply</span> <span class="n">method</span> <span class="n">collapsing</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Series</span><span class="o">.</span>
+<span class="n">Usually</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">list</span><span class="o">-</span><span class="n">like</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.io.formats.style.Styler at 0x7fe5c4119d30&gt;
 </pre></div>
 </div>
 </div>
@@ -1086,14 +1649,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [28],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">plot_line</span><span class="p">(</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Hm0 rmse [m]&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/multi_model_comparison_36_0.png" src="_images/multi_model_comparison_36_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1103,14 +1659,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [29],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">plot_grid</span><span class="p">(</span><span class="s1">&#39;si&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;0.1%&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Hm0 Scatter index&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
-</pre></div>
-</div>
+<img alt="_images/multi_model_comparison_37_0.png" src="_images/multi_model_comparison_37_0.png" />
 </div>
 </div>
 <section id="the-sel-method-can-subset-the-skill-object">
@@ -1125,12 +1674,104 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [30],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">s</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/IPython/core/formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;cc&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:272,</span> in <span class="ni">Styler._repr_html_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd"> Hooks into Jupyter notebook rich display system, which calls _repr_html_ by</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd"> default if an object is returned at the end of a cell.</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.repr&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;html&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1178,</span> in <span class="ni">Styler.to_html</span><span class="nt">(self, buf, table_uuid, table_attributes, sparse_index, sparse_columns, bold_headers, caption, max_rows, max_columns, encoding, doctype_html, exclude_styles, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span> <span class="ow">or</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.encoding&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="c1"># Build HTML string..</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span> <span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">sparse_index</span><span class="o">=</span><span class="n">sparse_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">sparse_columns</span><span class="o">=</span><span class="n">sparse_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="n">max_cols</span><span class="o">=</span><span class="n">max_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="n">exclude_styles</span><span class="o">=</span><span class="n">exclude_styles</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">doctype_html</span><span class="o">=</span><span class="n">doctype_html</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="n">html</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="p">(</span><span class="n">encoding</span> <span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:162,</span> in <span class="ni">StylerRenderer._render_html</span><span class="nt">(self, sparse_index, sparse_columns, max_rows, max_cols, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">def</span> <span class="nf">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">sparse_index</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd">     Renders the ``Styler`` including all applied styles to HTML.</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd">     Generates a dict with necessary kwargs passed to jinja2 template.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># TODO: namespace all the pandas keys</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">sparse_index</span><span class="p">,</span> <span class="n">sparse_columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="p">,</span> <span class="n">max_cols</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:205,</span> in <span class="ni">StylerRenderer._compute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todo</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1446,</span> in <span class="ni">Styler._apply</span><span class="nt">(self, func, axis, subset, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># see GH 42005</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> resulted in the apply method collapsing to a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="se">\n</span><span class="s2">Usually, this is the result of the function returning a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="sa">f</span><span class="s2">&quot;single value, instead of list-like.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> created invalid </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> labels.</span><span class="se">\n</span><span class="s2">Usually, this is &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>     <span class="sa">f</span><span class="s2">&quot;the result of the function returning a &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> shape:   </span><span class="se">{{</span><span class="s2">2</span><span class="se">}}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+
+<span class="ne">ValueError</span>: Function &lt;bound method AggregatedSkill._style_one_best of                      n      bias      rmse     urmse       mae        cc  \
+<span class="n">model</span> <span class="n">observation</span>                                                          
+<span class="n">ERA5</span>  <span class="n">EPL</span>           <span class="mi">66</span> <span class="o">-</span><span class="mf">0.207731</span>  <span class="mf">0.289960</span>  <span class="mf">0.202299</span>  <span class="mf">0.223748</span>  <span class="mf">0.972255</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.437425</span>  <span class="mf">0.545329</span>  <span class="mf">0.325643</span>  <span class="mf">0.441374</span>  <span class="mf">0.974863</span>   
+      <span class="n">c2</span>            <span class="mi">99</span> <span class="o">-</span><span class="mf">0.385808</span>  <span class="mf">0.463093</span>  <span class="mf">0.256140</span>  <span class="mf">0.393481</span>  <span class="mf">0.977581</span>   
+<span class="n">SW_1</span>  <span class="n">EPL</span>           <span class="mi">66</span> <span class="o">-</span><span class="mf">0.066028</span>  <span class="mf">0.224919</span>  <span class="mf">0.215009</span>  <span class="mf">0.189791</span>  <span class="mf">0.969512</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.194260</span>  <span class="mf">0.351964</span>  <span class="mf">0.293499</span>  <span class="mf">0.251839</span>  <span class="mf">0.971194</span>   
+      <span class="n">c2</span>            <span class="mi">99</span> <span class="o">-</span><span class="mf">0.031866</span>  <span class="mf">0.356946</span>  <span class="mf">0.355521</span>  <span class="mf">0.300259</span>  <span class="mf">0.972395</span>   
+<span class="n">SW_2</span>  <span class="n">EPL</span>           <span class="mi">66</span>  <span class="mf">0.001181</span>  <span class="mf">0.233964</span>  <span class="mf">0.233961</span>  <span class="mf">0.199915</span>  <span class="mf">0.969512</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.100426</span>  <span class="mf">0.293033</span>  <span class="mf">0.275287</span>  <span class="mf">0.214422</span>  <span class="mf">0.971194</span>   
+      <span class="n">c2</span>            <span class="mi">99</span>  <span class="mf">0.045900</span>  <span class="mf">0.427302</span>  <span class="mf">0.424829</span>  <span class="mf">0.357356</span>  <span class="mf">0.972395</span>   
+
+                         <span class="n">si</span>        <span class="n">r2</span>  
+<span class="n">model</span> <span class="n">observation</span>                      
+<span class="n">ERA5</span>  <span class="n">EPL</span>          <span class="mf">0.073907</span>  <span class="mf">0.887121</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.098380</span>  <span class="mf">0.772663</span>  
+      <span class="n">c2</span>           <span class="mf">0.087898</span>  <span class="mf">0.809338</span>  
+<span class="n">SW_1</span>  <span class="n">EPL</span>          <span class="mf">0.078551</span>  <span class="mf">0.932082</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.088669</span>  <span class="mf">0.905300</span>  
+      <span class="n">c2</span>           <span class="mf">0.122001</span>  <span class="mf">0.886725</span>  
+<span class="n">SW_2</span>  <span class="n">EPL</span>          <span class="mf">0.085475</span>  <span class="mf">0.926509</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.083167</span>  <span class="mf">0.934358</span>  
+      <span class="n">c2</span>           <span class="mf">0.145785</span>  <span class="mf">0.837671</span>  <span class="o">&gt;</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">apply</span> <span class="n">method</span> <span class="n">collapsing</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Series</span><span class="o">.</span>
+<span class="n">Usually</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">list</span><span class="o">-</span><span class="n">like</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.io.formats.style.Styler at 0x7fe5bf12afd0&gt;
 </pre></div>
 </div>
 </div>
@@ -1143,11 +1784,92 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [31],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;SW_1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/IPython/core/formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:272,</span> in <span class="ni">Styler._repr_html_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd"> Hooks into Jupyter notebook rich display system, which calls _repr_html_ by</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd"> default if an object is returned at the end of a cell.</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.repr&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;html&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1178,</span> in <span class="ni">Styler.to_html</span><span class="nt">(self, buf, table_uuid, table_attributes, sparse_index, sparse_columns, bold_headers, caption, max_rows, max_columns, encoding, doctype_html, exclude_styles, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span> <span class="ow">or</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.encoding&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="c1"># Build HTML string..</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span> <span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">sparse_index</span><span class="o">=</span><span class="n">sparse_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">sparse_columns</span><span class="o">=</span><span class="n">sparse_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="n">max_cols</span><span class="o">=</span><span class="n">max_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="n">exclude_styles</span><span class="o">=</span><span class="n">exclude_styles</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">doctype_html</span><span class="o">=</span><span class="n">doctype_html</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="n">html</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="p">(</span><span class="n">encoding</span> <span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:162,</span> in <span class="ni">StylerRenderer._render_html</span><span class="nt">(self, sparse_index, sparse_columns, max_rows, max_cols, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">def</span> <span class="nf">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">sparse_index</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd">     Renders the ``Styler`` including all applied styles to HTML.</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd">     Generates a dict with necessary kwargs passed to jinja2 template.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># TODO: namespace all the pandas keys</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">sparse_index</span><span class="p">,</span> <span class="n">sparse_columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="p">,</span> <span class="n">max_cols</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:205,</span> in <span class="ni">StylerRenderer._compute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todo</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1446,</span> in <span class="ni">Styler._apply</span><span class="nt">(self, func, axis, subset, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># see GH 42005</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> resulted in the apply method collapsing to a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="se">\n</span><span class="s2">Usually, this is the result of the function returning a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="sa">f</span><span class="s2">&quot;single value, instead of list-like.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> created invalid </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> labels.</span><span class="se">\n</span><span class="s2">Usually, this is &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>     <span class="sa">f</span><span class="s2">&quot;the result of the function returning a &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> shape:   </span><span class="se">{{</span><span class="s2">2</span><span class="se">}}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+
+<span class="ne">ValueError</span>: Function &lt;bound method AggregatedSkill._style_one_best of             model    n      bias      rmse     urmse       mae        cc  \
+<span class="n">observation</span>                                                                
+<span class="n">EPL</span>          <span class="n">SW_1</span>   <span class="mi">66</span> <span class="o">-</span><span class="mf">0.066028</span>  <span class="mf">0.224919</span>  <span class="mf">0.215009</span>  <span class="mf">0.189791</span>  <span class="mf">0.969512</span>   
+<span class="n">HKNA</span>         <span class="n">SW_1</span>  <span class="mi">386</span> <span class="o">-</span><span class="mf">0.194260</span>  <span class="mf">0.351964</span>  <span class="mf">0.293499</span>  <span class="mf">0.251839</span>  <span class="mf">0.971194</span>   
+<span class="n">c2</span>           <span class="n">SW_1</span>   <span class="mi">99</span> <span class="o">-</span><span class="mf">0.031866</span>  <span class="mf">0.356946</span>  <span class="mf">0.355521</span>  <span class="mf">0.300259</span>  <span class="mf">0.972395</span>   
+
+                   <span class="n">si</span>        <span class="n">r2</span>  
+<span class="n">observation</span>                      
+<span class="n">EPL</span>          <span class="mf">0.078551</span>  <span class="mf">0.932082</span>  
+<span class="n">HKNA</span>         <span class="mf">0.088669</span>  <span class="mf">0.905300</span>  
+<span class="n">c2</span>           <span class="mf">0.122001</span>  <span class="mf">0.886725</span>  <span class="o">&gt;</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">apply</span> <span class="n">method</span> <span class="n">collapsing</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Series</span><span class="o">.</span>
+<span class="n">Usually</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">list</span><span class="o">-</span><span class="n">like</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.io.formats.style.Styler at 0x7fe5bff2e520&gt;
 </pre></div>
 </div>
 </div>
@@ -1160,11 +1882,92 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [32],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">observation</span><span class="o">=</span><span class="s1">&#39;HKNA&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/IPython/core/formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:272,</span> in <span class="ni">Styler._repr_html_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd"> Hooks into Jupyter notebook rich display system, which calls _repr_html_ by</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd"> default if an object is returned at the end of a cell.</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.repr&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;html&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1178,</span> in <span class="ni">Styler.to_html</span><span class="nt">(self, buf, table_uuid, table_attributes, sparse_index, sparse_columns, bold_headers, caption, max_rows, max_columns, encoding, doctype_html, exclude_styles, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span> <span class="ow">or</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.encoding&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="c1"># Build HTML string..</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span> <span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">sparse_index</span><span class="o">=</span><span class="n">sparse_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">sparse_columns</span><span class="o">=</span><span class="n">sparse_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="n">max_cols</span><span class="o">=</span><span class="n">max_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="n">exclude_styles</span><span class="o">=</span><span class="n">exclude_styles</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">doctype_html</span><span class="o">=</span><span class="n">doctype_html</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="n">html</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="p">(</span><span class="n">encoding</span> <span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:162,</span> in <span class="ni">StylerRenderer._render_html</span><span class="nt">(self, sparse_index, sparse_columns, max_rows, max_cols, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">def</span> <span class="nf">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">sparse_index</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd">     Renders the ``Styler`` including all applied styles to HTML.</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd">     Generates a dict with necessary kwargs passed to jinja2 template.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># TODO: namespace all the pandas keys</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">sparse_index</span><span class="p">,</span> <span class="n">sparse_columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="p">,</span> <span class="n">max_cols</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:205,</span> in <span class="ni">StylerRenderer._compute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todo</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1446,</span> in <span class="ni">Styler._apply</span><span class="nt">(self, func, axis, subset, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># see GH 42005</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> resulted in the apply method collapsing to a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="se">\n</span><span class="s2">Usually, this is the result of the function returning a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="sa">f</span><span class="s2">&quot;single value, instead of list-like.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> created invalid </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> labels.</span><span class="se">\n</span><span class="s2">Usually, this is &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>     <span class="sa">f</span><span class="s2">&quot;the result of the function returning a &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> shape:   </span><span class="se">{{</span><span class="s2">2</span><span class="se">}}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+
+<span class="ne">ValueError</span>: Function &lt;bound method AggregatedSkill._style_one_best of       observation    n      bias      rmse     urmse       mae        cc  \
+<span class="n">model</span>                                                                      
+<span class="n">ERA5</span>         <span class="n">HKNA</span>  <span class="mi">386</span> <span class="o">-</span><span class="mf">0.437425</span>  <span class="mf">0.545329</span>  <span class="mf">0.325643</span>  <span class="mf">0.441374</span>  <span class="mf">0.974863</span>   
+<span class="n">SW_1</span>         <span class="n">HKNA</span>  <span class="mi">386</span> <span class="o">-</span><span class="mf">0.194260</span>  <span class="mf">0.351964</span>  <span class="mf">0.293499</span>  <span class="mf">0.251839</span>  <span class="mf">0.971194</span>   
+<span class="n">SW_2</span>         <span class="n">HKNA</span>  <span class="mi">386</span> <span class="o">-</span><span class="mf">0.100426</span>  <span class="mf">0.293033</span>  <span class="mf">0.275287</span>  <span class="mf">0.214422</span>  <span class="mf">0.971194</span>   
+
+             <span class="n">si</span>        <span class="n">r2</span>  
+<span class="n">model</span>                      
+<span class="n">ERA5</span>   <span class="mf">0.098380</span>  <span class="mf">0.772663</span>  
+<span class="n">SW_1</span>   <span class="mf">0.088669</span>  <span class="mf">0.905300</span>  
+<span class="n">SW_2</span>   <span class="mf">0.083167</span>  <span class="mf">0.934358</span>  <span class="o">&gt;</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">apply</span> <span class="n">method</span> <span class="n">collapsing</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Series</span><span class="o">.</span>
+<span class="n">Usually</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">list</span><span class="o">-</span><span class="n">like</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.io.formats.style.Styler at 0x7fe5c40de070&gt;
 </pre></div>
 </div>
 </div>
@@ -1177,11 +1980,100 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [33],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="s1">&#39;rmse&gt;0.25&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/IPython/core/formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:272,</span> in <span class="ni">Styler._repr_html_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd"> Hooks into Jupyter notebook rich display system, which calls _repr_html_ by</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd"> default if an object is returned at the end of a cell.</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.repr&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;html&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1178,</span> in <span class="ni">Styler.to_html</span><span class="nt">(self, buf, table_uuid, table_attributes, sparse_index, sparse_columns, bold_headers, caption, max_rows, max_columns, encoding, doctype_html, exclude_styles, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span> <span class="ow">or</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.encoding&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="c1"># Build HTML string..</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span> <span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">sparse_index</span><span class="o">=</span><span class="n">sparse_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">sparse_columns</span><span class="o">=</span><span class="n">sparse_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="n">max_cols</span><span class="o">=</span><span class="n">max_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="n">exclude_styles</span><span class="o">=</span><span class="n">exclude_styles</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">doctype_html</span><span class="o">=</span><span class="n">doctype_html</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="n">html</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="p">(</span><span class="n">encoding</span> <span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:162,</span> in <span class="ni">StylerRenderer._render_html</span><span class="nt">(self, sparse_index, sparse_columns, max_rows, max_cols, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">def</span> <span class="nf">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">sparse_index</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd">     Renders the ``Styler`` including all applied styles to HTML.</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd">     Generates a dict with necessary kwargs passed to jinja2 template.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># TODO: namespace all the pandas keys</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">sparse_index</span><span class="p">,</span> <span class="n">sparse_columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="p">,</span> <span class="n">max_cols</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:205,</span> in <span class="ni">StylerRenderer._compute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todo</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1446,</span> in <span class="ni">Styler._apply</span><span class="nt">(self, func, axis, subset, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># see GH 42005</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> resulted in the apply method collapsing to a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="se">\n</span><span class="s2">Usually, this is the result of the function returning a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="sa">f</span><span class="s2">&quot;single value, instead of list-like.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> created invalid </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> labels.</span><span class="se">\n</span><span class="s2">Usually, this is &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>     <span class="sa">f</span><span class="s2">&quot;the result of the function returning a &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> shape:   </span><span class="se">{{</span><span class="s2">2</span><span class="se">}}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+
+<span class="ne">ValueError</span>: Function &lt;bound method AggregatedSkill._style_one_best of                      n      bias      rmse     urmse       mae        cc  \
+<span class="n">model</span> <span class="n">observation</span>                                                          
+<span class="n">ERA5</span>  <span class="n">EPL</span>           <span class="mi">66</span> <span class="o">-</span><span class="mf">0.207731</span>  <span class="mf">0.289960</span>  <span class="mf">0.202299</span>  <span class="mf">0.223748</span>  <span class="mf">0.972255</span>   
+      <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.437425</span>  <span class="mf">0.545329</span>  <span class="mf">0.325643</span>  <span class="mf">0.441374</span>  <span class="mf">0.974863</span>   
+      <span class="n">c2</span>            <span class="mi">99</span> <span class="o">-</span><span class="mf">0.385808</span>  <span class="mf">0.463093</span>  <span class="mf">0.256140</span>  <span class="mf">0.393481</span>  <span class="mf">0.977581</span>   
+<span class="n">SW_1</span>  <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.194260</span>  <span class="mf">0.351964</span>  <span class="mf">0.293499</span>  <span class="mf">0.251839</span>  <span class="mf">0.971194</span>   
+      <span class="n">c2</span>            <span class="mi">99</span> <span class="o">-</span><span class="mf">0.031866</span>  <span class="mf">0.356946</span>  <span class="mf">0.355521</span>  <span class="mf">0.300259</span>  <span class="mf">0.972395</span>   
+<span class="n">SW_2</span>  <span class="n">HKNA</span>         <span class="mi">386</span> <span class="o">-</span><span class="mf">0.100426</span>  <span class="mf">0.293033</span>  <span class="mf">0.275287</span>  <span class="mf">0.214422</span>  <span class="mf">0.971194</span>   
+      <span class="n">c2</span>            <span class="mi">99</span>  <span class="mf">0.045900</span>  <span class="mf">0.427302</span>  <span class="mf">0.424829</span>  <span class="mf">0.357356</span>  <span class="mf">0.972395</span>   
+
+                         <span class="n">si</span>        <span class="n">r2</span>  
+<span class="n">model</span> <span class="n">observation</span>                      
+<span class="n">ERA5</span>  <span class="n">EPL</span>          <span class="mf">0.073907</span>  <span class="mf">0.887121</span>  
+      <span class="n">HKNA</span>         <span class="mf">0.098380</span>  <span class="mf">0.772663</span>  
+      <span class="n">c2</span>           <span class="mf">0.087898</span>  <span class="mf">0.809338</span>  
+<span class="n">SW_1</span>  <span class="n">HKNA</span>         <span class="mf">0.088669</span>  <span class="mf">0.905300</span>  
+      <span class="n">c2</span>           <span class="mf">0.122001</span>  <span class="mf">0.886725</span>  
+<span class="n">SW_2</span>  <span class="n">HKNA</span>         <span class="mf">0.083167</span>  <span class="mf">0.934358</span>  
+      <span class="n">c2</span>           <span class="mf">0.145785</span>  <span class="mf">0.837671</span>  <span class="o">&gt;</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">apply</span> <span class="n">method</span> <span class="n">collapsing</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Series</span><span class="o">.</span>
+<span class="n">Usually</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">list</span><span class="o">-</span><span class="n">like</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.io.formats.style.Styler at 0x7fe5bef1fcd0&gt;
 </pre></div>
 </div>
 </div>
@@ -1194,11 +2086,88 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [34],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="s1">&#39;rmse&gt;0.3&#39;</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span><span class="s1">&#39;mae&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">style</span><span class="p">()</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/IPython/core/formatters.py:343,</span> in <span class="ni">BaseFormatter.__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span>     <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>     <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">343</span>         <span class="k">return</span> <span class="n">method</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">344</span>     <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">345</span> <span class="k">else</span><span class="p">:</span>
 
-<span class="ne">NameError</span>: name &#39;s&#39; is not defined
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:272,</span> in <span class="ni">Styler._repr_html_</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">267</span> <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">268</span><span class="sd"> Hooks into Jupyter notebook rich display system, which calls _repr_html_ by</span>
+<span class="g g-Whitespace">    </span><span class="mi">269</span><span class="sd"> default if an object is returned at the end of a cell.</span>
+<span class="g g-Whitespace">    </span><span class="mi">270</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">271</span> <span class="k">if</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.repr&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;html&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">272</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span> <span class="k">return</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1178,</span> in <span class="ni">Styler.to_html</span><span class="nt">(self, buf, table_uuid, table_attributes, sparse_index, sparse_columns, bold_headers, caption, max_rows, max_columns, encoding, doctype_html, exclude_styles, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1176</span> <span class="n">encoding</span> <span class="o">=</span> <span class="n">encoding</span> <span class="ow">or</span> <span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;styler.render.encoding&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1177</span> <span class="c1"># Build HTML string..</span>
+<span class="ne">-&gt; </span><span class="mi">1178</span> <span class="n">html</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="n">sparse_index</span><span class="o">=</span><span class="n">sparse_index</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">sparse_columns</span><span class="o">=</span><span class="n">sparse_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="n">max_rows</span><span class="o">=</span><span class="n">max_rows</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span>     <span class="n">max_cols</span><span class="o">=</span><span class="n">max_columns</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="n">exclude_styles</span><span class="o">=</span><span class="n">exclude_styles</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">doctype_html</span><span class="o">=</span><span class="n">doctype_html</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span> <span class="k">return</span> <span class="n">save_to_buffer</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="n">html</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="n">buf</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="p">(</span><span class="n">encoding</span> <span class="k">if</span> <span class="n">buf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span> <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:162,</span> in <span class="ni">StylerRenderer._render_html</span><span class="nt">(self, sparse_index, sparse_columns, max_rows, max_cols, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span> <span class="k">def</span> <span class="nf">_render_html</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="n">sparse_index</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">158</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span><span class="sd">     Renders the ``Styler`` including all applied styles to HTML.</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span><span class="sd">     Generates a dict with necessary kwargs passed to jinja2 template.</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">162</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">163</span>     <span class="c1"># TODO: namespace all the pandas keys</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>     <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_translate</span><span class="p">(</span><span class="n">sparse_index</span><span class="p">,</span> <span class="n">sparse_columns</span><span class="p">,</span> <span class="n">max_rows</span><span class="p">,</span> <span class="n">max_cols</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style_render.py:205,</span> in <span class="ni">StylerRenderer._compute</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span> <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_todo</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">205</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="bp">self</span><span class="p">)(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="k">return</span> <span class="n">r</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.13/x64/lib/python3.9/site-packages/pandas/io/formats/style.py:1446,</span> in <span class="ni">Styler._apply</span><span class="nt">(self, func, axis, subset, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1443</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># see GH 42005</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">Series</span><span class="p">):</span>
+<span class="ne">-&gt; </span><span class="mi">1446</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span>         <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> resulted in the apply method collapsing to a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1448</span>         <span class="sa">f</span><span class="s2">&quot;Series.</span><span class="se">\n</span><span class="s2">Usually, this is the result of the function returning a &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1449</span>         <span class="sa">f</span><span class="s2">&quot;single value, instead of list-like.&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1450</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1451</span> <span class="n">msg</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1452</span>     <span class="sa">f</span><span class="s2">&quot;Function </span><span class="si">{</span><span class="nb">repr</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="si">}</span><span class="s2"> created invalid </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> labels.</span><span class="se">\n</span><span class="s2">Usually, this is &quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1453</span>     <span class="sa">f</span><span class="s2">&quot;the result of the function returning a &quot;</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1459</span>     <span class="sa">f</span><span class="s2">&quot;Expected </span><span class="se">{{</span><span class="s2">0</span><span class="se">}}</span><span class="s2"> shape:   </span><span class="se">{{</span><span class="s2">2</span><span class="se">}}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">   </span><span class="mi">1460</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1461</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">)):</span>
+
+<span class="ne">ValueError</span>: Function &lt;bound method AggregatedSkill._style_max of                        rmse       mae
+<span class="n">model</span> <span class="n">observation</span>                    
+<span class="n">ERA5</span>  <span class="n">HKNA</span>         <span class="mf">0.545329</span>  <span class="mf">0.441374</span>
+      <span class="n">c2</span>           <span class="mf">0.463093</span>  <span class="mf">0.393481</span>
+<span class="n">SW_1</span>  <span class="n">HKNA</span>         <span class="mf">0.351964</span>  <span class="mf">0.251839</span>
+      <span class="n">c2</span>           <span class="mf">0.356946</span>  <span class="mf">0.300259</span>
+<span class="n">SW_2</span>  <span class="n">c2</span>           <span class="mf">0.427302</span>  <span class="mf">0.357356</span><span class="o">&gt;</span> <span class="n">resulted</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">apply</span> <span class="n">method</span> <span class="n">collapsing</span> <span class="n">to</span> <span class="n">a</span> <span class="n">Series</span><span class="o">.</span>
+<span class="n">Usually</span><span class="p">,</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span> <span class="n">function</span> <span class="n">returning</span> <span class="n">a</span> <span class="n">single</span> <span class="n">value</span><span class="p">,</span> <span class="n">instead</span> <span class="n">of</span> <span class="nb">list</span><span class="o">-</span><span class="n">like</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pandas.io.formats.style.Styler at 0x7fe5bef7dc40&gt;
 </pre></div>
 </div>
 </div>
