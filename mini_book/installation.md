@@ -37,5 +37,5 @@ Can you say yes to the following questions?
 * My NumPy version is 1.18 or greater
 * My pandas version is 1.0 or greater
 * My matplotlib version is 3.2 or greater
-* My MIKE IO version is 0.9 or greater
+* My MIKE IO version is 1.0 or greater
 * My FMSkill version is 0.4 or greater
