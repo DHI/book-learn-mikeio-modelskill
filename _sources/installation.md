@@ -6,7 +6,7 @@ This course assumes that you have a working installation Python 3.8+.
 2. (On PCs without MIKE Zero) Install [VC redist](https://aka.ms/vs/16/release/vc_redist.x64.exe)
 3. Install matplotlib (`pip install matplotlib`)
 4. Install netCDF4 (`pip install netCDF4`)
-5. Install/upgrade FMSkill (`pip install --upgrade fmskill`)
+5. Install/upgrade ModelSkill (`pip install --upgrade fmskill`)
 
 You will need to code in either VS Code or Jupyter Lab in this course.
 
@@ -38,4 +38,4 @@ Can you say yes to the following questions?
 * My pandas version is 1.0 or greater
 * My matplotlib version is 3.2 or greater
 * My MIKE IO version is 1.0 or greater
-* My FMSkill version is 0.4 or greater
+* My ModelSkill version is 0.4 or greater
