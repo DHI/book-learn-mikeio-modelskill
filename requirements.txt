@@ -6,7 +6,7 @@ netcdf4
 xarray
 mikeio
 shapely
-fmskill
+modelskill>=1.0.b.*
 watobs
 geopandas
 openpyxl
