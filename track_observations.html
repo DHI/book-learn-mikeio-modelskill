@@ -564,79 +564,6 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">repo</span><span class="o">.</span><span class="n">time_of_newest_data</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-ValueError                                Traceback (most recent call last)
-Cell In[6], line 1
-----&gt; 1 repo.time_of_newest_data
-
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/watobs/altimetry.py:383, in DHIAltimetryRepository.time_of_newest_data(self)
-    380 @property
-    381 def time_of_newest_data(self):
-    382     &quot;&quot;&quot;Time of the latest data in the altimetry database.&quot;&quot;&quot;
---&gt; 383     df = self.get_observation_stats()[[&quot;max_date&quot;]]
-    384     return df.max_date.max()
-
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/watobs/altimetry.py:339, in DHIAltimetryRepository.get_observation_stats(self)
-    337 stats = r.json()[&quot;stats&quot;]
-    338 df = pd.DataFrame(stats).set_index(&quot;short_name&quot;)
---&gt; 339 df[&quot;min_date&quot;] = pd.to_datetime(df[&quot;min_date&quot;])
-    340 df[&quot;max_date&quot;] = pd.to_datetime(df[&quot;max_date&quot;])
-    341 return df
-
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:1112, in to_datetime(arg, errors, dayfirst, yearfirst, utc, format, exact, unit, infer_datetime_format, origin, cache)
-   1110         result = arg.map(cache_array)
-   1111     else:
--&gt; 1112         values = convert_listlike(arg._values, format)
-   1113         result = arg._constructor(values, index=arg.index, name=arg.name)
-   1114 elif isinstance(arg, (ABCDataFrame, abc.MutableMapping)):
-
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:488, in _convert_listlike_datetimes(arg, format, name, utc, unit, errors, dayfirst, yearfirst, exact)
-    486 # `format` could be inferred, or user didn&#39;t ask for mixed-format parsing.
-    487 if format is not None and format != &quot;mixed&quot;:
---&gt; 488     return _array_strptime_with_fallback(arg, name, utc, format, exact, errors)
-    490 result, tz_parsed = objects_to_datetime64ns(
-    491     arg,
-    492     dayfirst=dayfirst,
-   (...)
-    496     allow_object=True,
-    497 )
-    499 if tz_parsed is not None:
-    500     # We can take a shortcut since the datetime64 numpy array
-    501     # is in UTC
-
-File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/pandas/core/tools/datetimes.py:519, in _array_strptime_with_fallback(arg, name, utc, fmt, exact, errors)
-    508 def _array_strptime_with_fallback(
-    509     arg,
-    510     name,
-   (...)
-    514     errors: str,
-    515 ) -&gt; Index:
-    516     &quot;&quot;&quot;
-    517     Call array_strptime, with fallback behavior depending on &#39;errors&#39;.
-    518     &quot;&quot;&quot;
---&gt; 519     result, timezones = array_strptime(arg, fmt, exact=exact, errors=errors, utc=utc)
-    520     if any(tz is not None for tz in timezones):
-    521         return _return_parsed_timezone_results(result, timezones, utc, name)
-
-File strptime.pyx:534, in pandas._libs.tslibs.strptime.array_strptime()
-
-File strptime.pyx:355, in pandas._libs.tslibs.strptime.array_strptime()
-
-ValueError: time data &quot;2020-11-30T14:26:01&quot; doesn&#39;t match format &quot;%Y-%m-%dT%H:%M:%S.%f&quot;, at position 4. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format=&#39;ISO8601&#39;` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format=&#39;mixed&#39;`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_altimetry_data</span><span class="p">(</span><span class="n">area</span><span class="o">=</span><span class="s2">&quot;lon=2.9&amp;lat=53.9&amp;radius=100&quot;</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="s2">&quot;2019-10-1&quot;</span><span class="p">,</span> 
 <span class="n">end_time</span><span class="o">=</span><span class="s2">&quot;2019-10-8&quot;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -644,7 +571,7 @@ ValueError: time data &quot;2020-11-30T14:26:01&quot; doesn&#39;t match format &
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succesfully retrieved 268 records from API in 4.81 seconds
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succesfully retrieved 268 records from API in 3.19 seconds
 </pre></div>
 </div>
 <div class="output text_html"><div>
@@ -829,7 +756,7 @@ ValueError: time data &quot;2020-11-30T14:26:01&quot; doesn&#39;t match format &
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
 <span class="ne">OSError</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span><span class="o">.</span><span class="n">plot_map</span><span class="p">()</span>
 
 <span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/watobs/altimetry.py:121,</span> in <span class="ni">AltimetryData.plot_map</span><span class="nt">(self, fig_size, markersize)</span>
@@ -888,7 +815,7 @@ ValueError: time data &quot;2020-11-30T14:26:01&quot; doesn&#39;t match format &
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="n">o2</span>
     <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
