@@ -1,12 +1,12 @@
 jupyter-book
 matplotlib
 numpy
-pandas
+pandas==2.0.0 # temporary fix
 netcdf4
 xarray
 mikeio
 shapely
-modelskill>=1.0.b.*
+modelskill>=1.0.b.* # update when available
 watobs
 geopandas
 openpyxl
