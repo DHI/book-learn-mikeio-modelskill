@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Model skill visualisation &#8212; Python for marine modelers using MIKE IO and ModelSkill</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'model_skill_visualisation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -158,7 +155,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -402,7 +410,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -412,7 +420,7 @@ document.write(`
 </div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="model-skill-visualisation">
-<h1>Model skill visualisation<a class="headerlink" href="#model-skill-visualisation" title="Permalink to this heading">#</a></h1>
+<h1>Model skill visualisation<a class="headerlink" href="#model-skill-visualisation" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;data/SW/HKZN_local_2017_DutchCoast.dfsu&#39;</span>
@@ -450,7 +458,7 @@ Comparer: EPL_3
 </div>
 </div>
 <section id="data-analysis">
-<h2>Data analysis<a class="headerlink" href="#data-analysis" title="Permalink to this heading">#</a></h2>
+<h2>Data analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="o">.</span><span class="n">skill</span><span class="p">()</span>
@@ -458,6 +466,22 @@ Comparer: EPL_3
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:91: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.mean(model.ravel() - obs.ravel())
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:227: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = obs.ravel() - model.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:129: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  error = np.average(np.abs(model.ravel() - obs.ravel()), weights=weights)
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:403: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.corrcoef(obs.ravel(), model.ravel())[0, 1]
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:467: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = obs.ravel() - model.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:469: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.sqrt(np.mean(residual**2)) / np.mean(np.abs(obs.ravel()))
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:342: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = model.ravel() - obs.ravel()
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -499,103 +523,103 @@ Comparer: EPL_3
   </thead>
   <tbody>
     <tr>
-      <th>EPL</th>
-      <td>66</td>
-      <td>-0.066028</td>
-      <td>0.224919</td>
-      <td>0.215009</td>
-      <td>0.189791</td>
-      <td>0.969512</td>
-      <td>0.082773</td>
-      <td>0.932082</td>
-    </tr>
-    <tr>
-      <th>EPL_2</th>
-      <td>66</td>
-      <td>-0.176137</td>
-      <td>0.278117</td>
-      <td>0.215233</td>
-      <td>0.240594</td>
-      <td>0.968521</td>
-      <td>0.082859</td>
-      <td>0.896154</td>
-    </tr>
-    <tr>
-      <th>EPL_3</th>
-      <td>66</td>
-      <td>-0.066028</td>
-      <td>0.224919</td>
-      <td>0.215009</td>
-      <td>0.189791</td>
-      <td>0.969512</td>
-      <td>0.082773</td>
-      <td>0.932082</td>
-    </tr>
-    <tr>
-      <th>HKNA</th>
-      <td>386</td>
-      <td>-0.194260</td>
-      <td>0.351964</td>
-      <td>0.293499</td>
-      <td>0.251839</td>
-      <td>0.971194</td>
-      <td>0.094489</td>
-      <td>0.905300</td>
-    </tr>
-    <tr>
-      <th>HKNA_2</th>
-      <td>386</td>
-      <td>-0.296194</td>
-      <td>0.430783</td>
-      <td>0.312799</td>
-      <td>0.325512</td>
-      <td>0.969579</td>
-      <td>0.100702</td>
-      <td>0.858137</td>
-    </tr>
-    <tr>
-      <th>HKNA_3</th>
-      <td>386</td>
-      <td>-0.135648</td>
-      <td>0.298130</td>
-      <td>0.265482</td>
-      <td>0.210063</td>
-      <td>0.975813</td>
-      <td>0.085469</td>
-      <td>0.932054</td>
-    </tr>
-    <tr>
       <th>HKZA</th>
       <td>397</td>
-      <td>0.051763</td>
-      <td>0.285233</td>
-      <td>0.280497</td>
-      <td>0.222436</td>
-      <td>0.965938</td>
-      <td>0.096780</td>
-      <td>0.930484</td>
+      <td>0.097677</td>
+      <td>0.297203</td>
+      <td>0.280693</td>
+      <td>0.234103</td>
+      <td>0.965766</td>
+      <td>0.096848</td>
+      <td>0.924528</td>
     </tr>
     <tr>
       <th>HKZA_2</th>
       <td>397</td>
-      <td>-0.006792</td>
-      <td>0.281183</td>
-      <td>0.281101</td>
-      <td>0.219259</td>
-      <td>0.966268</td>
-      <td>0.096988</td>
-      <td>0.932444</td>
+      <td>-0.084598</td>
+      <td>0.294471</td>
+      <td>0.282057</td>
+      <td>0.224945</td>
+      <td>0.967457</td>
+      <td>0.097318</td>
+      <td>0.925909</td>
     </tr>
     <tr>
       <th>HKZA_3</th>
       <td>397</td>
-      <td>-0.011184</td>
-      <td>0.278949</td>
-      <td>0.278725</td>
-      <td>0.218145</td>
-      <td>0.966900</td>
-      <td>0.096168</td>
-      <td>0.933514</td>
+      <td>-0.055265</td>
+      <td>0.267680</td>
+      <td>0.261913</td>
+      <td>0.206410</td>
+      <td>0.971840</td>
+      <td>0.090368</td>
+      <td>0.938777</td>
+    </tr>
+    <tr>
+      <th>HKNA</th>
+      <td>386</td>
+      <td>-0.315380</td>
+      <td>0.447311</td>
+      <td>0.317210</td>
+      <td>0.341344</td>
+      <td>0.968323</td>
+      <td>0.102122</td>
+      <td>0.847042</td>
+    </tr>
+    <tr>
+      <th>HKNA_2</th>
+      <td>386</td>
+      <td>-0.263059</td>
+      <td>0.399579</td>
+      <td>0.300771</td>
+      <td>0.299503</td>
+      <td>0.970854</td>
+      <td>0.096830</td>
+      <td>0.877944</td>
+    </tr>
+    <tr>
+      <th>HKNA_3</th>
+      <td>386</td>
+      <td>-0.251149</td>
+      <td>0.393604</td>
+      <td>0.303065</td>
+      <td>0.290698</td>
+      <td>0.970244</td>
+      <td>0.097568</td>
+      <td>0.881567</td>
+    </tr>
+    <tr>
+      <th>EPL</th>
+      <td>66</td>
+      <td>-0.077263</td>
+      <td>0.229352</td>
+      <td>0.215947</td>
+      <td>0.194178</td>
+      <td>0.969118</td>
+      <td>0.083134</td>
+      <td>0.929378</td>
+    </tr>
+    <tr>
+      <th>EPL_2</th>
+      <td>66</td>
+      <td>-0.127012</td>
+      <td>0.251000</td>
+      <td>0.216493</td>
+      <td>0.217022</td>
+      <td>0.968078</td>
+      <td>0.083344</td>
+      <td>0.915417</td>
+    </tr>
+    <tr>
+      <th>EPL_3</th>
+      <td>66</td>
+      <td>-0.067380</td>
+      <td>0.227172</td>
+      <td>0.216950</td>
+      <td>0.190187</td>
+      <td>0.968860</td>
+      <td>0.083520</td>
+      <td>0.930714</td>
     </tr>
   </tbody>
 </table>
@@ -609,6 +633,22 @@ Comparer: EPL_3
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:91: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.mean(model.ravel() - obs.ravel())
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:227: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = obs.ravel() - model.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:129: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  error = np.average(np.abs(model.ravel() - obs.ravel()), weights=weights)
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:403: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.corrcoef(obs.ravel(), model.ravel())[0, 1]
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:467: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = obs.ravel() - model.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:469: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.sqrt(np.mean(residual**2)) / np.mean(np.abs(obs.ravel()))
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:342: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = model.ravel() - obs.ravel()
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>modelskill.skill.SkillTable
 </pre></div>
 </div>
@@ -621,7 +661,7 @@ Comparer: EPL_3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bd4db740b42b8e6fbabd394fbfdcab65376a4615295e01f65f5a93ebd9121bdc.png" src="_images/bd4db740b42b8e6fbabd394fbfdcab65376a4615295e01f65f5a93ebd9121bdc.png" />
+<img alt="_images/5cc0cc6e4ea7e9a839b18b34d243727fbf0038d45c850c267e34cd28a062de36.png" src="_images/5cc0cc6e4ea7e9a839b18b34d243727fbf0038d45c850c267e34cd28a062de36.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -631,12 +671,12 @@ Comparer: EPL_3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/275524174f7c279bc63c847d753fb668a528527e29c059933920bc62fc111b0b.png" src="_images/275524174f7c279bc63c847d753fb668a528527e29c059933920bc62fc111b0b.png" />
+<img alt="_images/26799bcbf9cd6b2ae920ca145468c92a11af165e026fcc0dec858f96cf08d244.png" src="_images/26799bcbf9cd6b2ae920ca145468c92a11af165e026fcc0dec858f96cf08d244.png" />
 </div>
 </div>
 </section>
 <section id="custom-plot">
-<h2>Custom plot<a class="headerlink" href="#custom-plot" title="Permalink to this heading">#</a></h2>
+<h2>Custom plot<a class="headerlink" href="#custom-plot" title="Link to this heading">#</a></h2>
 <p>All skill statistics are available in a dataframe, and in case you need a tailor-made plot, you can get data and use matplotlib to get exactly what you need.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -667,7 +707,7 @@ Comparer: EPL_3
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b899c1b81a7efd593b2a340bf39e14892ca42ec6d90115552ec788cac0e1cfb8.png" src="_images/b899c1b81a7efd593b2a340bf39e14892ca42ec6d90115552ec788cac0e1cfb8.png" />
+<img alt="_images/667bf8949eb93b7516abf016a3caf4ff7509d1990e3c91f19db27d66764a94cf.png" src="_images/667bf8949eb93b7516abf016a3caf4ff7509d1990e3c91f19db27d66764a94cf.png" />
 </div>
 </div>
 </section>
@@ -730,6 +770,7 @@ Comparer: EPL_3
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -762,7 +803,7 @@ By Jesper Mariegaard and  Henrik Andersson
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -786,8 +827,8 @@ By Jesper Mariegaard and  Henrik Andersson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

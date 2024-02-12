@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Model skill assessment &#8212; Python for marine modelers using MIKE IO and ModelSkill</title>
   
@@ -19,49 +18,45 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'model_skill';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -76,10 +71,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -120,11 +114,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -158,7 +155,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -413,12 +421,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="model-skill-assessment">
-<h1>Model skill assessment<a class="headerlink" href="#model-skill-assessment" title="Permalink to this heading">#</a></h1>
+<h1>Model skill assessment<a class="headerlink" href="#model-skill-assessment" title="Link to this heading">#</a></h1>
 <section id="simple-comparison">
-<h2>Simple comparison<a class="headerlink" href="#simple-comparison" title="Permalink to this heading">#</a></h2>
+<h2>Simple comparison<a class="headerlink" href="#simple-comparison" title="Link to this heading">#</a></h2>
 <p>Sometimes all your need is a simple comparison of two time series. The <code class="docutils literal notranslate"><span class="pre">modelskill.compare()</span></code> method does just that.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -429,7 +437,7 @@ document.write(`
 </div>
 </div>
 <section id="the-model">
-<h3>The model<a class="headerlink" href="#the-model" title="Permalink to this heading">#</a></h3>
+<h3>The model<a class="headerlink" href="#the-model" title="Link to this heading">#</a></h3>
 <p>Can be either a dfs0 or a DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -441,7 +449,7 @@ document.write(`
 </div>
 </section>
 <section id="the-observation">
-<h3>The observation<a class="headerlink" href="#the-observation" title="Permalink to this heading">#</a></h3>
+<h3>The observation<a class="headerlink" href="#the-observation" title="Link to this heading">#</a></h3>
 <p>Can be either a dfs0, a DataFrame or a PointObservation object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -452,7 +460,7 @@ document.write(`
 </div>
 </section>
 <section id="match-observation-to-model">
-<h3>Match observation to model<a class="headerlink" href="#match-observation-to-model" title="Permalink to this heading">#</a></h3>
+<h3>Match observation to model<a class="headerlink" href="#match-observation-to-model" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">match()</span></code> method will return an object that can be used for scatter plots, skill assessment, time series plots etc.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -468,13 +476,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3daa664f11649fab2a9d6f68815d5dea0a248f72e6ab27d5bcc797203ea41717.png" src="_images/3daa664f11649fab2a9d6f68815d5dea0a248f72e6ab27d5bcc797203ea41717.png" />
+<img alt="_images/730162d1dbb784be603cd91650e95f909fa7b7e1132d67ddbaa7da6c0abe8f32.png" src="_images/730162d1dbb784be603cd91650e95f909fa7b7e1132d67ddbaa7da6c0abe8f32.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="systematic-vs-random-errors">
-<h2>Systematic vs random errors<a class="headerlink" href="#systematic-vs-random-errors" title="Permalink to this heading">#</a></h2>
+<h2>Systematic vs random errors<a class="headerlink" href="#systematic-vs-random-errors" title="Link to this heading">#</a></h2>
 <p><img alt="" src="_images/systematic_random_error.png" /></p>
 <p>A model is an simplified version of a natural system, such as the ocean, and as such does not reflect every detail of the natural system.</p>
 <p>In order to validate if a model does capture the essential dynamics of the natural system, it can be helpful to classify the mismatch of the model and observations in two broad categories:</p>
@@ -485,7 +493,7 @@ document.write(`
 <p>A quantitativate assesment of a model involves calculating one or more model score, skill metrics, which in varying degrees capture systematic errors, random errors or a combination.</p>
 </section>
 <section id="metrics">
-<h2>Metrics<a class="headerlink" href="#metrics" title="Permalink to this heading">#</a></h2>
+<h2>Metrics<a class="headerlink" href="#metrics" title="Link to this heading">#</a></h2>
 <p><strong>Bias</strong> is an indication of systematic error. In the left figure above, the model has negative bias (modelled wave heights are lower thatn observed). Thus it is an indication that the model can be improved.</p>
 <p><strong>Root Mean Square Error</strong> (rmse) is a combination of systematic and random error. It is a common metric to indicate the quality of a calibrated model, but less useful to understand the potential for further calibration since it captures both systematic and random errors.</p>
 <p><strong>Unbiased Root Mean Square Error</strong> (urmse) is the unbiased version of Root Mean Square Error. Since the bias is removed, it only captures the random error.</p>
@@ -498,6 +506,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:91: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.mean(model.ravel() - obs.ravel())
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:227: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = obs.ravel() - model.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:129: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  error = np.average(np.abs(model.ravel() - obs.ravel()), weights=weights)
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:403: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.corrcoef(obs.ravel(), model.ravel())[0, 1]
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:467: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = obs.ravel() - model.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:469: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.sqrt(np.mean(residual**2)) / np.mean(np.abs(obs.ravel()))
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:342: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = model.ravel() - obs.ravel()
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -561,6 +585,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:129: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  error = np.average(np.abs(model.ravel() - obs.ravel()), weights=weights)
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:689: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return _linear_regression(obs.ravel(), model.ravel(), reg_method)[0]
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -613,7 +643,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/80e307a721d75cdc69c2e2b82ae16856f8aa80947eaf7925474e52a81c6b11d0.png" src="_images/80e307a721d75cdc69c2e2b82ae16856f8aa80947eaf7925474e52a81c6b11d0.png" />
+<img alt="_images/bc9843f1516d1e88143f84d2a97de0fc7a1630deee01a1961f06b05df0d41cd7.png" src="_images/bc9843f1516d1e88143f84d2a97de0fc7a1630deee01a1961f06b05df0d41cd7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -626,12 +656,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2d4c4311e62ffb73c85b892cdca446768581ff3bf064927c7d8fdb4674720596.png" src="_images/2d4c4311e62ffb73c85b892cdca446768581ff3bf064927c7d8fdb4674720596.png" />
+<img alt="_images/629fbb92de37d9f08ba3018bc7acccb6fc6456d7738862914b831d87666072c8.png" src="_images/629fbb92de37d9f08ba3018bc7acccb6fc6456d7738862914b831d87666072c8.png" />
 </div>
 </div>
 </section>
 <section id="taylor-diagram">
-<h2>Taylor diagram<a class="headerlink" href="#taylor-diagram" title="Permalink to this heading">#</a></h2>
+<h2>Taylor diagram<a class="headerlink" href="#taylor-diagram" title="Link to this heading">#</a></h2>
 <p>A taylor diagram is a way to combine several statistics in a single plot, and is very useful to compare the skill of several models, or observations in a single plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -640,19 +670,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:403: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.corrcoef(obs.ravel(), model.ravel())[0, 1]
+</pre></div>
+</div>
 <img alt="_images/4005871bbbeec755b7a5cb1acead207a30e82b8a20042e16531030d730cc4c51.png" src="_images/4005871bbbeec755b7a5cb1acead207a30e82b8a20042e16531030d730cc4c51.png" />
 </div>
 </div>
 </section>
 <section id="elaborate-comparison">
-<h2>Elaborate comparison<a class="headerlink" href="#elaborate-comparison" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-</div>
+<h2>Elaborate comparison<a class="headerlink" href="#elaborate-comparison" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;data/SW/HKZN_local_2017_DutchCoast.dfsu&#39;</span>
@@ -677,19 +704,12 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span><span class="o">.</span><span class="n">hist</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">o1</span><span class="o">.</span><span class="n">hist</span><span class="p">();</span>
-
-<span class="ne">AttributeError</span>: &#39;PointObservation&#39; object has no attribute &#39;hist&#39;
-</pre></div>
-</div>
+<img alt="_images/9ab3a0fe77fdac62fdf92db16fc337f8f6de041aa4ff95da50fa5248469b111d.png" src="_images/9ab3a0fe77fdac62fdf92db16fc337f8f6de041aa4ff95da50fa5248469b111d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -699,11 +719,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/efb01b8bceb5695ee223802014173cd3f5008273309feb832504d434f562a160.png" src="_images/efb01b8bceb5695ee223802014173cd3f5008273309feb832504d434f562a160.png" />
+<img alt="_images/128de4a58f736f0240c608524ca80cffad172bb1447445ac3914430e15a02119.png" src="_images/128de4a58f736f0240c608524ca80cffad172bb1447445ac3914430e15a02119.png" />
 </div>
 </div>
 <section id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h3>
+<h3>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ms</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">spatial_overview</span><span class="p">(</span><span class="n">obs</span><span class="o">=</span><span class="p">[</span><span class="n">o1</span><span class="p">,</span><span class="n">o2</span><span class="p">],</span> <span class="n">mod</span><span class="o">=</span><span class="n">mr</span><span class="p">);</span>
@@ -736,46 +756,60 @@ Comparer: EPL
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/skill.py:618: FutureWarning: precision is deprecated, it has been renamed to decimals
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:91: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.mean(model.ravel() - obs.ravel())
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:227: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = obs.ravel() - model.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:129: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  error = np.average(np.abs(model.ravel() - obs.ravel()), weights=weights)
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:403: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.corrcoef(obs.ravel(), model.ravel())[0, 1]
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:467: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = obs.ravel() - model.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:469: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  return np.sqrt(np.mean(residual**2)) / np.mean(np.abs(obs.ravel()))
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:342: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  residual = model.ravel() - obs.ravel()
+/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/skill.py:785: FutureWarning: precision is deprecated, it has been renamed to decimals
   warnings.warn(
 </pre></div>
 </div>
 <div class="output text_html"><style type="text/css">
-#T_5d08b_row0_col1 {
-  background-color: #a9c6fd;
+#T_81c68_row0_col1 {
+  background-color: #3b4cc0;
+  color: #f1f1f1;
+}
+#T_81c68_row0_col2, #T_81c68_row0_col3, #T_81c68_row0_col4, #T_81c68_row0_col5, #T_81c68_row0_col6, #T_81c68_row0_col7 {
+  background-color: #7f0000;
+  color: #f1f1f1;
+}
+#T_81c68_row1_col1 {
+  background-color: #b9d0f9;
   color: #000000;
   text-decoration: underline;
   font-style: italic;
   font-weight: bold;
 }
-#T_5d08b_row0_col2, #T_5d08b_row0_col3, #T_5d08b_row0_col4, #T_5d08b_row0_col6, #T_5d08b_row0_col7, #T_5d08b_row1_col5 {
+#T_81c68_row1_col2, #T_81c68_row1_col3, #T_81c68_row1_col4, #T_81c68_row1_col5, #T_81c68_row1_col6, #T_81c68_row1_col7 {
   background-color: #fff7ec;
   color: #000000;
   text-decoration: underline;
   font-style: italic;
   font-weight: bold;
 }
-#T_5d08b_row0_col5, #T_5d08b_row1_col2, #T_5d08b_row1_col3, #T_5d08b_row1_col4, #T_5d08b_row1_col6, #T_5d08b_row1_col7 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
-#T_5d08b_row1_col1 {
-  background-color: #3b4cc0;
-  color: #f1f1f1;
-}
 </style>
-<table id="T_5d08b">
+<table id="T_81c68">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_5d08b_level0_col0" class="col_heading level0 col0" >n</th>
-      <th id="T_5d08b_level0_col1" class="col_heading level0 col1" >bias</th>
-      <th id="T_5d08b_level0_col2" class="col_heading level0 col2" >rmse</th>
-      <th id="T_5d08b_level0_col3" class="col_heading level0 col3" >urmse</th>
-      <th id="T_5d08b_level0_col4" class="col_heading level0 col4" >mae</th>
-      <th id="T_5d08b_level0_col5" class="col_heading level0 col5" >cc</th>
-      <th id="T_5d08b_level0_col6" class="col_heading level0 col6" >si</th>
-      <th id="T_5d08b_level0_col7" class="col_heading level0 col7" >r2</th>
+      <th id="T_81c68_level0_col0" class="col_heading level0 col0" >n</th>
+      <th id="T_81c68_level0_col1" class="col_heading level0 col1" >bias</th>
+      <th id="T_81c68_level0_col2" class="col_heading level0 col2" >rmse</th>
+      <th id="T_81c68_level0_col3" class="col_heading level0 col3" >urmse</th>
+      <th id="T_81c68_level0_col4" class="col_heading level0 col4" >mae</th>
+      <th id="T_81c68_level0_col5" class="col_heading level0 col5" >cc</th>
+      <th id="T_81c68_level0_col6" class="col_heading level0 col6" >si</th>
+      <th id="T_81c68_level0_col7" class="col_heading level0 col7" >r2</th>
     </tr>
     <tr>
       <th class="index_name level0" >observation</th>
@@ -791,26 +825,26 @@ Comparer: EPL
   </thead>
   <tbody>
     <tr>
-      <th id="T_5d08b_level0_row0" class="row_heading level0 row0" >EPL</th>
-      <td id="T_5d08b_row0_col0" class="data row0 col0" >66</td>
-      <td id="T_5d08b_row0_col1" class="data row0 col1" >-0.07</td>
-      <td id="T_5d08b_row0_col2" class="data row0 col2" >0.22</td>
-      <td id="T_5d08b_row0_col3" class="data row0 col3" >0.22</td>
-      <td id="T_5d08b_row0_col4" class="data row0 col4" >0.19</td>
-      <td id="T_5d08b_row0_col5" class="data row0 col5" >0.97</td>
-      <td id="T_5d08b_row0_col6" class="data row0 col6" >0.08</td>
-      <td id="T_5d08b_row0_col7" class="data row0 col7" >0.93</td>
+      <th id="T_81c68_level0_row0" class="row_heading level0 row0" >HKNA</th>
+      <td id="T_81c68_row0_col0" class="data row0 col0" >386</td>
+      <td id="T_81c68_row0_col1" class="data row0 col1" >-0.32</td>
+      <td id="T_81c68_row0_col2" class="data row0 col2" >0.45</td>
+      <td id="T_81c68_row0_col3" class="data row0 col3" >0.32</td>
+      <td id="T_81c68_row0_col4" class="data row0 col4" >0.34</td>
+      <td id="T_81c68_row0_col5" class="data row0 col5" >0.97</td>
+      <td id="T_81c68_row0_col6" class="data row0 col6" >0.10</td>
+      <td id="T_81c68_row0_col7" class="data row0 col7" >0.85</td>
     </tr>
     <tr>
-      <th id="T_5d08b_level0_row1" class="row_heading level0 row1" >HKNA</th>
-      <td id="T_5d08b_row1_col0" class="data row1 col0" >386</td>
-      <td id="T_5d08b_row1_col1" class="data row1 col1" >-0.19</td>
-      <td id="T_5d08b_row1_col2" class="data row1 col2" >0.35</td>
-      <td id="T_5d08b_row1_col3" class="data row1 col3" >0.29</td>
-      <td id="T_5d08b_row1_col4" class="data row1 col4" >0.25</td>
-      <td id="T_5d08b_row1_col5" class="data row1 col5" >0.97</td>
-      <td id="T_5d08b_row1_col6" class="data row1 col6" >0.09</td>
-      <td id="T_5d08b_row1_col7" class="data row1 col7" >0.91</td>
+      <th id="T_81c68_level0_row1" class="row_heading level0 row1" >EPL</th>
+      <td id="T_81c68_row1_col0" class="data row1 col0" >66</td>
+      <td id="T_81c68_row1_col1" class="data row1 col1" >-0.08</td>
+      <td id="T_81c68_row1_col2" class="data row1 col2" >0.23</td>
+      <td id="T_81c68_row1_col3" class="data row1 col3" >0.22</td>
+      <td id="T_81c68_row1_col4" class="data row1 col4" >0.19</td>
+      <td id="T_81c68_row1_col5" class="data row1 col5" >0.97</td>
+      <td id="T_81c68_row1_col6" class="data row1 col6" >0.08</td>
+      <td id="T_81c68_row1_col7" class="data row1 col7" >0.93</td>
     </tr>
   </tbody>
 </table>
@@ -823,6 +857,10 @@ Comparer: EPL
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages/modelskill/metrics.py:129: FutureWarning: Series.ravel is deprecated. The underlying array is already 1D, so ravel is not necessary.  Use `to_numpy()` for conversion to a numpy array instead.
+  error = np.average(np.abs(model.ravel() - obs.ravel()), weights=weights)
+</pre></div>
+</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -854,7 +892,7 @@ Comparer: EPL
     <tr>
       <th>EPL</th>
       <td>66</td>
-      <td>0.189791</td>
+      <td>0.194178</td>
     </tr>
   </tbody>
 </table>
@@ -867,7 +905,7 @@ Comparer: EPL
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/42c4b9990ac2624e66ae88ef1d4bbae1e533eb1b73147af2a88763fc984945ad.png" src="_images/42c4b9990ac2624e66ae88ef1d4bbae1e533eb1b73147af2a88763fc984945ad.png" />
+<img alt="_images/9884ba0d2dc933e40b47f1f7a30a4cd4e04cb8ed304dc66535f665c9d90e520d.png" src="_images/9884ba0d2dc933e40b47f1f7a30a4cd4e04cb8ed304dc66535f665c9d90e520d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -877,7 +915,7 @@ Comparer: EPL
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ff8c5ad9d1c2ad112dc17f6f32b8ba8757fa62fc82d14bccefc7ef36d6854ff4.png" src="_images/ff8c5ad9d1c2ad112dc17f6f32b8ba8757fa62fc82d14bccefc7ef36d6854ff4.png" />
+<img alt="_images/0d0b262ccf3f048de53888ea4461bc36fcebaef42baefde5d4a307cd74d8e1ae.png" src="_images/0d0b262ccf3f048de53888ea4461bc36fcebaef42baefde5d4a307cd74d8e1ae.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -887,7 +925,7 @@ Comparer: EPL
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/76c3a32f70a01b30358937a01ba0811fd0f0c2d9cc9d23a2f64ac7b40185d3c9.png" src="_images/76c3a32f70a01b30358937a01ba0811fd0f0c2d9cc9d23a2f64ac7b40185d3c9.png" />
+<img alt="_images/317775b29de2b50e8bcf99e5223f8eac6dc6b922bc8a0b51785c7c5354e327c7.png" src="_images/317775b29de2b50e8bcf99e5223f8eac6dc6b922bc8a0b51785c7c5354e327c7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -897,7 +935,7 @@ Comparer: EPL
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d635ea6e41d9a72b484ba8ef0a634e53bb9992fac6d9cfe1ce0239445a6ab366.png" src="_images/d635ea6e41d9a72b484ba8ef0a634e53bb9992fac6d9cfe1ce0239445a6ab366.png" />
+<img alt="_images/e2579240251ea4b82c4fcf22fa9c3230f67613c01f6cabeb4370b4b52a110c36.png" src="_images/e2579240251ea4b82c4fcf22fa9c3230f67613c01f6cabeb4370b4b52a110c36.png" />
 </div>
 </div>
 </section>
@@ -963,6 +1001,7 @@ Comparer: EPL
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -1006,7 +1045,7 @@ By Jesper Mariegaard and  Henrik Andersson
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1030,8 +1069,8 @@ By Jesper Mariegaard and  Henrik Andersson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
