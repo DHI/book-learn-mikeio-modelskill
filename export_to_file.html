@@ -429,14 +429,6 @@ document.write(`
 </section>
 <section id="export-to-shapefile">
 <h2>Export to shapefile<a class="headerlink" href="#export-to-shapefile" title="Link to this heading">#</a></h2>
-<p>Exporting to GIS formats such as ESRI Shapefile or GeoTiff requires some libraries which are tricky to install on Windows.</p>
-<p>One way is to use Conda-forge</p>
-<ol class="arabic simple">
-<li><p>Download the <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda installer</a></p></li>
-<li><p>Install GeoPandas: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">--channel</span> <span class="pre">conda-forge</span> <span class="pre">geopandas</span></code></p></li>
-</ol>
-<p>An alternative is to use to run python under <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a></p>
-<p><img alt="" src="_images/wsl.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mikeio</span>
@@ -515,17 +507,76 @@ items:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;waterlevel&#39;</span><span class="p">:</span> <span class="n">maxwl</span><span class="p">},</span><span class="n">geometry</span><span class="o">=</span><span class="n">poly_list</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dfs</span><span class="o">.</span><span class="n">projection_string</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;waterlevel&#39;</span><span class="p">:</span> <span class="n">maxwl</span><span class="p">},</span><span class="n">geometry</span><span class="o">=</span><span class="n">poly_list</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dfs</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">projection_string</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="ne">CRSError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;waterlevel&#39;</span><span class="p">:</span> <span class="n">maxwl</span><span class="p">},</span><span class="n">geometry</span><span class="o">=</span><span class="n">poly_list</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dfs</span><span class="o">.</span><span class="n">projection_string</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;waterlevel&#39;</span><span class="p">:</span> <span class="n">maxwl</span><span class="p">},</span><span class="n">geometry</span><span class="o">=</span><span class="n">poly_list</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">dfs</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">projection_string</span><span class="p">)</span>
 
-<span class="ne">AttributeError</span>: &#39;Dfsu2DH&#39; object has no attribute &#39;projection_string&#39;
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/geopandas/geodataframe.py:243,</span> in <span class="ni">GeoDataFrame.__init__</span><span class="nt">(self, data, geometry, crs, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span> <span class="ow">and</span> <span class="n">geometry</span><span class="o">.</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>         <span class="s2">&quot;geometry&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">237</span>         <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">239</span>         <span class="c1"># __init__ always creates geometry col named &quot;geometry&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">240</span>         <span class="c1"># rename as `set_geometry` respects the given series name</span>
+<span class="g g-Whitespace">    </span><span class="mi">241</span>         <span class="n">geometry</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">243</span>     <span class="bp">self</span><span class="o">.</span><span class="n">set_geometry</span><span class="p">(</span><span class="n">geometry</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">245</span> <span class="k">if</span> <span class="n">geometry</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">crs</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span>         <span class="s2">&quot;Assigning CRS to a GeoDataFrame without a geometry column is not &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">248</span>         <span class="s2">&quot;supported. Supply geometry using the &#39;geometry=&#39; keyword argument, &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span>         <span class="s2">&quot;or by providing a DataFrame with column name &#39;geometry&#39;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/geopandas/geodataframe.py:462,</span> in <span class="ni">GeoDataFrame.set_geometry</span><span class="nt">(self, col, drop, inplace, crs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">459</span>     <span class="n">crs</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="s2">&quot;crs&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">461</span> <span class="c1"># Check that we are using a listlike of geometries</span>
+<span class="ne">--&gt; </span><span class="mi">462</span> <span class="n">level</span> <span class="o">=</span> <span class="n">_ensure_geometry</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span> <span class="c1"># ensure_geometry only sets crs on level if it has crs==None</span>
+<span class="g g-Whitespace">    </span><span class="mi">464</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">GeoSeries</span><span class="p">):</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/geopandas/geodataframe.py:71,</span> in <span class="ni">_ensure_geometry</span><span class="nt">(data, crs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">return</span> <span class="n">GeoSeries</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">71</span>     <span class="n">out</span> <span class="o">=</span> <span class="n">from_shapely</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">return</span> <span class="n">out</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/geopandas/array.py:190,</span> in <span class="ni">from_shapely</span><span class="nt">(data, crs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span>             <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input must be valid geometry objects: </span><span class="si">{</span><span class="n">geom</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span>     <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">190</span> <span class="k">return</span> <span class="n">GeometryArray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/geopandas/array.py:340,</span> in <span class="ni">GeometryArray.__init__</span><span class="nt">(self, data, crs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">337</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">data</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span> <span class="bp">self</span><span class="o">.</span><span class="n">_crs</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">--&gt; </span><span class="mi">340</span> <span class="bp">self</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="n">crs</span>
+<span class="g g-Whitespace">    </span><span class="mi">341</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sindex</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/geopandas/array.py:392,</span> in <span class="ni">GeometryArray.crs</span><span class="nt">(self, value)</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="k">if</span> <span class="n">HAS_PYPROJ</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span>     <span class="kn">from</span><span class="w"> </span><span class="nn">pyproj</span><span class="w"> </span><span class="kn">import</span> <span class="n">CRS</span>
+<span class="ne">--&gt; </span><span class="mi">392</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_crs</span> <span class="o">=</span> <span class="kc">None</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">value</span> <span class="k">else</span> <span class="n">CRS</span><span class="o">.</span><span class="n">from_user_input</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">393</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">394</span>     <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pyproj/crs/crs.py:503,</span> in <span class="ni">CRS.from_user_input</span><span class="nt">(cls, value, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="bp">cls</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>     <span class="k">return</span> <span class="n">value</span>
+<span class="ne">--&gt; </span><span class="mi">503</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pyproj/crs/crs.py:350,</span> in <span class="ni">CRS.__init__</span><span class="nt">(self, projparams, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">348</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="n">projparams</span>
+<span class="g g-Whitespace">    </span><span class="mi">349</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">350</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_local</span><span class="o">.</span><span class="n">crs</span> <span class="o">=</span> <span class="n">_CRS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">srs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/pyproj/_crs.pyx:2364,</span> in <span class="ni">pyproj._crs._CRS.__init__</span><span class="nt">()</span>
+
+<span class="ne">CRSError</span>: Invalid projection: UTM-33: (Internal Proj Error: proj_create: several objects matching this name: Schwarzeck / UTM zone 33S, RGRDC 2005 / UTM zone 33S, Malongo 1987 / UTM zone 33S, ETRS89/DREF91/2016 / UTM zone 33N, ETRS89/DREF91/2016 / UTM zone 33N (N-zE), ETRS89/DREF91/2016 / UTM zone 33N (zE-N))
 </pre></div>
 </div>
 </div>
@@ -534,7 +585,7 @@ items:
 <a class="reference external" href="https://spatialreference.org/ref/epsg/32433/">https://spatialreference.org/ref/epsg/32433/</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;waterlevel&#39;</span><span class="p">:</span> <span class="n">maxwl</span><span class="p">},</span><span class="n">geometry</span><span class="o">=</span><span class="n">poly_list</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:32433&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">({</span><span class="s1">&#39;waterlevel&#39;</span><span class="p">:</span> <span class="n">maxwl</span><span class="p">},</span> <span class="n">geometry</span><span class="o">=</span><span class="n">poly_list</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:32433&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -545,6 +596,58 @@ items:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>waterlevel</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.321391</td>
+      <td>POLYGON ((353122.611 6199631.339, 354250.947 6...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.254802</td>
+      <td>POLYGON ((356811.295 6165979.11, 356926.413 61...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.210542</td>
+      <td>POLYGON ((334193.183 6143454.831, 332951.036 6...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.213418</td>
+      <td>POLYGON ((330871.279 6142677.275, 331831.835 6...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.208291</td>
+      <td>POLYGON ((334327.062 6140906.232, 335381.131 6...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Export as ESRI Shapefile</p>
 <div class="cell docutils container">
