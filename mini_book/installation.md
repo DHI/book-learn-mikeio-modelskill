@@ -22,7 +22,7 @@ import numpy as np
 import pandas as pd
 import matplotlib as mpl
 import mikeio
-import fmskill
+import modelskill
 print(f"Python version: {sys.version}")
 print("NumPy: " + np.__version__)
 print("Pandas: " + pd.__version__)

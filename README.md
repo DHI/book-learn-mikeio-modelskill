@@ -14,4 +14,4 @@ The course comprises typical data processing tasks in connection with MIKE 21/3 
 
 ## BENEFITS
 
-After the course, you will have improved your skills and knowledge on how to conduct typical MIKE 21/3 modeling workflows using MIKE IO and FMskill.
+After the course, you will have improved your skills and knowledge on how to conduct typical MIKE 21/3 modeling workflows using MIKE IO and ModelSkill.
