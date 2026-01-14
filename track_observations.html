@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -403,7 +403,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-from-file">Data from file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dhi-altimetry-api">DHI Altimetry API</a></li>
 </ul>
             </nav>
         </div>
@@ -450,8 +449,7 @@ document.write(`
 <p><strong>csv</strong> files needs to be read by pandas first and passed to TrackObservation as a DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s2">&quot;data/SW/altimetry_NorthSea_20171027.csv&quot;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># step 1: create DataFrame</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/SW/altimetry_NorthSea_20171027.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># step 1: create DataFrame</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -543,240 +541,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.9/x64/lib/python3.13/site-packages/modelskill/timeseries/_track.py:136: UserWarning: Removed 22 duplicate timestamps with keep=first
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.11/x64/lib/python3.13/site-packages/modelskill/timeseries/_track.py:136: UserWarning: Removed 22 duplicate timestamps with keep=first
   warnings.warn(
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TrackObservation&gt;: surface_elevation
 Time: 2017-10-26 04:37:37 - 2017-10-30 20:54:47
 Quantity:  []
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="dhi-altimetry-api">
-<h2>DHI Altimetry API<a class="headerlink" href="#dhi-altimetry-api" title="Link to this heading">#</a></h2>
-<p>You need to pip install “watobs” for this part!</p>
-<p>See <a class="reference external" href="https://nbviewer.jupyter.org/github/DHI/watobs/blob/main/notebooks/Altimetry_data.ipynb">Altimetry_data.ipynb</a> example notebook.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">watobs</span><span class="w"> </span><span class="kn">import</span> <span class="n">DHIAltimetryRepository</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DHI_ALTIMETRY_API_KEY&quot;</span><span class="p">]</span>
-<span class="n">repo</span> <span class="o">=</span> <span class="n">DHIAltimetryRepository</span><span class="p">(</span><span class="n">api_key</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_altimetry_data</span><span class="p">(</span><span class="n">area</span><span class="o">=</span><span class="s2">&quot;lon=2.9&amp;lat=53.9&amp;radius=100&quot;</span><span class="p">,</span> <span class="n">start_time</span><span class="o">=</span><span class="s2">&quot;2019-10-1&quot;</span><span class="p">,</span> 
-<span class="n">end_time</span><span class="o">=</span><span class="s2">&quot;2019-10-8&quot;</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Succesfully retrieved 268 records from API in 1.64 seconds
-</pre></div>
-</div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>longitude</th>
-      <th>latitude</th>
-      <th>water_level</th>
-      <th>significant_wave_height</th>
-      <th>wind_speed</th>
-      <th>distance_from_land</th>
-      <th>water_depth</th>
-      <th>satellite</th>
-      <th>quality</th>
-      <th>absolute_dynamic_topography</th>
-      <th>water_level_rms</th>
-      <th>significant_wave_height_raw</th>
-      <th>significant_wave_height_rms</th>
-      <th>wind_speed_raw</th>
-      <th>wind_speed_rads</th>
-      <th>quality_swh</th>
-      <th>quality_water_level</th>
-      <th>quality_wind_speed</th>
-    </tr>
-    <tr>
-      <th>datetime</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>2019-10-01 01:53:00.499</th>
-      <td>4.095785</td>
-      <td>53.379154</td>
-      <td>-1.374</td>
-      <td>1.621</td>
-      <td>9.519</td>
-      <td>53819.0</td>
-      <td>-23.75</td>
-      <td>c2</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>0.041</td>
-      <td>1.630</td>
-      <td>0.374</td>
-      <td>9.511</td>
-      <td>8.45</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2019-10-01 01:53:01.443</th>
-      <td>4.086177</td>
-      <td>53.436186</td>
-      <td>-1.410</td>
-      <td>1.571</td>
-      <td>10.095</td>
-      <td>56835.0</td>
-      <td>-23.18</td>
-      <td>c2</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>0.031</td>
-      <td>1.576</td>
-      <td>0.390</td>
-      <td>10.078</td>
-      <td>9.00</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2019-10-01 01:53:02.386</th>
-      <td>4.076554</td>
-      <td>53.493216</td>
-      <td>-1.387</td>
-      <td>1.718</td>
-      <td>9.951</td>
-      <td>60379.0</td>
-      <td>-24.14</td>
-      <td>c2</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>0.030</td>
-      <td>1.734</td>
-      <td>0.280</td>
-      <td>9.936</td>
-      <td>8.86</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2019-10-01 01:53:03.330</th>
-      <td>4.066916</td>
-      <td>53.550245</td>
-      <td>-1.355</td>
-      <td>1.758</td>
-      <td>9.771</td>
-      <td>64265.0</td>
-      <td>-28.75</td>
-      <td>c2</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>0.048</td>
-      <td>1.777</td>
-      <td>0.391</td>
-      <td>9.759</td>
-      <td>8.71</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2019-10-01 01:53:04.273</th>
-      <td>4.057262</td>
-      <td>53.607274</td>
-      <td>-1.367</td>
-      <td>1.809</td>
-      <td>9.519</td>
-      <td>68517.0</td>
-      <td>-34.86</td>
-      <td>c2</td>
-      <td>2</td>
-      <td>NaN</td>
-      <td>0.044</td>
-      <td>1.832</td>
-      <td>0.308</td>
-      <td>9.511</td>
-      <td>8.45</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">plot_map</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/bb5fbd2ea1f2cfd7bd695faee23beb1219816232ba86d5fb8256a136276ec743.png" src="_images/bb5fbd2ea1f2cfd7bd695faee23beb1219816232ba86d5fb8256a136276ec743.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">TrackObservation</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="s2">&quot;significant_wave_height&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Alti_from_df&#39;</span><span class="p">,</span> <span class="n">quantity</span><span class="o">=</span><span class="n">ms</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="s2">&quot;Significant wave height&quot;</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">))</span>
-<span class="n">o1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;TrackObservation&gt;: Alti_from_df
-Time: 2019-10-01 01:53:00.499000 - 2019-10-07 10:38:34
-Quantity: Significant wave height [m]
 </pre></div>
 </div>
 </div>
@@ -851,7 +622,6 @@ Quantity: Significant wave height [m]
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-from-file">Data from file</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dhi-altimetry-api">DHI Altimetry API</a></li>
 </ul>
   </nav></div>
 

@@ -30,7 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=1ae7504c"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -546,19 +546,16 @@ projection: UTM-33
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of elements per layer (5 z-layers, 4 sigma layers):
-Layer 0: 10
-Layer 1: 86
-Layer 2: 187
-Layer 3: 528
-Layer 4: 1507
-Layer 5: 3700
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Layer 6: 3700
-Layer 7: 3700
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Layer 8: 3700
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">n_layers</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">dsl</span> <span class="o">=</span> <span class="n">dfs</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="n">j</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Layer </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">dsl</span><span class="o">.</span><span class="n">n_elements</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;Dataset&#39; object has no attribute &#39;n_elements&#39;
 </pre></div>
 </div>
 </div>
@@ -612,7 +609,7 @@ items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3bfd3be5eff85f93c21b206b3080a6f084b2dcc5a1372c5eb60298d2d14041e3.png" src="_images/3bfd3be5eff85f93c21b206b3080a6f084b2dcc5a1372c5eb60298d2d14041e3.png" />
+<img alt="_images/f8460bc2d948b3c073776929bd9069ec961abc639afc935f622cc747692f4a48.png" src="_images/f8460bc2d948b3c073776929bd9069ec961abc639afc935f622cc747692f4a48.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -655,7 +652,7 @@ items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d67aa85479c1e3d6813045465b0424143942f59d1a648e989af69c1b8747e39d.png" src="_images/d67aa85479c1e3d6813045465b0424143942f59d1a648e989af69c1b8747e39d.png" />
+<img alt="_images/1381325cd8d2de84ffb8d16e5749a80d1fb416ba04720afe49511256c7551c48.png" src="_images/1381325cd8d2de84ffb8d16e5749a80d1fb416ba04720afe49511256c7551c48.png" />
 </div>
 </div>
 </section>
@@ -690,7 +687,7 @@ items:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9fc2b9a4405db83a145c73daea0047d1b2d482554f47294f64954146d0e01741.png" src="_images/9fc2b9a4405db83a145c73daea0047d1b2d482554f47294f64954146d0e01741.png" />
+<img alt="_images/64ad115e36bfa2ed053409464a31b3c16e9c9c895a3a5a61f6f12ff3084e4539.png" src="_images/64ad115e36bfa2ed053409464a31b3c16e9c9c895a3a5a61f6f12ff3084e4539.png" />
 </div>
 </div>
 <section id="read-vertical-slice">
@@ -741,7 +738,7 @@ time: 1997-09-15 21:00:00 - 1997-09-16 03:00:00 (3 records)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/027713fde2f5a77034d14affece2e5ad9e2f06ab3c3eee65a70bdeaf991532bd.png" src="_images/027713fde2f5a77034d14affece2e5ad9e2f06ab3c3eee65a70bdeaf991532bd.png" />
+<img alt="_images/2b02227bc77504c2e128c0d52a2b9a2d7c15f05fefb274350b3dd704538781ee.png" src="_images/2b02227bc77504c2e128c0d52a2b9a2d7c15f05fefb274350b3dd704538781ee.png" />
 </div>
 </div>
 </section>
