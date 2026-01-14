@@ -1,6 +1,5 @@
 jupyter-book==1.0.4
 mikeio>=2.6.0
 modelskill>=1.3.0
-watobs
 geopandas
 openpyxl
