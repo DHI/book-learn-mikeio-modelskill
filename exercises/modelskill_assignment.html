@@ -277,7 +277,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/DHI/book-learn-mikeio-fmskill/blob/main/mini_book/exercises/modelskill_assignment.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/DHI/book-learn-mikeio-ModelSkill/blob/main/mini_book/exercises/modelskill_assignment.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -446,26 +446,14 @@ document.write(`
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fldr</span> <span class="o">=</span> <span class="s2">&quot;../data/FMskill_assignment/&quot;</span>   <span class="c1"># where have you put your data? </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fldr</span> <span class="o">=</span> <span class="s2">&quot;../data/ModelSkill_assignment/&quot;</span>   <span class="c1"># where have you put your data? </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">fmskill</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">ModelSkill</span><span class="w"> </span><span class="kn">import</span> <span class="n">PointObservation</span><span class="p">,</span> <span class="n">ModelResult</span><span class="p">,</span> <span class="n">Connector</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">fmskill</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ModelSkill</span><span class="w"> </span><span class="kn">import</span> <span class="n">PointObservation</span><span class="p">,</span> <span class="n">ModelResult</span><span class="p">,</span> <span class="n">Connector</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;fmskill&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">modelskill</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ms</span>
 </pre></div>
 </div>
 </div>
@@ -481,7 +469,7 @@ document.write(`
 </ul>
 <section id="simple-compare">
 <h3>1.1 Simple compare<a class="headerlink" href="#simple-compare" title="Link to this heading">#</a></h3>
-<p>Use fmskill.compare to do a quick comparison of F16 and SW1.</p>
+<p>Use ModelSkill.compare to do a quick comparison of F16 and SW1.</p>
 <p>What is the mean absolute error in cm?
 Do a time series plot.</p>
 </section>
