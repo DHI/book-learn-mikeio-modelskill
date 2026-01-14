@@ -27,7 +27,6 @@ parts:
     - file: point_observations
       sections:
       - file: exercises/exercise_point_observations
-    - file: modelskill_model_results
     - file: model_skill
       sections:
       - file: exercises/exercise_basic_model_skill
