@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -58,40 +61,37 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'model_skill';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Exercise: Basic model skill" href="exercises/exercise_basic_model_skill.html" />
     <link rel="prev" title="Exercise point observation" href="exercises/exercise_point_observations.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -99,7 +99,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,15 +106,59 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
     </header>
   
 
@@ -124,7 +167,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,21 +198,17 @@
     
     
     <img src="_static/logo.png" class="logo__image only-light" alt="Python for marine modelers using MIKE IO and ModelSkill - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Python for marine modelers using MIKE IO and ModelSkill - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python for marine modelers using MIKE IO and ModelSkill - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -231,9 +271,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -347,7 +392,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -361,25 +406,17 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -401,7 +438,7 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-comparison">Simple comparison</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model">The model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-observation">The observation</a></li>
@@ -444,7 +481,7 @@ document.write(`
 <p>Can be either a dfs0 or a DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn_mod</span> <span class="o">=</span> <span class="s1">&#39;data/SW/ts_storm_4.dfs0&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn_mod</span> <span class="o">=</span> <span class="s1">'data/SW/ts_storm_4.dfs0'</span>
 <span class="n">df_mod</span> <span class="o">=</span> <span class="n">mikeio</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">fn_mod</span><span class="p">,</span> <span class="n">items</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -456,7 +493,7 @@ document.write(`
 <p>Can be either a dfs0, a DataFrame or a PointObservation object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">&#39;data/SW/eur_Hm0.dfs0&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">'data/SW/eur_Hm0.dfs0'</span>
 </pre></div>
 </div>
 </div>
@@ -472,7 +509,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/obs.py:79: UserWarning: Could not guess geometry type from data or args, assuming POINT geometry. Use PointObservation or TrackObservation to be explicit.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/obs.py:79: UserWarning: Could not guess geometry type from data or args, assuming POINT geometry. Use PointObservation or TrackObservation to be explicit.
   warnings.warn(
 </pre></div>
 </div>
@@ -485,7 +522,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5c496165638ed36910c5876aa2cd37d2fc691474aca3dca2bdbc6bd9ced0c5aa.png" src="_images/5c496165638ed36910c5876aa2cd37d2fc691474aca3dca2bdbc6bd9ced0c5aa.png" />
+<img alt="_images/affde00db4ce00e241211af84d737e21bcab7aecf12d312ac13f2bee2d147549.png" src="_images/affde00db4ce00e241211af84d737e21bcab7aecf12d312ac13f2bee2d147549.png" />
 </div>
 </div>
 </section>
@@ -515,10 +552,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/metrics.py:344: RuntimeWarning: divide by zero encountered in scalar divide
-  return 1 - SSr / SSt
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -561,14 +594,14 @@ document.write(`
   <tbody>
     <tr>
       <th>eur_Hm0</th>
-      <td>1</td>
-      <td>0.510124</td>
-      <td>0.510124</td>
-      <td>0.0</td>
-      <td>0.510124</td>
-      <td>NaN</td>
-      <td>0.0</td>
-      <td>-inf</td>
+      <td>66</td>
+      <td>0.05321</td>
+      <td>0.229957</td>
+      <td>0.223717</td>
+      <td>0.177321</td>
+      <td>0.967972</td>
+      <td>0.086125</td>
+      <td>0.929005</td>
     </tr>
   </tbody>
 </table>
@@ -577,15 +610,11 @@ document.write(`
 <p>The default is a number of common metrics, but you are free to pick your favorite metrics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmp</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;mae&quot;</span><span class="p">,</span><span class="s2">&quot;rho&quot;</span><span class="p">,</span><span class="s2">&quot;lin_slope&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmp</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">"mae"</span><span class="p">,</span><span class="s2">"rho"</span><span class="p">,</span><span class="s2">"lin_slope"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/metrics.py:736: SmallSampleWarning: One or more sample arguments is too small; all returned values will be NaN. See documentation for sample size requirements.
-  reg = _linregress(obs, model)
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -620,10 +649,10 @@ document.write(`
   <tbody>
     <tr>
       <th>eur_Hm0</th>
-      <td>1</td>
-      <td>0.510124</td>
-      <td>NaN</td>
-      <td>NaN</td>
+      <td>66</td>
+      <td>0.177321</td>
+      <td>0.970199</td>
+      <td>0.999428</td>
     </tr>
   </tbody>
 </table>
@@ -638,112 +667,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cmp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">();</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:565,</span> in <span class="ni">ComparerPlotter.scatter</span><span class="nt">(self, model, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, ax, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span> <span class="n">axes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">for</span> <span class="n">mod_name</span> <span class="ow">in</span> <span class="n">mod_names</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">565</span>     <span class="n">ax_mod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scatter_one_model</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">566</span>         <span class="n">mod_name</span><span class="o">=</span><span class="n">mod_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>         <span class="n">quantiles</span><span class="o">=</span><span class="n">quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span>         <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span>         <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span>         <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span>         <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">575</span>         <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">576</span>         <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span>         <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>         <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>         <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">580</span>         <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span>         <span class="n">skill_table</span><span class="o">=</span><span class="n">skill_table</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span>         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="n">axes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax_mod</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="k">return</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">axes</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:649,</span> in <span class="ni">ComparerPlotter._scatter_one_model</span><span class="nt">(self, mod_name, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span>     <span class="n">reg_method</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="n">skill_scores</span> <span class="o">=</span> <span class="n">skill</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">if</span> <span class="n">skill</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">649</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">652</span>     <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span>     <span class="n">quantiles</span><span class="o">=</span><span class="n">quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span>     <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">661</span>     <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>     <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>     <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="n">skill_scores</span><span class="o">=</span><span class="n">skill_scores</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>     <span class="n">skill_score_unit</span><span class="o">=</span><span class="n">skill_score_unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span> <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;matplotlib&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_directional</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>     <span class="n">_xtick_directional</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlim</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_scatter.py:228,</span> in <span class="ni">scatter</span><span class="nt">(x, y, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, skill_scores, skill_score_unit, ax, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="n">skill</span> <span class="o">=</span> <span class="n">cmp</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="n">skill_scores</span> <span class="o">=</span> <span class="n">skill</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;records&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">228</span> <span class="k">return</span> <span class="n">PLOTTING_BACKENDS</span><span class="p">[</span><span class="n">backend</span><span class="p">](</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">x_sample</span><span class="o">=</span><span class="n">x_sample</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="n">y_sample</span><span class="o">=</span><span class="n">y_sample</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">xq</span><span class="o">=</span><span class="n">xq</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">yq</span><span class="o">=</span><span class="n">yq</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">x_trend</span><span class="o">=</span><span class="n">x_trend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="n">nbins_hist</span><span class="o">=</span><span class="n">nbins_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="n">skill_scores</span><span class="o">=</span><span class="n">skill_scores</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">skill_score_unit</span><span class="o">=</span><span class="n">skill_score_unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">252</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_scatter.py:289,</span> in <span class="ni">_scatter_matplotlib</span><span class="nt">(x, y, x_sample, y_sample, z, xq, yq, x_trend, show_density, show_points, show_hist, norm, nbins_hist, reg_method, xlabel, ylabel, figsize, xlim, ylim, title, skill_scores, skill_score_unit, fit_to_quantiles, ax, cmap, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">_get_fig_ax</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">289</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Not enough data to plot. At least 2 points are required.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>     <span class="p">[</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="p">[</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">296</span>     <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="n">show_points</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">show_points</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: Not enough data to plot. At least 2 points are required.
-</pre></div>
-</div>
-<img alt="_images/c2f934e85f9b17fe23a4168ad6948ad931a7ef36ad2c126ad57c3d2279850635.png" src="_images/c2f934e85f9b17fe23a4168ad6948ad931a7ef36ad2c126ad57c3d2279850635.png" />
+<img alt="_images/be318d94f43db0f738219920942b202369f681ad9eb524ddcbc64a02c7233215.png" src="_images/be318d94f43db0f738219920942b202369f681ad9eb524ddcbc64a02c7233215.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -751,120 +675,12 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cmp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">binsize</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
           <span class="n">show_points</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
           <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
-          <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A calibrated model!&quot;</span><span class="p">);</span>
+          <span class="n">title</span><span class="o">=</span><span class="s2">"A calibrated model!"</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cmp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">binsize</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
-<span class="g g-Whitespace">      </span><span class="mi">2</span>           <span class="n">show_points</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>           <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>           <span class="n">title</span><span class="o">=</span><span class="s2">&quot;A calibrated model!&quot;</span><span class="p">);</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:565,</span> in <span class="ni">ComparerPlotter.scatter</span><span class="nt">(self, model, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, ax, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span> <span class="n">axes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">for</span> <span class="n">mod_name</span> <span class="ow">in</span> <span class="n">mod_names</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">565</span>     <span class="n">ax_mod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scatter_one_model</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">566</span>         <span class="n">mod_name</span><span class="o">=</span><span class="n">mod_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>         <span class="n">quantiles</span><span class="o">=</span><span class="n">quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span>         <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span>         <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span>         <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span>         <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">575</span>         <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">576</span>         <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span>         <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>         <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>         <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">580</span>         <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span>         <span class="n">skill_table</span><span class="o">=</span><span class="n">skill_table</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span>         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="n">axes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax_mod</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="k">return</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">axes</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:649,</span> in <span class="ni">ComparerPlotter._scatter_one_model</span><span class="nt">(self, mod_name, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span>     <span class="n">reg_method</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="n">skill_scores</span> <span class="o">=</span> <span class="n">skill</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">if</span> <span class="n">skill</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">649</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">652</span>     <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span>     <span class="n">quantiles</span><span class="o">=</span><span class="n">quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span>     <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">661</span>     <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>     <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>     <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="n">skill_scores</span><span class="o">=</span><span class="n">skill_scores</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>     <span class="n">skill_score_unit</span><span class="o">=</span><span class="n">skill_score_unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span> <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;matplotlib&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_directional</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>     <span class="n">_xtick_directional</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlim</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_scatter.py:228,</span> in <span class="ni">scatter</span><span class="nt">(x, y, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, skill_scores, skill_score_unit, ax, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="n">skill</span> <span class="o">=</span> <span class="n">cmp</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="n">skill_scores</span> <span class="o">=</span> <span class="n">skill</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;records&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">228</span> <span class="k">return</span> <span class="n">PLOTTING_BACKENDS</span><span class="p">[</span><span class="n">backend</span><span class="p">](</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">x_sample</span><span class="o">=</span><span class="n">x_sample</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="n">y_sample</span><span class="o">=</span><span class="n">y_sample</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">xq</span><span class="o">=</span><span class="n">xq</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">yq</span><span class="o">=</span><span class="n">yq</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">x_trend</span><span class="o">=</span><span class="n">x_trend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="n">nbins_hist</span><span class="o">=</span><span class="n">nbins_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="n">skill_scores</span><span class="o">=</span><span class="n">skill_scores</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">skill_score_unit</span><span class="o">=</span><span class="n">skill_score_unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">252</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_scatter.py:289,</span> in <span class="ni">_scatter_matplotlib</span><span class="nt">(x, y, x_sample, y_sample, z, xq, yq, x_trend, show_density, show_points, show_hist, norm, nbins_hist, reg_method, xlabel, ylabel, figsize, xlim, ylim, title, skill_scores, skill_score_unit, fit_to_quantiles, ax, cmap, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">_get_fig_ax</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">289</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Not enough data to plot. At least 2 points are required.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>     <span class="p">[</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="p">[</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">296</span>     <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="n">show_points</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">show_points</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: Not enough data to plot. At least 2 points are required.
-</pre></div>
-</div>
-<img alt="_images/c2f934e85f9b17fe23a4168ad6948ad931a7ef36ad2c126ad57c3d2279850635.png" src="_images/c2f934e85f9b17fe23a4168ad6948ad931a7ef36ad2c126ad57c3d2279850635.png" />
+<img alt="_images/d8fe86f8dd49220d54fee52784f51dc6bf4b734da55f751c86b604fd3039bcc4.png" src="_images/d8fe86f8dd49220d54fee52784f51dc6bf4b734da55f751c86b604fd3039bcc4.png" />
 </div>
 </div>
 </section>
@@ -877,136 +693,14 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cmp</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">taylor</span><span class="p">();</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:754,</span> in <span class="ni">ComparerPlotter.taylor</span><span class="nt">(self, normalize_std, figsize, marker, marker_size, title)</span>
-<span class="g g-Whitespace">    </span><span class="mi">748</span> <span class="n">pts</span> <span class="o">=</span> <span class="p">[</span>
-<span class="g g-Whitespace">    </span><span class="mi">749</span>     <span class="n">TaylorPoint</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">model</span><span class="p">,</span> <span class="n">obs_std</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">obs_std</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">std</span><span class="p">,</span> <span class="n">cc</span><span class="o">=</span><span class="n">r</span><span class="o">.</span><span class="n">cc</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span> <span class="n">marker_size</span><span class="o">=</span><span class="n">marker_size</span><span class="p">)</span>
-<span class="nn">    750     for r</span> in <span class="ni">df.itertuples</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">751</span> <span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">753</span> <span class="c1"># TODO consistent return type with other plotting methods</span>
-<span class="ne">--&gt; </span><span class="mi">754</span> <span class="k">return</span> <span class="n">taylor_diagram</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">755</span>     <span class="n">obs_std</span><span class="o">=</span><span class="n">ref_std</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">756</span>     <span class="n">points</span><span class="o">=</span><span class="n">pts</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">757</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">758</span>     <span class="n">obs_text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Obs: </span><span class="si">{</span><span class="n">cmp</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">759</span>     <span class="n">normalize_std</span><span class="o">=</span><span class="n">normalize_std</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">760</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">761</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_taylor_diagram.py:68,</span> in <span class="ni">taylor_diagram</span><span class="nt">(obs_std, points, figsize, obs_text, normalize_std, ax, title)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">obs_text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="n">obs_text</span> <span class="o">=</span> <span class="n">obs_text</span><span class="p">[:</span><span class="mi">25</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;...&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">68</span> <span class="n">td</span> <span class="o">=</span> <span class="n">TaylorDiagram</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="n">obs_std</span><span class="p">,</span> <span class="n">fig</span><span class="o">=</span><span class="n">fig</span><span class="p">,</span> <span class="n">rect</span><span class="o">=</span><span class="mi">111</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">obs_text</span><span class="p">,</span> <span class="n">normalize_std</span><span class="o">=</span><span class="n">normalize_std</span>
-<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="n">contours</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">add_contours</span><span class="p">(</span><span class="n">levels</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="s2">&quot;0.5&quot;</span><span class="p">,</span> <span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dotted&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="n">plt</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">contours</span><span class="p">,</span> <span class="n">inline</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%.2f</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_taylor_diagram_external.py:87,</span> in <span class="ni">TaylorDiagram.__init__</span><span class="nt">(self, refstd, fig, rect, label, srange, extend, normalize_std)</span>
-<span class="g g-Whitespace">     </span><span class="mi">84</span> <span class="k">if</span> <span class="n">fig</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span>     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="ne">---&gt; </span><span class="mi">87</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">FA</span><span class="o">.</span><span class="n">FloatingSubplot</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">rect</span><span class="p">,</span> <span class="n">grid_helper</span><span class="o">=</span><span class="n">ghelper</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">88</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span> <span class="c1"># Adjust axes</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/mpl_toolkits/axisartist/floating_axes.py:240,</span> in <span class="ni">FloatingAxesBase.__init__</span><span class="nt">(self, grid_helper, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span> <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">grid_helper</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="n">_api</span><span class="o">.</span><span class="n">check_isinstance</span><span class="p">(</span><span class="n">GridHelperCurveLinear</span><span class="p">,</span> <span class="n">grid_helper</span><span class="o">=</span><span class="n">grid_helper</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">240</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">grid_helper</span><span class="o">=</span><span class="n">grid_helper</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="bp">self</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mf">1.</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/mpl_toolkits/axes_grid1/parasite_axes.py:83,</span> in <span class="ni">HostAxesBase.__init__</span><span class="nt">(self, *args, **kwargs)</span>
-<span class="g g-Whitespace">     </span><span class="mi">81</span> <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="bp">self</span><span class="o">.</span><span class="n">parasites</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ne">---&gt; </span><span class="mi">83</span>     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/mpl_toolkits/axisartist/axislines.py:376,</span> in <span class="ni">Axes.__init__</span><span class="nt">(self, grid_helper, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span> <span class="bp">self</span><span class="o">.</span><span class="n">_axisline_on</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">    </span><span class="mi">375</span> <span class="bp">self</span><span class="o">.</span><span class="n">_grid_helper</span> <span class="o">=</span> <span class="n">grid_helper</span> <span class="k">if</span> <span class="n">grid_helper</span> <span class="k">else</span> <span class="n">GridHelperRectlinear</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">376</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="bp">self</span><span class="o">.</span><span class="n">toggle_axisline</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/axes/_base.py:732,</span> in <span class="ni">_AxesBase.__init__</span><span class="nt">(self, fig, facecolor, frameon, sharex, sharey, label, xscale, yscale, box_aspect, forward_navigation_events, *args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">729</span> <span class="bp">self</span><span class="o">.</span><span class="n">set_axisbelow</span><span class="p">(</span><span class="n">mpl</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.axisbelow&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">731</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rasterization_zorder</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">732</span> <span class="bp">self</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">734</span> <span class="c1"># funcs used to format x and y - fall back on major formatters</span>
-<span class="g g-Whitespace">    </span><span class="mi">735</span> <span class="bp">self</span><span class="o">.</span><span class="n">fmt_xdata</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/mpl_toolkits/axisartist/floating_axes.py:262,</span> in <span class="ni">FloatingAxesBase.clear</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">260</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="n">orig_patch</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">261</span> <span class="bp">self</span><span class="o">.</span><span class="n">gridlines</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="n">orig_patch</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">262</span> <span class="bp">self</span><span class="o">.</span><span class="n">adjust_axes_lim</span><span class="p">()</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/mpl_toolkits/axisartist/floating_axes.py:265,</span> in <span class="ni">FloatingAxesBase.adjust_axes_lim</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">264</span> <span class="k">def</span><span class="w"> </span><span class="nf">adjust_axes_lim</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">265</span>     <span class="n">bbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">get_path</span><span class="p">()</span><span class="o">.</span><span class="n">get_extents</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span>         <span class="c1"># First transform to pixel coords, then to parent data coords.</span>
-<span class="g g-Whitespace">    </span><span class="mi">267</span>         <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">get_transform</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">transData</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">268</span>     <span class="n">bbox</span> <span class="o">=</span> <span class="n">bbox</span><span class="o">.</span><span class="n">expanded</span><span class="p">(</span><span class="mf">1.02</span><span class="p">,</span> <span class="mf">1.02</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="bp">self</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">bbox</span><span class="o">.</span><span class="n">xmin</span><span class="p">,</span> <span class="n">bbox</span><span class="o">.</span><span class="n">xmax</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/path.py:645,</span> in <span class="ni">Path.get_extents</span><span class="nt">(self, transform, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">643</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.transforms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Bbox</span>
-<span class="g g-Whitespace">    </span><span class="mi">644</span> <span class="k">if</span> <span class="n">transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">645</span>     <span class="bp">self</span> <span class="o">=</span> <span class="n">transform</span><span class="o">.</span><span class="n">transform_path</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">646</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">codes</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span>     <span class="n">xys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vertices</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/transforms.py:1601,</span> in <span class="ni">Transform.transform_path</span><span class="nt">(self, path)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1594</span> <span class="k">def</span><span class="w"> </span><span class="nf">transform_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1595</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">   </span><span class="mi">1596</span><span class="sd">     Apply the transform to `.Path` *path*, returning a new `.Path`.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1597</span><span class="sd"> </span>
-<span class="g g-Whitespace">   </span><span class="mi">1598</span><span class="sd">     In some cases, this transform may insert curves into the path</span>
-<span class="g g-Whitespace">   </span><span class="mi">1599</span><span class="sd">     that began as line segments.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1600</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1601</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_path_affine</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_path_non_affine</span><span class="p">(</span><span class="n">path</span><span class="p">))</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/projections/polar.py:147,</span> in <span class="ni">PolarTransform.transform_path_non_affine</span><span class="nt">(self, path)</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span>         <span class="n">codes</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">c</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">trs</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span>     <span class="n">last_t</span><span class="p">,</span> <span class="n">last_r</span> <span class="o">=</span> <span class="n">trs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">147</span> <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">xys</span><span class="p">,</span> <span class="n">codes</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/path.py:130,</span> in <span class="ni">Path.__init__</span><span class="nt">(self, vertices, codes, _interpolation_steps, closed, readonly)</span>
-<span class="g g-Whitespace">    </span><span class="mi">101</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="sd"> Create a new path with the given vertices and codes.</span>
-<span class="g g-Whitespace">    </span><span class="mi">103</span><span class="sd"> </span>
-<span class="sd">   (...)    127     and codes as read-only arrays.</span>
-<span class="g g-Whitespace">    </span><span class="mi">128</span><span class="sd"> &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="n">vertices</span> <span class="o">=</span> <span class="n">_to_unmasked_float_array</span><span class="p">(</span><span class="n">vertices</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">130</span> <span class="n">_api</span><span class="o">.</span><span class="n">check_shape</span><span class="p">((</span><span class="kc">None</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">vertices</span><span class="o">=</span><span class="n">vertices</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="k">if</span> <span class="n">codes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">vertices</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="n">codes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">codes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">code_type</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/matplotlib/_api/__init__.py:176,</span> in <span class="ni">check_shape</span><span class="nt">(shape, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">173</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">174</span>     <span class="n">text_shape</span> <span class="o">+=</span> <span class="s2">&quot;,&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">176</span> <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">177</span>     <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">k</span><span class="si">!r}</span><span class="s2"> must be </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2">D with shape (</span><span class="si">{</span><span class="n">text_shape</span><span class="si">}</span><span class="s2">), &quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">178</span>     <span class="sa">f</span><span class="s2">&quot;but your input has shape </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">179</span> <span class="p">)</span>
-
-<span class="ne">ValueError</span>: &#39;vertices&#39; must be 2D with shape (N, 2), but your input has shape (0,)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 700x700 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="elaborate-comparison">
 <h2>Elaborate comparison<a class="headerlink" href="#elaborate-comparison" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">&#39;data/SW/HKZN_local_2017_DutchCoast.dfsu&#39;</span>
-<span class="n">mr</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">model_result</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;HKZN_local&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn</span> <span class="o">=</span> <span class="s1">'data/SW/HKZN_local_2017_DutchCoast.dfsu'</span>
+<span class="n">mr</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">model_result</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">'HKZN_local'</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">mr</span>
 </pre></div>
 </div>
@@ -1021,8 +715,8 @@ Quantity: Significant wave height [m]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">PointObservation</span><span class="p">(</span><span class="s1">&#39;data/SW/HKNA_Hm0.dfs0&#39;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">4.2420</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.6887</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;HKNA&quot;</span><span class="p">)</span>
-<span class="n">o2</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">PointObservation</span><span class="p">(</span><span class="s2">&quot;data/SW/eur_Hm0.dfs0&quot;</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">3.2760</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">51.9990</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;EPL&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">PointObservation</span><span class="p">(</span><span class="s1">'data/SW/HKNA_Hm0.dfs0'</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">4.2420</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">52.6887</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"HKNA"</span><span class="p">)</span>
+<span class="n">o2</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">PointObservation</span><span class="p">(</span><span class="s2">"data/SW/eur_Hm0.dfs0"</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mf">3.2760</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">51.9990</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">"EPL"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1034,7 +728,7 @@ Quantity: Significant wave height [m]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f17ae05e440b5021abe67edc23ed021951d35291e69e9d63739a83292cccf262.png" src="_images/f17ae05e440b5021abe67edc23ed021951d35291e69e9d63739a83292cccf262.png" />
+<img alt="_images/22b9040a6614e3f6a40c542b41f3d96773de0b3dafe0d5a28d8501cdea284e0d.png" src="_images/22b9040a6614e3f6a40c542b41f3d96773de0b3dafe0d5a28d8501cdea284e0d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1044,7 +738,7 @@ Quantity: Significant wave height [m]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/46486de1b36e8831e9a8a18463fd2553013111d69d7cc322186882cbec99e1e6.png" src="_images/46486de1b36e8831e9a8a18463fd2553013111d69d7cc322186882cbec99e1e6.png" />
+<img alt="_images/a1de8ac9c52739ef1cb89143188f45b22de5c0cd51e4c366d228dd8ae7d4e10a.png" src="_images/a1de8ac9c52739ef1cb89143188f45b22de5c0cd51e4c366d228dd8ae7d4e10a.png" />
 </div>
 </div>
 <section id="overview">
@@ -1056,7 +750,7 @@ Quantity: Significant wave height [m]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/079b2e8c18f905e1bfc61b70cccb6f9665cb1b079d013142f1fbfdfe0065f02c.png" src="_images/079b2e8c18f905e1bfc61b70cccb6f9665cb1b079d013142f1fbfdfe0065f02c.png" />
+<img alt="_images/497a404e9675f8b8cb1c17e388b08d160de38625fbb51c75e07b2944b4fdc723.png" src="_images/497a404e9675f8b8cb1c17e388b08d160de38625fbb51c75e07b2944b4fdc723.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1067,12 +761,6 @@ Quantity: Significant wave height [m]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/mikeio/dataset/_dataset.py:505: FutureWarning: &#39;inplace&#39; parameter is deprecated and will be removed in future versions. Use ds = ds.rename(...) instead.
-  warnings.warn(
-/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/mikeio/dataset/_dataset.py:505: FutureWarning: &#39;inplace&#39; parameter is deprecated and will be removed in future versions. Use ds = ds.rename(...) instead.
-  warnings.warn(
-</pre></div>
-</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ComparerCollection&gt;
 Comparers:
 0: HKNA - Significant wave height [m]
@@ -1088,65 +776,46 @@ Comparers:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/metrics.py:344: RuntimeWarning: divide by zero encountered in scalar divide
-  return 1 - SSr / SSt
-/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/skill.py:804: FutureWarning: precision is deprecated, it has been renamed to decimals
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/skill.py:804: FutureWarning: precision is deprecated, it has been renamed to decimals
   warnings.warn(
-/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/pandas/io/formats/style.py:4202: RuntimeWarning: All-NaN slice encountered
-  smin = np.nanmin(gmap) if vmin is None else vmin
-/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/pandas/io/formats/style.py:4203: RuntimeWarning: All-NaN slice encountered
-  smax = np.nanmax(gmap) if vmax is None else vmax
-/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/pandas/io/formats/style.py:4204: RuntimeWarning: invalid value encountered in scalar subtract
-  rng = smax - smin
 </pre></div>
 </div>
 <div class="output text_html"><style type="text/css">
-#T_4d7d5_row0_col1 {
-  background-color: #f7b396;
-  color: #000000;
-  text-decoration: underline;
-  font-style: italic;
-  font-weight: bold;
+#T_7a70b_row0_col1 {
+  background-color: #3b4cc0;
+  color: #f1f1f1;
 }
-#T_4d7d5_row0_col2, #T_4d7d5_row0_col3, #T_4d7d5_row0_col4, #T_4d7d5_row0_col6, #T_4d7d5_row1_col3, #T_4d7d5_row1_col6 {
+#T_7a70b_row0_col2, #T_7a70b_row0_col3, #T_7a70b_row0_col4, #T_7a70b_row0_col6, #T_7a70b_row0_col7, #T_7a70b_row1_col5 {
+  background-color: #7f0000;
+  color: #f1f1f1;
+}
+#T_7a70b_row0_col5, #T_7a70b_row1_col2, #T_7a70b_row1_col3, #T_7a70b_row1_col4, #T_7a70b_row1_col6, #T_7a70b_row1_col7 {
   background-color: #fff7ec;
   color: #000000;
   text-decoration: underline;
   font-style: italic;
   font-weight: bold;
 }
-#T_4d7d5_row0_col5, #T_4d7d5_row1_col5 {
-  background-color: #000000;
-  color: #f1f1f1;
-}
-#T_4d7d5_row0_col7, #T_4d7d5_row1_col7 {
-  background-color: #000000;
-  color: #f1f1f1;
+#T_7a70b_row1_col1 {
+  background-color: #a7c5fe;
+  color: #000000;
   text-decoration: underline;
   font-style: italic;
   font-weight: bold;
 }
-#T_4d7d5_row1_col1 {
-  background-color: #b40426;
-  color: #f1f1f1;
-}
-#T_4d7d5_row1_col2, #T_4d7d5_row1_col4 {
-  background-color: #7f0000;
-  color: #f1f1f1;
-}
 </style>
-<table id="T_4d7d5">
+<table id="T_7a70b">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_4d7d5_level0_col0" class="col_heading level0 col0" >n</th>
-      <th id="T_4d7d5_level0_col1" class="col_heading level0 col1" >bias</th>
-      <th id="T_4d7d5_level0_col2" class="col_heading level0 col2" >rmse</th>
-      <th id="T_4d7d5_level0_col3" class="col_heading level0 col3" >urmse</th>
-      <th id="T_4d7d5_level0_col4" class="col_heading level0 col4" >mae</th>
-      <th id="T_4d7d5_level0_col5" class="col_heading level0 col5" >cc</th>
-      <th id="T_4d7d5_level0_col6" class="col_heading level0 col6" >si</th>
-      <th id="T_4d7d5_level0_col7" class="col_heading level0 col7" >r2</th>
+      <th id="T_7a70b_level0_col0" class="col_heading level0 col0" >n</th>
+      <th id="T_7a70b_level0_col1" class="col_heading level0 col1" >bias</th>
+      <th id="T_7a70b_level0_col2" class="col_heading level0 col2" >rmse</th>
+      <th id="T_7a70b_level0_col3" class="col_heading level0 col3" >urmse</th>
+      <th id="T_7a70b_level0_col4" class="col_heading level0 col4" >mae</th>
+      <th id="T_7a70b_level0_col5" class="col_heading level0 col5" >cc</th>
+      <th id="T_7a70b_level0_col6" class="col_heading level0 col6" >si</th>
+      <th id="T_7a70b_level0_col7" class="col_heading level0 col7" >r2</th>
     </tr>
     <tr>
       <th class="index_name level0" >observation</th>
@@ -1162,26 +831,26 @@ Comparers:
   </thead>
   <tbody>
     <tr>
-      <th id="T_4d7d5_level0_row0" class="row_heading level0 row0" >HKNA</th>
-      <td id="T_4d7d5_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_4d7d5_row0_col1" class="data row0 col1" >0.19</td>
-      <td id="T_4d7d5_row0_col2" class="data row0 col2" >0.19</td>
-      <td id="T_4d7d5_row0_col3" class="data row0 col3" >0.00</td>
-      <td id="T_4d7d5_row0_col4" class="data row0 col4" >0.19</td>
-      <td id="T_4d7d5_row0_col5" class="data row0 col5" >nan</td>
-      <td id="T_4d7d5_row0_col6" class="data row0 col6" >0.00</td>
-      <td id="T_4d7d5_row0_col7" class="data row0 col7" >-inf</td>
+      <th id="T_7a70b_level0_row0" class="row_heading level0 row0" >HKNA</th>
+      <td id="T_7a70b_row0_col0" class="data row0 col0" >386</td>
+      <td id="T_7a70b_row0_col1" class="data row0 col1" >-0.20</td>
+      <td id="T_7a70b_row0_col2" class="data row0 col2" >0.36</td>
+      <td id="T_7a70b_row0_col3" class="data row0 col3" >0.29</td>
+      <td id="T_7a70b_row0_col4" class="data row0 col4" >0.26</td>
+      <td id="T_7a70b_row0_col5" class="data row0 col5" >0.97</td>
+      <td id="T_7a70b_row0_col6" class="data row0 col6" >0.09</td>
+      <td id="T_7a70b_row0_col7" class="data row0 col7" >0.90</td>
     </tr>
     <tr>
-      <th id="T_4d7d5_level0_row1" class="row_heading level0 row1" >EPL</th>
-      <td id="T_4d7d5_row1_col0" class="data row1 col0" >1</td>
-      <td id="T_4d7d5_row1_col1" class="data row1 col1" >0.52</td>
-      <td id="T_4d7d5_row1_col2" class="data row1 col2" >0.52</td>
-      <td id="T_4d7d5_row1_col3" class="data row1 col3" >0.00</td>
-      <td id="T_4d7d5_row1_col4" class="data row1 col4" >0.52</td>
-      <td id="T_4d7d5_row1_col5" class="data row1 col5" >nan</td>
-      <td id="T_4d7d5_row1_col6" class="data row1 col6" >0.00</td>
-      <td id="T_4d7d5_row1_col7" class="data row1 col7" >-inf</td>
+      <th id="T_7a70b_level0_row1" class="row_heading level0 row1" >EPL</th>
+      <td id="T_7a70b_row1_col0" class="data row1 col0" >66</td>
+      <td id="T_7a70b_row1_col1" class="data row1 col1" >-0.07</td>
+      <td id="T_7a70b_row1_col2" class="data row1 col2" >0.23</td>
+      <td id="T_7a70b_row1_col3" class="data row1 col3" >0.21</td>
+      <td id="T_7a70b_row1_col4" class="data row1 col4" >0.19</td>
+      <td id="T_7a70b_row1_col5" class="data row1 col5" >0.97</td>
+      <td id="T_7a70b_row1_col6" class="data row1 col6" >0.08</td>
+      <td id="T_7a70b_row1_col7" class="data row1 col7" >0.93</td>
     </tr>
   </tbody>
 </table>
@@ -1189,7 +858,7 @@ Comparers:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="s2">&quot;mean_absolute_error&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">"EPL"</span><span class="p">]</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="s2">"mean_absolute_error"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1224,8 +893,8 @@ Comparers:
   <tbody>
     <tr>
       <th>EPL</th>
-      <td>1</td>
-      <td>0.518057</td>
+      <td>66</td>
+      <td>0.190754</td>
     </tr>
   </tbody>
 </table>
@@ -1233,252 +902,42 @@ Comparers:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;HKNA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">timeseries</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">"HKNA"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">timeseries</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4ad3cdb625c7fa462387b4a696fb8eb884d987738aab8566077c90d1e9ba1229.png" src="_images/4ad3cdb625c7fa462387b4a696fb8eb884d987738aab8566077c90d1e9ba1229.png" />
+<img alt="_images/7945b9bf6c1b892aed11822fd8d0e34586fff1f6151baedecbf8bb2f56e74892.png" src="_images/7945b9bf6c1b892aed11822fd8d0e34586fff1f6151baedecbf8bb2f56e74892.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">show_hist</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">"EPL"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">show_hist</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">show_hist</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:565,</span> in <span class="ni">ComparerPlotter.scatter</span><span class="nt">(self, model, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, ax, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span> <span class="n">axes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">for</span> <span class="n">mod_name</span> <span class="ow">in</span> <span class="n">mod_names</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">565</span>     <span class="n">ax_mod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scatter_one_model</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">566</span>         <span class="n">mod_name</span><span class="o">=</span><span class="n">mod_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>         <span class="n">quantiles</span><span class="o">=</span><span class="n">quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span>         <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span>         <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span>         <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span>         <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">575</span>         <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">576</span>         <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span>         <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>         <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>         <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">580</span>         <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span>         <span class="n">skill_table</span><span class="o">=</span><span class="n">skill_table</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span>         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="n">axes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax_mod</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="k">return</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">axes</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:649,</span> in <span class="ni">ComparerPlotter._scatter_one_model</span><span class="nt">(self, mod_name, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span>     <span class="n">reg_method</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="n">skill_scores</span> <span class="o">=</span> <span class="n">skill</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">if</span> <span class="n">skill</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">649</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">652</span>     <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span>     <span class="n">quantiles</span><span class="o">=</span><span class="n">quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span>     <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">661</span>     <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>     <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>     <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="n">skill_scores</span><span class="o">=</span><span class="n">skill_scores</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>     <span class="n">skill_score_unit</span><span class="o">=</span><span class="n">skill_score_unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span> <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;matplotlib&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_directional</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>     <span class="n">_xtick_directional</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlim</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_scatter.py:228,</span> in <span class="ni">scatter</span><span class="nt">(x, y, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, skill_scores, skill_score_unit, ax, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="n">skill</span> <span class="o">=</span> <span class="n">cmp</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="n">skill_scores</span> <span class="o">=</span> <span class="n">skill</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;records&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">228</span> <span class="k">return</span> <span class="n">PLOTTING_BACKENDS</span><span class="p">[</span><span class="n">backend</span><span class="p">](</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">x_sample</span><span class="o">=</span><span class="n">x_sample</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="n">y_sample</span><span class="o">=</span><span class="n">y_sample</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">xq</span><span class="o">=</span><span class="n">xq</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">yq</span><span class="o">=</span><span class="n">yq</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">x_trend</span><span class="o">=</span><span class="n">x_trend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="n">nbins_hist</span><span class="o">=</span><span class="n">nbins_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="n">skill_scores</span><span class="o">=</span><span class="n">skill_scores</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">skill_score_unit</span><span class="o">=</span><span class="n">skill_score_unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">252</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_scatter.py:289,</span> in <span class="ni">_scatter_matplotlib</span><span class="nt">(x, y, x_sample, y_sample, z, xq, yq, x_trend, show_density, show_points, show_hist, norm, nbins_hist, reg_method, xlabel, ylabel, figsize, xlim, ylim, title, skill_scores, skill_score_unit, fit_to_quantiles, ax, cmap, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">_get_fig_ax</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">289</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Not enough data to plot. At least 2 points are required.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>     <span class="p">[</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="p">[</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">296</span>     <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="n">show_points</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">show_points</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: Not enough data to plot. At least 2 points are required.
-</pre></div>
-</div>
-<img alt="_images/c2f934e85f9b17fe23a4168ad6948ad931a7ef36ad2c126ad57c3d2279850635.png" src="_images/c2f934e85f9b17fe23a4168ad6948ad931a7ef36ad2c126ad57c3d2279850635.png" />
+<img alt="_images/fd7a345d0466febdb8dbd7ac32d4e926e6005f0b36bc7890fafbe0288e6faa69.png" src="_images/fd7a345d0466febdb8dbd7ac32d4e926e6005f0b36bc7890fafbe0288e6faa69.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;EPL&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">"EPL"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ad7627b4f7b74a47c81c45fb5ae649fddfd673b85a23b9e19dbba72fc45a5e3d.png" src="_images/ad7627b4f7b74a47c81c45fb5ae649fddfd673b85a23b9e19dbba72fc45a5e3d.png" />
+<img alt="_images/a59a96cb6ec22642b1650690f68bbc25bbcfb68360b3aaad8bf1db53989e3d2c.png" src="_images/a59a96cb6ec22642b1650690f68bbc25bbcfb68360b3aaad8bf1db53989e3d2c.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">&quot;HKNA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">();</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cc</span><span class="p">[</span><span class="s2">"HKNA"</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cc</span><span class="p">[</span><span class="s2">&quot;HKNA&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">();</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:565,</span> in <span class="ni">ComparerPlotter.scatter</span><span class="nt">(self, model, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, ax, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">563</span> <span class="n">axes</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">    </span><span class="mi">564</span> <span class="k">for</span> <span class="n">mod_name</span> <span class="ow">in</span> <span class="n">mod_names</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">565</span>     <span class="n">ax_mod</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scatter_one_model</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">566</span>         <span class="n">mod_name</span><span class="o">=</span><span class="n">mod_name</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">567</span>         <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">568</span>         <span class="n">quantiles</span><span class="o">=</span><span class="n">quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">569</span>         <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">570</span>         <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">571</span>         <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">572</span>         <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">573</span>         <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">574</span>         <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">575</span>         <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">576</span>         <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">577</span>         <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">578</span>         <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">579</span>         <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">580</span>         <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">582</span>         <span class="n">skill_table</span><span class="o">=</span><span class="n">skill_table</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">583</span>         <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">584</span>         <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">585</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">586</span>     <span class="n">axes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ax_mod</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">587</span> <span class="k">return</span> <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">axes</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/comparison/_comparer_plotter.py:649,</span> in <span class="ni">ComparerPlotter._scatter_one_model</span><span class="nt">(self, mod_name, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">645</span>     <span class="n">reg_method</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="g g-Whitespace">    </span><span class="mi">647</span> <span class="n">skill_scores</span> <span class="o">=</span> <span class="n">skill</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">if</span> <span class="n">skill</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
-<span class="ne">--&gt; </span><span class="mi">649</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">650</span>     <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">651</span>     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">652</span>     <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">653</span>     <span class="n">quantiles</span><span class="o">=</span><span class="n">quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">654</span>     <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span>     <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">656</span>     <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">657</span>     <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">658</span>     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">659</span>     <span class="n">backend</span><span class="o">=</span><span class="n">backend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">660</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">661</span>     <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">662</span>     <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">663</span>     <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">664</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">665</span>     <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">666</span>     <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">667</span>     <span class="n">skill_scores</span><span class="o">=</span><span class="n">skill_scores</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">668</span>     <span class="n">skill_score_unit</span><span class="o">=</span><span class="n">skill_score_unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">669</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">670</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">672</span> <span class="k">if</span> <span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;matplotlib&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_directional</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">673</span>     <span class="n">_xtick_directional</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">xlim</span><span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_scatter.py:228,</span> in <span class="ni">scatter</span><span class="nt">(x, y, bins, quantiles, fit_to_quantiles, show_points, show_hist, show_density, norm, backend, figsize, xlim, ylim, reg_method, title, xlabel, ylabel, skill_table, skill_scores, skill_score_unit, ax, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="n">skill</span> <span class="o">=</span> <span class="n">cmp</span><span class="o">.</span><span class="n">skill</span><span class="p">(</span><span class="n">metrics</span><span class="o">=</span><span class="n">metrics</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="n">skill_scores</span> <span class="o">=</span> <span class="n">skill</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="s2">&quot;records&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">228</span> <span class="k">return</span> <span class="n">PLOTTING_BACKENDS</span><span class="p">[</span><span class="n">backend</span><span class="p">](</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">231</span>     <span class="n">x_sample</span><span class="o">=</span><span class="n">x_sample</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">232</span>     <span class="n">y_sample</span><span class="o">=</span><span class="n">y_sample</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">233</span>     <span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="n">xq</span><span class="o">=</span><span class="n">xq</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="n">yq</span><span class="o">=</span><span class="n">yq</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="n">x_trend</span><span class="o">=</span><span class="n">x_trend</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">237</span>     <span class="n">show_density</span><span class="o">=</span><span class="n">show_density</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">238</span>     <span class="n">norm</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">239</span>     <span class="n">show_points</span><span class="o">=</span><span class="n">show_points</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">240</span>     <span class="n">show_hist</span><span class="o">=</span><span class="n">show_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">241</span>     <span class="n">nbins_hist</span><span class="o">=</span><span class="n">nbins_hist</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">242</span>     <span class="n">reg_method</span><span class="o">=</span><span class="n">reg_method</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">243</span>     <span class="n">xlabel</span><span class="o">=</span><span class="n">xlabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">244</span>     <span class="n">ylabel</span><span class="o">=</span><span class="n">ylabel</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">245</span>     <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">246</span>     <span class="n">xlim</span><span class="o">=</span><span class="n">xlim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="n">ylim</span><span class="o">=</span><span class="n">ylim</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">248</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="n">skill_scores</span><span class="o">=</span><span class="n">skill_scores</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">250</span>     <span class="n">skill_score_unit</span><span class="o">=</span><span class="n">skill_score_unit</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="n">fit_to_quantiles</span><span class="o">=</span><span class="n">fit_to_quantiles</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">252</span>     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">253</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="p">)</span>
-
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/plotting/_scatter.py:289,</span> in <span class="ni">_scatter_matplotlib</span><span class="nt">(x, y, x_sample, y_sample, z, xq, yq, x_trend, show_density, show_points, show_hist, norm, nbins_hist, reg_method, xlabel, ylabel, figsize, xlim, ylim, title, skill_scores, skill_score_unit, fit_to_quantiles, ax, cmap, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">_get_fig_ax</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">figsize</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">289</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Not enough data to plot. At least 2 points are required.&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">291</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">292</span>     <span class="p">[</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="p">[</span><span class="n">xlim</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xlim</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>    <span class="mi">296</span>     <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="n">show_points</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">show_points</span><span class="p">:</span>
-
-<span class="ne">ValueError</span>: Not enough data to plot. At least 2 points are required.
-</pre></div>
-</div>
-<img alt="_images/c2f934e85f9b17fe23a4168ad6948ad931a7ef36ad2c126ad57c3d2279850635.png" src="_images/c2f934e85f9b17fe23a4168ad6948ad931a7ef36ad2c126ad57c3d2279850635.png" />
+<img alt="_images/6cae6f58f257bcd39105be043e885f2f2993f0bb4806a5341255341520920f0c.png" src="_images/6cae6f58f257bcd39105be043e885f2f2993f0bb4806a5341255341520920f0c.png" />
 </div>
 </div>
 </section>
@@ -1542,15 +1001,17 @@ Comparers:
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-comparison">Simple comparison</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model">The model</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-observation">The observation</a></li>
@@ -1612,8 +1073,8 @@ By Jesper Mariegaard and  Henrik Andersson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>

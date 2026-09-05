@@ -16,41 +16,44 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-
-  
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -58,40 +61,37 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercises/exercise_basic_model_skill';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Track observations" href="../track_observations.html" />
     <link rel="prev" title="Model skill assessment" href="../model_skill.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +99,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,15 +106,55 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
     </header>
   
 
@@ -124,7 +163,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -154,21 +194,17 @@
     
     
     <img src="../_static/logo.png" class="logo__image only-light" alt="Python for marine modelers using MIKE IO and ModelSkill - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Python for marine modelers using MIKE IO and ModelSkill - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Python for marine modelers using MIKE IO and ModelSkill - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -231,9 +267,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -347,7 +388,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -361,24 +402,16 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
+</button>
 
 </div></div>
       
@@ -420,26 +453,26 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn_mod</span> <span class="o">=</span> <span class="s1">&#39;../data/SW/ts_storm_4.dfs0&#39;</span>
-<span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">&#39;../data/SW/eur_Hm0.dfs0&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fn_mod</span> <span class="o">=</span> <span class="s1">'../data/SW/ts_storm_4.dfs0'</span>
+<span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">'../data/SW/eur_Hm0.dfs0'</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">fn_obs</span><span class="p">,</span> <span class="n">fn_mod</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/obs.py:79: UserWarning: Could not guess geometry type from data or args, assuming POINT geometry. Use PointObservation or TrackObservation to be explicit.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/obs.py:79: UserWarning: Could not guess geometry type from data or args, assuming POINT geometry. Use PointObservation or TrackObservation to be explicit.
   warnings.warn(
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/matching.py:466,</span> in <span class="ni">_parse_single_model</span><span class="nt">(mod, item, gtype)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/matching.py:466,</span> in <span class="ni">_parse_single_model</span><span class="nt">(mod, item, gtype)</span>
 <span class="g g-Whitespace">    </span><span class="mi">465</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">466</span>     <span class="k">return</span> <span class="n">model_result</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">gtype</span><span class="o">=</span><span class="n">gtype</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">467</span> <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/model/factory.py:57,</span> in <span class="ni">model_result</span><span class="nt">(data, aux_items, gtype, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/model/factory.py:57,</span> in <span class="ni">model_result</span><span class="nt">(data, aux_items, gtype, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="n">geometry</span> <span class="o">=</span> <span class="n">GeometryType</span><span class="p">(</span><span class="n">gtype</span><span class="p">)</span>
 <span class="ne">---&gt; </span><span class="mi">57</span> <span class="k">return</span> <span class="n">_modelresult_lookup</span><span class="p">[</span><span class="n">geometry</span><span class="p">](</span>
 <span class="g g-Whitespace">     </span><span class="mi">58</span>     <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
@@ -447,7 +480,7 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">60</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="g g-Whitespace">     </span><span class="mi">61</span> <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/model/point.py:56,</span> in <span class="ni">PointModelResult.__init__</span><span class="nt">(self, data, name, x, y, z, item, quantity, aux_items)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/model/point.py:56,</span> in <span class="ni">PointModelResult.__init__</span><span class="nt">(self, data, name, x, y, z, item, quantity, aux_items)</span>
 <span class="g g-Whitespace">     </span><span class="mi">55</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_input_validated</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
 <span class="ne">---&gt; </span><span class="mi">56</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">_parse_point_input</span><span class="p">(</span>
 <span class="g g-Whitespace">     </span><span class="mi">57</span>         <span class="n">data</span><span class="p">,</span>
@@ -461,34 +494,35 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">67</span> <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/timeseries/_point.py:105,</span> in <span class="ni">_parse_point_input</span><span class="nt">(data, name, item, quantity, x, y, z, aux_items)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/timeseries/_point.py:105,</span> in <span class="ni">_parse_point_input</span><span class="nt">(data, name, item, quantity, x, y, z, aux_items)</span>
 <span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="n">valid_items</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data_vars</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">105</span> <span class="n">sel_items</span> <span class="o">=</span> <span class="n">_parse_point_items</span><span class="p">(</span><span class="n">valid_items</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">aux_items</span><span class="o">=</span><span class="n">aux_items</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="n">item_name</span> <span class="o">=</span> <span class="n">sel_items</span><span class="o">.</span><span class="n">values</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/timeseries/_point.py:37,</span> in <span class="ni">_parse_point_items</span><span class="nt">(items, item, aux_items)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/timeseries/_point.py:37,</span> in <span class="ni">_parse_point_items</span><span class="nt">(items, item, aux_items)</span>
 <span class="g g-Whitespace">     </span><span class="mi">36</span>     <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
 <span class="ne">---&gt; </span><span class="mi">37</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">38</span>             <span class="sa">f</span><span class="s2">&quot;Input has more than 1 item, but item was not given! Available items: </span><span class="si">{</span><span class="n">items</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span>             <span class="sa">f</span><span class="s2">"Input has more than 1 item, but item was not given! Available items: </span><span class="si">{</span><span class="n">items</span><span class="si">}</span><span class="s2">"</span>
 <span class="g g-Whitespace">     </span><span class="mi">39</span>         <span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="n">item</span> <span class="o">=</span> <span class="n">_get_name</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">valid_names</span><span class="o">=</span><span class="n">items</span><span class="p">)</span>
 
-<span class="ne">ValueError</span>: Input has more than 1 item, but item was not given! Available items: [&#39;Europlatform: Sign. Wave Height&#39;, &#39;K14: Sign. Wave Height&#39;, &#39;F16: Sign. Wave Height&#39;, &#39;F3: Sign. Wave Height&#39;, &#39;Europlatform: Sign. Wave Height, W&#39;, &#39;K14: Sign. Wave Height, W&#39;, &#39;F16: Sign. Wave Height, W&#39;, &#39;F3: Sign. Wave Height, W&#39;, &#39;Europlatform: Sign. Wave Height, S&#39;, &#39;K14: Sign. Wave Height, S&#39;, &#39;F16: Sign. Wave Height, S&#39;, &#39;F3: Sign. Wave Height, S&#39;, &#39;Europlatform: Wind speed&#39;, &#39;K14: Wind speed&#39;, &#39;F16: Wind speed&#39;, &#39;F3: Wind speed&#39;, &#39;Europlatform: Wind direction&#39;, &#39;K14: Wind direction&#39;, &#39;F16: Wind direction&#39;, &#39;F3: Wind direction&#39;]
+<span class="ne">ValueError</span>: Input has more than 1 item, but item was not given! Available items: ['Europlatform: Sign. Wave Height', 'K14: Sign. Wave Height', 'F16: Sign. Wave Height', 'F3: Sign. Wave Height', 'Europlatform: Sign. Wave Height, W', 'K14: Sign. Wave Height, W', 'F16: Sign. Wave Height, W', 'F3: Sign. Wave Height, W', 'Europlatform: Sign. Wave Height, S', 'K14: Sign. Wave Height, S', 'F16: Sign. Wave Height, S', 'F3: Sign. Wave Height, S', 'Europlatform: Wind speed', 'K14: Wind speed', 'F16: Wind speed', 'F3: Wind speed', 'Europlatform: Wind direction', 'K14: Wind direction', 'F16: Wind direction', 'F3: Wind direction']
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fn_mod</span> <span class="o">=</span> <span class="s1">&#39;../data/SW/ts_storm_4.dfs0&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">&#39;../data/SW/eur_Hm0.dfs0&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">fn_mod</span> <span class="o">=</span> <span class="s1">'../data/SW/ts_storm_4.dfs0'</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fn_obs</span> <span class="o">=</span> <span class="s1">'../data/SW/eur_Hm0.dfs0'</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">c</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">fn_obs</span><span class="p">,</span> <span class="n">fn_mod</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/matching.py:256,</span> in <span class="ni">match</span><span class="nt">(obs, mod, obs_item, mod_item, gtype, max_model_gap, spatial_method, spatial_tolerance, obs_no_overlap)</span>
-<span class="g g-Whitespace">    </span><span class="mi">204</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Match observation and model result data in space and time</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/matching.py:256,</span> in <span class="ni">match</span><span class="nt">(obs, mod, obs_item, mod_item, gtype, max_model_gap, spatial_method, spatial_tolerance, obs_no_overlap)</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span><span class="w"> </span><span class="sd">"""Match observation and model result data in space and time</span>
 <span class="g g-Whitespace">    </span><span class="mi">205</span><span class="sd"> </span>
 <span class="g g-Whitespace">    </span><span class="mi">206</span><span class="sd"> NOTE: In case of multiple model results with different time coverage,</span>
 <span class="sd">   (...)    253 from_matched - Create a Comparer from observation and model results that are already matched</span>
-<span class="g g-Whitespace">    </span><span class="mi">254</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span><span class="sd"> """</span>
 <span class="g g-Whitespace">    </span><span class="mi">255</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">get_args</span><span class="p">(</span><span class="n">ObsInputType</span><span class="p">)):</span>
 <span class="ne">--&gt; </span><span class="mi">256</span>     <span class="k">return</span> <span class="n">_match_single_obs</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">257</span>         <span class="n">obs</span><span class="p">,</span>
@@ -504,23 +538,23 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">268</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obs</span><span class="p">,</span> <span class="n">Collection</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">269</span>     <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">get_args</span><span class="p">(</span><span class="n">ObsInputType</span><span class="p">))</span> <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">obs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/matching.py:332,</span> in <span class="ni">_match_single_obs</span><span class="nt">(obs, mod, obs_item, mod_item, gtype, max_model_gap, spatial_method, spatial_tolerance, obs_no_overlap)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/matching.py:332,</span> in <span class="ni">_match_single_obs</span><span class="nt">(obs, mod, obs_item, mod_item, gtype, max_model_gap, spatial_method, spatial_tolerance, obs_no_overlap)</span>
 <span class="g g-Whitespace">    </span><span class="mi">329</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">330</span>     <span class="n">models</span> <span class="o">=</span> <span class="n">mod</span>  <span class="c1"># type: ignore</span>
 <span class="ne">--&gt; </span><span class="mi">332</span> <span class="n">model_results</span> <span class="o">=</span> <span class="p">[</span><span class="n">_parse_single_model</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">mod_item</span><span class="p">,</span> <span class="n">gtype</span><span class="o">=</span><span class="n">gtype</span><span class="p">)</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">]</span>
 <span class="g g-Whitespace">    </span><span class="mi">333</span> <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">m</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">model_results</span><span class="p">]</span>
 <span class="g g-Whitespace">    </span><span class="mi">334</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.13.12/x64/lib/python3.13/site-packages/modelskill/matching.py:468,</span> in <span class="ni">_parse_single_model</span><span class="nt">(mod, item, gtype)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.13.15/x64/lib/python3.13/site-packages/modelskill/matching.py:468,</span> in <span class="ni">_parse_single_model</span><span class="nt">(mod, item, gtype)</span>
 <span class="g g-Whitespace">    </span><span class="mi">466</span>         <span class="k">return</span> <span class="n">model_result</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">gtype</span><span class="o">=</span><span class="n">gtype</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">467</span>     <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">468</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span>             <span class="sa">f</span><span class="s2">&quot;Could not compare. Unknown model result type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>             <span class="sa">f</span><span class="s2">"Could not compare. Unknown model result type </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">mod</span><span class="p">)</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
 <span class="g g-Whitespace">    </span><span class="mi">470</span>         <span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">471</span> <span class="k">else</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">472</span>     <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 
-<span class="ne">ValueError</span>: Could not compare. Unknown model result type &lt;class &#39;str&#39;&gt;. Input has more than 1 item, but item was not given! Available items: [&#39;Europlatform: Sign. Wave Height&#39;, &#39;K14: Sign. Wave Height&#39;, &#39;F16: Sign. Wave Height&#39;, &#39;F3: Sign. Wave Height&#39;, &#39;Europlatform: Sign. Wave Height, W&#39;, &#39;K14: Sign. Wave Height, W&#39;, &#39;F16: Sign. Wave Height, W&#39;, &#39;F3: Sign. Wave Height, W&#39;, &#39;Europlatform: Sign. Wave Height, S&#39;, &#39;K14: Sign. Wave Height, S&#39;, &#39;F16: Sign. Wave Height, S&#39;, &#39;F3: Sign. Wave Height, S&#39;, &#39;Europlatform: Wind speed&#39;, &#39;K14: Wind speed&#39;, &#39;F16: Wind speed&#39;, &#39;F3: Wind speed&#39;, &#39;Europlatform: Wind direction&#39;, &#39;K14: Wind direction&#39;, &#39;F16: Wind direction&#39;, &#39;F3: Wind direction&#39;]
+<span class="ne">ValueError</span>: Could not compare. Unknown model result type &lt;class 'str'&gt;. Input has more than 1 item, but item was not given! Available items: ['Europlatform: Sign. Wave Height', 'K14: Sign. Wave Height', 'F16: Sign. Wave Height', 'F3: Sign. Wave Height', 'Europlatform: Sign. Wave Height, W', 'K14: Sign. Wave Height, W', 'F16: Sign. Wave Height, W', 'F3: Sign. Wave Height, W', 'Europlatform: Sign. Wave Height, S', 'K14: Sign. Wave Height, S', 'F16: Sign. Wave Height, S', 'F3: Sign. Wave Height, S', 'Europlatform: Wind speed', 'K14: Wind speed', 'F16: Wind speed', 'F3: Wind speed', 'Europlatform: Wind direction', 'K14: Wind direction', 'F16: Wind direction', 'F3: Wind direction']
 </pre></div>
 </div>
 </div>
@@ -539,8 +573,8 @@ document.write(`
 <p><img alt="" src="../_images/excel_chart.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the .df property on the comparer object to save the obs and model timeseries as an Excel file (&quot;skill.xlsx&quot;)</span>
-<span class="c1"># you might get an error &quot;No module named &#39;openpyxl&#39;&quot;, the solution is to run `pip install openpyxl`</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the .df property on the comparer object to save the obs and model timeseries as an Excel file ("skill.xlsx")</span>
+<span class="c1"># you might get an error "No module named 'openpyxl'", the solution is to run `pip install openpyxl`</span>
 </pre></div>
 </div>
 </div>
@@ -687,8 +721,8 @@ By Jesper Mariegaard and  Henrik Andersson
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
 
   <footer class="bd-footer">
   </footer>
