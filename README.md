@@ -1,5 +1,13 @@
 # Python for marine modelers using [MIKE IO](https://github.com/DHI/mikeio) and [ModelSkill](https://github.com/DHI/modelskill)
 
+> [!NOTE]
+> **This course material is no longer maintained.**
+> It has been superseded by the 2026 ModelSkill course:
+> [DHI-Internal/modelskill-course-2026](https://github.com/DHI-Internal/modelskill-course-2026)
+> (DHI staff only — requires access to the DHI-Internal org).
+>
+> The notebooks in this repo remain available as-is.
+
 <https://dhi.github.io/book-learn-mikeio-modelskill/>
 
 Would you like to use Python to become more efficient as a marine modeler?
